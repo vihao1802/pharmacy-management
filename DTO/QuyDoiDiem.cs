@@ -10,11 +10,11 @@ namespace pharmacy_management.DTO
     {
         private int maQuyDoi;
         private int maKH;
-        private string ngayQuyDoi;
+        private DateTime ngayQuyDoi;
         private int maPhieuGiam;
         private int daSuDung;
 
-        public QuyDoiDiem(int maQuyDoi, int maKH, string ngayQuyDoi, int maPhieuGiam, int daSuDung)
+        public QuyDoiDiem(int maQuyDoi, int maKH, DateTime ngayQuyDoi, int maPhieuGiam, int daSuDung)
         {
             this.MaQuyDoi = maQuyDoi;
             this.MaKH = maKH;
@@ -25,7 +25,7 @@ namespace pharmacy_management.DTO
 
         public int MaQuyDoi { get => maQuyDoi; set => maQuyDoi = value; }
         public int MaKH { get => maKH; set => maKH = value; }
-        public string NgayQuyDoi { get => ngayQuyDoi; set => ngayQuyDoi = value; }
+        public DateTime NgayQuyDoi { get => ngayQuyDoi; set => ngayQuyDoi = value; }
         public int MaPhieuGiam { get => maPhieuGiam; set => maPhieuGiam = value; }
         public int DaSuDung { get => daSuDung; set => daSuDung = value; }
     }
