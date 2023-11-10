@@ -33,8 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Krypton.Toolkit, Version=70.22.11.312, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>packages\Krypton.Toolkit.70.22.11.312\lib\net472\Krypton.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,27 +50,87 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\DoiTuongBUS.cs" />
+    <Compile Include="DAO\ChiTietDonHangDAO.cs" />
+    <Compile Include="DAO\ChiTietPhieuNhapDAO.cs" />
+    <Compile Include="DAO\DiemKhachHangDAO.cs" />
+    <Compile Include="DAO\DoiTuongDAO.cs" />
+    <Compile Include="DAO\DonHangDAO.cs" />
+    <Compile Include="DAO\KhachHangDAO.cs" />
+    <Compile Include="DAO\NhanVienDAO.cs" />
+    <Compile Include="DAO\PhieuGiamGiaDAO.cs" />
+    <Compile Include="DAO\PhieuNhapDAO.cs" />
+    <Compile Include="DAO\QuyDoiDIemDAO.cs" />
+    <Compile Include="DAO\QuyenDAO.cs" />
+    <Compile Include="DAO\ThuocDAO.cs" />
+    <Compile Include="DAO\XuatXuDAO.cs" />
+    <Compile Include="Database\ConnectDB.cs" />
+    <Compile Include="DTO\ChiTietDonHang.cs" />
+    <Compile Include="DTO\ChiTietPhieuNhap.cs" />
+    <Compile Include="DTO\DiemKhachHang.cs" />
+    <Compile Include="DTO\DoiTuong.cs" />
+    <Compile Include="DTO\DonHang.cs" />
+    <Compile Include="DTO\XuatXu.cs" />
+    <Compile Include="DTO\KhachHang.cs" />
+    <Compile Include="DTO\NhanVien.cs" />
+    <Compile Include="DTO\PhieuGiamGia.cs" />
+    <Compile Include="DTO\PhieuNhap.cs" />
+    <Compile Include="DTO\QuyDoiDiem.cs" />
+    <Compile Include="DTO\Quyen.cs" />
+    <Compile Include="DTO\Thuoc.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\BanHang\BanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\BanHang\BanHang.Designer.cs">
+      <DependentUpon>BanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\BanHang\SanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\BanHang\SanPham.Designer.cs">
+      <DependentUpon>SanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Thuoc\FormThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Thuoc\FormThuoc.Designer.cs">
+      <DependentUpon>FormThuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BanHang\BanHang.resx">
+      <DependentUpon>BanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BanHang\SanPham.resx">
+      <DependentUpon>SanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx">
+      <DependentUpon>FormThuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -75,6 +139,189 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-detail-24.png" />
+    <None Include="Resources\icons8-detail-30.png" />
+    <None Include="Resources\icons8-detail-50.png" />
+    <None Include="Resources\icons8-cart-30_white.png" />
+    <None Include="Resources\176.jpg" />
+    <None Include="Resources\175.jpg" />
+    <None Include="Resources\174.jpg" />
+    <None Include="Resources\173.jpg" />
+    <None Include="Resources\172.jpg" />
+    <None Include="Resources\171.jpg" />
+    <None Include="Resources\170.jpg" />
+    <None Include="Resources\169.jpg" />
+    <None Include="Resources\168.jpg" />
+    <None Include="Resources\167.jpg" />
+    <None Include="Resources\166.jpg" />
+    <None Include="Resources\165.jpg" />
+    <None Include="Resources\164.jpg" />
+    <None Include="Resources\163.jpg" />
+    <None Include="Resources\162.jpg" />
+    <None Include="Resources\161.jpg" />
+    <None Include="Resources\160.jpg" />
+    <None Include="Resources\159.jpg" />
+    <None Include="Resources\158.jpg" />
+    <None Include="Resources\157.jpg" />
+    <None Include="Resources\156.jpg" />
+    <None Include="Resources\155.jpg" />
+    <None Include="Resources\154.jpg" />
+    <None Include="Resources\153.jpg" />
+    <None Include="Resources\152.jpg" />
+    <None Include="Resources\151.jpg" />
+    <None Include="Resources\150.jpg" />
+    <None Include="Resources\149.jpg" />
+    <None Include="Resources\148.jpg" />
+    <None Include="Resources\147.jpg" />
+    <None Include="Resources\146.jpg" />
+    <None Include="Resources\145.jpg" />
+    <None Include="Resources\144.jpg" />
+    <None Include="Resources\143.jpg" />
+    <None Include="Resources\142.jpg" />
+    <None Include="Resources\141.jpg" />
+    <None Include="Resources\140.jpg" />
+    <None Include="Resources\139.jpg" />
+    <None Include="Resources\138.jpg" />
+    <None Include="Resources\137.jpg" />
+    <None Include="Resources\136.jpg" />
+    <None Include="Resources\135.jpg" />
+    <None Include="Resources\134.jpg" />
+    <None Include="Resources\133.jpg" />
+    <None Include="Resources\132.jpg" />
+    <None Include="Resources\131.jpg" />
+    <None Include="Resources\130.jpg" />
+    <None Include="Resources\129.jpg" />
+    <None Include="Resources\128.jpg" />
+    <None Include="Resources\127.jpg" />
+    <None Include="Resources\126.jpg" />
+    <None Include="Resources\125.jpg" />
+    <None Include="Resources\124.jpg" />
+    <None Include="Resources\123.jpg" />
+    <None Include="Resources\122.jpg" />
+    <None Include="Resources\121.jpg" />
+    <None Include="Resources\120.jpg" />
+    <None Include="Resources\119.jpg" />
+    <None Include="Resources\118.jpg" />
+    <None Include="Resources\117.jpg" />
+    <None Include="Resources\116.jpg" />
+    <None Include="Resources\115.jpg" />
+    <None Include="Resources\114.jpg" />
+    <None Include="Resources\113.jpg" />
+    <None Include="Resources\112.jpg" />
+    <None Include="Resources\111.jpg" />
+    <None Include="Resources\110.jpg" />
+    <None Include="Resources\109.jpg" />
+    <None Include="Resources\108.jpg" />
+    <None Include="Resources\107.jpg" />
+    <None Include="Resources\106.jpg" />
+    <None Include="Resources\105.jpg" />
+    <None Include="Resources\104.jpg" />
+    <None Include="Resources\103.jpg" />
+    <None Include="Resources\102.jpg" />
+    <None Include="Resources\101.jpg" />
+    <None Include="Resources\100.jpg" />
+    <None Include="Resources\99.jpg" />
+    <None Include="Resources\98.jpg" />
+    <None Include="Resources\97.jpg" />
+    <None Include="Resources\96.jpg" />
+    <None Include="Resources\95.jpg" />
+    <None Include="Resources\94.jpg" />
+    <None Include="Resources\93.jpg" />
+    <None Include="Resources\92.jpg" />
+    <None Include="Resources\91.jpg" />
+    <None Include="Resources\90.jpg" />
+    <None Include="Resources\89.jpg" />
+    <None Include="Resources\88.jpg" />
+    <None Include="Resources\87.jpg" />
+    <None Include="Resources\86.jpg" />
+    <None Include="Resources\85.jpg" />
+    <None Include="Resources\84.jpg" />
+    <None Include="Resources\83.jpg" />
+    <None Include="Resources\82.jpg" />
+    <None Include="Resources\81.jpg" />
+    <None Include="Resources\80.jpg" />
+    <None Include="Resources\79.jpg" />
+    <None Include="Resources\78.jpg" />
+    <None Include="Resources\77.jpg" />
+    <None Include="Resources\76.jpg" />
+    <None Include="Resources\75.jpg" />
+    <None Include="Resources\74.jpg" />
+    <None Include="Resources\73.jpg" />
+    <None Include="Resources\72.jpg" />
+    <None Include="Resources\71.jpg" />
+    <None Include="Resources\70.jpg" />
+    <None Include="Resources\69.jpg" />
+    <None Include="Resources\68.jpg" />
+    <None Include="Resources\67.jpg" />
+    <None Include="Resources\66.jpg" />
+    <None Include="Resources\65.jpg" />
+    <None Include="Resources\64.jpg" />
+    <None Include="Resources\63.jpg" />
+    <None Include="Resources\62.jpg" />
+    <None Include="Resources\61.jpg" />
+    <None Include="Resources\60.jpg" />
+    <None Include="Resources\59.jpg" />
+    <None Include="Resources\58.jpg" />
+    <None Include="Resources\57.jpg" />
+    <None Include="Resources\56.jpg" />
+    <None Include="Resources\55.jpg" />
+    <None Include="Resources\54.jpg" />
+    <None Include="Resources\53.jpg" />
+    <None Include="Resources\52.jpg" />
+    <None Include="Resources\51.jpg" />
+    <None Include="Resources\50.jpg" />
+    <None Include="Resources\49.jpg" />
+    <None Include="Resources\48.jpg" />
+    <None Include="Resources\47.jpg" />
+    <None Include="Resources\46.jpg" />
+    <None Include="Resources\45.jpg" />
+    <None Include="Resources\44.jpg" />
+    <None Include="Resources\43.jpg" />
+    <None Include="Resources\42.jpg" />
+    <None Include="Resources\41.jpg" />
+    <None Include="Resources\40.jpg" />
+    <None Include="Resources\39.jpg" />
+    <None Include="Resources\38.jpg" />
+    <None Include="Resources\37.jpg" />
+    <None Include="Resources\36.jpg" />
+    <None Include="Resources\35.jpg" />
+    <None Include="Resources\34.jpg" />
+    <None Include="Resources\33.jpg" />
+    <None Include="Resources\32.jpg" />
+    <None Include="Resources\31.jpg" />
+    <None Include="Resources\30.jpg" />
+    <None Include="Resources\29.jpg" />
+    <None Include="Resources\28.jpg" />
+    <None Include="Resources\27.jpg" />
+    <None Include="Resources\26.jpg" />
+    <None Include="Resources\25.jpg" />
+    <None Include="Resources\24.jpg" />
+    <None Include="Resources\23.jpg" />
+    <None Include="Resources\22.jpg" />
+    <None Include="Resources\21.jpg" />
+    <None Include="Resources\20.jpg" />
+    <None Include="Resources\19.jpg" />
+    <None Include="Resources\18.jpg" />
+    <None Include="Resources\17.jpg" />
+    <None Include="Resources\16.jpg" />
+    <None Include="Resources\15.jpg" />
+    <None Include="Resources\14.jpg" />
+    <None Include="Resources\13.jpg" />
+    <None Include="Resources\12.jpg" />
+    <None Include="Resources\11.jpg" />
+    <None Include="Resources\10.jpg" />
+    <None Include="Resources\9.jpg" />
+    <None Include="Resources\8.jpg" />
+    <None Include="Resources\7.jpg" />
+    <None Include="Resources\6.jpg" />
+    <None Include="Resources\5.jpg" />
+    <None Include="Resources\4.jpg" />
+    <None Include="Resources\3.jpg" />
+    <None Include="Resources\2.jpg" />
+    <None Include="Resources\1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
