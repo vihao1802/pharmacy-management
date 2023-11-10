@@ -15,8 +15,9 @@ namespace pharmacy_management.DTO
         private string anhThuoc;
         private int trangThai;
         private int maXuatXu;
+        private int soLuong;
 
-        public Thuoc(int maThuoc, string tenThuoc, int maDoiTuong, float giaThuoc, string anhThuoc, int trangThai, int maXuatXu)
+        public Thuoc(int maThuoc, string tenThuoc, int maDoiTuong, float giaThuoc, string anhThuoc, int trangThai, int maXuatXu, int soLuong)
         {
             this.maThuoc = maThuoc;
             this.tenThuoc = tenThuoc;
@@ -25,6 +26,7 @@ namespace pharmacy_management.DTO
             this.anhThuoc = anhThuoc;
             this.trangThai = trangThai;
             this.maXuatXu = maXuatXu;
+            this.soLuong = soLuong;
         }
 
         public int MaThuoc { get => maThuoc; set => maThuoc = value; }
@@ -34,5 +36,6 @@ namespace pharmacy_management.DTO
         public string AnhThuoc { get => anhThuoc; set => anhThuoc = value; }
         public int TrangThai { get => trangThai; set => trangThai = value; }
         public int MaXuatXu { get => maXuatXu; set => maXuatXu = value; }
+        public int SoLuong { get => soLuong; set => soLuong = value; }
     }
 }

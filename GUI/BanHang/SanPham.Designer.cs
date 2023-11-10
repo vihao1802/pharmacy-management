@@ -92,6 +92,7 @@
             this.btn_item_detail.StateTracking.Border.Rounding = 3F;
             this.btn_item_detail.TabIndex = 9;
             this.btn_item_detail.Values.Text = "";
+            this.btn_item_detail.Click += new System.EventHandler(this.btn_item_detail_Click);
             this.btn_item_detail.MouseEnter += new System.EventHandler(this.pnl_item_container_MouseEnter);
             this.btn_item_detail.MouseLeave += new System.EventHandler(this.pnl_item_container_MouseLeave);
             // 
