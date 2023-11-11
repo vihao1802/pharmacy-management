@@ -27,5 +27,15 @@ namespace pharmacy_management.BUS
         {
             list = dao.GetALl();
         }
+
+        public string GetNameBUS(int ma)
+        {
+            return dao.GetNameDAO(ma);
+        }
+
+        public string getPhanTramGiamBUS(int ma)
+        {
+            return dao.GetPhanTramGiamDAO(ma);
+        }
     }
 }

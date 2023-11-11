@@ -49,5 +49,53 @@ namespace pharmacy_management.DAO
             return arrayList;
 
         }
+
+        public string GetNameDAO(int ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            string name = "";
+            string query = "SELECT MoTaPG FROM phieugiamgia WHERE MaPhieuGiam = " + ma.ToString();
+            //Console.WriteLine(query);
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    name = reader["MoTaPG"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at PhieuGiamGiaDAO: " + ex.Message);
+            }
+
+            return name;
+        }
+
+        public string GetPhanTramGiamDAO(int ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            string percent = "";
+            string query = "SELECT PhanTramGiam FROM phieugiamgia WHERE MaPhieuGiam = " + ma.ToString();
+            //Console.WriteLine(query);
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    percent = reader["PhanTramGiam"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at PhieuGiamGiaDAO: " + ex.Message);
+            }
+
+            return percent;
+        }
     }
 }

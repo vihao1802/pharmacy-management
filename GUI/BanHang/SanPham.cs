@@ -17,13 +17,15 @@ namespace pharmacy_management.GUI.BanHang
 {
     public partial class SanPham : UserControl
     {
-        Thuoc thuoc_info;
-        public SanPham()
+        DTO.Thuoc thuoc_info;
+        BanHangFrm bhFrm;
+        public SanPham(BanHangFrm bhFrm)
         {
             InitializeComponent();
+            this.bhFrm = bhFrm;
         }
 
-        public void AddNewContent(Thuoc thuoc_item)
+        public void AddNewContent(DTO.Thuoc thuoc_item)
         {
             thuoc_info = thuoc_item;
 
@@ -41,7 +43,7 @@ namespace pharmacy_management.GUI.BanHang
 
         private void btn_item_detail_Click(object sender, EventArgs e)
         {
-            ChiTietSanPham ctsp = new ChiTietSanPham(thuoc_info);
+            ChiTietSanPhamFrm ctsp = new ChiTietSanPhamFrm(thuoc_info);
             ctsp.Show();
         }
 
@@ -53,6 +55,11 @@ namespace pharmacy_management.GUI.BanHang
         private void pnl_item_container_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = Color.White;
+        }
+
+        private void btn_add_cart_Click(object sender, EventArgs e)
+        {
+            this.bhFrm.AddToCart(thuoc_info.MaThuoc, thuoc_info.TenThuoc, thuoc_info.GiaThuoc, thuoc_info.AnhThuoc);
         }
     }
 }

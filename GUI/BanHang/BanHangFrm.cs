@@ -2,6 +2,7 @@
 using pharmacy_management.BUS;
 using pharmacy_management.DTO;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,13 +18,16 @@ using Label = System.Windows.Forms.Label;
 
 namespace pharmacy_management.GUI.BanHang
 {
-    public partial class BanHang : Form
+    public partial class BanHangFrm : Form
     {
         private int current_page_value;
         private SanPham spGUI;
         ThuocBUS thuoc_list;
+        List<DTO.Thuoc> thuoc_cart = new List<DTO.Thuoc>();
         Label lbl_not_found = new Label();
-        public BanHang()
+        GioHangFrm gh;
+
+        public BanHangFrm()
         {
             InitializeComponent();
             setup();
@@ -98,7 +102,6 @@ namespace pharmacy_management.GUI.BanHang
             }
             lbl_total_pages.Text = pages.ToString();
 
-
             string txt_search;
             txt_search = txt_searching.Text;
 
@@ -115,11 +118,11 @@ namespace pharmacy_management.GUI.BanHang
         {
             int count = 0;
 
-            foreach (Thuoc t in thuoc_list.getList())
+            foreach (DTO.Thuoc t in thuoc_list.getList())
             {
                 Console.WriteLine(t.MaThuoc);
 
-                spGUI = new SanPham();
+                spGUI = new SanPham(this);
                 spGUI.AddNewContent(t);
                 this.flow_pnl_contain_item.Controls.Add(spGUI);
                 count++;
@@ -133,8 +136,6 @@ namespace pharmacy_management.GUI.BanHang
             lbl_current_page.Text = "1";
             pagination();
         }
-
-
 
         private void btn_search_page_Click(object sender, EventArgs e)
         {
@@ -205,22 +206,70 @@ namespace pharmacy_management.GUI.BanHang
             pagination();
         }
 
-
-
-
-
-
-
-        /*private void txt_searching_Enter(object sender, EventArgs e)
+        bool ContainsSubform()
         {
-            txt_searching.Text = "";
-            txt_searching.ForeColor = Color.Black;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Name == "GioHangFrm")
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
-        private void txt_searching_Leave(object sender, EventArgs e)
+        public void check_cart_show()
         {
-            txt_searching.Text = "Tìm kiếm ...";
-            txt_searching.ForeColor = Color.Gray;
-        }*/
+            if (ContainsSubform())
+            {
+                MessageBox.Show("Giỏ hàng đang được hiển thị");
+            }
+            else
+            {
+                gh = new GioHangFrm();
+                gh.setCart(thuoc_cart);
+                gh.Show();
+            }
+        }
+
+        private void btn_show_cart_Click(object sender, EventArgs e)
+        {
+            check_cart_show();
+        }
+
+        public void AddToCart(int ma, string ten, float gia, string anh)
+        {
+
+            int flag = 0;
+
+            foreach (DTO.Thuoc item in thuoc_cart)
+            {
+                if (item.MaThuoc == ma)
+                {
+                    item.SoLuong += 1;
+                    flag = 1;
+                    break;
+                }
+            }
+
+            if (flag == 0)
+            {
+                DTO.Thuoc tmp = new DTO.Thuoc(ma, ten, 0, gia, anh, 1, 0, 1);
+                thuoc_cart.Add(tmp);
+                thuoc_cart.Reverse();
+            }
+            Console.WriteLine(gh);
+            if (gh == null || !ContainsSubform())
+            {
+                check_cart_show();
+                //Console.WriteLine(gh);
+            }
+            else
+            {
+                //Console.WriteLine(gh);
+                gh.setCart(thuoc_cart);
+                //gh.Show();
+            }
+        }
     }
 }

@@ -129,6 +129,7 @@
             this.btn_add_cart.StateTracking.Border.Rounding = 3F;
             this.btn_add_cart.TabIndex = 7;
             this.btn_add_cart.Values.Text = "";
+            this.btn_add_cart.Click += new System.EventHandler(this.btn_add_cart_Click);
             this.btn_add_cart.MouseEnter += new System.EventHandler(this.pnl_item_container_MouseEnter);
             this.btn_add_cart.MouseLeave += new System.EventHandler(this.pnl_item_container_MouseLeave);
             // 

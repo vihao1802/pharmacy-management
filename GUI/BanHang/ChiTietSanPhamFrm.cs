@@ -1,5 +1,6 @@
 ﻿using pharmacy_management.BUS;
 using pharmacy_management.DTO;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,15 +14,15 @@ using System.Windows.Forms;
 
 namespace pharmacy_management.GUI.BanHang
 {
-    public partial class ChiTietSanPham : Form
+    public partial class ChiTietSanPhamFrm : Form
     {
-        public ChiTietSanPham(Thuoc item)
+        public ChiTietSanPhamFrm(pharmacy_management.DTO.Thuoc item)
         {
             InitializeComponent();
             load_product_detail(item);
         }
 
-        public void load_product_detail(Thuoc t)
+        public void load_product_detail(pharmacy_management.DTO.Thuoc t)
         {
             lbl_product_name.Text = t.TenThuoc;
             string formattedNumber = t.GiaThuoc.ToString("#,##0") + " đ";

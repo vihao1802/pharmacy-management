@@ -1,6 +1,6 @@
 ﻿namespace pharmacy_management.GUI.BanHang
 {
-    partial class ChiTietSanPham
+    partial class ChiTietSanPhamFrm
     {
         /// <summary>
         /// Required designer variable.
