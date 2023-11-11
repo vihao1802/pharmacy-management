@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace pharmacy_management.GUI.BanHang
+namespace thuoc.GUI.BanHang
 {
     public partial class SanPham : UserControl
     {
@@ -30,6 +30,11 @@ namespace pharmacy_management.GUI.BanHang
         private void pnl_item_container_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = Color.White;
+        }
+
+        private void lbl_item_name_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

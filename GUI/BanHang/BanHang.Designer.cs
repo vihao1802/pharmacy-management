@@ -1,4 +1,5 @@
-﻿namespace pharmacy_management.GUI.BanHang
+﻿using ComponentFactory.Krypton.Toolkit;
+namespace thuoc.GUI.BanHang
 {
     partial class BanHang
     {
@@ -29,16 +30,16 @@
         private void InitializeComponent()
         {
             this.flow_pnl_contain_item = new System.Windows.Forms.FlowLayoutPanel();
-            this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
-            this.btn_show_cart = new Krypton.Toolkit.KryptonButton();
-            this.cb_DoiTuong = new Krypton.Toolkit.KryptonComboBox();
-            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
-            this.lbl_DoiTuong = new Krypton.Toolkit.KryptonLabel();
-            this.txt_searching = new Krypton.Toolkit.KryptonRichTextBox();
-            this.cb_XuatXu = new Krypton.Toolkit.KryptonComboBox();
-            this.kryptonPanel2 = new Krypton.Toolkit.KryptonPanel();
-            this.btn_search_page = new Krypton.Toolkit.KryptonButton();
-            this.txt_page_value = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.btn_show_cart = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.cb_DoiTuong = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lbl_DoiTuong = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.txt_searching = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.cb_XuatXu = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.btn_search_page = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.txt_page_value = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_next = new System.Windows.Forms.Button();
             this.btn_previous = new System.Windows.Forms.Button();
@@ -46,15 +47,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_total_pages = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.sanPham1 = new pharmacy_management.GUI.BanHang.SanPham();
-            this.sanPham2 = new pharmacy_management.GUI.BanHang.SanPham();
-            this.sanPham3 = new pharmacy_management.GUI.BanHang.SanPham();
-            this.sanPham4 = new pharmacy_management.GUI.BanHang.SanPham();
-            this.sanPham5 = new pharmacy_management.GUI.BanHang.SanPham();
-            this.sanPham6 = new pharmacy_management.GUI.BanHang.SanPham();
-            this.sanPham7 = new pharmacy_management.GUI.BanHang.SanPham();
-            this.sanPham8 = new pharmacy_management.GUI.BanHang.SanPham();
-            this.sanPham9 = new pharmacy_management.GUI.BanHang.SanPham();
+            this.sanPham1 = new thuoc.GUI.BanHang.SanPham();
+            this.sanPham2 = new thuoc.GUI.BanHang.SanPham();
+            this.sanPham3 = new thuoc.GUI.BanHang.SanPham();
+            this.sanPham4 = new thuoc.GUI.BanHang.SanPham();
+            this.sanPham5 = new thuoc.GUI.BanHang.SanPham();
+            this.sanPham6 = new thuoc.GUI.BanHang.SanPham();
+            this.sanPham7 = new thuoc.GUI.BanHang.SanPham();
+            this.sanPham8 = new thuoc.GUI.BanHang.SanPham();
             this.flow_pnl_contain_item.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
@@ -68,15 +68,14 @@
             // 
             this.flow_pnl_contain_item.AutoScroll = true;
             this.flow_pnl_contain_item.BackColor = System.Drawing.Color.White;
-            this.flow_pnl_contain_item.Controls.Add(this.sanPham1);
-            this.flow_pnl_contain_item.Controls.Add(this.sanPham2);
-            this.flow_pnl_contain_item.Controls.Add(this.sanPham3);
-            this.flow_pnl_contain_item.Controls.Add(this.sanPham4);
-            this.flow_pnl_contain_item.Controls.Add(this.sanPham5);
-            this.flow_pnl_contain_item.Controls.Add(this.sanPham6);
-            this.flow_pnl_contain_item.Controls.Add(this.sanPham7);
-            this.flow_pnl_contain_item.Controls.Add(this.sanPham8);
-            this.flow_pnl_contain_item.Controls.Add(this.sanPham9);
+//            this.flow_pnl_contain_item.Controls.Add(this.sanPham1);
+//            this.flow_pnl_contain_item.Controls.Add(this.sanPham2);
+//            this.flow_pnl_contain_item.Controls.Add(this.sanPham3);
+//            this.flow_pnl_contain_item.Controls.Add(this.sanPham4);
+//            this.flow_pnl_contain_item.Controls.Add(this.sanPham5);
+//            this.flow_pnl_contain_item.Controls.Add(this.sanPham6);
+//            this.flow_pnl_contain_item.Controls.Add(this.sanPham7);
+//            this.flow_pnl_contain_item.Controls.Add(this.sanPham8);
             this.flow_pnl_contain_item.Location = new System.Drawing.Point(0, 66);
             this.flow_pnl_contain_item.Margin = new System.Windows.Forms.Padding(0);
             this.flow_pnl_contain_item.Name = "flow_pnl_contain_item";
@@ -102,36 +101,36 @@
             // 
             // btn_show_cart
             // 
-            this.btn_show_cart.CornerRoundingRadius = 5F;
+      //          this.btn_show_cart.CornerRoundingRadius = 5;
             this.btn_show_cart.Location = new System.Drawing.Point(814, 28);
             this.btn_show_cart.Name = "btn_show_cart";
             this.btn_show_cart.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btn_show_cart.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_show_cart.OverrideDefault.Border.Rounding = 5F;
+            this.btn_show_cart.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_show_cart.OverrideDefault.Border.Rounding = 5;
             this.btn_show_cart.Size = new System.Drawing.Size(124, 28);
             this.btn_show_cart.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btn_show_cart.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_show_cart.StateCommon.Border.Rounding = 5F;
+            this.btn_show_cart.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_show_cart.StateCommon.Border.Rounding = 5;
             this.btn_show_cart.StateCommon.Border.Width = 2;
             this.btn_show_cart.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btn_show_cart.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.btn_show_cart.StateTracking.Back.Color2 = System.Drawing.Color.White;
             this.btn_show_cart.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btn_show_cart.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_show_cart.StateTracking.Border.Rounding = 5F;
+            this.btn_show_cart.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_show_cart.StateTracking.Border.Rounding = 5;
             this.btn_show_cart.StateTracking.Border.Width = 2;
             this.btn_show_cart.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.TabIndex = 9;
@@ -139,17 +138,17 @@
             // 
             // cb_DoiTuong
             // 
-            this.cb_DoiTuong.CornerRoundingRadius = 5F;
+          //  this.cb_DoiTuong.CornerRoundingRadius = 5;
             this.cb_DoiTuong.DropDownWidth = 121;
-            this.cb_DoiTuong.IntegralHeight = false;
+            //this.cb_DoiTuong.IntegralHeight = false;
             this.cb_DoiTuong.Location = new System.Drawing.Point(414, 28);
             this.cb_DoiTuong.Name = "cb_DoiTuong";
             this.cb_DoiTuong.Size = new System.Drawing.Size(150, 29);
-            this.cb_DoiTuong.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.cb_DoiTuong.StateCommon.ComboBox.Border.Rounding = 5F;
-            this.cb_DoiTuong.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.cb_DoiTuong.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cb_DoiTuong.StateCommon.ComboBox.Border.Rounding = 5;
+            //this.cb_DoiTuong.StateCommon.ComboBox.Content.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.cb_DoiTuong.TabIndex = 8;
             this.cb_DoiTuong.Text = "Chọn đối tượng";
             // 
@@ -171,14 +170,14 @@
             // 
             // txt_searching
             // 
-            this.txt_searching.Location = new System.Drawing.Point(18, 12);
+            this.txt_searching.Location = new System.Drawing.Point(15, 17);
             this.txt_searching.Multiline = false;
             this.txt_searching.Name = "txt_searching";
             this.txt_searching.Size = new System.Drawing.Size(300, 40);
-            this.txt_searching.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txt_searching.StateCommon.Border.Rounding = 5F;
+            this.txt_searching.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txt_searching.StateCommon.Border.Rounding = 5;
             this.txt_searching.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 5, 10, -1);
             this.txt_searching.TabIndex = 5;
             this.txt_searching.Text = "Tìm kiếm ...";
@@ -188,17 +187,17 @@
             // 
             // cb_XuatXu
             // 
-            this.cb_XuatXu.CornerRoundingRadius = 5F;
+       //     this.cb_XuatXu.CornerRoundingRadius = 5;
             this.cb_XuatXu.DropDownWidth = 121;
-            this.cb_XuatXu.IntegralHeight = false;
+           // this.cb_XuatXu.IntegralHeight = false;
             this.cb_XuatXu.Location = new System.Drawing.Point(649, 28);
             this.cb_XuatXu.Name = "cb_XuatXu";
             this.cb_XuatXu.Size = new System.Drawing.Size(136, 29);
-            this.cb_XuatXu.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.cb_XuatXu.StateCommon.ComboBox.Border.Rounding = 5F;
-            this.cb_XuatXu.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.cb_XuatXu.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cb_XuatXu.StateCommon.ComboBox.Border.Rounding = 5;
+            //this.cb_XuatXu.StateCommon.ComboBox.Content.Text = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.cb_XuatXu.TabIndex = 2;
             this.cb_XuatXu.Text = "Chọn xuất xứ";
             // 
@@ -223,35 +222,35 @@
             // 
             // btn_search_page
             // 
-            this.btn_search_page.CornerRoundingRadius = 3F;
+       //     this.btn_search_page.CornerRoundingRadius = 3;
             this.btn_search_page.Location = new System.Drawing.Point(758, 8);
             this.btn_search_page.Name = "btn_search_page";
             this.btn_search_page.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_search_page.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btn_search_page.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_search_page.OverrideDefault.Border.Rounding = 3F;
+            this.btn_search_page.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_search_page.OverrideDefault.Border.Rounding = 3;
             this.btn_search_page.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btn_search_page.Size = new System.Drawing.Size(90, 25);
             this.btn_search_page.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_search_page.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_search_page.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_search_page.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btn_search_page.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_search_page.StateCommon.Border.Rounding = 3F;
+            this.btn_search_page.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_search_page.StateCommon.Border.Rounding = 3;
             this.btn_search_page.StateCommon.Border.Width = 2;
             this.btn_search_page.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btn_search_page.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.btn_search_page.StateTracking.Back.Color2 = System.Drawing.Color.White;
             this.btn_search_page.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_search_page.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btn_search_page.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_search_page.StateTracking.Border.Rounding = 3F;
+            this.btn_search_page.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_search_page.StateTracking.Border.Rounding = 3;
             this.btn_search_page.StateTracking.Border.Width = 2;
             this.btn_search_page.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_search_page.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
@@ -416,16 +415,6 @@
             this.sanPham8.Size = new System.Drawing.Size(225, 330);
             this.sanPham8.TabIndex = 7;
             // 
-            // sanPham9
-            // 
-            this.sanPham9.BackColor = System.Drawing.Color.White;
-            this.sanPham9.Location = new System.Drawing.Point(15, 700);
-            this.sanPham9.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.sanPham9.Name = "sanPham9";
-            this.sanPham9.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
-            this.sanPham9.Size = new System.Drawing.Size(225, 330);
-            this.sanPham9.TabIndex = 8;
-            // 
             // BanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -456,14 +445,14 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flow_pnl_contain_item;
-        private Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        private Krypton.Toolkit.KryptonPanel kryptonPanel2;
-        private Krypton.Toolkit.KryptonComboBox cb_XuatXu;
-        private Krypton.Toolkit.KryptonRichTextBox txt_searching;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private Krypton.Toolkit.KryptonLabel lbl_DoiTuong;
-        private Krypton.Toolkit.KryptonComboBox cb_DoiTuong;
-        private Krypton.Toolkit.KryptonButton btn_show_cart;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel2;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cb_XuatXu;
+        private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox txt_searching;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbl_DoiTuong;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cb_DoiTuong;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_show_cart;
         private SanPham sanPham1;
         private SanPham sanPham2;
         private SanPham sanPham3;
@@ -478,9 +467,8 @@
         private System.Windows.Forms.Button btn_next;
         private System.Windows.Forms.Button btn_previous;
         private System.Windows.Forms.Label lbl_current_page;
-        private Krypton.Toolkit.KryptonButton btn_search_page;
-        private Krypton.Toolkit.KryptonTextBox txt_page_value;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_search_page;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txt_page_value;
         private System.Windows.Forms.Label label3;
-        private SanPham sanPham9;
     }
 }
