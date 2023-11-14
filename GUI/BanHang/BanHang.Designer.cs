@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.flow_pnl_contain_item = new System.Windows.Forms.FlowLayoutPanel();
+            this.sanPham1 = new pharmacy_management.GUI.BanHang.SanPham();
+            this.sanPham2 = new pharmacy_management.GUI.BanHang.SanPham();
+            this.sanPham3 = new pharmacy_management.GUI.BanHang.SanPham();
+            this.sanPham4 = new pharmacy_management.GUI.BanHang.SanPham();
+            this.sanPham5 = new pharmacy_management.GUI.BanHang.SanPham();
+            this.sanPham6 = new pharmacy_management.GUI.BanHang.SanPham();
+            this.sanPham7 = new pharmacy_management.GUI.BanHang.SanPham();
+            this.sanPham8 = new pharmacy_management.GUI.BanHang.SanPham();
+            this.sanPham9 = new pharmacy_management.GUI.BanHang.SanPham();
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
             this.btn_show_cart = new Krypton.Toolkit.KryptonButton();
             this.cb_DoiTuong = new Krypton.Toolkit.KryptonComboBox();
@@ -46,15 +55,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_total_pages = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.sanPham1 = new pharmacy_management.GUI.BanHang.SanPham();
-            this.sanPham2 = new pharmacy_management.GUI.BanHang.SanPham();
-            this.sanPham3 = new pharmacy_management.GUI.BanHang.SanPham();
-            this.sanPham4 = new pharmacy_management.GUI.BanHang.SanPham();
-            this.sanPham5 = new pharmacy_management.GUI.BanHang.SanPham();
-            this.sanPham6 = new pharmacy_management.GUI.BanHang.SanPham();
-            this.sanPham7 = new pharmacy_management.GUI.BanHang.SanPham();
-            this.sanPham8 = new pharmacy_management.GUI.BanHang.SanPham();
-            this.sanPham9 = new pharmacy_management.GUI.BanHang.SanPham();
             this.flow_pnl_contain_item.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
@@ -83,6 +83,96 @@
             this.flow_pnl_contain_item.Padding = new System.Windows.Forms.Padding(15, 0, 0, 20);
             this.flow_pnl_contain_item.Size = new System.Drawing.Size(950, 550);
             this.flow_pnl_contain_item.TabIndex = 0;
+            // 
+            // sanPham1
+            // 
+            this.sanPham1.BackColor = System.Drawing.Color.White;
+            this.sanPham1.Location = new System.Drawing.Point(15, 0);
+            this.sanPham1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.sanPham1.Name = "sanPham1";
+            this.sanPham1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.sanPham1.Size = new System.Drawing.Size(225, 330);
+            this.sanPham1.TabIndex = 0;
+            // 
+            // sanPham2
+            // 
+            this.sanPham2.BackColor = System.Drawing.Color.White;
+            this.sanPham2.Location = new System.Drawing.Point(240, 0);
+            this.sanPham2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.sanPham2.Name = "sanPham2";
+            this.sanPham2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.sanPham2.Size = new System.Drawing.Size(225, 330);
+            this.sanPham2.TabIndex = 1;
+            // 
+            // sanPham3
+            // 
+            this.sanPham3.BackColor = System.Drawing.Color.White;
+            this.sanPham3.Location = new System.Drawing.Point(465, 0);
+            this.sanPham3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.sanPham3.Name = "sanPham3";
+            this.sanPham3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.sanPham3.Size = new System.Drawing.Size(225, 330);
+            this.sanPham3.TabIndex = 2;
+            // 
+            // sanPham4
+            // 
+            this.sanPham4.BackColor = System.Drawing.Color.White;
+            this.sanPham4.Location = new System.Drawing.Point(690, 0);
+            this.sanPham4.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.sanPham4.Name = "sanPham4";
+            this.sanPham4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.sanPham4.Size = new System.Drawing.Size(225, 330);
+            this.sanPham4.TabIndex = 3;
+            // 
+            // sanPham5
+            // 
+            this.sanPham5.BackColor = System.Drawing.Color.White;
+            this.sanPham5.Location = new System.Drawing.Point(15, 350);
+            this.sanPham5.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.sanPham5.Name = "sanPham5";
+            this.sanPham5.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.sanPham5.Size = new System.Drawing.Size(225, 330);
+            this.sanPham5.TabIndex = 4;
+            // 
+            // sanPham6
+            // 
+            this.sanPham6.BackColor = System.Drawing.Color.White;
+            this.sanPham6.Location = new System.Drawing.Point(240, 350);
+            this.sanPham6.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.sanPham6.Name = "sanPham6";
+            this.sanPham6.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.sanPham6.Size = new System.Drawing.Size(225, 330);
+            this.sanPham6.TabIndex = 5;
+            // 
+            // sanPham7
+            // 
+            this.sanPham7.BackColor = System.Drawing.Color.White;
+            this.sanPham7.Location = new System.Drawing.Point(465, 350);
+            this.sanPham7.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.sanPham7.Name = "sanPham7";
+            this.sanPham7.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.sanPham7.Size = new System.Drawing.Size(225, 330);
+            this.sanPham7.TabIndex = 6;
+            // 
+            // sanPham8
+            // 
+            this.sanPham8.BackColor = System.Drawing.Color.White;
+            this.sanPham8.Location = new System.Drawing.Point(690, 350);
+            this.sanPham8.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.sanPham8.Name = "sanPham8";
+            this.sanPham8.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.sanPham8.Size = new System.Drawing.Size(225, 330);
+            this.sanPham8.TabIndex = 7;
+            // 
+            // sanPham9
+            // 
+            this.sanPham9.BackColor = System.Drawing.Color.White;
+            this.sanPham9.Location = new System.Drawing.Point(15, 700);
+            this.sanPham9.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.sanPham9.Name = "sanPham9";
+            this.sanPham9.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
+            this.sanPham9.Size = new System.Drawing.Size(225, 330);
+            this.sanPham9.TabIndex = 8;
             // 
             // kryptonPanel1
             // 
@@ -336,96 +426,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tổng số trang :";
             // 
-            // sanPham1
-            // 
-            this.sanPham1.BackColor = System.Drawing.Color.White;
-            this.sanPham1.Location = new System.Drawing.Point(15, 0);
-            this.sanPham1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.sanPham1.Name = "sanPham1";
-            this.sanPham1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.sanPham1.Size = new System.Drawing.Size(225, 330);
-            this.sanPham1.TabIndex = 0;
-            // 
-            // sanPham2
-            // 
-            this.sanPham2.BackColor = System.Drawing.Color.White;
-            this.sanPham2.Location = new System.Drawing.Point(240, 0);
-            this.sanPham2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.sanPham2.Name = "sanPham2";
-            this.sanPham2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.sanPham2.Size = new System.Drawing.Size(225, 330);
-            this.sanPham2.TabIndex = 1;
-            // 
-            // sanPham3
-            // 
-            this.sanPham3.BackColor = System.Drawing.Color.White;
-            this.sanPham3.Location = new System.Drawing.Point(465, 0);
-            this.sanPham3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.sanPham3.Name = "sanPham3";
-            this.sanPham3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.sanPham3.Size = new System.Drawing.Size(225, 330);
-            this.sanPham3.TabIndex = 2;
-            // 
-            // sanPham4
-            // 
-            this.sanPham4.BackColor = System.Drawing.Color.White;
-            this.sanPham4.Location = new System.Drawing.Point(690, 0);
-            this.sanPham4.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.sanPham4.Name = "sanPham4";
-            this.sanPham4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.sanPham4.Size = new System.Drawing.Size(225, 330);
-            this.sanPham4.TabIndex = 3;
-            // 
-            // sanPham5
-            // 
-            this.sanPham5.BackColor = System.Drawing.Color.White;
-            this.sanPham5.Location = new System.Drawing.Point(15, 350);
-            this.sanPham5.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.sanPham5.Name = "sanPham5";
-            this.sanPham5.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.sanPham5.Size = new System.Drawing.Size(225, 330);
-            this.sanPham5.TabIndex = 4;
-            // 
-            // sanPham6
-            // 
-            this.sanPham6.BackColor = System.Drawing.Color.White;
-            this.sanPham6.Location = new System.Drawing.Point(240, 350);
-            this.sanPham6.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.sanPham6.Name = "sanPham6";
-            this.sanPham6.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.sanPham6.Size = new System.Drawing.Size(225, 330);
-            this.sanPham6.TabIndex = 5;
-            // 
-            // sanPham7
-            // 
-            this.sanPham7.BackColor = System.Drawing.Color.White;
-            this.sanPham7.Location = new System.Drawing.Point(465, 350);
-            this.sanPham7.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.sanPham7.Name = "sanPham7";
-            this.sanPham7.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.sanPham7.Size = new System.Drawing.Size(225, 330);
-            this.sanPham7.TabIndex = 6;
-            // 
-            // sanPham8
-            // 
-            this.sanPham8.BackColor = System.Drawing.Color.White;
-            this.sanPham8.Location = new System.Drawing.Point(690, 350);
-            this.sanPham8.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.sanPham8.Name = "sanPham8";
-            this.sanPham8.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.sanPham8.Size = new System.Drawing.Size(225, 330);
-            this.sanPham8.TabIndex = 7;
-            // 
-            // sanPham9
-            // 
-            this.sanPham9.BackColor = System.Drawing.Color.White;
-            this.sanPham9.Location = new System.Drawing.Point(15, 700);
-            this.sanPham9.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.sanPham9.Name = "sanPham9";
-            this.sanPham9.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
-            this.sanPham9.Size = new System.Drawing.Size(225, 330);
-            this.sanPham9.TabIndex = 8;
-            // 
             // BanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -439,7 +439,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BanHang";
-            this.Text = "BanHang";
+            this.Text = "8";
             this.flow_pnl_contain_item.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);

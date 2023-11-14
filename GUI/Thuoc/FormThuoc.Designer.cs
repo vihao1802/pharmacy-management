@@ -87,11 +87,11 @@
             // 
             // txtMaThuoc
             // 
-            this.txtMaThuoc.Location = new System.Drawing.Point(35, 40);
-            this.txtMaThuoc.Name = "txtMaThuoc";
-            this.txtMaThuoc.Size = new System.Drawing.Size(200, 27);
-            this.txtMaThuoc.TabIndex = 0;
-            this.txtMaThuoc.Text = "Mã thuốc";
+            this.txtMapharmacy_management.Location = new System.Drawing.Point(35, 40);
+            this.txtMapharmacy_management.Name = "txtMaThuoc";
+            this.txtMapharmacy_management.Size = new System.Drawing.Size(200, 27);
+            this.txtMapharmacy_management.TabIndex = 0;
+            this.txtMapharmacy_management.Text = "Mã thuốc";
             // 
             // kryptonLabel1
             // 
