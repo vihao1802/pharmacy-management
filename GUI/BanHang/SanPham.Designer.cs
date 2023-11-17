@@ -54,7 +54,7 @@
             this.pnl_item_container.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_item_container.Name = "pnl_item_container";
             this.pnl_item_container.Padding = new System.Windows.Forms.Padding(12, 5, 12, 12);
-            this.pnl_item_container.Size = new System.Drawing.Size(225, 323);
+            this.pnl_item_container.Size = new System.Drawing.Size(225, 193);
             this.pnl_item_container.TabIndex = 0;
             this.pnl_item_container.MouseEnter += new System.EventHandler(this.pnl_item_container_MouseEnter);
             this.pnl_item_container.MouseLeave += new System.EventHandler(this.pnl_item_container_MouseLeave);
@@ -66,6 +66,7 @@
             this.btn_item_detail.Name = "btn_item_detail";
             this.btn_item_detail.OverrideDefault.Back.Color1 = System.Drawing.Color.Gray;
             this.btn_item_detail.OverrideDefault.Back.Color2 = System.Drawing.Color.Gray;
+            this.btn_item_detail.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btn_item_detail.OverrideFocus.Back.Color1 = System.Drawing.Color.Gray;
             this.btn_item_detail.OverrideFocus.Back.Color2 = System.Drawing.Color.Gray;
             this.btn_item_detail.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -92,6 +93,7 @@
             this.btn_item_detail.StateTracking.Border.Rounding = 3F;
             this.btn_item_detail.TabIndex = 9;
             this.btn_item_detail.Values.Text = "";
+            this.btn_item_detail.Click += new System.EventHandler(this.btn_item_detail_Click);
             this.btn_item_detail.MouseEnter += new System.EventHandler(this.pnl_item_container_MouseEnter);
             this.btn_item_detail.MouseLeave += new System.EventHandler(this.pnl_item_container_MouseLeave);
             // 
@@ -128,6 +130,7 @@
             this.btn_add_cart.StateTracking.Border.Rounding = 3F;
             this.btn_add_cart.TabIndex = 7;
             this.btn_add_cart.Values.Text = "";
+            this.btn_add_cart.Click += new System.EventHandler(this.btn_add_cart_Click);
             this.btn_add_cart.MouseEnter += new System.EventHandler(this.pnl_item_container_MouseEnter);
             this.btn_add_cart.MouseLeave += new System.EventHandler(this.pnl_item_container_MouseLeave);
             // 
