@@ -34,7 +34,7 @@ namespace pharmacy_management.Database
             try
             {
                 SqlCommand sqlcmd = new SqlCommand(strSQL, sqlConn);
-                sqlConn.Open(); //Mo ket noi
+                sqlConn.Open();
                 sqlcmd.ExecuteNonQuery();//Lenh hien lenh Them/Xoa/Sua
             }
             catch (Exception ex)
@@ -43,7 +43,7 @@ namespace pharmacy_management.Database
             }
             finally
             {
-                sqlConn.Close();//Dong ket noi
+                sqlConn.Close();
 
             }
         }

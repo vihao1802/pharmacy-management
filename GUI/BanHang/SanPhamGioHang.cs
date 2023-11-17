@@ -52,7 +52,7 @@ namespace pharmacy_management.GUI.BanHang
         private void btn_remove_item_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("Remove");
-            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa khỏi giỏ hàng?", "Đồng ý", MessageBoxButtons.OKCancel);
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa khỏi giỏ hàng?", "Xóa sản phẩm khỏi giỏ hàng", MessageBoxButtons.OKCancel);
 
             if (result == DialogResult.OK)
             {

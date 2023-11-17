@@ -223,6 +223,7 @@ namespace pharmacy_management.GUI.BanHang
             if (ContainsSubform())
             {
                 MessageBox.Show("Giỏ hàng đang được hiển thị");
+                gh.BringToFront();
             }
             else
             {
@@ -268,6 +269,7 @@ namespace pharmacy_management.GUI.BanHang
             {
                 //Console.WriteLine(gh);
                 gh.setCart(thuoc_cart);
+                //gh.BringToFront();
                 //gh.Show();
             }
         }

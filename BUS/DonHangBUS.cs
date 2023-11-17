@@ -1,4 +1,6 @@
-﻿using pharmacy_management.DAO;
+﻿using Microsoft.SqlServer.Server;
+using pharmacy_management.DAO;
+using pharmacy_management.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,6 +28,16 @@ namespace pharmacy_management.BUS
         public void loadList()
         {
             list = dao.GetALl();
+        }
+
+        public void addNewInvoice(string maNV, string maKH, string ngayLap, string maQD, string tongGia, string thanhTien)
+        {
+            dao.addNewInvoice(maNV, maKH, ngayLap, maQD, tongGia, thanhTien);
+        }
+
+        public DonHang getItem()
+        {
+            return dao.getItem();
         }
     }
 }
