@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace pharmacy_management.BUS
 {
-    public class DoiTuongBUS
+    public class ChiTietPhieuNhapBUS
     {
         private ArrayList list;
-        private DoiTuongDAO dao;
+        private ChiTietPhieuNhapDAO dao;
 
-        public DoiTuongBUS()
+        public ChiTietPhieuNhapBUS()
         {
-            dao = new DoiTuongDAO();
+            dao = new ChiTietPhieuNhapDAO();
             loadList();
         }
 
@@ -26,11 +26,6 @@ namespace pharmacy_management.BUS
         public void loadList()
         {
             list = dao.GetALl();
-        }
-
-        public string GetNameBUS(int ma)
-        {
-            return dao.GetNameDAO(ma);
         }
     }
 }

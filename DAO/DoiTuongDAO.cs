@@ -39,11 +39,36 @@ namespace pharmacy_management.DAO
             }
             catch (Exception ex)
             {
+                reader.Close();
+
                 Console.WriteLine("An error at DoiTuongDAO: " + ex.Message);
             }
 
             return arrayList;
 
+        }
+
+        public string GetNameDAO(int ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            string name = "";
+            string query = "SELECT * FROM doituong WHERE MaDT = " + ma.ToString();
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    name = reader["TenDT"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at DoiTuongDAO: " + ex.Message);
+            }
+
+            return name;
         }
     }
 }

@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace pharmacy_management.BUS
 {
-    public class DoiTuongBUS
+    internal class XuatXuBUS
     {
         private ArrayList list;
-        private DoiTuongDAO dao;
+        private XuatXuDAO dao;
 
-        public DoiTuongBUS()
+        public XuatXuBUS()
         {
-            dao = new DoiTuongDAO();
+            dao = new XuatXuDAO();
             loadList();
         }
 
