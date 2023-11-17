@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace thuoc.GUI.BanHang
+namespace pharmacy_management.GUI.BanHang
 {
     public partial class SanPham : UserControl
     {

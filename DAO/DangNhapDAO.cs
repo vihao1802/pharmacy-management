@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Navigation;
+using System.Windows.Forms;
 using pharmacy_management.Database;
 using pharmacy_management.DTO;
 
@@ -22,9 +22,8 @@ namespace pharmacy_management.DAO
         SqlConnection sqlcon;
         void KetNoiCSDL()
         {
-            string conn =
-global::pharmacy_management.Properties.Settings.Default.ql_nhathuocConnectionString;
-            sqlcon = new SqlConnection(conn);
+            string conn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
+               sqlcon = new SqlConnection(conn);
         }
 
         public bool kiemtradangnhap(string username, string password)

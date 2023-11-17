@@ -25,12 +25,7 @@ namespace pharmacy_management.GUI.NhapHang
 
         private void NhapHang_Load(object sender, EventArgs e)
         {
-            listthuoc = thuocdao.GetALl();
-            foreach (Thuoc t in listthuoc)
-            {
-                SanPham sp = new SanPham();
-                
-            }
+        
 
         }
     }

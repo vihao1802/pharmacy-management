@@ -20,7 +20,7 @@ namespace pharmacy_management.DAO
         void KetNoiCSDL()
         {
             string conn =
-global::pharmacy_management.Properties.Settings.Default.ql_nhathuocConnectionString;
+"Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
             sqlcon = new SqlConnection(conn);
         }
         public int getslthuoc()

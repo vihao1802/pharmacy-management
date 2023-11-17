@@ -14,7 +14,7 @@ namespace pharmacy_management.Database
         SqlDataAdapter da;//Bo dieu phoi du lieu
         public ConnectDB()
         {
-            string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc;Integrated Security = True";
+            string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
             sqlConn = new SqlConnection(strCnn);
         }
         //Phuong thuc de thuc hien cau lenh strSQL truy vân du lieu
