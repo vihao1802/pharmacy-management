@@ -38,6 +38,8 @@ namespace pharmacy_management.DAO
             }
             catch (Exception ex)
             {
+                reader.Close();
+
                 Console.WriteLine("An error at QuyenDAO: " + ex.Message);
             }
 

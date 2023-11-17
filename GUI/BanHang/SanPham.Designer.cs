@@ -61,98 +61,87 @@
             // 
             // btn_item_detail
             // 
-            this.btn_item_detail.Location = new System.Drawing.Point(155, 165);
+            this.btn_item_detail.CornerRoundingRadius = 3F;
+            this.btn_item_detail.Location = new System.Drawing.Point(173, 278);
             this.btn_item_detail.Name = "btn_item_detail";
             this.btn_item_detail.OverrideDefault.Back.Color1 = System.Drawing.Color.Gray;
             this.btn_item_detail.OverrideDefault.Back.Color2 = System.Drawing.Color.Gray;
             this.btn_item_detail.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btn_item_detail.OverrideFocus.Back.Color1 = System.Drawing.Color.Gray;
             this.btn_item_detail.OverrideFocus.Back.Color2 = System.Drawing.Color.Gray;
-            this.btn_item_detail.OverrideFocus.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btn_item_detail.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_item_detail.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_item_detail.OverrideFocus.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btn_item_detail.OverrideFocus.Border.Rounding = 3;
-            this.btn_item_detail.Size = new System.Drawing.Size(23, 24);
+            this.btn_item_detail.OverrideFocus.Border.Rounding = 3F;
+            this.btn_item_detail.Size = new System.Drawing.Size(40, 40);
             this.btn_item_detail.StateCommon.Back.Color1 = System.Drawing.Color.Gray;
             this.btn_item_detail.StateCommon.Back.Color2 = System.Drawing.Color.Gray;
             this.btn_item_detail.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btn_item_detail.StateCommon.Back.Image")));
             this.btn_item_detail.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.btn_item_detail.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
             this.btn_item_detail.StateCommon.Border.Color2 = System.Drawing.Color.Gray;
-            this.btn_item_detail.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_item_detail.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_item_detail.StateCommon.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btn_item_detail.StateCommon.Border.Rounding = 3;
+            this.btn_item_detail.StateCommon.Border.Rounding = 3F;
             this.btn_item_detail.StateTracking.Back.Color1 = System.Drawing.Color.DarkGray;
             this.btn_item_detail.StateTracking.Back.Color2 = System.Drawing.Color.DarkGray;
-            this.btn_item_detail.StateTracking.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btn_item_detail.StateTracking.Border.Draw = Krypton.Toolkit.InheritBool.True;
-            this.btn_item_detail.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_item_detail.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_item_detail.StateTracking.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btn_item_detail.StateTracking.Border.Rounding = 3;
+            this.btn_item_detail.StateTracking.Border.Rounding = 3F;
             this.btn_item_detail.TabIndex = 9;
             this.btn_item_detail.Values.Text = "";
+            this.btn_item_detail.Click += new System.EventHandler(this.btn_item_detail_Click);
             this.btn_item_detail.MouseEnter += new System.EventHandler(this.pnl_item_container_MouseEnter);
             this.btn_item_detail.MouseLeave += new System.EventHandler(this.pnl_item_container_MouseLeave);
             // 
             // btn_add_cart
             // 
-            this.btn_add_cart.Location = new System.Drawing.Point(12, 165);
+            this.btn_add_cart.CornerRoundingRadius = 3F;
+            this.btn_add_cart.Location = new System.Drawing.Point(12, 278);
             this.btn_add_cart.Name = "btn_add_cart";
             this.btn_add_cart.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_add_cart.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btn_add_cart.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btn_add_cart.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_add_cart.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btn_add_cart.OverrideFocus.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btn_add_cart.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_add_cart.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_add_cart.OverrideFocus.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btn_add_cart.OverrideFocus.Border.Rounding = 3;
-            this.btn_add_cart.Size = new System.Drawing.Size(123, 24);
+            this.btn_add_cart.OverrideFocus.Border.Rounding = 3F;
+            this.btn_add_cart.Size = new System.Drawing.Size(150, 40);
             this.btn_add_cart.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_add_cart.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_add_cart.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btn_add_cart.StateCommon.Back.Image")));
             this.btn_add_cart.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.btn_add_cart.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_add_cart.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btn_add_cart.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_add_cart.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_add_cart.StateCommon.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btn_add_cart.StateCommon.Border.Rounding = 3;
+            this.btn_add_cart.StateCommon.Border.Rounding = 3F;
             this.btn_add_cart.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.btn_add_cart.StateCommon.Content.ShortText.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btn_add_cart.StateCommon.Content.ShortText.Trim = Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btn_add_cart.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(191)))));
             this.btn_add_cart.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(191)))));
-            this.btn_add_cart.StateTracking.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btn_add_cart.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_add_cart.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_add_cart.StateTracking.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btn_add_cart.StateTracking.Border.Rounding = 3;
+            this.btn_add_cart.StateTracking.Border.Rounding = 3F;
             this.btn_add_cart.TabIndex = 7;
             this.btn_add_cart.Values.Text = "";
+            this.btn_add_cart.Click += new System.EventHandler(this.btn_add_cart_Click);
             this.btn_add_cart.MouseEnter += new System.EventHandler(this.pnl_item_container_MouseEnter);
             this.btn_add_cart.MouseLeave += new System.EventHandler(this.pnl_item_container_MouseLeave);
             // 
             // lbl_item_price
             // 
             this.lbl_item_price.AutoSize = false;
-            this.lbl_item_price.Location = new System.Drawing.Point(12, 140);
+            this.lbl_item_price.Location = new System.Drawing.Point(12, 240);
             this.lbl_item_price.Name = "lbl_item_price";
-            this.lbl_item_price.Size = new System.Drawing.Size(166, 19);
+            this.lbl_item_price.Size = new System.Drawing.Size(201, 32);
             this.lbl_item_price.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.lbl_item_price.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_item_price.StateCommon.ShortText.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.lbl_item_price.StateCommon.ShortText.Trim = Krypton.Toolkit.PaletteTextTrim.Inherit;
+            this.lbl_item_price.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbl_item_price.TabIndex = 3;
             this.lbl_item_price.Values.Text = "366.000 đ";
             this.lbl_item_price.MouseEnter += new System.EventHandler(this.pnl_item_container_MouseEnter);
@@ -160,18 +149,15 @@
             // 
             // lbl_item_name
             // 
-            this.lbl_item_name.Location = new System.Drawing.Point(12, 113);
+            this.lbl_item_name.Location = new System.Drawing.Point(12, 213);
             this.lbl_item_name.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_item_name.MaximumSize = new System.Drawing.Size(200, 0);
             this.lbl_item_name.Name = "lbl_item_name";
             this.lbl_item_name.Size = new System.Drawing.Size(200, 24);
             this.lbl_item_name.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
-            this.lbl_item_name.StateCommon.ShortText.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.lbl_item_name.StateCommon.ShortText.Trim = Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.lbl_item_name.TabIndex = 2;
             this.lbl_item_name.Values.Text = "Viên uống Thanh Phế Kim Thiên Bình giúp bổ phế, hỗ trợ giảm ho, tiêu đờm (30 viên" +
     ")";
-            this.lbl_item_name.Paint += new System.Windows.Forms.PaintEventHandler(this.lbl_item_name_Paint);
             this.lbl_item_name.MouseEnter += new System.EventHandler(this.pnl_item_container_MouseEnter);
             this.lbl_item_name.MouseLeave += new System.EventHandler(this.pnl_item_container_MouseLeave);
             // 
@@ -190,8 +176,8 @@
             this.picb_item.Image = ((System.Drawing.Image)(resources.GetObject("picb_item.Image")));
             this.picb_item.Location = new System.Drawing.Point(12, 5);
             this.picb_item.Name = "picb_item";
-            this.picb_item.Size = new System.Drawing.Size(201, 105);
-            this.picb_item.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picb_item.Size = new System.Drawing.Size(201, 205);
+            this.picb_item.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picb_item.TabIndex = 0;
             this.picb_item.TabStop = false;
             this.picb_item.MouseEnter += new System.EventHandler(this.pnl_item_container_MouseEnter);
@@ -206,7 +192,7 @@
             this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
             this.Name = "SanPham";
             this.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
-            this.Size = new System.Drawing.Size(225, 200);
+            this.Size = new System.Drawing.Size(225, 330);
             this.pnl_item_container.ResumeLayout(false);
             this.pnl_item_container.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picb_item)).EndInit();

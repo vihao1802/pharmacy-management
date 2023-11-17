@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{04963F7F-9FFC-4E03-A1AF-82B89174B2F4}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>pharmacy_management</RootNamespace>
     <AssemblyName>pharmacy-management</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Krypton.Toolkit, Version=70.22.11.312, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <HintPath>packages\Krypton.Toolkit.70.22.11.312\lib\net472\Krypton.Toolkit.dll</HintPath>
@@ -53,9 +56,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="BUS\DangNhapBUS.cs" />
     <Compile Include="BUS\DoiTuongBUS.cs" />
     <Compile Include="BUS\ThongKeBUS.cs" />
+=======
+    <Compile Include="BUS\ChiTietDonHangBUS.cs" />
+    <Compile Include="BUS\ChiTietPhieuNhapBUS.cs" />
+    <Compile Include="BUS\DiemKhachHangBUS.cs" />
+    <Compile Include="BUS\DoiTuongBUS.cs" />
+    <Compile Include="BUS\DonHangBUS.cs" />
+    <Compile Include="BUS\KhachHangBUS.cs" />
+    <Compile Include="BUS\NhanVienBUS.cs" />
+    <Compile Include="BUS\PhieuGiamGiaBUS.cs" />
+    <Compile Include="BUS\PhieuNhapBUS.cs" />
+    <Compile Include="BUS\QuyDoiDiemBUS.cs" />
+    <Compile Include="BUS\QuyenBUS.cs" />
+    <Compile Include="BUS\ThuocBUS.cs" />
+    <Compile Include="BUS\XuatXuBUS.cs" />
+>>>>>>> main
     <Compile Include="DAO\ChiTietDonHangDAO.cs" />
     <Compile Include="DAO\ChiTietPhieuNhapDAO.cs" />
     <Compile Include="DAO\DangNhapDAO.cs" />
@@ -93,11 +112,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\BanHang\BanHang.cs">
+    <Compile Include="GUI\BanHang\BanHangFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\BanHang\BanHang.Designer.cs">
-      <DependentUpon>BanHang.cs</DependentUpon>
+    <Compile Include="GUI\BanHang\BanHangFrm.Designer.cs">
+      <DependentUpon>BanHangFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\BanHang\ChiTietSanPhamFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\BanHang\ChiTietSanPhamFrm.Designer.cs">
+      <DependentUpon>ChiTietSanPhamFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\BanHang\GioHangFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\BanHang\GioHangFrm.Designer.cs">
+      <DependentUpon>GioHangFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\BanHang\SanPham.cs">
       <SubType>UserControl</SubType>
@@ -105,6 +136,7 @@
     <Compile Include="GUI\BanHang\SanPham.Designer.cs">
       <DependentUpon>SanPham.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="GUI\BtnSidebar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -134,6 +166,13 @@
     </Compile>
     <Compile Include="GUI\NhapHang\NhapHang.Designer.cs">
       <DependentUpon>NhapHang.cs</DependentUpon>
+=======
+    <Compile Include="GUI\BanHang\SanPhamGioHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\BanHang\SanPhamGioHang.Designer.cs">
+      <DependentUpon>SanPhamGioHang.cs</DependentUpon>
+>>>>>>> main
     </Compile>
     <Compile Include="GUI\Thuoc\FormThuoc.cs">
       <SubType>Form</SubType>
@@ -152,12 +191,19 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\BanHang\BanHang.resx">
-      <DependentUpon>BanHang.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\BanHang\BanHangFrm.resx">
+      <DependentUpon>BanHangFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BanHang\ChiTietSanPhamFrm.resx">
+      <DependentUpon>ChiTietSanPhamFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BanHang\GioHangFrm.resx">
+      <DependentUpon>GioHangFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\BanHang\SanPham.resx">
       <DependentUpon>SanPham.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="GUI\BtnSidebar.resx">
       <DependentUpon>BtnSidebar.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +218,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhapHang\NhapHang.resx">
       <DependentUpon>NhapHang.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="GUI\BanHang\SanPhamGioHang.resx">
+      <DependentUpon>SanPhamGioHang.cs</DependentUpon>
+>>>>>>> main
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx">
       <DependentUpon>FormThuoc.cs</DependentUpon>
@@ -454,7 +504,16 @@
     <None Include="Resources\4.jpg" />
     <None Include="Resources\3.jpg" />
     <None Include="Resources\2.jpg" />
-    <None Include="Resources\1.jpg" />
+    <EmbeddedResource Include="Resources\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GUI\Components\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-24_white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

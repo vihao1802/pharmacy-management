@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.kryptonGroupBox1 = new Krypton.Toolkit.KryptonGroupBox();
+            this.kryptonDropButton2 = new Krypton.Toolkit.KryptonDropButton();
+            this.kryptonStatusStrip1 = new Krypton.Toolkit.KryptonStatusStrip();
+            this.kryptonDropButton1 = new Krypton.Toolkit.KryptonDropButton();
+            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonTextBox5 = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonTextBox2 = new Krypton.Toolkit.KryptonTextBox();
             this.txtMaThuoc = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
-            this.kryptonDropButton1 = new Krypton.Toolkit.KryptonDropButton();
-            this.kryptonStatusStrip1 = new Krypton.Toolkit.KryptonStatusStrip();
-            this.kryptonDropButton2 = new Krypton.Toolkit.KryptonDropButton();
             this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
             this.kryptonButton3 = new Krypton.Toolkit.KryptonButton();
             this.kryptonButton4 = new Krypton.Toolkit.KryptonButton();
@@ -69,6 +69,52 @@
             this.kryptonGroupBox1.Size = new System.Drawing.Size(280, 570);
             this.kryptonGroupBox1.TabIndex = 0;
             // 
+            // kryptonDropButton2
+            // 
+            this.kryptonDropButton2.Location = new System.Drawing.Point(35, 195);
+            this.kryptonDropButton2.Name = "kryptonDropButton2";
+            this.kryptonDropButton2.Size = new System.Drawing.Size(200, 31);
+            this.kryptonDropButton2.TabIndex = 10;
+            this.kryptonDropButton2.Values.Text = "Mã hãng thuốc";
+            // 
+            // kryptonStatusStrip1
+            // 
+            this.kryptonStatusStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.kryptonStatusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.kryptonStatusStrip1.Location = new System.Drawing.Point(0, 520);
+            this.kryptonStatusStrip1.Name = "kryptonStatusStrip1";
+            this.kryptonStatusStrip1.ProgressBars = null;
+            this.kryptonStatusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
+            this.kryptonStatusStrip1.Size = new System.Drawing.Size(276, 22);
+            this.kryptonStatusStrip1.TabIndex = 9;
+            this.kryptonStatusStrip1.Text = "kryptonStatusStrip1";
+            // 
+            // kryptonDropButton1
+            // 
+            this.kryptonDropButton1.Location = new System.Drawing.Point(35, 140);
+            this.kryptonDropButton1.Name = "kryptonDropButton1";
+            this.kryptonDropButton1.Size = new System.Drawing.Size(200, 32);
+            this.kryptonDropButton1.TabIndex = 8;
+            this.kryptonDropButton1.Values.Text = "Mã đối tượng";
+            // 
+            // kryptonButton1
+            // 
+            this.kryptonButton1.CornerRoundingRadius = -1F;
+            this.kryptonButton1.Location = new System.Drawing.Point(35, 487);
+            this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.Size = new System.Drawing.Size(200, 33);
+            this.kryptonButton1.TabIndex = 7;
+            this.kryptonButton1.Values.Text = "Chọn ảnh";
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(79, 377);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(109, 24);
+            this.kryptonLabel1.TabIndex = 6;
+            this.kryptonLabel1.Values.Text = "kryptonLabel1";
+            this.kryptonLabel1.Click += new System.EventHandler(this.kryptonLabel1_Click);
+            // 
             // kryptonTextBox5
             // 
             this.kryptonTextBox5.Location = new System.Drawing.Point(35, 255);
@@ -93,24 +139,6 @@
             this.txtMaThuoc.TabIndex = 0;
             this.txtMaThuoc.Text = "Mã thuốc";
             // 
-            // kryptonLabel1
-            // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(79, 377);
-            this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(109, 24);
-            this.kryptonLabel1.TabIndex = 6;
-            this.kryptonLabel1.Values.Text = "kryptonLabel1";
-            this.kryptonLabel1.Click += new System.EventHandler(this.kryptonLabel1_Click);
-            // 
-            // kryptonButton1
-            // 
-            this.kryptonButton1.CornerRoundingRadius = -1F;
-            this.kryptonButton1.Location = new System.Drawing.Point(35, 487);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(200, 33);
-            this.kryptonButton1.TabIndex = 7;
-            this.kryptonButton1.Values.Text = "Chọn ảnh";
-            // 
             // kryptonDataGridView1
             // 
             this.kryptonDataGridView1.ColumnHeadersHeight = 36;
@@ -120,34 +148,6 @@
             this.kryptonDataGridView1.RowTemplate.Height = 24;
             this.kryptonDataGridView1.Size = new System.Drawing.Size(622, 436);
             this.kryptonDataGridView1.TabIndex = 1;
-            // 
-            // kryptonDropButton1
-            // 
-            this.kryptonDropButton1.Location = new System.Drawing.Point(35, 140);
-            this.kryptonDropButton1.Name = "kryptonDropButton1";
-            this.kryptonDropButton1.Size = new System.Drawing.Size(200, 32);
-            this.kryptonDropButton1.TabIndex = 8;
-            this.kryptonDropButton1.Values.Text = "Mã đối tượng";
-            // 
-            // kryptonStatusStrip1
-            // 
-            this.kryptonStatusStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.kryptonStatusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.kryptonStatusStrip1.Location = new System.Drawing.Point(0, 520);
-            this.kryptonStatusStrip1.Name = "kryptonStatusStrip1";
-            this.kryptonStatusStrip1.ProgressBars = null;
-            this.kryptonStatusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.kryptonStatusStrip1.Size = new System.Drawing.Size(276, 22);
-            this.kryptonStatusStrip1.TabIndex = 9;
-            this.kryptonStatusStrip1.Text = "kryptonStatusStrip1";
-            // 
-            // kryptonDropButton2
-            // 
-            this.kryptonDropButton2.Location = new System.Drawing.Point(35, 195);
-            this.kryptonDropButton2.Name = "kryptonDropButton2";
-            this.kryptonDropButton2.Size = new System.Drawing.Size(200, 31);
-            this.kryptonDropButton2.TabIndex = 10;
-            this.kryptonDropButton2.Values.Text = "Mã hãng thuốc";
             // 
             // kryptonButton2
             // 

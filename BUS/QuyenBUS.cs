@@ -6,17 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace pharmacy_management.BUS
 {
-    public class DoiTuongBUS
+    public class QuyenBUS
     {
         private ArrayList list;
-        private DoiTuongDAO dao;
+        private QuyenDAO dao;
 
-        public DoiTuongBUS()
+        public QuyenBUS()
         {
-            dao = new DoiTuongDAO();
+            dao = new QuyenDAO();
             loadList();
         }
 
@@ -27,11 +26,6 @@ namespace pharmacy_management.BUS
         public void loadList()
         {
             list = dao.GetALl();
-        }
-
-        public string GetNameBUS(int ma)
-        {
-            return dao.GetNameDAO(ma);
         }
     }
 }

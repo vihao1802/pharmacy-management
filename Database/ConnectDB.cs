@@ -14,19 +14,21 @@ namespace pharmacy_management.Database
         SqlDataAdapter da;//Bo dieu phoi du lieu
         public ConnectDB()
         {
+            // @autho Hao
+            //string strCnn = "Data Source=LAPTOP-ULQT60JG; Database=ql_nhathuoc;Integrated Security = True";
+            // @author Thinh
+            //string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc;Integrated Security = True";
+            // @author Duc
             string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
             sqlConn = new SqlConnection(strCnn);
         }
         //Phuong thuc de thuc hien cau lenh strSQL truy vân du lieu
         public SqlDataReader Execute(string sqlStr)
         {
-            using (SqlCommand command = new SqlCommand(sqlStr, sqlConn))
-            {
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    return reader;
-                }
-            }
+            sqlConn.Open();
+            SqlCommand command = new SqlCommand(sqlStr, sqlConn);
+            SqlDataReader reader = command.ExecuteReader();
+            return reader;
         }
         //Phuong thuc de thuc hien cac lenh Them, Xoa, Sua
         public void ExecuteNonQuery(string strSQL)
