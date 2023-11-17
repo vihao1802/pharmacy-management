@@ -14,6 +14,7 @@ using pharmacy_management.Properties;
 using pharmacy_management;
 using static System.Net.Mime.MediaTypeNames;
 using thuoc;
+using pharmacy_management.GUI.BanHang;
 
 namespace pharmacy_management.GUI
 {
@@ -206,7 +207,9 @@ namespace pharmacy_management.GUI
 
         private void btnSell_Click_1(object sender, EventArgs e)
         {
-
+            BanHangFrm f = new BanHangFrm();
+            dashboard1.Visible = false;
+            PnContainer.Controls.Add(f);
         }
 
         private void btnStorage_Click(object sender, EventArgs e)
@@ -220,6 +223,11 @@ namespace pharmacy_management.GUI
             this.Close();
             Login login = new Login();
             login.Show();
+        }
+
+        private void dashboard1_Load(object sender, EventArgs e)
+        {
+
         }
     }
     

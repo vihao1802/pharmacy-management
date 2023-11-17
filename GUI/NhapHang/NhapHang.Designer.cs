@@ -46,7 +46,6 @@
             this.txt_searching = new Krypton.Toolkit.KryptonRichTextBox();
             this.cb_XuatXu = new Krypton.Toolkit.KryptonComboBox();
             this.container = new System.Windows.Forms.FlowLayoutPanel();
-            this.sanPham1 = new pharmacy_management.GUI.BanHang.SanPham();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
             this.kryptonPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
@@ -299,7 +298,6 @@
             // 
             // container
             // 
-            this.container.Controls.Add(this.sanPham1);
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container.Location = new System.Drawing.Point(0, 60);
             this.container.Name = "container";
@@ -351,6 +349,5 @@
         private Krypton.Toolkit.KryptonRichTextBox txt_searching;
         private Krypton.Toolkit.KryptonComboBox cb_XuatXu;
         private System.Windows.Forms.FlowLayoutPanel container;
-        private BanHang.SanPham sanPham1;
     }
 }

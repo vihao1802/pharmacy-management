@@ -56,11 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="BUS\DangNhapBUS.cs" />
     <Compile Include="BUS\DoiTuongBUS.cs" />
     <Compile Include="BUS\ThongKeBUS.cs" />
-=======
     <Compile Include="BUS\ChiTietDonHangBUS.cs" />
     <Compile Include="BUS\ChiTietPhieuNhapBUS.cs" />
     <Compile Include="BUS\DiemKhachHangBUS.cs" />
@@ -74,7 +72,6 @@
     <Compile Include="BUS\QuyenBUS.cs" />
     <Compile Include="BUS\ThuocBUS.cs" />
     <Compile Include="BUS\XuatXuBUS.cs" />
->>>>>>> main
     <Compile Include="DAO\ChiTietDonHangDAO.cs" />
     <Compile Include="DAO\ChiTietPhieuNhapDAO.cs" />
     <Compile Include="DAO\DangNhapDAO.cs" />
@@ -136,7 +133,6 @@
     <Compile Include="GUI\BanHang\SanPham.Designer.cs">
       <DependentUpon>SanPham.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="GUI\BtnSidebar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -166,13 +162,12 @@
     </Compile>
     <Compile Include="GUI\NhapHang\NhapHang.Designer.cs">
       <DependentUpon>NhapHang.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="GUI\BanHang\SanPhamGioHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\BanHang\SanPhamGioHang.Designer.cs">
       <DependentUpon>SanPhamGioHang.cs</DependentUpon>
->>>>>>> main
     </Compile>
     <Compile Include="GUI\Thuoc\FormThuoc.cs">
       <SubType>Form</SubType>
@@ -203,7 +198,6 @@
     <EmbeddedResource Include="GUI\BanHang\SanPham.resx">
       <DependentUpon>SanPham.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="GUI\BtnSidebar.resx">
       <DependentUpon>BtnSidebar.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,10 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhapHang\NhapHang.resx">
       <DependentUpon>NhapHang.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\BanHang\SanPhamGioHang.resx">
       <DependentUpon>SanPhamGioHang.cs</DependentUpon>
->>>>>>> main
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx">
       <DependentUpon>FormThuoc.cs</DependentUpon>

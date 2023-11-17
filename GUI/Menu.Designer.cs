@@ -50,9 +50,9 @@
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PnContainer = new Krypton.Toolkit.KryptonPanel();
+            this.dashboard1 = new pharmacy_management.GUI.Dashboard();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dashboard1 = new pharmacy_management.GUI.Dashboard();
             this.Sidebar.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -424,6 +424,7 @@
             this.dashboard1.Name = "dashboard1";
             this.dashboard1.Size = new System.Drawing.Size(932, 603);
             this.dashboard1.TabIndex = 0;
+            this.dashboard1.Load += new System.EventHandler(this.dashboard1_Load);
             // 
             // Menu
             // 
