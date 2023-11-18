@@ -15,6 +15,7 @@ using pharmacy_management;
 using static System.Net.Mime.MediaTypeNames;
 using thuoc;
 using pharmacy_management.GUI.BanHang;
+using pharmacy_management.GUI.NhapHang;
 
 namespace pharmacy_management.GUI
 {
@@ -28,8 +29,8 @@ namespace pharmacy_management.GUI
         {
             InitializeComponent();
            
-            nv = Login.nv;
-            lbName.Text = nv.TenNV;
+           // nv = Login.nv;
+           // lbName.Text = nv.TenNV;
            
         }
 
@@ -208,14 +209,20 @@ namespace pharmacy_management.GUI
         private void btnSell_Click_1(object sender, EventArgs e)
         {
             BanHangFrm f = new BanHangFrm();
-            dashboard1.Visible = false;
+            f.TopLevel = false;
             PnContainer.Controls.Add(f);
+            PnContainer.Dock = DockStyle.Fill;
+            dashboard1.Visible = false;
+            nhapHang1.Visible = false;
+            f.Show();
         }
 
         private void btnStorage_Click(object sender, EventArgs e)
         {
-            //nhapHang1.Visible = true;
-            //dashboard1.Visible = false;
+            PnContainer.Controls.Clear();
+           NhapHang.NhapHang nh = new NhapHang.NhapHang();
+            PnContainer.Controls.Add(nh);
+            PnContainer.Dock = DockStyle.Fill;
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)

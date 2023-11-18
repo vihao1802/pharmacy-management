@@ -8,9 +8,10 @@ namespace pharmacy_management.DTO
 {
     internal class ThongKe
     {
-        private int sothuoc, sokh, slban, doanhthu;
+        private int sothuoc, sokh, slban;
+        private float doanhthu;
 
-        public ThongKe(int sothuoc, int sokh, int slban, int doanhthu)
+        public ThongKe(int sothuoc, int sokh, int slban, float doanhthu)
         {
             this.sothuoc = sothuoc;
             this.sokh = sokh;
@@ -30,7 +31,7 @@ namespace pharmacy_management.DTO
         public int getSlban() {
             return this.slban;
         }
-        public int getDoanhthu()
+        public float getDoanhthu()
         {
             return this.doanhthu;
         }
@@ -46,7 +47,7 @@ namespace pharmacy_management.DTO
         {
             this.slban = slban;
         }
-        public void setDoanhthu(int doanhthu)
+        public void setDoanhthu(float doanhthu)
         {
             this.doanhthu = doanhthu;
         }

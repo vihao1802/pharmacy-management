@@ -57,13 +57,13 @@ namespace pharmacy_management.DAO
             }
             return tk.getSlban();
         }
-        public int getdoanhthu()
+        public float getdoanhthu()
         {
             string query = "Select Sum(Thanhtien) from donhang";
             using (SqlCommand cmd = new SqlCommand(query, sqlcon))
             {
                 sqlcon.Open();
-                tk.setDoanhthu((int)cmd.ExecuteScalar());
+                tk.setDoanhthu(Convert.ToSingle(cmd.ExecuteScalar()));
                 sqlcon.Close();
             }
             return tk.getDoanhthu();
