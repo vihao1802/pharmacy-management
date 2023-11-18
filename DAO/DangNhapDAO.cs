@@ -41,16 +41,19 @@ namespace pharmacy_management.DAO
                 {
                     // login successful, do something here
                     MessageBox.Show("Login successful");
+                    sqlcon.Close();
+
                     return true;
                 }
                 else
                 {
                     // login failed, do something here
                     MessageBox.Show("Invalid username or password");
+                    sqlcon.Close();
+
                     return false;
                 }
 
-                sqlcon.Close();
             }
             catch (Exception ex) { return false; }
         }

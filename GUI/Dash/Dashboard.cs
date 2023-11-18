@@ -41,7 +41,7 @@ namespace pharmacy_management.GUI
             Numthuoc.Text = tkbus.getslthuoc().ToString();
             Numkhach.Text = tkbus.getslkh().ToString();
             Numslban.Text = tkbus.getslban().ToString();
-        //    Numdoanhthu.Text = tkbus.getdoanhthu().ToString();
+            Numdoanhthu.Text = tkbus.getdoanhthu().ToString();
         }
 
 
