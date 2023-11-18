@@ -53,6 +53,7 @@
             this.dashboard1 = new pharmacy_management.GUI.Dashboard();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.nhapHang1 = new pharmacy_management.GUI.NhapHang.NhapHang();
             this.Sidebar.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -83,7 +84,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flowLayoutPanel1.Controls.Add(this.btnSell);
             this.flowLayoutPanel1.Controls.Add(this.btnPill);
             this.flowLayoutPanel1.Controls.Add(this.btnStorage);
@@ -369,6 +370,7 @@
             // 
             // btnLogout
             // 
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.Image = global::pharmacy_management.Properties.Resources.Open_Pane;
             this.btnLogout.Location = new System.Drawing.Point(0, 0);
             this.btnLogout.Name = "btnLogout";
@@ -409,6 +411,7 @@
             // PnContainer
             // 
             this.PnContainer.Controls.Add(this.dashboard1);
+            this.PnContainer.Controls.Add(this.nhapHang1);
             this.PnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnContainer.Location = new System.Drawing.Point(250, 50);
             this.PnContainer.Name = "PnContainer";
@@ -425,6 +428,14 @@
             this.dashboard1.Size = new System.Drawing.Size(932, 603);
             this.dashboard1.TabIndex = 0;
             this.dashboard1.Load += new System.EventHandler(this.dashboard1_Load);
+            // 
+            // nhapHang1
+            // 
+            this.nhapHang1.BackColor = System.Drawing.Color.White;
+            this.nhapHang1.Location = new System.Drawing.Point(0, 0);
+            this.nhapHang1.Name = "nhapHang1";
+            this.nhapHang1.Size = new System.Drawing.Size(932, 603);
+            this.nhapHang1.TabIndex = 13;
             // 
             // Menu
             // 
@@ -488,6 +499,7 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private Dashboard dashboard1;
+        private NhapHang.NhapHang nhapHang1;
     }
 }
 

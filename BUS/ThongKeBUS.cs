@@ -25,7 +25,7 @@ namespace pharmacy_management.BUS
         {
             return dao.getslban();  
         }
-        public int getdoanhthu()
+        public float getdoanhthu()
         {
             return dao.getdoanhthu();
         }
