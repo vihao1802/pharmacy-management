@@ -27,5 +27,10 @@ namespace pharmacy_management.BUS
         {
             list = dao.GetALlNotUse();
         }
+
+        public void updateStatus(string ma)
+        {
+            dao.updateStatus(ma);
+        }
     }
 }

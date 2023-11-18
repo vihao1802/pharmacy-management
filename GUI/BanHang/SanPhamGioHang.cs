@@ -52,7 +52,7 @@ namespace pharmacy_management.GUI.BanHang
         private void btn_remove_item_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("Remove");
-            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa khỏi giỏ hàng?", "Xóa sản phẩm khỏi giỏ hàng", MessageBoxButtons.OKCancel);
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa sản phẩm khỏi giỏ hàng?", "Xóa sản phẩm khỏi giỏ hàng", MessageBoxButtons.OKCancel);
 
             if (result == DialogResult.OK)
             {
@@ -76,5 +76,7 @@ namespace pharmacy_management.GUI.BanHang
             btn_remove_item.BackColor = Color.White;
             btn_remove_item.Image = Properties.Resources.icons8_close_24;
         }
+
+
     }
 }

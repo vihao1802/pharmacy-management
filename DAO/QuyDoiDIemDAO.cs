@@ -82,5 +82,13 @@ namespace pharmacy_management.DAO
             return arrayList;
 
         }
+
+        public void updateStatus(string ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("UPDATE quydoidiem SET DaSuDung = '1' WHERE MaQuyDoi = '{0}'", ma);
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
+        }
     }
 }

@@ -47,5 +47,15 @@ namespace pharmacy_management.BUS
         {
             list = dao.GetAllAdvancedDAO(text_searching, selected_doiTuong, selected_xuatXu, page_value, perPage);
         }
+
+        public void updateQuantity(int ma, int sl)
+        {
+            dao.updateQuantity(ma, sl);
+        }
+
+        public DTO.Thuoc getItem(int ma)
+        {
+            return dao.getItem(ma);
+        }
     }
 }
