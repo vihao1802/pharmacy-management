@@ -14,13 +14,14 @@ namespace pharmacy_management.DAO
     {
         ThongKe tk = new ThongKe();
         SqlConnection sqlcon;
-        public ThongKeDAO() {
+        public ThongKeDAO()
+        {
             KetNoiCSDL();
         }
         void KetNoiCSDL()
         {
             string conn =
-"Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
+"Data Source=LAPTOP-ULQT60JG;Initial Catalog=ql_nhathuoc;Integrated Security=True";
             sqlcon = new SqlConnection(conn);
         }
         public int getslthuoc()
@@ -69,15 +70,15 @@ namespace pharmacy_management.DAO
             return tk.getDoanhthu();
         }
 
-        public void dtthang(List<decimal> revenues,List<string>months)
+        public void dtthang(List<decimal> revenues, List<string> months)
         {
             string query = "  Select sum(thanhtien) as revenue,month(NgayLap) as thang from donhang group by month(NgayLap)";
             using (SqlCommand cmd = new SqlCommand(query, sqlcon))
             {
                 sqlcon.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-               revenues = new List<decimal>();
-               months = new List<string>();
+                revenues = new List<decimal>();
+                months = new List<string>();
                 while (reader.Read())
                 {
                     revenues.Add(reader.GetDecimal(0)); // get the revenue value

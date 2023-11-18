@@ -115,11 +115,29 @@
     <Compile Include="GUI\BanHang\BanHangFrm.Designer.cs">
       <DependentUpon>BanHangFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\BanHang\ChiTietDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\BanHang\ChiTietDonHang.Designer.cs">
+      <DependentUpon>ChiTietDonHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\BanHang\ChiTietSanPhamFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\BanHang\ChiTietSanPhamFrm.Designer.cs">
       <DependentUpon>ChiTietSanPhamFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\BanHang\DonHangFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\BanHang\DonHangFrm.Designer.cs">
+      <DependentUpon>DonHangFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\BanHang\DonHangRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\BanHang\DonHangRow.Designer.cs">
+      <DependentUpon>DonHangRow.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\BanHang\GioHangFrm.cs">
       <SubType>Form</SubType>
@@ -207,8 +225,17 @@
     <EmbeddedResource Include="GUI\BanHang\BanHangFrm.resx">
       <DependentUpon>BanHangFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BanHang\ChiTietDonHang.resx">
+      <DependentUpon>ChiTietDonHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\BanHang\ChiTietSanPhamFrm.resx">
       <DependentUpon>ChiTietSanPhamFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BanHang\DonHangFrm.resx">
+      <DependentUpon>DonHangFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BanHang\DonHangRow.resx">
+      <DependentUpon>DonHangRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\BanHang\GioHangFrm.resx">
       <DependentUpon>GioHangFrm.cs</DependentUpon>
@@ -309,6 +336,14 @@
     <Content Include="Images\Subtract.png" />
     <Content Include="Images\Voucher-Contrast.png" />
     <Content Include="Images\Voucher.png" />
+    <None Include="Resources\icons8-refresh-24.png" />
+    <None Include="Resources\icons8-down-24_white.png" />
+    <None Include="Resources\icons8-down-24.png" />
+    <None Include="Resources\icons8-search-30.png" />
+    <None Include="Resources\icons8-ellipsis-30_white.png" />
+    <None Include="Resources\icons8-ellipsis-30_gray.png" />
+    <None Include="Resources\icons8-cart-30_gray.png" />
+    <None Include="Resources\icons8-cart-30._graypng.png" />
     <None Include="Resources\Pill-Contrast.png" />
     <None Include="Resources\Pill.png" />
     <None Include="Resources\Pharmacy.png" />
@@ -529,9 +564,7 @@
   <ItemGroup>
     <None Include="Resources\icons8-close-24.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUI\Components\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\icons8-close-24_white.png" />
   </ItemGroup>

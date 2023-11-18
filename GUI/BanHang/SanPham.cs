@@ -40,6 +40,17 @@ namespace pharmacy_management.GUI.BanHang
             string fileName = imageName;
             string imagePath = Path.Combine(directoryPath, fileName);
             picb_item.ImageLocation = imagePath;
+
+            if (thuoc_item.SoLuong == 0)
+            {
+                btn_add_cart.Enabled = false;
+
+                this.btn_add_cart.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+                this.btn_add_cart.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+                this.btn_add_cart.StateCommon.Back.Image = ((System.Drawing.Image)(Resources.icons8_cart_30_gray));
+                this.btn_add_cart.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+                this.btn_add_cart.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            }
         }
 
         private void btn_item_detail_Click(object sender, EventArgs e)
@@ -61,6 +72,15 @@ namespace pharmacy_management.GUI.BanHang
         private void btn_add_cart_Click(object sender, EventArgs e)
         {
             this.bhFrm.AddToCart(thuoc_info.MaThuoc, thuoc_info.TenThuoc, thuoc_info.GiaThuoc, thuoc_info.AnhThuoc);
+        }
+
+        public string getLabelName()
+        {
+            return this.lbl_item_name.Text;
+        }
+        public void setVisible()
+        {
+            lbl_item_name.BringToFront();
         }
     }
 }

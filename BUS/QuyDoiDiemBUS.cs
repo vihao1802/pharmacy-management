@@ -25,7 +25,12 @@ namespace pharmacy_management.BUS
         }
         public void loadList()
         {
-            list = dao.GetALl();
+            list = dao.GetALlNotUse();
+        }
+
+        public void updateStatus(string ma)
+        {
+            dao.updateStatus(ma);
         }
     }
 }

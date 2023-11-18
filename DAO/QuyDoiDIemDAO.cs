@@ -15,9 +15,8 @@ namespace pharmacy_management.DAO
         private ArrayList list;
         public QuyDoiDIemDAO()
         {
-            list = GetALl();
+            //list = GetALl();
         }
-
         public ArrayList GetALl()
         {
             ArrayList arrayList = new ArrayList();
@@ -44,11 +43,52 @@ namespace pharmacy_management.DAO
             {
                 reader.Close();
 
-                Console.WriteLine("An error at QuyDoiDiemDAO: " + ex.Message);
+                Console.WriteLine("An error at QuyDoiDiemDAO GetALl: " + ex.Message);
             }
 
             return arrayList;
 
+        }
+        public ArrayList GetALlNotUse()
+        {
+            ArrayList arrayList = new ArrayList();
+
+            ConnectDB conn = new ConnectDB();
+            string query = "SELECT * FROM quydoidiem WHERE DaSuDung = 0";
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    QuyDoiDiem tmp = new QuyDoiDiem(
+                        Int32.Parse(reader["MaQuyDoi"].ToString()),
+                        Int32.Parse(reader["MaKH"].ToString()),
+                        DateTime.Parse(reader["NgayQuyDoi"].ToString()),
+                        Int32.Parse(reader["MaPhieuGiam"].ToString()),
+                        Int32.Parse(reader["DaSuDung"].ToString())
+
+                    );
+                    //Console.WriteLine(reader["NgayQuyDoi"].ToString());
+                    arrayList.Add(tmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at QuyDoiDiemDAO GetALlNotUse: " + ex.Message);
+            }
+
+            return arrayList;
+
+        }
+
+        public void updateStatus(string ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("UPDATE quydoidiem SET DaSuDung = '1' WHERE MaQuyDoi = '{0}'", ma);
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
         }
     }
 }
