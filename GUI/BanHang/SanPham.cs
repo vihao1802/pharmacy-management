@@ -12,19 +12,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-
+using pharmacy_management.GUI.NhapHang;
 namespace pharmacy_management.GUI.BanHang
 {
     public partial class SanPham : UserControl
     {
         DTO.Thuoc thuoc_info;
         BanHangFrm bhFrm;
+      
         public SanPham(BanHangFrm bhFrm)
         {
             InitializeComponent();
             this.bhFrm = bhFrm;
         }
-
+     
         public void AddNewContent(DTO.Thuoc thuoc_item)
         {
             thuoc_info = thuoc_item;

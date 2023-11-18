@@ -175,6 +175,12 @@
     <Compile Include="GUI\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\NhapHang\LoHangFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhapHang\LoHangFrm.Designer.cs">
+      <DependentUpon>LoHangFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\NhapHang\NhapHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -186,6 +192,18 @@
     </Compile>
     <Compile Include="GUI\BanHang\SanPhamGioHang.Designer.cs">
       <DependentUpon>SanPhamGioHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhapHang\SPLohang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\NhapHang\SPLohang.Designer.cs">
+      <DependentUpon>SPLohang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhapHang\SPNhaphang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\NhapHang\SPNhaphang.Designer.cs">
+      <DependentUpon>SPNhaphang.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Thuoc\FormThuoc.cs">
       <SubType>Form</SubType>
@@ -237,11 +255,20 @@
     <EmbeddedResource Include="GUI\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhapHang\LoHangFrm.resx">
+      <DependentUpon>LoHangFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhapHang\NhapHang.resx">
       <DependentUpon>NhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\BanHang\SanPhamGioHang.resx">
       <DependentUpon>SanPhamGioHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhapHang\SPLohang.resx">
+      <DependentUpon>SPLohang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhapHang\SPNhaphang.resx">
+      <DependentUpon>SPNhaphang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx">
       <DependentUpon>FormThuoc.cs</DependentUpon>
