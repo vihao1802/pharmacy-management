@@ -53,7 +53,7 @@ namespace pharmacy_management.DAO
         public void updateDiemKH(string diem, string ma)
         {
             ConnectDB conn = new ConnectDB();
-            string query = string.Format("UPDATE diemkhachhang SET DiemTichLuy = DiemTichLuy - {0} WHERE MaKH = '{1}'", diem, ma);
+            string query = string.Format("UPDATE diemkhachhang SET DiemTichLuy = DiemTichLuy + {0} WHERE MaKH = '{1}'", diem, ma);
             Console.WriteLine(query);
             conn.ExecuteNonQuery(query);
         }

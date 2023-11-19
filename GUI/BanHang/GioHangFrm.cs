@@ -50,6 +50,7 @@ namespace pharmacy_management.GUI.BanHang
         {
             KhachHangBUS khBUS = new KhachHangBUS();
             //Console.WriteLine(dropBtn_KH.SelectedIndex);
+            khBUS.loadList();
             foreach (KhachHang kh in khBUS.getList())
             {
                 string item_name = kh.MaKH.ToString() + "_" + kh.TenKH;
@@ -164,7 +165,7 @@ namespace pharmacy_management.GUI.BanHang
             formattedNumber = final_price.ToString("#,##0") + " đ";
             lbl_final_total_price.Text = formattedNumber;
 
-            lbl_bonus.Text = "+" + lbl_final_total_price.Text.Split(',')[0];
+            lbl_bonus.Text = "+" + (Int32.Parse(lbl_final_total_price.Text.Replace(",", "").Replace(" đ", "")) / 1000).ToString();
         }
 
         public void AddCart()

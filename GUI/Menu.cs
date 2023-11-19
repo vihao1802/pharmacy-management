@@ -1,5 +1,5 @@
 
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,19 +22,20 @@ namespace pharmacy_management.GUI
     public partial class Menu : KryptonForm
     {
         public static NhanVien nv = new NhanVien();
-        
+
         bool sidebarExpand;
-      
+        BanHangFrm bhFrm;
+
         public Menu()
         {
             InitializeComponent();
-           
-           // nv = Login.nv;
-           // lbName.Text = nv.TenNV;
-           
+
+            // nv = Login.nv;
+            // lbName.Text = nv.TenNV;
+
         }
 
-       
+
         //private void sidebarTimer_tick(object sender, EventArgs e)
         //{
         //    if (sidebarExpand)
@@ -194,7 +195,7 @@ namespace pharmacy_management.GUI
 
         }
 
-      
+
 
         private void Menu_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -206,23 +207,50 @@ namespace pharmacy_management.GUI
             sidebarTimer.Start();
         }
 
+        private void addFormtoPanelContainer(object Form)
+        {
+            if (this.PnContainer.Controls.Count > 0)
+            {
+                this.PnContainer.Controls.Clear();
+                if (bhFrm != null)
+                    if (bhFrm.GetGioHangFrm != null)
+                        closeFrm(bhFrm.GetGioHangFrm);
+            }
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.PnContainer.Controls.Add(f);
+            this.PnContainer.Tag = f;
+            f.Show();
+        }
+
+        public void closeFrm(object Form)
+        {
+            Form f = Form as Form;
+            f.Close();
+        }
         private void btnSell_Click_1(object sender, EventArgs e)
         {
-            BanHangFrm f = new BanHangFrm();
+            /*BanHangFrm f = new BanHangFrm();
             f.TopLevel = false;
             PnContainer.Controls.Add(f);
             PnContainer.Dock = DockStyle.Fill;
             dashboard1.Visible = false;
             nhapHang1.Visible = false;
-            f.Show();
+            f.Show();*/
+            bhFrm = new BanHangFrm();
+            addFormtoPanelContainer(bhFrm);
         }
 
         private void btnStorage_Click(object sender, EventArgs e)
         {
-            PnContainer.Controls.Clear();
+            /*PnContainer.Controls.Clear();
            NhapHang.NhapHang nh = new NhapHang.NhapHang();
             PnContainer.Controls.Add(nh);
-            PnContainer.Dock = DockStyle.Fill;
+            PnContainer.Dock = DockStyle.Fill;*/
+
+            addFormtoPanelContainer(new NhapHang.NhapHang());
+
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -236,7 +264,13 @@ namespace pharmacy_management.GUI
         {
 
         }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new DonHangFrm());
+
+        }
     }
-    
+
 }
 
