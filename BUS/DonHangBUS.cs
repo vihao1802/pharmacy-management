@@ -35,6 +35,11 @@ namespace pharmacy_management.BUS
             list = dao.GetALlPriceAscend(dateStart, dateEnd, search);
         }
 
+        public void load_invoice_id_descend(string dateStart, string dateEnd, string search)
+        {
+            list = dao.GetALlIdDescend(dateStart, dateEnd, search);
+        }
+
         public void addNewInvoice(string maNV, string maKH, string ngayLap, string maQD, string tongGia, string thanhTien)
         {
             dao.addNewInvoice(maNV, maKH, ngayLap, maQD, tongGia, thanhTien);

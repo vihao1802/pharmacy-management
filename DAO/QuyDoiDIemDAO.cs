@@ -90,5 +90,35 @@ namespace pharmacy_management.DAO
             Console.WriteLine(query);
             conn.ExecuteNonQuery(query);
         }
+
+        public QuyDoiDiem getQDD(int ma)
+        {
+            QuyDoiDiem qdd = new QuyDoiDiem();
+            ConnectDB conn = new ConnectDB();
+            string query = "SELECT * FROM quydoidiem WHERE MaQuyDoi = '" + ma + "'";
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                if (reader.Read())
+                {
+                    qdd = new QuyDoiDiem(
+                        Int32.Parse(reader["MaQuyDoi"].ToString()),
+                        Int32.Parse(reader["MaKH"].ToString()),
+                        DateTime.Parse(reader["NgayQuyDoi"].ToString()),
+                        Int32.Parse(reader["MaPhieuGiam"].ToString()),
+                        Int32.Parse(reader["DaSuDung"].ToString())
+
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at QuyDoiDiemDAO getQDD: " + ex.Message);
+            }
+
+            return qdd;
+        }
     }
 }

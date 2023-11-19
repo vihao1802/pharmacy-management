@@ -46,7 +46,9 @@ namespace pharmacy_management.GUI.BanHang
 
         private void btn_invoice_detail_Click(object sender, EventArgs e)
         {
-
+            ChiTietDonHangFrm f = new ChiTietDonHangFrm();
+            f.AddNewContent(dh);
+            f.Show();
         }
     }
 }

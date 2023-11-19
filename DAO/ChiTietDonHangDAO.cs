@@ -15,7 +15,7 @@ namespace pharmacy_management.DAO
         private ArrayList list;
         public ChiTietDonHangDAO()
         {
-            list = GetALl();
+            //list = GetALl();
         }
 
         public ArrayList GetALl()
@@ -48,6 +48,37 @@ namespace pharmacy_management.DAO
 
             return arrayList;
 
+        }
+
+        public ArrayList getListWithID(int ma)
+        {
+            ArrayList arrayList = new ArrayList();
+
+            ConnectDB conn = new ConnectDB();
+            string query = "SELECT * FROM chitietdonhang WHERE MaDH = '" + ma + "'";
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    ChiTietDonHang tmp = new ChiTietDonHang(
+                        Int32.Parse(reader["MaChiTietDH"].ToString()),
+                        Int32.Parse(reader["MaDH"].ToString()),
+                        Int32.Parse(reader["MaThuoc"].ToString()),
+                        Int32.Parse(reader["SoLuong"].ToString()),
+                        float.Parse(reader["DonGia"].ToString()),
+                        float.Parse(reader["ThanhTien"].ToString())
+                    );
+                    arrayList.Add(tmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+                Console.WriteLine("An error at ChiTietDonHangDAO getListWithID: " + ex.Message);
+            }
+
+            return arrayList;
         }
 
         public void addNewDetailInvoice(int maDH, int maThuoc, int soLuong, float gia, float thanhTien)

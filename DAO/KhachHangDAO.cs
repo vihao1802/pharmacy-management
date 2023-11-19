@@ -49,5 +49,36 @@ namespace pharmacy_management.DAO
             return arrayList;
 
         }
+
+        public KhachHang getKH(int ma)
+        {
+            KhachHang kh = new KhachHang();
+
+            ConnectDB conn = new ConnectDB();
+            string query = "SELECT * FROM khachhang WHERE MaKH = '" + ma + "'";
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                if (reader.Read())
+                {
+                    kh = new KhachHang(
+                        Int32.Parse(reader["MaKH"].ToString()),
+                        reader["TenKH"].ToString(),
+                        reader["SDT"].ToString(),
+                        DateTime.Parse(reader["NgaySinh"].ToString()),
+                        Int32.Parse(reader["TrangThai"].ToString())
+                     );
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at KhachHangDAO: " + ex.Message);
+            }
+
+            return kh;
+
+        }
     }
 }

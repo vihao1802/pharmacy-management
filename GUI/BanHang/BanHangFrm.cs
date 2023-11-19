@@ -33,8 +33,15 @@ namespace pharmacy_management.GUI.BanHang
             setup();
             pagination();
         }
+
+        public GioHangFrm GetGioHangFrm { get { return gh; } }
         public void setup()
         {
+            if (ContainsSubform())
+            {
+                gh.Close();
+            }
+
             DoiTuongBUS dt_list = new DoiTuongBUS();
             cb_DoiTuong.Items.Add("Tất cả");
             cb_DoiTuong.SelectedIndex = 0;
@@ -278,7 +285,7 @@ namespace pharmacy_management.GUI.BanHang
                 //Console.WriteLine(gh);
                 gh.setCart(thuoc_cart);
                 gh.BringToFront();
-                //gh.Show();
+                gh.Show();
             }
         }
     }

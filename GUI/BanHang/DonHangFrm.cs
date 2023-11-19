@@ -53,7 +53,7 @@ namespace pharmacy_management.GUI.BanHang
             string formattedDateStart = dateStart.ToString("yyyy-MM-dd");
             DateTime dateEnd = dtp_end.Value;
             string formattedDateEnd = dateEnd.ToString("yyyy-MM-dd");
-            Console.WriteLine(formattedDateStart + "," + formattedDateEnd);
+            //Console.WriteLine(formattedDateStart + "," + formattedDateEnd);
             dhBUS.loadList(formattedDateStart, formattedDateEnd, txt_searching.Text.Trim());
             foreach (DonHang dh in dhBUS.getList())
             {
@@ -82,7 +82,25 @@ namespace pharmacy_management.GUI.BanHang
                 this.flowLayoutPanel1.Controls.Add(dhRow);
             }
         }
+        public void load_invoice_id_descend()
+        {
+            DonHangBUS dhBUS = new DonHangBUS();
 
+            DateTime dateStart = dtp_start.Value;
+            string formattedDateStart = dateStart.ToString("yyyy-MM-dd");
+            DateTime dateEnd = dtp_end.Value;
+            string formattedDateEnd = dateEnd.ToString("yyyy-MM-dd");
+
+            dhBUS.load_invoice_id_descend(formattedDateStart, formattedDateEnd, txt_searching.Text.Trim());
+            //Console.WriteLine(formattedDateStart + "," + formattedDateEnd);
+
+            foreach (DonHang dh in dhBUS.getList())
+            {
+                dhRow = new DonHangRow();
+                dhRow.AddNewContent(dh);
+                this.flowLayoutPanel1.Controls.Add(dhRow);
+            }
+        }
         private void dtp_start_ValueChanged(object sender, EventArgs e)
         {
             dtp_end.MinDate = dtp_start.Value;
@@ -104,6 +122,12 @@ namespace pharmacy_management.GUI.BanHang
         {
             setEmpty();
             load_invoice();
+        }
+
+        private void btn_descend_DonHang_Click(object sender, EventArgs e)
+        {
+            setEmpty();
+            load_invoice_id_descend();
         }
     }
 }
