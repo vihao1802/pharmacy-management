@@ -29,6 +29,7 @@ namespace pharmacy_management.GUI.NhapHang
             InitializeComponent();
             setup();
             pagination();
+
         }
         public void setup()
         {

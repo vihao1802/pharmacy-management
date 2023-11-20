@@ -27,5 +27,9 @@ namespace pharmacy_management.BUS
         {
             list = dao.GetALl();
         }
+        public ArrayList getListWithID(int ma)
+        {
+            return dao.getListWithID(ma);
+        }
     }
 }

@@ -43,9 +43,9 @@
             this.lbl_total_pages = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_searching = new Krypton.Toolkit.KryptonRichTextBox();
-            this.container = new System.Windows.Forms.FlowLayoutPanel();
             this.kryptonPanel2 = new Krypton.Toolkit.KryptonPanel();
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
+            this.container = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.cb_XuatXu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_DoiTuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
@@ -273,14 +273,6 @@
             this.txt_searching.Text = "";
             this.txt_searching.TextChanged += new System.EventHandler(this.txt_searching_TextChanged);
             // 
-            // container
-            // 
-            this.container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container.Location = new System.Drawing.Point(0, 60);
-            this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(950, 550);
-            this.container.TabIndex = 8;
-            // 
             // kryptonPanel2
             // 
             this.kryptonPanel2.Controls.Add(this.btn_search_page);
@@ -315,6 +307,17 @@
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.White;
             this.kryptonPanel1.StateCommon.Color2 = System.Drawing.Color.White;
             this.kryptonPanel1.TabIndex = 6;
+            // 
+            // container
+            // 
+            this.container.AutoScroll = true;
+            this.container.BackColor = System.Drawing.Color.White;
+            this.container.Location = new System.Drawing.Point(0, 60);
+            this.container.Margin = new System.Windows.Forms.Padding(0);
+            this.container.Name = "container";
+            this.container.Padding = new System.Windows.Forms.Padding(15, 0, 0, 20);
+            this.container.Size = new System.Drawing.Size(950, 550);
+            this.container.TabIndex = 9;
             // 
             // NhapHangFrm
             // 
@@ -356,8 +359,8 @@
         private System.Windows.Forms.Label lbl_total_pages;
         private System.Windows.Forms.Label label1;
         private Krypton.Toolkit.KryptonRichTextBox txt_searching;
-        private System.Windows.Forms.FlowLayoutPanel container;
         private Krypton.Toolkit.KryptonPanel kryptonPanel2;
         private Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        private System.Windows.Forms.FlowLayoutPanel container;
     }
 }

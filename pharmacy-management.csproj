@@ -181,6 +181,12 @@
     <Compile Include="GUI\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\NhapHang\ChiTietPhieuNhapFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhapHang\ChiTietPhieuNhapFrm.Designer.cs">
+      <DependentUpon>ChiTietPhieuNhapFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\NhapHang\LoHangFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,18 @@
     </Compile>
     <Compile Include="GUI\NhapHang\NhapHangFrm.Designer.cs">
       <DependentUpon>NhapHangFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhapHang\PhieuNhapFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhapHang\PhieuNhapFrm.Designer.cs">
+      <DependentUpon>PhieuNhapFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhapHang\PhieuNhapRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\NhapHang\PhieuNhapRow.Designer.cs">
+      <DependentUpon>PhieuNhapRow.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\NhapHang\SPLohang.cs">
       <SubType>UserControl</SubType>
@@ -270,6 +288,9 @@
     <EmbeddedResource Include="GUI\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhapHang\ChiTietPhieuNhapFrm.resx">
+      <DependentUpon>ChiTietPhieuNhapFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhapHang\LoHangFrm.resx">
       <DependentUpon>LoHangFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +302,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhapHang\NhapHangFrm.resx">
       <DependentUpon>NhapHangFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhapHang\PhieuNhapFrm.resx">
+      <DependentUpon>PhieuNhapFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhapHang\PhieuNhapRow.resx">
+      <DependentUpon>PhieuNhapRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhapHang\SPLohang.resx">
       <DependentUpon>SPLohang.cs</DependentUpon>

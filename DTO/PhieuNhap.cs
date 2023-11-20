@@ -13,7 +13,7 @@ namespace pharmacy_management.DTO
         private DateTime ngayLap;
         private float tongTien;
 
-        public PhieuNhap(int maPN, int maNV, DateTime ngayLap, float tongTien)
+        public PhieuNhap(int maPN, int maNV, string ngayLap, float tongTien)
         {
             this.MaPN = maPN;
             this.MaNV = maNV;

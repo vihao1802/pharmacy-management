@@ -34,6 +34,8 @@
             this.lbl_item_price = new Krypton.Toolkit.KryptonLabel();
             this.lbl_item_name = new Krypton.Toolkit.KryptonLabel();
             this.picb_item = new System.Windows.Forms.PictureBox();
+            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
+            this.txtsl = new Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picb_item)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,10 +144,28 @@
             this.picb_item.TabIndex = 10;
             this.picb_item.TabStop = false;
             // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(173, 242);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(30, 24);
+            this.kryptonLabel1.TabIndex = 15;
+            this.kryptonLabel1.Values.Text = "SL:";
+            // 
+            // txtsl
+            // 
+            this.txtsl.Location = new System.Drawing.Point(202, 242);
+            this.txtsl.Name = "txtsl";
+            this.txtsl.Size = new System.Drawing.Size(20, 24);
+            this.txtsl.TabIndex = 16;
+            this.txtsl.Values.Text = "0";
+            // 
             // SPNhaphang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtsl);
+            this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.btn_item_detail);
             this.Controls.Add(this.btn_add_cart);
             this.Controls.Add(this.lbl_item_price);
@@ -166,5 +186,7 @@
         private Krypton.Toolkit.KryptonLabel lbl_item_price;
         private Krypton.Toolkit.KryptonLabel lbl_item_name;
         private System.Windows.Forms.PictureBox picb_item;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private Krypton.Toolkit.KryptonLabel txtsl;
     }
 }
