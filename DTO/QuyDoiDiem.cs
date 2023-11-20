@@ -14,6 +14,10 @@ namespace pharmacy_management.DTO
         private int maPhieuGiam;
         private int daSuDung;
 
+        public QuyDoiDiem()
+        {
+
+        }
         public QuyDoiDiem(int maQuyDoi, int maKH, DateTime ngayQuyDoi, int maPhieuGiam, int daSuDung)
         {
             this.MaQuyDoi = maQuyDoi;

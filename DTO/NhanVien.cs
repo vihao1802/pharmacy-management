@@ -30,7 +30,7 @@ namespace pharmacy_management.DTO
             this.MatKhau = matKhau;
             this.MaQuyen = maQuyen;
         }
-
+        public NhanVien() { }
         public int MaNV { get => maNV; set => maNV = value; }
         public string TenNV { get => tenNV; set => tenNV = value; }
         public string SDT { get => sdt; set => sdt = value; }

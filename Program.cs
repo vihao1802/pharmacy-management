@@ -1,14 +1,16 @@
-﻿using pharmacy_management.GUI.BanHang;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using thuoc;
 
 namespace pharmacy_management
 {
-    internal static class Program
+    static class Program
     {
+        public static Form LoginForm { get; set; }
+        public static Form MenuForm { get; set; }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,8 +19,11 @@ namespace pharmacy_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BanHangFrm());
-            
+            //LoginForm = new Login();
+            //LoginForm.Show();
+
+            // Run the application
+            Application.Run(new GUI.Menu());
         }
     }
 }

@@ -14,6 +14,7 @@ namespace pharmacy_management.DTO
         private DateTime ngaySinh;
         private int trangThai;
 
+        public KhachHang() { }
         public KhachHang(int maKH, string tenKH, string sdt, DateTime ngaySinh, int trangThai)
         {
             this.MaKH = maKH;

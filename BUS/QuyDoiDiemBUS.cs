@@ -1,4 +1,5 @@
 ﻿using pharmacy_management.DAO;
+using pharmacy_management.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,7 +26,17 @@ namespace pharmacy_management.BUS
         }
         public void loadList()
         {
-            list = dao.GetALl();
+            list = dao.GetALlNotUse();
+        }
+
+        public void updateStatus(string ma)
+        {
+            dao.updateStatus(ma);
+        }
+
+        public QuyDoiDiem getQDD(int ma)
+        {
+            return dao.getQDD(ma);
         }
     }
 }

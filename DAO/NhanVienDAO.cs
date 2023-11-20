@@ -15,7 +15,7 @@ namespace pharmacy_management.DAO
         private ArrayList list;
         public NhanVienDAO()
         {
-            list = GetALl();
+            //list = GetALl();
         }
 
         public ArrayList GetALl()
@@ -52,6 +52,43 @@ namespace pharmacy_management.DAO
             }
 
             return arrayList;
+
+        }
+
+        public NhanVien getNhanVien(int ma)
+        {
+            NhanVien nv = new NhanVien();
+
+            ConnectDB conn = new ConnectDB();
+            string query = "SELECT * FROM nhanvien WHERE MaNV = '" + ma + "'";
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                if (reader.Read())
+                {
+                    nv = new NhanVien(
+                        Int32.Parse(reader["MaNV"].ToString()),
+                        reader["TenNV"].ToString(),
+                        reader["SDT"].ToString(),
+                        reader["DiaChi"].ToString(),
+                        reader["Email"].ToString(),
+                        Int32.Parse(reader["TrangThai"].ToString()),
+                        reader["TenDangNhap"].ToString(),
+                        reader["MatKhau"].ToString(),
+                        Int32.Parse(reader["MaQuyen"].ToString())
+
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at NhanVienDAO: " + ex.Message);
+            }
+
+            return nv;
+
 
         }
     }

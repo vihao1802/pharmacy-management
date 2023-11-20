@@ -27,5 +27,10 @@ namespace pharmacy_management.BUS
         {
             list = dao.GetALl();
         }
+
+        public void updateDiemKH(string diem, string ma)
+        {
+            dao.updateDiemKH(diem, ma);
+        }
     }
 }
