@@ -1,4 +1,5 @@
 ﻿using pharmacy_management.DAO;
+using pharmacy_management.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace pharmacy_management.BUS
         public NhanVienBUS()
         {
             dao = new NhanVienDAO();
-            loadList();
+            //loadList();
         }
 
         public ArrayList getList()
@@ -26,6 +27,11 @@ namespace pharmacy_management.BUS
         public void loadList()
         {
             list = dao.GetALl();
+        }
+
+        public NhanVien getNhanVien(int ma)
+        {
+            return dao.getNhanVien(ma);
         }
     }
 }

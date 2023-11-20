@@ -15,11 +15,11 @@ namespace pharmacy_management.Database
         public ConnectDB()
         {
             // @autho Hao
-            //string strCnn = "Data Source=LAPTOP-ULQT60JG; Database=ql_nhathuoc;Integrated Security = True";
+            string strCnn = "Data Source=LAPTOP-ULQT60JG; Database=ql_nhathuoc;Integrated Security = True";
             // @author Thinh
             //string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc;Integrated Security = True";
             // @author Duc
-            string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
+            //string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
             sqlConn = new SqlConnection(strCnn);
         }
         //Phuong thuc de thuc hien cau lenh strSQL truy vân du lieu
@@ -36,7 +36,7 @@ namespace pharmacy_management.Database
             try
             {
                 SqlCommand sqlcmd = new SqlCommand(strSQL, sqlConn);
-                sqlConn.Open(); //Mo ket noi
+                sqlConn.Open();
                 sqlcmd.ExecuteNonQuery();//Lenh hien lenh Them/Xoa/Sua
             }
             catch (Exception ex)
@@ -45,7 +45,7 @@ namespace pharmacy_management.Database
             }
             finally
             {
-                sqlConn.Close();//Dong ket noi
+                sqlConn.Close();
 
             }
         }

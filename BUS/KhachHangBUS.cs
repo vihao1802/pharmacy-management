@@ -1,4 +1,5 @@
 ﻿using pharmacy_management.DAO;
+using pharmacy_management.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace pharmacy_management.BUS
         public KhachHangBUS()
         {
             dao = new KhachHangDAO();
-            loadList();
+            //loadList();
         }
 
         public ArrayList getList()
@@ -26,6 +27,11 @@ namespace pharmacy_management.BUS
         public void loadList()
         {
             list = dao.GetALl();
+        }
+
+        public KhachHang getKH(int ma)
+        {
+            return dao.getKH(ma);
         }
     }
 }

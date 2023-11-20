@@ -54,7 +54,7 @@
             this.pnl_item_container.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_item_container.Name = "pnl_item_container";
             this.pnl_item_container.Padding = new System.Windows.Forms.Padding(12, 5, 12, 12);
-            this.pnl_item_container.Size = new System.Drawing.Size(225, 193);
+            this.pnl_item_container.Size = new System.Drawing.Size(225, 323);
             this.pnl_item_container.TabIndex = 0;
             this.pnl_item_container.MouseEnter += new System.EventHandler(this.pnl_item_container_MouseEnter);
             this.pnl_item_container.MouseLeave += new System.EventHandler(this.pnl_item_container_MouseLeave);
@@ -66,7 +66,6 @@
             this.btn_item_detail.Name = "btn_item_detail";
             this.btn_item_detail.OverrideDefault.Back.Color1 = System.Drawing.Color.Gray;
             this.btn_item_detail.OverrideDefault.Back.Color2 = System.Drawing.Color.Gray;
-            this.btn_item_detail.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btn_item_detail.OverrideFocus.Back.Color1 = System.Drawing.Color.Gray;
             this.btn_item_detail.OverrideFocus.Back.Color2 = System.Drawing.Color.Gray;
             this.btn_item_detail.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 

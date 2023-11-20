@@ -33,8 +33,15 @@ namespace pharmacy_management.GUI.BanHang
             setup();
             pagination();
         }
+
+        public GioHangFrm GetGioHangFrm { get { return gh; } }
         public void setup()
         {
+            if (ContainsSubform())
+            {
+                gh.Close();
+            }
+
             DoiTuongBUS dt_list = new DoiTuongBUS();
             cb_DoiTuong.Items.Add("Tất cả");
             cb_DoiTuong.SelectedIndex = 0;
@@ -125,6 +132,7 @@ namespace pharmacy_management.GUI.BanHang
                 spGUI = new SanPham(this);
                 spGUI.AddNewContent(t);
                 this.flow_pnl_contain_item.Controls.Add(spGUI);
+                spGUI.setVisible();
                 count++;
             }
             Console.WriteLine("at load_prodcut: " + count);
@@ -223,6 +231,7 @@ namespace pharmacy_management.GUI.BanHang
             if (ContainsSubform())
             {
                 MessageBox.Show("Giỏ hàng đang được hiển thị");
+                gh.BringToFront();
             }
             else
             {
@@ -246,8 +255,15 @@ namespace pharmacy_management.GUI.BanHang
             {
                 if (item.MaThuoc == ma)
                 {
-                    item.SoLuong += 1;
+                    ThuocBUS tBUS = new ThuocBUS();
                     flag = 1;
+
+                    if (tBUS.getItem(ma).SoLuong == item.SoLuong)
+                    {
+                        MessageBox.Show("Số lượng chỉ còn " + tBUS.getItem(ma).SoLuong + " cho sản phẩm này");
+                        return;
+                    }
+                    item.SoLuong += 1;
                     break;
                 }
             }
@@ -268,7 +284,8 @@ namespace pharmacy_management.GUI.BanHang
             {
                 //Console.WriteLine(gh);
                 gh.setCart(thuoc_cart);
-                //gh.Show();
+                gh.BringToFront();
+                gh.Show();
             }
         }
     }

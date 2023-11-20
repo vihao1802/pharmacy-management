@@ -11,12 +11,12 @@ namespace pharmacy_management.DTO
         private int maDH;
         private int maNV;
         private int maKH;
-        private DateTime ngayLap;
+        private string ngayLap;
         private int maQuyDoi;
         private float tongGia;
         private float thanhTien;
 
-        public DonHang(int maDH, int maNV, int maKH, DateTime ngayLap, int maQuyDoi, float tongGia, float thanhTien)
+        public DonHang(int maDH, int maNV, int maKH, string ngayLap, int maQuyDoi, float tongGia, float thanhTien)
         {
             this.MaDH = maDH;
             this.MaNV = maNV;
@@ -30,7 +30,7 @@ namespace pharmacy_management.DTO
         public int MaDH { get => maDH; set => maDH = value; }
         public int MaNV { get => maNV; set => maNV = value; }
         public int MaKH { get => maKH; set => maKH = value; }
-        public DateTime NgayLap { get => ngayLap; set => ngayLap = value; }
+        public string NgayLap { get => ngayLap; set => ngayLap = value; }
         public int MaQuyDoi { get => maQuyDoi; set => maQuyDoi = value; }
         public float TongGia { get => tongGia; set => tongGia = value; }
         public float ThanhTien { get => thanhTien; set => thanhTien = value; }
