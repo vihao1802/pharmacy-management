@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace pharmacy_management.GUI.NhapHang
 {
-    public partial class LoHangFrm : Form
+    public partial class LoHangFrm : Krypton.Toolkit.KryptonForm
     {
         QuyDoiDiemBUS qdBUS = new QuyDoiDiemBUS();
         PhieuGiamGiaBUS pggBUS = new PhieuGiamGiaBUS();

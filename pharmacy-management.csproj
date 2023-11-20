@@ -163,6 +163,12 @@
     <Compile Include="GUI\Dash\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Dash\DashFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dash\DashFrm.Designer.cs">
+      <DependentUpon>DashFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Dash\ThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -192,6 +198,12 @@
     </Compile>
     <Compile Include="GUI\BanHang\SanPhamGioHang.Designer.cs">
       <DependentUpon>SanPhamGioHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhapHang\NhapHangFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhapHang\NhapHangFrm.Designer.cs">
+      <DependentUpon>NhapHangFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\NhapHang\SPLohang.cs">
       <SubType>UserControl</SubType>
@@ -249,6 +261,9 @@
     <EmbeddedResource Include="GUI\Dash\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dash\DashFrm.resx">
+      <DependentUpon>DashFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Dash\ThongKe.resx">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\BanHang\SanPhamGioHang.resx">
       <DependentUpon>SanPhamGioHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhapHang\NhapHangFrm.resx">
+      <DependentUpon>NhapHangFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhapHang\SPLohang.resx">
       <DependentUpon>SPLohang.cs</DependentUpon>

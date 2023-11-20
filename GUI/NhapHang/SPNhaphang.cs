@@ -15,9 +15,9 @@ namespace pharmacy_management.GUI.NhapHang
     public partial class SPNhaphang : UserControl
     {
         DTO.Thuoc thuoc_info;
-        NhapHang nhapHang;
+        NhapHangFrm nhapHang;
        
-        public SPNhaphang(NhapHang nhaphang)
+        public SPNhaphang(NhapHangFrm nhaphang)
         {
 
             InitializeComponent();

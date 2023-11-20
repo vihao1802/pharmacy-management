@@ -16,6 +16,7 @@ using static System.Net.Mime.MediaTypeNames;
 using thuoc;
 using pharmacy_management.GUI.BanHang;
 using pharmacy_management.GUI.NhapHang;
+using pharmacy_management.GUI.Dash;
 
 namespace pharmacy_management.GUI
 {
@@ -112,7 +113,8 @@ namespace pharmacy_management.GUI
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            DashFrm dsh = new DashFrm();
+            addFormtoPanelContainer(dsh);
         }
 
         private void btnPill_MouseHover(object sender, EventArgs e)
@@ -249,7 +251,7 @@ namespace pharmacy_management.GUI
             PnContainer.Controls.Add(nh);
             PnContainer.Dock = DockStyle.Fill;*/
 
-            addFormtoPanelContainer(new NhapHang.NhapHang());
+            addFormtoPanelContainer(new NhapHang.NhapHangFrm());
 
         }
 
@@ -268,6 +270,11 @@ namespace pharmacy_management.GUI
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new DonHangFrm());
+
+        }
+
+        private void kryptonLabel2_Click(object sender, EventArgs e)
+        {
 
         }
     }
