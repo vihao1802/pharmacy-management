@@ -22,7 +22,7 @@ namespace pharmacy_management.DAO
         SqlConnection sqlcon;
         void KetNoiCSDL()
         {
-            string conn = "Data Source=LAPTOP-ULQT60JG;Initial Catalog=ql_nhathuoc;Integrated Security=True";
+            string conn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
             sqlcon = new SqlConnection(conn);
         }
 

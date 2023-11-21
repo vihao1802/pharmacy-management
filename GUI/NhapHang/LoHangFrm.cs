@@ -10,18 +10,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using thuoc;
 
 namespace pharmacy_management.GUI.NhapHang
 {
-    public partial class LoHangFrm : Form
+    public partial class LoHangFrm : Krypton.Toolkit.KryptonForm
     {
-        QuyDoiDiemBUS qdBUS = new QuyDoiDiemBUS();
-        PhieuGiamGiaBUS pggBUS = new PhieuGiamGiaBUS();
+        public static NhanVien nv = new NhanVien();
         List<DTO.Thuoc> list_cart;
         private float total_price = 0;
         public LoHangFrm()
         {
             InitializeComponent();
+            nv = Login.nv;
+            lbName.Text = nv.TenNV.ToString();
             setup();
         }
       
@@ -33,40 +35,52 @@ namespace pharmacy_management.GUI.NhapHang
         private void btn_pay_Click(object sender, EventArgs e)
         {
             if (list_cart.Count == 0)
+                if (list_cart.Count == 0)
+                {
+                    MessageBox.Show("Bạn chưa có sản phẩm nào");
+                    return;
+                }
+         
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn thanh toán?", "Thanh toán", MessageBoxButtons.OKCancel);
+
+            if (result != DialogResult.OK)
             {
-                MessageBox.Show("Bạn chưa có sản phẩm nào");
                 return;
             }
-           
 
             string selectedText;
             string[] arr;
 
-         // //  selectedText = dropBtn_KH.Text;
-         ////   arr = selectedText.Split('_');
-         ////   string maKH = arr[0];
-
-         //  // selectedText = dropBtn_PG.Text;
-         //   string maQD;
-         //   if (selectedText == "Chọn phiếu giảm")
-         //   {
-         //       maQD = "null";
-         //   }
-         //   else
-         //   {
-         //       arr = selectedText.Split('_');
-         //       maQD = arr[0];
-         //   }
-
             DateTime currentDate = DateTime.Now;
             string formattedDate = currentDate.ToString("yyyy-MM-dd");
 
-            Console.WriteLine("MaNV: " + "2" +
-              //  "\nMaKH: " + maKH +
-                "\nNgayLap: " + formattedDate +
-              //  "\nMaQDD: " + maQD +
-                "\nTongGia: " + lbl_total_price.Text.Replace(" đ", "").Replace(",", "") +
-                "\nThanhTien" + lbl_final_total_price.Text.Replace(" đ", "").Replace(",", ""));
+            PhieuNhapBUS pnBUS = new PhieuNhapBUS();
+
+            string tongTien = lbl_total_price.Text.Replace(" đ", "").Replace(",", "");
+            string thanhTien = lbl_final_total_price.Text.Replace(" đ", "").Replace(",", "");
+
+            pnBUS.addNewInvoice(nv.MaNV, formattedDate, tongTien);
+
+         
+
+            PhieuNhap tmp = pnBUS.getItem();
+
+
+         
+            ChiTietPhieuNhapBUS ctpnBUS = new ChiTietPhieuNhapBUS();
+            ThuocBUS tUpdate = new ThuocBUS();
+
+            foreach (DTO.Thuoc t in list_cart)
+            {
+                float thanhTienThuoc = t.SoLuong * t.GiaThuoc;
+                ctpnBUS.addNewDetailInvoice(tmp.MaPN, t.MaThuoc, t.SoLuong, t.GiaThuoc, thanhTienThuoc);
+                tUpdate.addQuantity(t.MaThuoc, t.SoLuong);
+                Console.WriteLine("Chi tiet PN:\n" + tmp.MaPN + "," + t.MaThuoc + "," + t.SoLuong + "," + t.GiaThuoc + "," + thanhTienThuoc);
+            }
+            //setEmpty();
+            list_cart.Clear();
+            AddCart();
+            MessageBox.Show("Thanh toán thành công!");
         }
 
         public void setEmpty()
@@ -92,9 +106,7 @@ namespace pharmacy_management.GUI.NhapHang
 
             string formattedNumber = total_price.ToString("#,##0") + " đ";
             lbl_total_price.Text = formattedNumber;
-
-            Console.WriteLine(lbl_discount.Text);
-            float final_price = total_price - total_price * (float.Parse(lbl_discount.Text.Replace("%", "")) / 100.0f);
+            float final_price = total_price ;
             formattedNumber = final_price.ToString("#,##0") + " đ";
             lbl_final_total_price.Text = formattedNumber;
         }
@@ -136,45 +148,7 @@ namespace pharmacy_management.GUI.NhapHang
             }
         }
 
-        private void dropBtn_PG_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*string selectedText = dropBtn_PG.Text;
-            string arr[] = selectedText.Split('_');
-            string maQD = arr[0];*/
-
-            string selectedText = dropBtn_PG.Text;
-            string[] arr = selectedText.Split('_');
-            int maQD;
-
-            if (selectedText == "Chọn phiếu giảm" || dropBtn_PG.SelectedIndex == -1)
-            {
-                //dropBtn_PG.SelectedIndex = -1;
-                dropBtn_PG.Text = "Chọn phiếu giảm";
-                lbl_discount.Text = "0%";
-                AddCart();
-                return;
-            }
-            else
-            {
-                arr = selectedText.Split('_');
-                maQD = Int32.Parse(arr[0]);
-            }
-
-            foreach (QuyDoiDiem qd in qdBUS.getList())
-            {
-                if (maQD == qd.MaQuyDoi)
-                {
-                    // Combobox Quy Doi Diem
-                    string percent = pggBUS.getPhanTramGiamBUS(qd.MaPhieuGiam);
-                    lbl_discount.Text = percent + "%";
-                    break;
-                }
-            }
-            Console.WriteLine("PG change");
-
-            AddCart();
-        }
-
+       
       
 
     }

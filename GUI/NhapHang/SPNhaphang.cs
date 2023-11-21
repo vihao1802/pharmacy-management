@@ -15,9 +15,9 @@ namespace pharmacy_management.GUI.NhapHang
     public partial class SPNhaphang : UserControl
     {
         DTO.Thuoc thuoc_info;
-        NhapHang nhapHang;
+        NhapHangFrm nhapHang;
        
-        public SPNhaphang(NhapHang nhaphang)
+        public SPNhaphang(NhapHangFrm nhaphang)
         {
 
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace pharmacy_management.GUI.NhapHang
 
             string formattedNumber = thuoc_item.GiaThuoc.ToString("#,##0") + " đ";
             lbl_item_price.Text = formattedNumber;
-
+            txtsl.Text = thuoc_item.SoLuong.ToString();
             string imageName = thuoc_item.AnhThuoc.Replace("images/", "");
             string directoryPath = @"..\..\Resources";
             string fileName = imageName;

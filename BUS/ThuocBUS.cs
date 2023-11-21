@@ -53,6 +53,10 @@ namespace pharmacy_management.BUS
             dao.updateQuantity(ma, sl);
         }
 
+        public void addQuantity(int ma, int sl)
+        {
+            dao.addQuantity(ma, sl);
+        }
         public DTO.Thuoc getItem(int ma)
         {
             return dao.getItem(ma);
