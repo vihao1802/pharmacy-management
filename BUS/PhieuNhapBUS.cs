@@ -43,12 +43,12 @@ namespace pharmacy_management.BUS
             list = dao.GetALlIdDescend(dateStart, dateEnd, search);
         }
 
-        public void addNewInvoice(string maNV, string maKH, string ngayLap, string maQD, string tongGia, string thanhTien)
+        public void addNewInvoice(int maNV,  string ngayLap, string tongTien)
         {
-            dao.addNewInvoice(maNV, maKH, ngayLap, maQD, tongGia, thanhTien);
+            dao.addNewInvoice(maNV, ngayLap, tongTien);
         }
 
-        public DonHang getItem()
+        public PhieuNhap getItem()
         {
             return dao.getItem();
         }

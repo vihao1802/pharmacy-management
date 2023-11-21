@@ -80,5 +80,11 @@ namespace pharmacy_management.DAO
 
             return arrayList;
         }
+        public void addNewDetailInvoice(int maPN, int maThuoc, int soLuong, float gia, float thanhTien)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("INSERT INTO chitietphieunhap VALUES('{0}','{1}','{2}',{3},'{4}')", maPN, maThuoc, soLuong, gia, thanhTien);
+            conn.ExecuteNonQuery(query);
+        }
     }
 }

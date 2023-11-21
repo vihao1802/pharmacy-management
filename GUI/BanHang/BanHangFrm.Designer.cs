@@ -63,7 +63,7 @@ namespace pharmacy_management.GUI.BanHang
             this.flow_pnl_contain_item.Margin = new System.Windows.Forms.Padding(0);
             this.flow_pnl_contain_item.Name = "flow_pnl_contain_item";
             this.flow_pnl_contain_item.Padding = new System.Windows.Forms.Padding(15, 0, 0, 20);
-            this.flow_pnl_contain_item.Size = new System.Drawing.Size(950, 547);
+            this.flow_pnl_contain_item.Size = new System.Drawing.Size(950, 550);
             this.flow_pnl_contain_item.TabIndex = 0;
             // 
             // kryptonPanel1

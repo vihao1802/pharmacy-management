@@ -122,7 +122,7 @@
             // 
             // lbl_item_name
             // 
-            this.lbl_item_name.Location = new System.Drawing.Point(12, 215);
+            this.lbl_item_name.Location = new System.Drawing.Point(12, 222);
             this.lbl_item_name.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_item_name.MaximumSize = new System.Drawing.Size(200, 0);
             this.lbl_item_name.Name = "lbl_item_name";
@@ -137,7 +137,7 @@
             this.picb_item.Dock = System.Windows.Forms.DockStyle.Top;
             this.picb_item.ErrorImage = null;
             this.picb_item.Image = ((System.Drawing.Image)(resources.GetObject("picb_item.Image")));
-            this.picb_item.Location = new System.Drawing.Point(0, 0);
+            this.picb_item.Location = new System.Drawing.Point(0, 7);
             this.picb_item.Name = "picb_item";
             this.picb_item.Size = new System.Drawing.Size(225, 205);
             this.picb_item.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -146,7 +146,7 @@
             // 
             // kryptonLabel1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(173, 242);
+            this.kryptonLabel1.Location = new System.Drawing.Point(166, 249);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(30, 24);
             this.kryptonLabel1.TabIndex = 15;
@@ -154,7 +154,7 @@
             // 
             // txtsl
             // 
-            this.txtsl.Location = new System.Drawing.Point(202, 242);
+            this.txtsl.Location = new System.Drawing.Point(193, 249);
             this.txtsl.Name = "txtsl";
             this.txtsl.Size = new System.Drawing.Size(20, 24);
             this.txtsl.TabIndex = 16;
@@ -164,6 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.txtsl);
             this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.btn_item_detail);
@@ -171,8 +172,10 @@
             this.Controls.Add(this.lbl_item_price);
             this.Controls.Add(this.lbl_item_name);
             this.Controls.Add(this.picb_item);
+            this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
             this.Name = "SPNhaphang";
-            this.Size = new System.Drawing.Size(225, 323);
+            this.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
+            this.Size = new System.Drawing.Size(225, 330);
             ((System.ComponentModel.ISupportInitialize)(this.picb_item)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -31,5 +31,10 @@ namespace pharmacy_management.BUS
         {
             return dao.getListWithID(ma);
         }
+        public void addNewDetailInvoice(int maPN, int maThuoc, int soLuong, float gia, float thanhTien)
+        {
+            dao.addNewDetailInvoice(maPN, maThuoc, soLuong, gia, thanhTien);
+        }
+
     }
 }

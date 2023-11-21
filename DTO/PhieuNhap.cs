@@ -10,7 +10,7 @@ namespace pharmacy_management.DTO
     {
         private int maPN;
         private int maNV;
-        private DateTime ngayLap;
+        private string ngayLap;
         private float tongTien;
 
         public PhieuNhap(int maPN, int maNV, string ngayLap, float tongTien)
@@ -23,7 +23,7 @@ namespace pharmacy_management.DTO
 
         public int MaPN { get => maPN; set => maPN = value; }
         public int MaNV { get => maNV; set => maNV = value; }
-        public DateTime NgayLap { get => ngayLap; set => ngayLap = value; }
+        public string NgayLap { get => ngayLap; set => ngayLap = value; }
         public float TongTien { get => tongTien; set => tongTien = value; }
     }
 }

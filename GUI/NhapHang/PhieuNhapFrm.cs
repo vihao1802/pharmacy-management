@@ -15,7 +15,7 @@ namespace pharmacy_management.GUI.NhapHang
 {
     public partial class PhieuNhapFrm : Form
     {
-        DonHangRow dhRow;
+        PhieuNhapRow pnRow;
         public PhieuNhapFrm()
         {
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace pharmacy_management.GUI.NhapHang
         public void setEmpty()
         {
             //flowLayoutPanel1.Controls.Clear();
-            var controlsToRemove = flowLayoutPanel1.Controls.OfType<DonHangRow>().ToList();
+            var controlsToRemove = flowLayoutPanel1.Controls.OfType<PhieuNhapRow>().ToList();
 
             foreach (var control in controlsToRemove)
             {
@@ -55,50 +55,50 @@ namespace pharmacy_management.GUI.NhapHang
             string formattedDateEnd = dateEnd.ToString("yyyy-MM-dd");
             //Console.WriteLine(formattedDateStart + "," + formattedDateEnd);
             pnBUS.loadList(formattedDateStart, formattedDateEnd, txt_searching.Text.Trim());
-            foreach (DonHang dh in dhBUS.getList())
+            foreach (PhieuNhap pn in pnBUS.getList())
             {
-                dhRow = new DonHangRow();
-                dhRow.AddNewContent(dh);
-                this.flowLayoutPanel1.Controls.Add(dhRow);
+                pnRow = new PhieuNhapRow();
+                pnRow.AddNewContent(pn);
+                this.flowLayoutPanel1.Controls.Add(pnRow);
             }
         }
 
         public void load_invoice_price_ascend()
         {
-            DonHangBUS dhBUS = new DonHangBUS();
+            PhieuNhapBUS pnBUS = new PhieuNhapBUS();
 
             DateTime dateStart = dtp_start.Value;
             string formattedDateStart = dateStart.ToString("yyyy-MM-dd");
             DateTime dateEnd = dtp_end.Value;
             string formattedDateEnd = dateEnd.ToString("yyyy-MM-dd");
 
-            dhBUS.loadList_price_ascend(formattedDateStart, formattedDateEnd, txt_searching.Text.Trim());
+            pnBUS.loadList_price_ascend(formattedDateStart, formattedDateEnd, txt_searching.Text.Trim());
             //Console.WriteLine(formattedDateStart + "," + formattedDateEnd);
 
-            foreach (DonHang dh in dhBUS.getList())
+            foreach (PhieuNhap pn in pnBUS.getList())
             {
-                dhRow = new DonHangRow();
-                dhRow.AddNewContent(dh);
-                this.flowLayoutPanel1.Controls.Add(dhRow);
+                pnRow = new PhieuNhapRow();
+                pnRow.AddNewContent(pn);
+                this.flowLayoutPanel1.Controls.Add(pnRow);
             }
         }
         public void load_invoice_id_descend()
         {
-            DonHangBUS dhBUS = new DonHangBUS();
+            PhieuNhapBUS pnBUS = new PhieuNhapBUS();
 
             DateTime dateStart = dtp_start.Value;
             string formattedDateStart = dateStart.ToString("yyyy-MM-dd");
             DateTime dateEnd = dtp_end.Value;
             string formattedDateEnd = dateEnd.ToString("yyyy-MM-dd");
 
-            dhBUS.load_invoice_id_descend(formattedDateStart, formattedDateEnd, txt_searching.Text.Trim());
+            pnBUS.load_invoice_id_descend(formattedDateStart, formattedDateEnd, txt_searching.Text.Trim());
             //Console.WriteLine(formattedDateStart + "," + formattedDateEnd);
 
-            foreach (DonHang dh in dhBUS.getList())
+            foreach (PhieuNhap pn in pnBUS.getList())
             {
-                dhRow = new DonHangRow();
-                dhRow.AddNewContent(dh);
-                this.flowLayoutPanel1.Controls.Add(dhRow);
+                pnRow = new PhieuNhapRow();
+                pnRow.AddNewContent(pn);
+                this.flowLayoutPanel1.Controls.Add(pnRow);
             }
         }
         private void dtp_start_ValueChanged(object sender, EventArgs e)
@@ -124,7 +124,7 @@ namespace pharmacy_management.GUI.NhapHang
             load_invoice();
         }
 
-        private void btn_descend_DonHang_Click(object sender, EventArgs e)
+        private void btn_descend_PhieuNhap_Click(object sender, EventArgs e)
         {
             setEmpty();
             load_invoice_id_descend();

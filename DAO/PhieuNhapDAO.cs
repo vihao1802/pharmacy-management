@@ -20,8 +20,8 @@ namespace pharmacy_management.DAO
 
         public ArrayList GetALl()
         {
-            ArrayList arrayList = new ArrayList();
 
+           ArrayList arrayList = new ArrayList();
             ConnectDB conn = new ConnectDB();
             string query = "SELECT * FROM phieunhap";
             SqlDataReader reader = conn.Execute(query);
@@ -29,10 +29,13 @@ namespace pharmacy_management.DAO
             {
                 while (reader.Read())
                 {
+                    
+                    DateTime dateTime = DateTime.ParseExact(reader["NgayLap"].ToString(), "MM/dd/yyyy hh:mm:ss tt", null);
+                    string outputString = dateTime.ToString("yyyy-MM-dd");
                     PhieuNhap tmp = new PhieuNhap(
                         Int32.Parse(reader["MaPN"].ToString()),
                         Int32.Parse(reader["MaNV"].ToString()),
-                        DateTime.Parse(reader["NgayLap"].ToString()),
+                        outputString,
                         float.Parse(reader["TongTien"].ToString())
                     );
                     arrayList.Add(tmp);
@@ -53,7 +56,7 @@ namespace pharmacy_management.DAO
             ArrayList arrayList = new ArrayList();
 
             ConnectDB conn = new ConnectDB();
-            string query = string.Format("SELECT * FROM PhieuNhap WHERE (MaDH LIKE '%{2}%' OR MaNV LIKE '%{2}%' OR MaQuyDoi LIKE '%{2}%') AND NgayLap BETWEEN '{0}' AND '{1}'", dateStart, dateEnd, search);
+            string query = string.Format("SELECT * FROM PhieuNhap WHERE (MaPN LIKE '%{2}%' OR MaNV LIKE '%{2}%') AND NgayLap BETWEEN '{0}' AND '{1}'", dateStart, dateEnd, search);
             SqlDataReader reader = conn.Execute(query);
             Console.WriteLine(query);
             try
@@ -68,10 +71,10 @@ namespace pharmacy_management.DAO
 
 
                     PhieuNhap tmp = new PhieuNhap(
-                        Int32.Parse(reader["MaDH"].ToString()),
+                        Int32.Parse(reader["MaPN"].ToString()),
                         Int32.Parse(reader["MaNV"].ToString()),
-                        DateTime.Parse(reader["NgayLap"].ToString()),
-                        float.Parse(reader["ThanhTien"].ToString())
+                        outputString,
+                        float.Parse(reader["tongTien"].ToString())
                      );
                     arrayList.Add(tmp);
                 }
@@ -93,7 +96,7 @@ namespace pharmacy_management.DAO
             ArrayList arrayList = new ArrayList();
 
             ConnectDB conn = new ConnectDB();
-            string query = string.Format("SELECT * FROM PhieuNhap WHERE (MaPN LIKE '%{2}%' OR MaNV LIKE '%{2}%' OR MaQuyDoi LIKE '%{2}%') AND NgayLap BETWEEN '{0}' AND '{1}' ORDER BY ThanhTien", dateStart, dateEnd, search);
+            string query = string.Format("SELECT * FROM PhieuNhap WHERE (MaPN LIKE '%{2}%' OR MaNV LIKE '%{2}%' ) AND NgayLap BETWEEN '{0}' AND '{1}' ORDER BY ThanhTien", dateStart, dateEnd, search);
             SqlDataReader reader = conn.Execute(query);
             Console.WriteLine(query);
 
@@ -112,7 +115,7 @@ namespace pharmacy_management.DAO
                         Int32.Parse(reader["MaPN"].ToString()),
                         Int32.Parse(reader["MaNV"].ToString()),
 
-                       DateTime.Parse(reader["NgayLap"].ToString()),
+                        outputString,
                         float.Parse(reader["ThanhTien"].ToString())
                      );
                     arrayList.Add(tmp);
@@ -134,7 +137,7 @@ namespace pharmacy_management.DAO
             ArrayList arrayList = new ArrayList();
 
             ConnectDB conn = new ConnectDB();
-            string query = string.Format("SELECT * FROM PhieuNhap WHERE (MaPN LIKE '%{2}%' OR MaNV LIKE '%{2}%' OR MaQuyDoi LIKE '%{2}%') AND NgayLap BETWEEN '{0}' AND '{1}' ORDER BY MaDH DESC", dateStart, dateEnd, search);
+            string query = string.Format("SELECT * FROM PhieuNhap WHERE (MaPN LIKE '%{2}%' OR MaNV LIKE '%{2}%') AND NgayLap BETWEEN '{0}' AND '{1}' ORDER BY MaPN DESC", dateStart, dateEnd, search);
             SqlDataReader reader = conn.Execute(query);
             Console.WriteLine(query);
 
@@ -152,8 +155,8 @@ namespace pharmacy_management.DAO
                     PhieuNhap tmp = new PhieuNhap(
                         Int32.Parse(reader["MaPN"].ToString()),
                         Int32.Parse(reader["MaNV"].ToString()),
-                        float.Parse(reader["TongGia"].ToString()),
-                        float.Parse(reader["ThanhTien"].ToString())
+                       outputString,
+                        float.Parse(reader["TongTien"].ToString())
                      ); 
                     arrayList.Add(tmp);
                 }
@@ -169,17 +172,16 @@ namespace pharmacy_management.DAO
 
         }
 
-        public void addNewInvoice(string maNV, string maKH, string ngayLap, string maQD, string tongGia, string thanhTien)
+        public void addNewInvoice(int maNV, string ngayLap, string tongTien)
         {
             ConnectDB conn = new ConnectDB();
-            Console.WriteLine(maQD);
-            string query = string.Format("INSERT INTO PhieuNhap VALUES('{0}','{1}','{2}',{3})", maNV, ngayLap,  tongGia, thanhTien);
-            Console.WriteLine(query);
+            string query = string.Format("INSERT INTO PhieuNhap VALUES('{0}','{1}','{2}')", maNV, ngayLap, tongTien);
             conn.ExecuteNonQuery(query);
         }
 
         public PhieuNhap getItem()
         {
+          //  DateTime date = DateTime.UtcNow();
             PhieuNhap dh = new PhieuNhap(0, 0, "2020-02-2", 0);
             ConnectDB conn = new ConnectDB();
             string query = "SELECT TOP 1 MaPN FROM PhieuNhap ORDER BY MaPN DESC";

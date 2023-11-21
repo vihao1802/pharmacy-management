@@ -17,6 +17,7 @@ using thuoc;
 using pharmacy_management.GUI.BanHang;
 using pharmacy_management.GUI.NhapHang;
 using pharmacy_management.GUI.Dash;
+using pharmacy_management.GUI.Thuoc;
 
 namespace pharmacy_management.GUI
 {
@@ -31,8 +32,8 @@ namespace pharmacy_management.GUI
         {
             InitializeComponent();
 
-            // nv = Login.nv;
-            // lbName.Text = nv.TenNV;
+             nv = Login.nv;
+             lbName.Text = nv.TenNV;
 
         }
 
@@ -276,6 +277,16 @@ namespace pharmacy_management.GUI
         private void kryptonLabel2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPN_Click(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new PhieuNhapFrm());
+        }
+
+        private void btnPill_Click(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new FormThuoc());
         }
     }
 

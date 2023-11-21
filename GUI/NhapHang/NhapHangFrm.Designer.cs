@@ -312,12 +312,12 @@
             // 
             this.container.AutoScroll = true;
             this.container.BackColor = System.Drawing.Color.White;
-            this.container.Location = new System.Drawing.Point(0, 60);
+            this.container.Location = new System.Drawing.Point(0, 66);
             this.container.Margin = new System.Windows.Forms.Padding(0);
             this.container.Name = "container";
             this.container.Padding = new System.Windows.Forms.Padding(15, 0, 0, 20);
             this.container.Size = new System.Drawing.Size(950, 550);
-            this.container.TabIndex = 9;
+            this.container.TabIndex = 0;
             // 
             // NhapHangFrm
             // 

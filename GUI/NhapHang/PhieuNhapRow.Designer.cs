@@ -50,6 +50,8 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(900, 80);
             this.panel1.TabIndex = 1;
+            this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
+            this.panel1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
             // 
             // btn_invoice_detail
             // 
@@ -87,6 +89,7 @@
             this.btn_invoice_detail.StateTracking.Border.Rounding = 50F;
             this.btn_invoice_detail.TabIndex = 18;
             this.btn_invoice_detail.Values.Text = "";
+            this.btn_invoice_detail.Click += new System.EventHandler(this.btn_invoice_detail_Click);
             // 
             // lbl_ThanhTien
             // 
@@ -116,7 +119,7 @@
             // 
             this.lbl_MaNV.AutoSize = true;
             this.lbl_MaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_MaNV.Location = new System.Drawing.Point(190, 29);
+            this.lbl_MaNV.Location = new System.Drawing.Point(230, 29);
             this.lbl_MaNV.Name = "lbl_MaNV";
             this.lbl_MaNV.Size = new System.Drawing.Size(21, 22);
             this.lbl_MaNV.TabIndex = 7;

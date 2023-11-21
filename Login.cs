@@ -63,9 +63,10 @@ namespace thuoc
         {
             if (e.KeyCode == Keys.Enter)
             {
-                kryptonButton1_Click((object)sender, e);
+                XulyDangNhap();
             }
         }
+
 
         private void txtuser_KeyPress(object sender, KeyPressEventArgs e)
         {

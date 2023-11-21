@@ -9,19 +9,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using thuoc;
 
 namespace pharmacy_management.GUI.NhapHang
 {
     public partial class ChiTietPhieuNhapFrm : Form
     {
+        public static NhanVien nv = new NhanVien();
         PhieuNhap pn;
         string formattedNumber = "";
         public ChiTietPhieuNhapFrm()
         {
             InitializeComponent();
+            nv = Login.nv;
         }
 
-        public void AddNewContent(DonHang pn_info)
+        public void AddNewContent(PhieuNhap pn_info)
         {
             pn = pn_info;
 
