@@ -37,10 +37,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_total_price = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.kryptonPalette2 = new Krypton.Toolkit.KryptonPalette(this.components);
-            this.lbName = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -123,6 +123,16 @@
             this.panel1.Size = new System.Drawing.Size(602, 50);
             this.panel1.TabIndex = 3;
             // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbName.Location = new System.Drawing.Point(116, 9);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(57, 20);
+            this.lbName.TabIndex = 8;
+            this.lbName.Text = "Name";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -197,16 +207,6 @@
             this.kryptonPalette2.HeaderStyles.HeaderForm.StateCommon.ButtonEdgeInset = 12;
             this.kryptonPalette2.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbName.Location = new System.Drawing.Point(116, 9);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(57, 20);
-            this.lbName.TabIndex = 8;
-            this.lbName.Text = "Name";
-            // 
             // LoHangFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -215,6 +215,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoHangFrm";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;

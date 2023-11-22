@@ -20,7 +20,6 @@ namespace thuoc
     public partial class Login : KryptonForm
     {
         public static NhanVien nv;
-        DangNhapDAO dao = new DangNhapDAO();
         DangNhapBUS bus = new DangNhapBUS();
         public Login()
         {
