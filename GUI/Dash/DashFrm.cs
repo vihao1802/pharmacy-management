@@ -38,26 +38,7 @@ namespace pharmacy_management.GUI.Dash
         }
 
 
-        private void chartcontrols()
-        {
-            revenues = new List<decimal>();
-            months = new List<string>();
-            tkbus.dtthang(revenues, months);
-            chart1.Size = new Size(600, 400); // set the chart size
-            chart1.Series.Add("Revenue"); // add a series
-            chart1.DataSource = revenues; // set the data source
-            chart1.Series["Revenue"].YValueMembers = "revenue"; // set the y-value member
-            chart1.Series["Revenue"].ChartType = SeriesChartType.Column; // set the chart type
-            chart1.ChartAreas.Add("ChartArea"); // add a chart area
-            chart1.ChartAreas["ChartArea"].AxisX.LabelStyle.Format = "MMM"; // set the x-axis label format
-            chart1.ChartAreas["ChartArea"].AxisX.IntervalType = DateTimeIntervalType.Months; // set the x-axis interval type
-            chart1.ChartAreas["ChartArea"].AxisX.Interval = 1; // set the x-axis interval
-            chart1.ChartAreas["ChartArea"].AxisX.CustomLabels.Clear(); // clear the default labels
-            for (int i = 0; i < months.Count; i++)
-            {
-                chart1.ChartAreas["ChartArea"].AxisX.CustomLabels.Add(i + 0.5, i + 1.5, months[i]); // add custom labels
-            }
-        }
+        
         private void timer_tick(object sender, EventArgs e)
         {
             counter++;

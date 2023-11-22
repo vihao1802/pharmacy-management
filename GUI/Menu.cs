@@ -32,43 +32,27 @@ namespace pharmacy_management.GUI
         {
             InitializeComponent();
 
+             DashFrm dashFrm = new DashFrm();
+            addFormtoPanelContainer(dashFrm );
              nv = Login.nv;
+            addControls();
              lbName.Text = nv.TenNV;
 
         }
-
-
-        //private void sidebarTimer_tick(object sender, EventArgs e)
-        //{
-        //    if (sidebarExpand)
-        //    {
-        //        Sidebar.Width -= 10;
-        //            if(Sidebar.Width == Sidebar.MinimumSize.Width)
-        //        {
-        //            sidebarExpand = false;
-        //            sidebarTimer.Stop();
-        //            dashboard1.Size = dashboard1.MinimumSize;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        Sidebar.Width += 10;
-        //        if(Sidebar.Width == Sidebar.MaximumSize.Width)
-        //        {
-        //            sidebarExpand = true;
-        //            sidebarTimer.Stop();
-        //            dashboard1.Size = dashboard1.MaximumSize;
-        //        }
-        //    }
-        //}
-        private void btnClose_MouseHover(object sender, EventArgs e)
+        private void addControls()
         {
+            if(nv.MaQuyen == 2)
+            {
+                btnStaff.Visible = false;
+                btnPill.Visible = false;
+                btnPN.Visible = false;
+                btnStorage.Visible = false;
+                btnVoucher.Visible = false;
+            }else if(nv.MaQuyen == 3)
+            {
+                btnCustomer.Visible = false;
 
-        }
-
-        private void btnClose_DragLeave(object sender, EventArgs e)
-        {
-
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -81,111 +65,10 @@ namespace pharmacy_management.GUI
 
         }
 
-        private void button1_MouseHover(object sender, EventArgs e)
-        {
-            KryptonButton button1 = (KryptonButton)sender;
-            changeHovercolor(button1);
-            button1.StateCommon.Back.Image = Properties.Resources.Sell_Contrast;
-
-        }
-
-        private void button1_MouseLeave(object sender, EventArgs e)
-        {
-            KryptonButton button1 = (KryptonButton)sender;
-            button1.BackColor = Color.FromArgb(255, 255, 255);
-            button1.ForeColor = Color.Black;
-            button1.StateCommon.Back.Image = Properties.Resources.Sell;
-        }
-
+     
         private void button3_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void changeHovercolor(KryptonButton b)
-        {
-            b.StateCommon.Back.Color1 = Color.FromArgb(0, 46, 191);
-            b.StateCommon.Back.Color2 = Color.FromArgb(0, 46, 191);
-        }
-        private void changeExitcolor(KryptonButton b)
-        {
-            b.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 255);
-            b.StateCommon.Back.Color2 = Color.White;
-        }
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            DashFrm dsh = new DashFrm();
-            addFormtoPanelContainer(dsh);
-        }
-
-        private void btnPill_MouseHover(object sender, EventArgs e)
-        {
-            KryptonButton b = (KryptonButton)sender;
-            changeHovercolor(b);
-            b.StateCommon.Back.Image = Properties.Resources.Pill_Contrast;
-        }
-
-        private void btnPill_MouseLeave(object sender, EventArgs e)
-        {
-            KryptonButton b = (KryptonButton)sender;
-            changeExitcolor(b);
-            b.StateCommon.Back.Image = Properties.Resources.Pill;
-        }
-
-        private void btnVoucher_MouseHover(object sender, EventArgs e)
-        {
-            KryptonButton b = (KryptonButton)sender;
-            changeHovercolor(b);
-            b.StateCommon.Back.Image = Properties.Resources.Voucher_Contrast;
-        }
-
-        private void btnVoucher_MouseLeave(object sender, EventArgs e)
-        {
-            KryptonButton b = (KryptonButton)sender;
-            changeExitcolor(b);
-            b.StateCommon.Back.Image = Properties.Resources.Voucher;
-        }
-
-        private void btnStaff_MouseHover(object sender, EventArgs e)
-        {
-            KryptonButton b = (KryptonButton)sender;
-            changeHovercolor(b);
-            b.StateCommon.Back.Image = Properties.Resources.Staff_Contrast;
-        }
-
-        private void btnStaff_MouseLeave(object sender, EventArgs e)
-        {
-            KryptonButton b = (KryptonButton)sender;
-            changeExitcolor(b);
-            b.StateCommon.Back.Image = Properties.Resources.Staff;
-        }
-
-        private void btnCustomer_MouseHover(object sender, EventArgs e)
-        {
-            KryptonButton b = (KryptonButton)sender;
-            changeHovercolor(b);
-            b.StateCommon.Back.Image = Properties.Resources.Crowd_Contrast;
-        }
-
-        private void btnCustomer_MouseLeave(object sender, EventArgs e)
-        {
-            KryptonButton b = (KryptonButton)sender;
-            changeExitcolor(b);
-            b.StateCommon.Back.Image = Properties.Resources.Crowd;
-        }
-
-        private void btnStorage_MouseHover(object sender, EventArgs e)
-        {
-            KryptonButton b = (KryptonButton)sender;
-            changeHovercolor(b);
-            b.StateCommon.Back.Image = Properties.Resources.Storage_Contrast;
-        }
-
-        private void btnStorage_MouseLeave(object sender, EventArgs e)
-        {
-            KryptonButton b = (KryptonButton)sender;
-            changeExitcolor(b);
-            b.StateCommon.Back.Image = Properties.Resources.Storage;
         }
 
         private void btnSell_Click(object sender, EventArgs e)
@@ -258,9 +141,7 @@ namespace pharmacy_management.GUI
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Login login = new Login();
-            login.Show();
+          
         }
 
         private void dashboard1_Load(object sender, EventArgs e)
@@ -287,6 +168,13 @@ namespace pharmacy_management.GUI
         private void btnPill_Click(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new FormThuoc());
+        }
+
+        private void kryptonLabel2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            Login login = new Login();
+            login.Show();
         }
     }
 

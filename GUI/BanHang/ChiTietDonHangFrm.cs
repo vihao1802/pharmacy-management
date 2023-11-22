@@ -1,4 +1,5 @@
-﻿using pharmacy_management.BUS;
+﻿using Krypton.Toolkit;
+using pharmacy_management.BUS;
 using pharmacy_management.DTO;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace pharmacy_management.GUI.BanHang
 {
-    public partial class ChiTietDonHangFrm : Form
+    public partial class ChiTietDonHangFrm : KryptonForm
     {
         DonHang dh;
         string formattedNumber = "";

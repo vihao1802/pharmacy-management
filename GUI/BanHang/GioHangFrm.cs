@@ -1,4 +1,5 @@
-﻿using pharmacy_management.BUS;
+﻿using Krypton.Toolkit;
+using pharmacy_management.BUS;
 using pharmacy_management.DTO;
 using System;
 using System.Collections;
@@ -14,7 +15,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace pharmacy_management.GUI.BanHang
 {
-    public partial class GioHangFrm : Form
+    public partial class GioHangFrm : KryptonForm
     {
         QuyDoiDiemBUS qdBUS = new QuyDoiDiemBUS();
         PhieuGiamGiaBUS pggBUS = new PhieuGiamGiaBUS();

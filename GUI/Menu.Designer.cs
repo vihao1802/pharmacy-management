@@ -77,12 +77,12 @@
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
             this.flowLayoutPanel1.Controls.Add(this.btnSell);
+            this.flowLayoutPanel1.Controls.Add(this.kryptonButton1);
+            this.flowLayoutPanel1.Controls.Add(this.btnStaff);
+            this.flowLayoutPanel1.Controls.Add(this.btnCustomer);
+            this.flowLayoutPanel1.Controls.Add(this.btnVoucher);
             this.flowLayoutPanel1.Controls.Add(this.btnPill);
             this.flowLayoutPanel1.Controls.Add(this.btnStorage);
-            this.flowLayoutPanel1.Controls.Add(this.btnCustomer);
-            this.flowLayoutPanel1.Controls.Add(this.btnStaff);
-            this.flowLayoutPanel1.Controls.Add(this.btnVoucher);
-            this.flowLayoutPanel1.Controls.Add(this.kryptonButton1);
             this.flowLayoutPanel1.Controls.Add(this.btnPN);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 60);
             this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(247, 500);
@@ -96,6 +96,8 @@
             this.btnSell.CornerRoundingRadius = 10F;
             this.btnSell.Location = new System.Drawing.Point(3, 3);
             this.btnSell.Name = "btnSell";
+            this.btnSell.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnSell.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
             this.btnSell.Size = new System.Drawing.Size(240, 56);
             this.btnSell.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnSell.StateCommon.Back.Color2 = System.Drawing.Color.White;
@@ -119,8 +121,10 @@
             // btnPill
             // 
             this.btnPill.CornerRoundingRadius = 10F;
-            this.btnPill.Location = new System.Drawing.Point(3, 65);
+            this.btnPill.Location = new System.Drawing.Point(3, 313);
             this.btnPill.Name = "btnPill";
+            this.btnPill.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnPill.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
             this.btnPill.Size = new System.Drawing.Size(240, 56);
             this.btnPill.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnPill.StateCommon.Back.Color2 = System.Drawing.Color.White;
@@ -131,17 +135,20 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnPill.StateCommon.Border.Rounding = 10F;
+            this.btnPill.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnPill.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnPill.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Pill_Contrast;
             this.btnPill.TabIndex = 8;
             this.btnPill.Values.Text = "Thuốc";
             this.btnPill.Click += new System.EventHandler(this.btnPill_Click);
-            this.btnPill.MouseLeave += new System.EventHandler(this.btnPill_MouseLeave);
-            this.btnPill.MouseHover += new System.EventHandler(this.btnPill_MouseHover);
             // 
             // btnStorage
             // 
             this.btnStorage.CornerRoundingRadius = 10F;
-            this.btnStorage.Location = new System.Drawing.Point(3, 127);
+            this.btnStorage.Location = new System.Drawing.Point(3, 375);
             this.btnStorage.Name = "btnStorage";
+            this.btnStorage.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnStorage.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
             this.btnStorage.Size = new System.Drawing.Size(240, 56);
             this.btnStorage.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnStorage.StateCommon.Back.Color2 = System.Drawing.Color.White;
@@ -151,17 +158,20 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnStorage.StateCommon.Border.Rounding = 10F;
+            this.btnStorage.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnStorage.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnStorage.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Storage_Contrast;
             this.btnStorage.TabIndex = 12;
             this.btnStorage.Values.Text = "Kho";
             this.btnStorage.Click += new System.EventHandler(this.btnStorage_Click);
-            this.btnStorage.MouseLeave += new System.EventHandler(this.btnStorage_MouseLeave);
-            this.btnStorage.MouseHover += new System.EventHandler(this.btnStorage_MouseHover);
             // 
             // btnCustomer
             // 
             this.btnCustomer.CornerRoundingRadius = 10F;
             this.btnCustomer.Location = new System.Drawing.Point(3, 189);
             this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnCustomer.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
             this.btnCustomer.Size = new System.Drawing.Size(240, 56);
             this.btnCustomer.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnCustomer.StateCommon.Back.Color2 = System.Drawing.Color.White;
@@ -171,16 +181,20 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnCustomer.StateCommon.Border.Rounding = 10F;
+            this.btnCustomer.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnCustomer.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnCustomer.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Crowd_Contrast;
             this.btnCustomer.TabIndex = 11;
             this.btnCustomer.Values.Text = "Khách hàng";
-            this.btnCustomer.MouseLeave += new System.EventHandler(this.btnCustomer_MouseLeave);
-            this.btnCustomer.MouseHover += new System.EventHandler(this.btnCustomer_MouseHover);
+    
             // 
             // btnStaff
             // 
             this.btnStaff.CornerRoundingRadius = 10F;
-            this.btnStaff.Location = new System.Drawing.Point(3, 251);
+            this.btnStaff.Location = new System.Drawing.Point(3, 127);
             this.btnStaff.Name = "btnStaff";
+            this.btnStaff.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnStaff.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
             this.btnStaff.Size = new System.Drawing.Size(240, 56);
             this.btnStaff.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnStaff.StateCommon.Back.Color2 = System.Drawing.Color.White;
@@ -190,16 +204,19 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnStaff.StateCommon.Border.Rounding = 10F;
+            this.btnStaff.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnStaff.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnStaff.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Staff_Contrast;
             this.btnStaff.TabIndex = 10;
             this.btnStaff.Values.Text = "Nhân viên";
-            this.btnStaff.MouseLeave += new System.EventHandler(this.btnStaff_MouseLeave);
-            this.btnStaff.MouseHover += new System.EventHandler(this.btnStaff_MouseHover);
             // 
             // btnVoucher
             // 
             this.btnVoucher.CornerRoundingRadius = 10F;
-            this.btnVoucher.Location = new System.Drawing.Point(3, 313);
+            this.btnVoucher.Location = new System.Drawing.Point(3, 251);
             this.btnVoucher.Name = "btnVoucher";
+            this.btnVoucher.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnVoucher.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
             this.btnVoucher.Size = new System.Drawing.Size(240, 56);
             this.btnVoucher.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnVoucher.StateCommon.Back.Color2 = System.Drawing.Color.White;
@@ -209,25 +226,31 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnVoucher.StateCommon.Border.Rounding = 10F;
+            this.btnVoucher.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnVoucher.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnVoucher.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Voucher_Contrast;
             this.btnVoucher.TabIndex = 9;
             this.btnVoucher.Values.Text = "Khuyến mãi";
-            this.btnVoucher.MouseLeave += new System.EventHandler(this.btnVoucher_MouseLeave);
-            this.btnVoucher.MouseHover += new System.EventHandler(this.btnVoucher_MouseHover);
             // 
             // kryptonButton1
             // 
             this.kryptonButton1.CornerRoundingRadius = 10F;
-            this.kryptonButton1.Location = new System.Drawing.Point(3, 375);
+            this.kryptonButton1.Location = new System.Drawing.Point(3, 65);
             this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonButton1.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
             this.kryptonButton1.Size = new System.Drawing.Size(240, 56);
             this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonButton1.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.Voucher;
+            this.kryptonButton1.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.Purchase_Order;
             this.kryptonButton1.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
             this.kryptonButton1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton1.StateCommon.Border.Rounding = 10F;
+            this.kryptonButton1.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.kryptonButton1.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.kryptonButton1.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Purchase_Order___Contrast;
             this.kryptonButton1.TabIndex = 13;
             this.kryptonButton1.Values.Text = "Đơn hàng";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
@@ -237,15 +260,20 @@
             this.btnPN.CornerRoundingRadius = 10F;
             this.btnPN.Location = new System.Drawing.Point(3, 437);
             this.btnPN.Name = "btnPN";
+            this.btnPN.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnPN.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
             this.btnPN.Size = new System.Drawing.Size(240, 56);
             this.btnPN.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnPN.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btnPN.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.Storage;
+            this.btnPN.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.Import;
             this.btnPN.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
             this.btnPN.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnPN.StateCommon.Border.Rounding = 10F;
+            this.btnPN.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnPN.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnPN.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Import___Contrast;
             this.btnPN.TabIndex = 14;
             this.btnPN.Values.Text = "Phiếu nhập";
             this.btnPN.Click += new System.EventHandler(this.btnPN_Click);
@@ -259,7 +287,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // PnProfile
             // 
@@ -284,6 +311,7 @@
             this.kryptonLabel2.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonLabel2.TabIndex = 3;
             this.kryptonLabel2.Values.Text = "Đăng xuất";
+            this.kryptonLabel2.Click += new System.EventHandler(this.kryptonLabel2_Click_1);
             // 
             // Avatar
             // 
@@ -358,16 +386,16 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette2.ButtonStyles.ButtonFormClose.StateTracking.Border.Width = 0;
-            this.kryptonPalette2.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.kryptonPalette2.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.kryptonPalette2.FormStyles.FormMain.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.kryptonPalette2.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonPalette2.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.kryptonPalette2.FormStyles.FormMain.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.kryptonPalette2.FormStyles.FormMain.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette2.FormStyles.FormMain.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
             this.kryptonPalette2.FormStyles.FormMain.StateCommon.Border.Rounding = 16F;
-            this.kryptonPalette2.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
-            this.kryptonPalette2.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.SystemColors.Control;
+            this.kryptonPalette2.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonPalette2.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonPalette2.HeaderStyles.HeaderForm.StateCommon.ButtonEdgeInset = 12;
             this.kryptonPalette2.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             this.kryptonPalette2.PalettePaint += new System.EventHandler<Krypton.Toolkit.PaletteLayoutEventArgs>(this.kryptonPalette2_PalettePaint);

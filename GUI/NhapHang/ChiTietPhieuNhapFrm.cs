@@ -1,4 +1,5 @@
-﻿using pharmacy_management.BUS;
+﻿using Krypton.Toolkit;
+using pharmacy_management.BUS;
 using pharmacy_management.DTO;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ using thuoc;
 
 namespace pharmacy_management.GUI.NhapHang
 {
-    public partial class ChiTietPhieuNhapFrm : Form
+    public partial class ChiTietPhieuNhapFrm : KryptonForm
     {
         public static NhanVien nv = new NhanVien();
         PhieuNhap pn;
