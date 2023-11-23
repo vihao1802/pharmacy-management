@@ -54,13 +54,13 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(550, 110);
+            this.panel1.Size = new System.Drawing.Size(530, 110);
             this.panel1.TabIndex = 0;
             // 
             // btn_increase
             // 
             this.btn_increase.CornerRoundingRadius = 5F;
-            this.btn_increase.Location = new System.Drawing.Point(373, 44);
+            this.btn_increase.Location = new System.Drawing.Point(343, 32);
             this.btn_increase.Name = "btn_increase";
             this.btn_increase.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(132)))), ((int)(((byte)(131)))));
             this.btn_increase.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(132)))), ((int)(((byte)(131)))));
@@ -97,7 +97,7 @@
             // btn_decrease
             // 
             this.btn_decrease.CornerRoundingRadius = 5F;
-            this.btn_decrease.Location = new System.Drawing.Point(273, 44);
+            this.btn_decrease.Location = new System.Drawing.Point(343, 63);
             this.btn_decrease.Name = "btn_decrease";
             this.btn_decrease.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(132)))), ((int)(((byte)(131)))));
             this.btn_decrease.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(132)))), ((int)(((byte)(131)))));
@@ -135,7 +135,7 @@
             // 
             this.lbl_prod_price_cart.AutoSize = true;
             this.lbl_prod_price_cart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_prod_price_cart.Location = new System.Drawing.Point(442, 44);
+            this.lbl_prod_price_cart.Location = new System.Drawing.Point(407, 44);
             this.lbl_prod_price_cart.Name = "lbl_prod_price_cart";
             this.lbl_prod_price_cart.Size = new System.Drawing.Size(90, 22);
             this.lbl_prod_price_cart.TabIndex = 3;
@@ -145,7 +145,7 @@
             // 
             this.lbl_prod_quantity_cart.AutoSize = true;
             this.lbl_prod_quantity_cart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_prod_quantity_cart.Location = new System.Drawing.Point(331, 44);
+            this.lbl_prod_quantity_cart.Location = new System.Drawing.Point(284, 44);
             this.lbl_prod_quantity_cart.Name = "lbl_prod_quantity_cart";
             this.lbl_prod_quantity_cart.Size = new System.Drawing.Size(20, 22);
             this.lbl_prod_quantity_cart.TabIndex = 2;
@@ -180,7 +180,7 @@
             this.btn_remove_item.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_remove_item.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_remove_item.Image = global::pharmacy_management.Properties.Resources.icons8_close_24;
-            this.btn_remove_item.Location = new System.Drawing.Point(550, 0);
+            this.btn_remove_item.Location = new System.Drawing.Point(530, 0);
             this.btn_remove_item.Name = "btn_remove_item";
             this.btn_remove_item.Size = new System.Drawing.Size(50, 110);
             this.btn_remove_item.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -198,7 +198,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.Name = "SanPhamGioHang";
-            this.Size = new System.Drawing.Size(600, 110);
+            this.Size = new System.Drawing.Size(580, 110);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picb_image_cart)).EndInit();

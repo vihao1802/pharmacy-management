@@ -39,6 +39,24 @@
     <Reference Include="Krypton.Toolkit, Version=70.22.11.312, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <HintPath>packages\Krypton.Toolkit.70.22.11.312\lib\net472\Krypton.Toolkit.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -115,11 +133,29 @@
     <Compile Include="GUI\BanHang\BanHangFrm.Designer.cs">
       <DependentUpon>BanHangFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\BanHang\ChiTietDonHangFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\BanHang\ChiTietDonHangFrm.Designer.cs">
+      <DependentUpon>ChiTietDonHangFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\BanHang\ChiTietSanPhamFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\BanHang\ChiTietSanPhamFrm.Designer.cs">
       <DependentUpon>ChiTietSanPhamFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\BanHang\DonHangFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\BanHang\DonHangFrm.Designer.cs">
+      <DependentUpon>DonHangFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\BanHang\DonHangRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\BanHang\DonHangRow.Designer.cs">
+      <DependentUpon>DonHangRow.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\BanHang\GioHangFrm.cs">
       <SubType>Form</SubType>
@@ -145,6 +181,12 @@
     <Compile Include="GUI\Dash\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Dash\DashFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dash\DashFrm.Designer.cs">
+      <DependentUpon>DashFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Dash\ThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -156,6 +198,12 @@
     </Compile>
     <Compile Include="GUI\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhapHang\ChiTietPhieuNhapFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhapHang\ChiTietPhieuNhapFrm.Designer.cs">
+      <DependentUpon>ChiTietPhieuNhapFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\NhapHang\LoHangFrm.cs">
       <SubType>Form</SubType>
@@ -174,6 +222,24 @@
     </Compile>
     <Compile Include="GUI\BanHang\SanPhamGioHang.Designer.cs">
       <DependentUpon>SanPhamGioHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhapHang\NhapHangFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhapHang\NhapHangFrm.Designer.cs">
+      <DependentUpon>NhapHangFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhapHang\PhieuNhapFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhapHang\PhieuNhapFrm.Designer.cs">
+      <DependentUpon>PhieuNhapFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhapHang\PhieuNhapRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\NhapHang\PhieuNhapRow.Designer.cs">
+      <DependentUpon>PhieuNhapRow.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\NhapHang\SPLohang.cs">
       <SubType>UserControl</SubType>
@@ -201,14 +267,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\BanHang\BanHangFrm.resx">
       <DependentUpon>BanHangFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BanHang\ChiTietDonHangFrm.resx">
+      <DependentUpon>ChiTietDonHangFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\BanHang\ChiTietSanPhamFrm.resx">
       <DependentUpon>ChiTietSanPhamFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BanHang\DonHangFrm.resx">
+      <DependentUpon>DonHangFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BanHang\DonHangRow.resx">
+      <DependentUpon>DonHangRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\BanHang\GioHangFrm.resx">
       <DependentUpon>GioHangFrm.cs</DependentUpon>
@@ -222,11 +298,17 @@
     <EmbeddedResource Include="GUI\Dash\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dash\DashFrm.resx">
+      <DependentUpon>DashFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Dash\ThongKe.resx">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhapHang\ChiTietPhieuNhapFrm.resx">
+      <DependentUpon>ChiTietPhieuNhapFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhapHang\LoHangFrm.resx">
       <DependentUpon>LoHangFrm.cs</DependentUpon>
@@ -236,6 +318,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\BanHang\SanPhamGioHang.resx">
       <DependentUpon>SanPhamGioHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhapHang\NhapHangFrm.resx">
+      <DependentUpon>NhapHangFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhapHang\PhieuNhapFrm.resx">
+      <DependentUpon>PhieuNhapFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhapHang\PhieuNhapRow.resx">
+      <DependentUpon>PhieuNhapRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhapHang\SPLohang.resx">
       <DependentUpon>SPLohang.cs</DependentUpon>
@@ -309,6 +400,31 @@
     <Content Include="Images\Subtract.png" />
     <Content Include="Images\Voucher-Contrast.png" />
     <Content Include="Images\Voucher.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Purchase Order.png" />
+    <None Include="Resources\Purchase Order - Contrast.png" />
+    <None Include="Resources\Import.png" />
+    <None Include="Resources\Import - Contrast.png" />
+    <None Include="Resources\icons8-refresh-24.png" />
+    <None Include="Resources\icons8-down-24_white.png" />
+    <None Include="Resources\icons8-down-24.png" />
+    <None Include="Resources\icons8-search-30.png" />
+    <None Include="Resources\icons8-ellipsis-30_white.png" />
+    <None Include="Resources\icons8-ellipsis-30_gray.png" />
+    <None Include="Resources\icons8-cart-30_gray.png" />
+    <None Include="Resources\icons8-cart-30._graypng.png" />
     <None Include="Resources\Pill-Contrast.png" />
     <None Include="Resources\Pill.png" />
     <None Include="Resources\Pharmacy.png" />
@@ -529,9 +645,7 @@
   <ItemGroup>
     <None Include="Resources\icons8-close-24.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUI\Components\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\icons8-close-24_white.png" />
   </ItemGroup>

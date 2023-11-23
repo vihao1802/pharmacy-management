@@ -84,36 +84,36 @@ namespace pharmacy_management.GUI.BanHang
             // 
             // btn_show_cart
             // 
-      //          this.btn_show_cart.CornerRoundingRadius = 5;
+            this.btn_show_cart.CornerRoundingRadius = 5F;
             this.btn_show_cart.Location = new System.Drawing.Point(814, 28);
             this.btn_show_cart.Name = "btn_show_cart";
             this.btn_show_cart.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btn_show_cart.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_show_cart.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_show_cart.OverrideDefault.Border.Rounding = 5;
+            this.btn_show_cart.OverrideDefault.Border.Rounding = 5F;
             this.btn_show_cart.Size = new System.Drawing.Size(124, 28);
             this.btn_show_cart.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btn_show_cart.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_show_cart.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_show_cart.StateCommon.Border.Rounding = 5;
+            this.btn_show_cart.StateCommon.Border.Rounding = 5F;
             this.btn_show_cart.StateCommon.Border.Width = 2;
             this.btn_show_cart.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btn_show_cart.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.btn_show_cart.StateTracking.Back.Color2 = System.Drawing.Color.White;
             this.btn_show_cart.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btn_show_cart.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_show_cart.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_show_cart.StateTracking.Border.Rounding = 5;
+            this.btn_show_cart.StateTracking.Border.Rounding = 5F;
             this.btn_show_cart.StateTracking.Border.Width = 2;
             this.btn_show_cart.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.TabIndex = 9;
@@ -125,15 +125,14 @@ namespace pharmacy_management.GUI.BanHang
             this.cb_DoiTuong.CornerRoundingRadius = 5F;
             this.cb_DoiTuong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_DoiTuong.DropDownWidth = 121;
-            //this.cb_DoiTuong.IntegralHeight = false;
+            this.cb_DoiTuong.IntegralHeight = false;
             this.cb_DoiTuong.Location = new System.Drawing.Point(414, 28);
             this.cb_DoiTuong.Name = "cb_DoiTuong";
             this.cb_DoiTuong.Size = new System.Drawing.Size(150, 29);
-            this.cb_DoiTuong.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.cb_DoiTuong.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.cb_DoiTuong.StateCommon.ComboBox.Border.Rounding = 5;
-            //this.cb_DoiTuong.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.cb_DoiTuong.StateCommon.ComboBox.Border.Rounding = 5F;
             this.cb_DoiTuong.TabIndex = 8;
             // 
             // kryptonLabel1
@@ -158,10 +157,10 @@ namespace pharmacy_management.GUI.BanHang
             this.txt_searching.Multiline = false;
             this.txt_searching.Name = "txt_searching";
             this.txt_searching.Size = new System.Drawing.Size(300, 40);
-            this.txt_searching.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.txt_searching.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txt_searching.StateCommon.Border.Rounding = 5;
+            this.txt_searching.StateCommon.Border.Rounding = 5F;
             this.txt_searching.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 5, 10, -1);
             this.txt_searching.TabIndex = 5;
             this.txt_searching.Text = "";
@@ -172,15 +171,14 @@ namespace pharmacy_management.GUI.BanHang
             this.cb_XuatXu.CornerRoundingRadius = 5F;
             this.cb_XuatXu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_XuatXu.DropDownWidth = 121;
-           // this.cb_XuatXu.IntegralHeight = false;
+            this.cb_XuatXu.IntegralHeight = false;
             this.cb_XuatXu.Location = new System.Drawing.Point(649, 28);
             this.cb_XuatXu.Name = "cb_XuatXu";
             this.cb_XuatXu.Size = new System.Drawing.Size(136, 29);
-            this.cb_XuatXu.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.cb_XuatXu.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.cb_XuatXu.StateCommon.ComboBox.Border.Rounding = 5;
-            //this.cb_XuatXu.StateCommon.ComboBox.Content.Text = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.cb_XuatXu.StateCommon.ComboBox.Border.Rounding = 5F;
             this.cb_XuatXu.TabIndex = 2;
             // 
             // kryptonPanel2
@@ -209,30 +207,30 @@ namespace pharmacy_management.GUI.BanHang
             this.btn_search_page.Name = "btn_search_page";
             this.btn_search_page.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_search_page.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btn_search_page.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_search_page.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_search_page.OverrideDefault.Border.Rounding = 3;
+            this.btn_search_page.OverrideDefault.Border.Rounding = 3F;
             this.btn_search_page.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btn_search_page.Size = new System.Drawing.Size(90, 25);
             this.btn_search_page.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_search_page.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_search_page.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_search_page.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btn_search_page.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_search_page.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_search_page.StateCommon.Border.Rounding = 3;
+            this.btn_search_page.StateCommon.Border.Rounding = 3F;
             this.btn_search_page.StateCommon.Border.Width = 2;
             this.btn_search_page.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btn_search_page.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.btn_search_page.StateTracking.Back.Color2 = System.Drawing.Color.White;
             this.btn_search_page.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_search_page.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btn_search_page.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.btn_search_page.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_search_page.StateTracking.Border.Rounding = 3;
+            this.btn_search_page.StateTracking.Border.Rounding = 3F;
             this.btn_search_page.StateTracking.Border.Width = 2;
             this.btn_search_page.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_search_page.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
@@ -246,8 +244,8 @@ namespace pharmacy_management.GUI.BanHang
             this.txt_page_value.Name = "txt_page_value";
             this.txt_page_value.Size = new System.Drawing.Size(100, 27);
             this.txt_page_value.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.txt_page_value.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.txt_page_value.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txt_page_value.TabIndex = 7;
             // 
@@ -324,7 +322,7 @@ namespace pharmacy_management.GUI.BanHang
             this.label1.TabIndex = 0;
             this.label1.Text = "Tổng số trang :";
             // 
-            // BanHang
+            // BanHangFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -336,7 +334,7 @@ namespace pharmacy_management.GUI.BanHang
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "BanHang";
+            this.Name = "BanHangFrm";
             this.Text = "BanHang";
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);

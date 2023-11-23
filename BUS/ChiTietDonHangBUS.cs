@@ -16,7 +16,7 @@ namespace pharmacy_management.BUS
         public ChiTietDonHangBUS()
         {
             dao = new ChiTietDonHangDAO();
-            loadList();
+            //loadList();
         }
 
         public ArrayList getList()
@@ -26,6 +26,16 @@ namespace pharmacy_management.BUS
         public void loadList()
         {
             list = dao.GetALl();
+        }
+
+        public void addNewDetailInvoice(int maDH, int maThuoc, int soLuong, float gia, float thanhTien)
+        {
+            dao.addNewDetailInvoice(maDH, maThuoc, soLuong, gia, thanhTien);
+        }
+
+        public ArrayList getListWithID(int ma)
+        {
+            return dao.getListWithID(ma);
         }
     }
 }

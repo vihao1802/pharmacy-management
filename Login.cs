@@ -20,7 +20,6 @@ namespace thuoc
     public partial class Login : KryptonForm
     {
         public static NhanVien nv;
-        DangNhapDAO dao = new DangNhapDAO();
         DangNhapBUS bus = new DangNhapBUS();
         public Login()
         {
@@ -63,9 +62,10 @@ namespace thuoc
         {
             if (e.KeyCode == Keys.Enter)
             {
-                kryptonButton1_Click((object)sender, e);
+                XulyDangNhap();
             }
         }
+
 
         private void txtuser_KeyPress(object sender, KeyPressEventArgs e)
         {

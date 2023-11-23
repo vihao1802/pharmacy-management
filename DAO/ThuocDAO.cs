@@ -116,45 +116,6 @@ namespace pharmacy_management.DAO
             SqlDataReader reader = conn.Execute(query);
             try
             {
-                /*if (text_searching == "")
-                {
-                    while (reader.Read())
-                    {
-                        Thuoc tmp = new Thuoc(
-                            Int32.Parse(reader["MaThuoc"].ToString()),
-                            reader["TenThuoc"].ToString(),
-                            Int32.Parse(reader["MaDoiTuong"].ToString()),
-                            float.Parse(reader["GiaThuoc"].ToString()),
-                            reader["AnhThuoc"].ToString(),
-                            Int32.Parse(reader["TrangThai"].ToString()),
-                            Int32.Parse(reader["MaXuatXu"].ToString()),
-                            Int32.Parse(reader["SoLuong"].ToString())
-                        );
-                        arrayList.Add(tmp);
-
-                    }
-                }
-                else
-                {
-                    while (reader.Read())
-                    {
-                        if (reader["TenThuoc"].ToString().Contains(text_searching))
-                        {
-                            Thuoc tmp = new Thuoc(
-                                Int32.Parse(reader["MaThuoc"].ToString()),
-                                reader["TenThuoc"].ToString(),
-                                Int32.Parse(reader["MaDoiTuong"].ToString()),
-                                float.Parse(reader["GiaThuoc"].ToString()),
-                                reader["AnhThuoc"].ToString(),
-                                Int32.Parse(reader["TrangThai"].ToString()),
-                                Int32.Parse(reader["MaXuatXu"].ToString()),
-                                Int32.Parse(reader["SoLuong"].ToString())
-                            );
-                            arrayList.Add(tmp);
-                        }
-
-                    }
-                }*/
                 while (reader.Read())
                 {
                     Thuoc tmp = new Thuoc(
@@ -248,49 +209,6 @@ namespace pharmacy_management.DAO
             SqlDataReader reader = conn.Execute(query);
             try
             {
-                /*if (text_searching == "")
-                {
-                    while (reader.Read())
-                    {
-                        Thuoc tmp = new Thuoc(
-                            Int32.Parse(reader["MaThuoc"].ToString()),
-                            reader["TenThuoc"].ToString(),
-                            Int32.Parse(reader["MaDoiTuong"].ToString()),
-                            float.Parse(reader["GiaThuoc"].ToString()),
-                            reader["AnhThuoc"].ToString(),
-                            Int32.Parse(reader["TrangThai"].ToString()),
-                            Int32.Parse(reader["MaXuatXu"].ToString()),
-                            Int32.Parse(reader["SoLuong"].ToString())
-                        );
-
-                        arrayList.Add(tmp);
-
-                    }
-                }
-                else
-                {
-                    while (reader.Read())
-                    {
-                        Console.WriteLine(reader["TenThuoc"].ToString());
-                        if (reader["TenThuoc"].ToString().ToLower().Contains(text_searching.ToLower()))
-                        {
-                            Thuoc tmp = new Thuoc(
-                                Int32.Parse(reader["MaThuoc"].ToString()),
-                                reader["TenThuoc"].ToString(),
-                                Int32.Parse(reader["MaDoiTuong"].ToString()),
-                                float.Parse(reader["GiaThuoc"].ToString()),
-                                reader["AnhThuoc"].ToString(),
-                                Int32.Parse(reader["TrangThai"].ToString()),
-                                Int32.Parse(reader["MaXuatXu"].ToString()),
-                                Int32.Parse(reader["SoLuong"].ToString())
-                            );
-                            //Console.WriteLine("at query result: " + tmp.TenThuoc);
-
-                            arrayList.Add(tmp);
-                        }
-
-                    }
-                }*/
                 while (reader.Read())
                 {
                     Thuoc tmp = new Thuoc(
@@ -316,6 +234,53 @@ namespace pharmacy_management.DAO
 
             return arrayList;
 
+        }
+
+        public void updateQuantity(int ma, int sl)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("UPDATE thuoc SET SoLuong = SoLuong - {0} WHERE MaThuoc = '{1}'", sl, ma);
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
+        }
+        public void addQuantity(int ma, int sl)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("UPDATE thuoc SET SoLuong = SoLuong + {0} WHERE MaThuoc = '{1}'", sl, ma);
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
+        }
+
+        public DTO.Thuoc getItem(int ma)
+        {
+            DTO.Thuoc t = new DTO.Thuoc(0, "", 0, 0, "", 0, 0, 0);
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("SELECT * FROM thuoc WHERE MaThuoc = '{0}'", ma);
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                if (reader.Read())
+                {
+                    t = new Thuoc(
+                        Int32.Parse(reader["MaThuoc"].ToString()),
+                        reader["TenThuoc"].ToString(),
+                        Int32.Parse(reader["MaDoiTuong"].ToString()),
+                        float.Parse(reader["GiaThuoc"].ToString()),
+                        reader["AnhThuoc"].ToString(),
+                        Int32.Parse(reader["TrangThai"].ToString()),
+                        Int32.Parse(reader["MaXuatXu"].ToString()),
+                        Int32.Parse(reader["SoLuong"].ToString())
+                    );
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+                Console.WriteLine("An error at ThuocDAO: " + ex.Message);
+            }
+            return t;
         }
     }
 }

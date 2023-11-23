@@ -15,7 +15,7 @@ using pharmacy_management.GUI.BanHang;
 
 namespace pharmacy_management.GUI.NhapHang
 {
-  
+
     public partial class NhapHang : UserControl
     {
         private ArrayList listthuoc;
@@ -64,7 +64,7 @@ namespace pharmacy_management.GUI.NhapHang
         }
         private void NhapHang_Load(object sender, EventArgs e)
         {
-       
+
         }
         public void setEmpty()
         {
@@ -124,7 +124,7 @@ namespace pharmacy_management.GUI.NhapHang
             {
                 Console.WriteLine(t.MaThuoc);
 
-                spGUI = new SPNhaphang(this);
+              //  spGUI = new SPNhaphang(this);
                 spGUI.AddNewContent(t);
                 this.container.Controls.Add(spGUI);
                 count++;

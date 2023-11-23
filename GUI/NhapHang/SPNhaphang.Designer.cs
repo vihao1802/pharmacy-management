@@ -34,6 +34,8 @@
             this.lbl_item_price = new Krypton.Toolkit.KryptonLabel();
             this.lbl_item_name = new Krypton.Toolkit.KryptonLabel();
             this.picb_item = new System.Windows.Forms.PictureBox();
+            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
+            this.txtsl = new Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picb_item)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,7 +122,7 @@
             // 
             // lbl_item_name
             // 
-            this.lbl_item_name.Location = new System.Drawing.Point(12, 215);
+            this.lbl_item_name.Location = new System.Drawing.Point(12, 222);
             this.lbl_item_name.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_item_name.MaximumSize = new System.Drawing.Size(200, 0);
             this.lbl_item_name.Name = "lbl_item_name";
@@ -135,24 +137,45 @@
             this.picb_item.Dock = System.Windows.Forms.DockStyle.Top;
             this.picb_item.ErrorImage = null;
             this.picb_item.Image = ((System.Drawing.Image)(resources.GetObject("picb_item.Image")));
-            this.picb_item.Location = new System.Drawing.Point(0, 0);
+            this.picb_item.Location = new System.Drawing.Point(0, 7);
             this.picb_item.Name = "picb_item";
             this.picb_item.Size = new System.Drawing.Size(225, 205);
             this.picb_item.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picb_item.TabIndex = 10;
             this.picb_item.TabStop = false;
             // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(166, 249);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(30, 24);
+            this.kryptonLabel1.TabIndex = 15;
+            this.kryptonLabel1.Values.Text = "SL:";
+            // 
+            // txtsl
+            // 
+            this.txtsl.Location = new System.Drawing.Point(193, 249);
+            this.txtsl.Name = "txtsl";
+            this.txtsl.Size = new System.Drawing.Size(20, 24);
+            this.txtsl.TabIndex = 16;
+            this.txtsl.Values.Text = "0";
+            // 
             // SPNhaphang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtsl);
+            this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.btn_item_detail);
             this.Controls.Add(this.btn_add_cart);
             this.Controls.Add(this.lbl_item_price);
             this.Controls.Add(this.lbl_item_name);
             this.Controls.Add(this.picb_item);
+            this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
             this.Name = "SPNhaphang";
-            this.Size = new System.Drawing.Size(225, 323);
+            this.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
+            this.Size = new System.Drawing.Size(225, 330);
             ((System.ComponentModel.ISupportInitialize)(this.picb_item)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -166,5 +189,7 @@
         private Krypton.Toolkit.KryptonLabel lbl_item_price;
         private Krypton.Toolkit.KryptonLabel lbl_item_name;
         private System.Windows.Forms.PictureBox picb_item;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private Krypton.Toolkit.KryptonLabel txtsl;
     }
 }
