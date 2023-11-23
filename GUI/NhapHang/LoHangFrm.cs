@@ -24,10 +24,10 @@ namespace pharmacy_management.GUI.NhapHang
             InitializeComponent();
             setup();
         }
-      
+
         public void setup()
         {
-            
+
         }
 
         private void btn_pay_Click(object sender, EventArgs e)
@@ -37,34 +37,34 @@ namespace pharmacy_management.GUI.NhapHang
                 MessageBox.Show("Bạn chưa có sản phẩm nào");
                 return;
             }
-           
+
 
             string selectedText;
             string[] arr;
 
-         // //  selectedText = dropBtn_KH.Text;
-         ////   arr = selectedText.Split('_');
-         ////   string maKH = arr[0];
+            // //  selectedText = dropBtn_KH.Text;
+            ////   arr = selectedText.Split('_');
+            ////   string maKH = arr[0];
 
-         //  // selectedText = dropBtn_PG.Text;
-         //   string maQD;
-         //   if (selectedText == "Chọn phiếu giảm")
-         //   {
-         //       maQD = "null";
-         //   }
-         //   else
-         //   {
-         //       arr = selectedText.Split('_');
-         //       maQD = arr[0];
-         //   }
+            //  // selectedText = dropBtn_PG.Text;
+            //   string maQD;
+            //   if (selectedText == "Chọn phiếu giảm")
+            //   {
+            //       maQD = "null";
+            //   }
+            //   else
+            //   {
+            //       arr = selectedText.Split('_');
+            //       maQD = arr[0];
+            //   }
 
             DateTime currentDate = DateTime.Now;
             string formattedDate = currentDate.ToString("yyyy-MM-dd");
 
             Console.WriteLine("MaNV: " + "2" +
-              //  "\nMaKH: " + maKH +
+                //  "\nMaKH: " + maKH +
                 "\nNgayLap: " + formattedDate +
-              //  "\nMaQDD: " + maQD +
+                //  "\nMaQDD: " + maQD +
                 "\nTongGia: " + lbl_total_price.Text.Replace(" đ", "").Replace(",", "") +
                 "\nThanhTien" + lbl_final_total_price.Text.Replace(" đ", "").Replace(",", ""));
         }
@@ -160,7 +160,7 @@ namespace pharmacy_management.GUI.NhapHang
                 maQD = Int32.Parse(arr[0]);
             }
 
-            foreach (QuyDoiDiem qd in qdBUS.getList())
+            foreach (DTO.QuyDoiDiem qd in qdBUS.getList())
             {
                 if (maQD == qd.MaQuyDoi)
                 {
@@ -175,7 +175,7 @@ namespace pharmacy_management.GUI.NhapHang
             AddCart();
         }
 
-      
+
 
     }
 }

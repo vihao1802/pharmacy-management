@@ -13,6 +13,7 @@ namespace pharmacy_management.DTO
         private int diemTichLuy;
         private int diemDaSuDung;
 
+        public DiemKhachHang() { }
         public DiemKhachHang(int maBangDiem, int maKH, int diemTichLuy, int diemDaSuDung)
         {
             this.MaBangDiem = maBangDiem;

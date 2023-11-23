@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_bonus = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.lbl_discount = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_pay = new System.Windows.Forms.Button();
@@ -40,8 +42,8 @@
             this.dropBtn_KH = new Krypton.Toolkit.KryptonComboBox();
             this.dropBtn_PG = new Krypton.Toolkit.KryptonComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbl_bonus = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_DiemHienCo = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dropBtn_KH)).BeginInit();
@@ -65,6 +67,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(602, 80);
             this.panel2.TabIndex = 1;
+            // 
+            // lbl_bonus
+            // 
+            this.lbl_bonus.AutoSize = true;
+            this.lbl_bonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_bonus.Location = new System.Drawing.Point(426, 45);
+            this.lbl_bonus.Name = "lbl_bonus";
+            this.lbl_bonus.Size = new System.Drawing.Size(35, 25);
+            this.lbl_bonus.TabIndex = 8;
+            this.lbl_bonus.Text = "+0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(352, 47);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 22);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Điểm :";
             // 
             // lbl_discount
             // 
@@ -142,12 +164,14 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbl_DiemHienCo);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dropBtn_KH);
             this.panel1.Controls.Add(this.dropBtn_PG);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(602, 50);
+            this.panel1.Size = new System.Drawing.Size(602, 83);
             this.panel1.TabIndex = 0;
             // 
             // dropBtn_KH
@@ -155,9 +179,9 @@
             this.dropBtn_KH.CornerRoundingRadius = 5F;
             this.dropBtn_KH.DropDownWidth = 121;
             this.dropBtn_KH.IntegralHeight = false;
-            this.dropBtn_KH.Location = new System.Drawing.Point(54, 12);
+            this.dropBtn_KH.Location = new System.Drawing.Point(19, 12);
             this.dropBtn_KH.Name = "dropBtn_KH";
-            this.dropBtn_KH.Size = new System.Drawing.Size(208, 29);
+            this.dropBtn_KH.Size = new System.Drawing.Size(222, 29);
             this.dropBtn_KH.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -172,16 +196,16 @@
             this.dropBtn_PG.CornerRoundingRadius = 5F;
             this.dropBtn_PG.DropDownWidth = 121;
             this.dropBtn_PG.IntegralHeight = false;
-            this.dropBtn_PG.Location = new System.Drawing.Point(356, 12);
+            this.dropBtn_PG.Location = new System.Drawing.Point(339, 12);
             this.dropBtn_PG.Name = "dropBtn_PG";
-            this.dropBtn_PG.Size = new System.Drawing.Size(208, 29);
+            this.dropBtn_PG.Size = new System.Drawing.Size(215, 29);
             this.dropBtn_PG.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.dropBtn_PG.StateCommon.ComboBox.Border.Rounding = 5F;
             this.dropBtn_PG.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.dropBtn_PG.TabIndex = 9;
-            this.dropBtn_PG.Text = "Chọn phiếu giảm";
+            this.dropBtn_PG.Text = "Chọn phiếu quy đổi";
             this.dropBtn_PG.DropDown += new System.EventHandler(this.dropBtn_PG_DropDown);
             this.dropBtn_PG.SelectedIndexChanged += new System.EventHandler(this.dropBtn_PG_SelectedIndexChanged);
             // 
@@ -189,34 +213,35 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 50);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 20);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(602, 423);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(602, 390);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // label3
+            // label5
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(352, 47);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 22);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Điểm :";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(15, 58);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(132, 22);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Điểm hiện có:";
             // 
-            // lbl_bonus
+            // lbl_DiemHienCo
             // 
-            this.lbl_bonus.AutoSize = true;
-            this.lbl_bonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_bonus.Location = new System.Drawing.Point(426, 45);
-            this.lbl_bonus.Name = "lbl_bonus";
-            this.lbl_bonus.Size = new System.Drawing.Size(35, 25);
-            this.lbl_bonus.TabIndex = 8;
-            this.lbl_bonus.Text = "+0";
+            this.lbl_DiemHienCo.AutoSize = true;
+            this.lbl_DiemHienCo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_DiemHienCo.Location = new System.Drawing.Point(165, 56);
+            this.lbl_DiemHienCo.Name = "lbl_DiemHienCo";
+            this.lbl_DiemHienCo.Size = new System.Drawing.Size(23, 25);
+            this.lbl_DiemHienCo.TabIndex = 9;
+            this.lbl_DiemHienCo.Text = "0";
             // 
             // GioHangFrm
             // 
+            this.AcceptButton = this.btn_pay;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -229,6 +254,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dropBtn_KH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dropBtn_PG)).EndInit();
             this.ResumeLayout(false);
@@ -250,5 +276,7 @@
         private Krypton.Toolkit.KryptonComboBox dropBtn_PG;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_bonus;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_DiemHienCo;
     }
 }
