@@ -76,5 +76,10 @@ namespace pharmacy_management.GUI.BanHang
         {
 
         }
+
+        private void ChiTietDonHangFrm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

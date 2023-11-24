@@ -34,7 +34,8 @@ namespace pharmacy_management.GUI.Dash
             Numthuoc.Text = tkbus.getslthuoc().ToString();
             Numkhach.Text = tkbus.getslkh().ToString();
             Numslban.Text = tkbus.getslban().ToString();
-            Numdoanhthu.Text = tkbus.getdoanhthu().ToString();
+            string formattedNumber = tkbus.getdoanhthu().ToString("#,##0") + " đ";
+            Numdoanhthu.Text = formattedNumber;
         }
 
 
