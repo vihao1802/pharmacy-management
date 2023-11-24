@@ -3,6 +3,7 @@ using pharmacy_management.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design.Serialization;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -244,6 +245,12 @@ namespace pharmacy_management.GUI.QLxuatxu
                     DGVXuatXu.Rows.Add(ma, ten, temp);
                 }
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            DGVXuatXu.Rows.Clear();
+            loadds();
         }
     }
 }

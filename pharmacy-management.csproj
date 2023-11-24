@@ -256,15 +256,21 @@
     <Compile Include="GUI\QLDoiTuong\FrmDoiTuong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QLDoiTuong\FrmDoiTuong.Designer.cs" />
+    <Compile Include="GUI\QLDoiTuong\FrmDoiTuong.designer.cs">
+      <DependentUpon>FrmDoiTuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\QLxuatxu\FrmXuatXu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QLxuatxu\FrmXuatXu.Designer.cs" />
+    <Compile Include="GUI\QLxuatxu\FrmXuatXu.designer.cs">
+      <DependentUpon>FrmXuatXu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Thuoc\FormThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Thuoc\FormThuoc.Designer.cs" />
+    <Compile Include="GUI\Thuoc\FormThuoc.designer.cs">
+      <DependentUpon>FormThuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -340,9 +346,15 @@
     <EmbeddedResource Include="GUI\NhapHang\SPNhaphang.resx">
       <DependentUpon>SPNhaphang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QLDoiTuong\FrmDoiTuong.resx" />
-    <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx" />
-    <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx" />
+    <EmbeddedResource Include="GUI\QLDoiTuong\FrmDoiTuong.resx">
+      <DependentUpon>FrmDoiTuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx">
+      <DependentUpon>FrmXuatXu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx">
+      <DependentUpon>FormThuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

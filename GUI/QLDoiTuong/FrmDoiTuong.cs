@@ -258,5 +258,10 @@ namespace pharmacy_management.GUI.QLDoiTuong
                 }
             }
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

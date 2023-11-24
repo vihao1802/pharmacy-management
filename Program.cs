@@ -19,9 +19,9 @@ namespace pharmacy_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            LoginForm = new Login();
-            LoginForm.Show();
-
+           /* LoginForm = new Login();
+            LoginForm.Show();*/
+            
             // Run the application
             Application.Run();
         }

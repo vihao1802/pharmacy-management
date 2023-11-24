@@ -1,4 +1,5 @@
-﻿using pharmacy_management.BUS;
+﻿
+using pharmacy_management.BUS;
 using pharmacy_management.DTO;
 using pharmacy_management.Properties;
 using System;
@@ -104,21 +105,31 @@ namespace pharmacy_management.GUI.Thuoc
             {
                 DGVThuoc.CurrentRow.Selected = true;
                 // Lấy giá trị từ cột tương ứng và hiển thị lên TextBox
-                txtMaThuoc.Text = DGVThuoc.Rows[e.RowIndex].Cells["MaThuoc"].Value.ToString();
-                txtTenThuoc.Text = DGVThuoc.Rows[e.RowIndex].Cells["TenThuoc"].Value.ToString();
-                txtSoLuong.Text = DGVThuoc.Rows[e.RowIndex].Cells["SoLuong"].Value.ToString();
+                String mt = DGVThuoc.Rows[e.RowIndex].Cells["MaThuoc"].Value.ToString();
+                txtTenThuoc.Text = DGVThuoc.Rows[e.RowIndex].Cells["TenThuoc"].Value.ToString();               
                 txtGiaThuoc.Text = DGVThuoc.Rows[e.RowIndex].Cells["GiaThuoc"].Value.ToString();
+
+                string temp = DGVThuoc.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString();
+                ckbTrangThai.Enabled = true;
+                if (temp.Equals("Active", StringComparison.OrdinalIgnoreCase))
+                {
+                    ckbTrangThai.Checked = true;
+                }
+                else
+                {
+                    ckbTrangThai.Checked = false;
+                }
+
                 foreach (DTO.Thuoc drug in thuocbus.getList())
                 {
-                    if (txtMaThuoc.Text == drug.MaThuoc.ToString())
+                    if (mt == drug.MaThuoc.ToString())
                     {
                         doituong = drug.MaDoiTuong + " - " + DGVThuoc.Rows[e.RowIndex].Cells["MaDoiTuong"].Value.ToString(); ;
                         xuatxu = drug.MaXuatXu + " - " + DGVThuoc.Rows[e.RowIndex].Cells["MaXuatXu"].Value.ToString();
                     }
                 }
                 cbbMaDoiTuong.Text = doituong;
-                cbbMaXuatXu.Text = xuatxu;
-                string temp = DGVThuoc.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString();
+                cbbMaXuatXu.Text = xuatxu;              
                 //string filePath = "C:\\DrugStore\\pharmacy-management\\Resources\\";
                 string imageName = Path.GetFileName(DGVThuoc.Rows[e.RowIndex].Cells["AnhThuoc"].Value.ToString()).Replace("images/","");
                 string directoryPath = @"..\..\Resources";
@@ -228,9 +239,7 @@ namespace pharmacy_management.GUI.Thuoc
             
         }
          private void Refreshtxt()
-        {
-            txtMaThuoc.Text = "";
-            txtSoLuong.Text = "";
+        {        
             txtTenThuoc.Text = "";
             txtGiaThuoc.Text = "";
             cbbMaDoiTuong.Text = string.Empty;
@@ -257,6 +266,7 @@ namespace pharmacy_management.GUI.Thuoc
         private void btnSua_Click(object sender, EventArgs e)
         {
             int state;
+            
             checkInput();
             if (DGVThuoc.SelectedRows.Count > 1)
             {
@@ -268,7 +278,7 @@ namespace pharmacy_management.GUI.Thuoc
                 MessageBox.Show("Chưa chọn dòng để sửa!");
                 return;
             }
-           
+
             if (!ckbTrangThai.Checked)
                 state = 0;
             else state = 1;
@@ -276,7 +286,8 @@ namespace pharmacy_management.GUI.Thuoc
             {
                 string maxx = cbbMaXuatXu.Text.Trim();
                 string madt = cbbMaDoiTuong.Text.Trim();
-                DTO.Thuoc drug = new DTO.Thuoc(int.Parse(txtMaThuoc.Text.ToString()), txtTenThuoc.Text.ToString(), int.Parse(madt[0].ToString()), float.Parse(txtGiaThuoc.Text.ToString()), globalFilename, 1, int.Parse(maxx[0].ToString()), 0);
+                int mt = int.Parse(DGVThuoc.CurrentRow.Cells["MaThuoc"].Value.ToString());
+                DTO.Thuoc drug = new DTO.Thuoc(mt, txtTenThuoc.Text.ToString(), int.Parse(madt[0].ToString()), float.Parse(txtGiaThuoc.Text.ToString()), globalFilename, 1, int.Parse(maxx[0].ToString()), 0);
                 thuocbus.update(drug);
                 int trangthaiNew = drug.TrangThai;
                 string tenNew = drug.TenThuoc;
@@ -290,7 +301,7 @@ namespace pharmacy_management.GUI.Thuoc
                 DGVThuoc.CurrentRow.Cells["MaDoiTuong"].Value = tendoituong;
                 DGVThuoc.CurrentRow.Cells["SoLuong"].Value = soluong;
                 DGVThuoc.CurrentRow.Cells["GiaThuoc"].Value = giathuoc;
-                DGVThuoc.CurrentRow.Cells["AnhThuoc"].Value = anhthuoc;               
+                DGVThuoc.CurrentRow.Cells["AnhThuoc"].Value = anhthuoc;
                 DGVThuoc.CurrentRow.Cells["TrangThai"].Value = state == 1 ? "Active" : "Not Active";
                 Refreshtxt();
                 MessageBox.Show("Sửa thành công");
@@ -299,6 +310,16 @@ namespace pharmacy_management.GUI.Thuoc
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void kryptonLabel6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
