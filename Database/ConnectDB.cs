@@ -17,9 +17,9 @@ namespace pharmacy_management.Database
             // @autho Hao
            // string strCnn = "Data Source=LAPTOP-ULQT60JG; Database=ql_nhathuoc;Integrated Security = True";
             // @author Thinh
-            //string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc;Integrated Security = True";
+            string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc;Integrated Security = True";
             // @author Duc
-            string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
+           // string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
             sqlConn = new SqlConnection(strCnn);
         }
         //Phuong thuc de thuc hien cau lenh strSQL truy vân du lieu
@@ -27,6 +27,7 @@ namespace pharmacy_management.Database
         {
             sqlConn.Open();
             SqlCommand command = new SqlCommand(sqlStr, sqlConn);
+            command.CommandTimeout = 0;
             SqlDataReader reader = command.ExecuteReader();
             return reader;
         }

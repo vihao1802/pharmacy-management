@@ -1,4 +1,5 @@
 ﻿using pharmacy_management.DAO;
+using pharmacy_management.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -28,9 +29,50 @@ namespace pharmacy_management.BUS
             list = dao.GetALl();
         }
 
+        public ArrayList getActiveMaxuatxu()
+        {
+            list = dao.getActiveMaxuatxu();
+            return list;
+        }
+
+        public void add(XuatXu DTO)
+        {
+            dao.add(DTO);
+        }
+
+
+        public void delete(int ma)
+        {
+            dao.Delete(ma);
+        }
+
+        public void update(XuatXu DTO)
+        {
+            dao.update(DTO);
+        }
+
+        public ArrayList searchatMa(int ma)
+        {
+            list = dao.searchatMa(ma);
+            return list;
+        }
+
+        public ArrayList searchatTen(string ten)
+        {
+            list = dao.searchatTen(ten);
+            return list;
+        }
+
         public string GetNameBUS(int ma)
         {
             return dao.GetNameDAO(ma);
         }
+
+        public string GetNameatMaBUS(int ma)
+        {
+            return dao.GetNameatMaDAO(ma);
+        }
+
+        
     }
 }

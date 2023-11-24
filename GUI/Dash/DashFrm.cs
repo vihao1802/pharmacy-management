@@ -33,8 +33,8 @@ namespace pharmacy_management.GUI.Dash
             counter = 0;
             Numthuoc.Text = tkbus.getslthuoc().ToString();
             Numkhach.Text = tkbus.getslkh().ToString();
-            Numslban.Text = tkbus.getslban().ToString();
-            Numdoanhthu.Text = tkbus.getdoanhthu().ToString();
+          //  Numslban.Text = tkbus.getslban().ToString();
+          //  Numdoanhthu.Text = tkbus.getdoanhthu().ToString();
         }
 
 

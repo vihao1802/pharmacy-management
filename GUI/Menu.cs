@@ -35,7 +35,7 @@ namespace pharmacy_management.GUI
              DashFrm dashFrm = new DashFrm();
             addFormtoPanelContainer(dashFrm );
              nv = Login.nv;
-            addControls();
+         //   addControls();
              lbName.Text = nv.TenNV;
 
         }
