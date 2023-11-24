@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using thuoc;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace pharmacy_management.GUI.BanHang
@@ -21,9 +22,11 @@ namespace pharmacy_management.GUI.BanHang
         PhieuGiamGiaBUS pggBUS = new PhieuGiamGiaBUS();
         List<DTO.Thuoc> list_cart;
         private float total_price = 0;
+        public static NhanVien nv = new NhanVien();
         public GioHangFrm()
         {
             InitializeComponent();
+            nv = Login.nv;
             setup();
         }
         public void load_QuyDoiDiem()
@@ -108,7 +111,7 @@ namespace pharmacy_management.GUI.BanHang
             string tongTien = lbl_total_price.Text.Replace(" đ", "").Replace(",", "");
             string thanhTien = lbl_final_total_price.Text.Replace(" đ", "").Replace(",", "");
 
-            dhBUS.addNewInvoice("2", maKH, formattedDate, maQD, tongTien, thanhTien);
+            dhBUS.addNewInvoice(nv.MaNV.ToString(), maKH, formattedDate, maQD, tongTien, thanhTien);
 
             if (Int32.Parse(maKH) > 1)
             {

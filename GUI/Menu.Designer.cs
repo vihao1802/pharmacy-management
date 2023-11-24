@@ -33,15 +33,16 @@
             this.Sidebar = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSell = new Krypton.Toolkit.KryptonButton();
+            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            this.btnStaff = new Krypton.Toolkit.KryptonButton();
+            this.btnCustomer = new Krypton.Toolkit.KryptonButton();
+            this.btnVoucher = new Krypton.Toolkit.KryptonButton();
             this.btnPill = new Krypton.Toolkit.KryptonButton();
             this.btnStorage = new Krypton.Toolkit.KryptonButton();
-            this.btnCustomer = new Krypton.Toolkit.KryptonButton();
-            this.btnStaff = new Krypton.Toolkit.KryptonButton();
-            this.btnVoucher = new Krypton.Toolkit.KryptonButton();
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.btnPN = new Krypton.Toolkit.KryptonButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnProfile = new Krypton.Toolkit.KryptonPanel();
+            this.kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             this.Avatar = new System.Windows.Forms.PictureBox();
             this.lbName = new Krypton.Toolkit.KryptonLabel();
@@ -107,6 +108,8 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnSell.StateCommon.Border.Rounding = 10F;
+            this.btnSell.StateCommon.Border.Width = 3;
+            this.btnSell.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSell.StateNormal.Back.Color1 = System.Drawing.Color.White;
             this.btnSell.StateNormal.Back.Color2 = System.Drawing.Color.White;
             this.btnSell.StatePressed.Back.Color1 = System.Drawing.Color.White;
@@ -114,9 +117,121 @@
             this.btnSell.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btnSell.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btnSell.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Sell_Contrast;
+            this.btnSell.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnSell.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnSell.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSell.TabIndex = 7;
             this.btnSell.Values.Text = "Bán hàng";
             this.btnSell.Click += new System.EventHandler(this.btnSell_Click_1);
+            // 
+            // kryptonButton1
+            // 
+            this.kryptonButton1.CornerRoundingRadius = 10F;
+            this.kryptonButton1.Location = new System.Drawing.Point(3, 65);
+            this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonButton1.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.kryptonButton1.Size = new System.Drawing.Size(240, 56);
+            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.kryptonButton1.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.Purchase_Order;
+            this.kryptonButton1.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
+            this.kryptonButton1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton1.StateCommon.Border.Rounding = 10F;
+            this.kryptonButton1.StateCommon.Border.Width = 3;
+            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonButton1.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.kryptonButton1.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.kryptonButton1.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Purchase_Order___Contrast;
+            this.kryptonButton1.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton1.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton1.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonButton1.TabIndex = 13;
+            this.kryptonButton1.Values.Text = "Đơn hàng";
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
+            // 
+            // btnStaff
+            // 
+            this.btnStaff.CornerRoundingRadius = 10F;
+            this.btnStaff.Location = new System.Drawing.Point(3, 127);
+            this.btnStaff.Name = "btnStaff";
+            this.btnStaff.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnStaff.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.btnStaff.Size = new System.Drawing.Size(240, 56);
+            this.btnStaff.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.btnStaff.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.btnStaff.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.Staff;
+            this.btnStaff.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
+            this.btnStaff.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnStaff.StateCommon.Border.Rounding = 10F;
+            this.btnStaff.StateCommon.Border.Width = 3;
+            this.btnStaff.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStaff.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnStaff.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnStaff.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Staff_Contrast;
+            this.btnStaff.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnStaff.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnStaff.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStaff.TabIndex = 10;
+            this.btnStaff.Values.Text = "Nhân viên";
+            // 
+            // btnCustomer
+            // 
+            this.btnCustomer.CornerRoundingRadius = 10F;
+            this.btnCustomer.Location = new System.Drawing.Point(3, 189);
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnCustomer.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.btnCustomer.Size = new System.Drawing.Size(240, 56);
+            this.btnCustomer.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.btnCustomer.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.btnCustomer.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.Crowd;
+            this.btnCustomer.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
+            this.btnCustomer.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnCustomer.StateCommon.Border.Rounding = 10F;
+            this.btnCustomer.StateCommon.Border.Width = 3;
+            this.btnCustomer.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomer.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnCustomer.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnCustomer.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Crowd_Contrast;
+            this.btnCustomer.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnCustomer.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnCustomer.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomer.TabIndex = 11;
+            this.btnCustomer.Values.Text = "Khách hàng";
+            // 
+            // btnVoucher
+            // 
+            this.btnVoucher.CornerRoundingRadius = 10F;
+            this.btnVoucher.Location = new System.Drawing.Point(3, 251);
+            this.btnVoucher.Name = "btnVoucher";
+            this.btnVoucher.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnVoucher.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.btnVoucher.Size = new System.Drawing.Size(240, 56);
+            this.btnVoucher.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.btnVoucher.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.btnVoucher.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.Voucher;
+            this.btnVoucher.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
+            this.btnVoucher.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnVoucher.StateCommon.Border.Rounding = 10F;
+            this.btnVoucher.StateCommon.Border.Width = 3;
+            this.btnVoucher.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoucher.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnVoucher.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnVoucher.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Voucher_Contrast;
+            this.btnVoucher.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnVoucher.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnVoucher.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoucher.TabIndex = 9;
+            this.btnVoucher.Values.Text = "Khuyến mãi";
             // 
             // btnPill
             // 
@@ -135,9 +250,14 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnPill.StateCommon.Border.Rounding = 10F;
+            this.btnPill.StateCommon.Border.Width = 3;
+            this.btnPill.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPill.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btnPill.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btnPill.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Pill_Contrast;
+            this.btnPill.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnPill.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnPill.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPill.TabIndex = 8;
             this.btnPill.Values.Text = "Thuốc";
             this.btnPill.Click += new System.EventHandler(this.btnPill_Click);
@@ -158,102 +278,17 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnStorage.StateCommon.Border.Rounding = 10F;
+            this.btnStorage.StateCommon.Border.Width = 3;
+            this.btnStorage.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStorage.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btnStorage.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btnStorage.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Storage_Contrast;
+            this.btnStorage.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnStorage.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnStorage.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStorage.TabIndex = 12;
             this.btnStorage.Values.Text = "Kho";
             this.btnStorage.Click += new System.EventHandler(this.btnStorage_Click);
-            // 
-            // btnCustomer
-            // 
-            this.btnCustomer.CornerRoundingRadius = 10F;
-            this.btnCustomer.Location = new System.Drawing.Point(3, 189);
-            this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
-            this.btnCustomer.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
-            this.btnCustomer.Size = new System.Drawing.Size(240, 56);
-            this.btnCustomer.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.btnCustomer.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btnCustomer.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.Crowd;
-            this.btnCustomer.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
-            this.btnCustomer.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnCustomer.StateCommon.Border.Rounding = 10F;
-            this.btnCustomer.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btnCustomer.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btnCustomer.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Crowd_Contrast;
-            this.btnCustomer.TabIndex = 11;
-            this.btnCustomer.Values.Text = "Khách hàng";
-    
-            // 
-            // btnStaff
-            // 
-            this.btnStaff.CornerRoundingRadius = 10F;
-            this.btnStaff.Location = new System.Drawing.Point(3, 127);
-            this.btnStaff.Name = "btnStaff";
-            this.btnStaff.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
-            this.btnStaff.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
-            this.btnStaff.Size = new System.Drawing.Size(240, 56);
-            this.btnStaff.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.btnStaff.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btnStaff.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.Staff;
-            this.btnStaff.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
-            this.btnStaff.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnStaff.StateCommon.Border.Rounding = 10F;
-            this.btnStaff.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btnStaff.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btnStaff.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Staff_Contrast;
-            this.btnStaff.TabIndex = 10;
-            this.btnStaff.Values.Text = "Nhân viên";
-            // 
-            // btnVoucher
-            // 
-            this.btnVoucher.CornerRoundingRadius = 10F;
-            this.btnVoucher.Location = new System.Drawing.Point(3, 251);
-            this.btnVoucher.Name = "btnVoucher";
-            this.btnVoucher.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
-            this.btnVoucher.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
-            this.btnVoucher.Size = new System.Drawing.Size(240, 56);
-            this.btnVoucher.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.btnVoucher.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btnVoucher.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.Voucher;
-            this.btnVoucher.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
-            this.btnVoucher.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnVoucher.StateCommon.Border.Rounding = 10F;
-            this.btnVoucher.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btnVoucher.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btnVoucher.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Voucher_Contrast;
-            this.btnVoucher.TabIndex = 9;
-            this.btnVoucher.Values.Text = "Khuyến mãi";
-            // 
-            // kryptonButton1
-            // 
-            this.kryptonButton1.CornerRoundingRadius = 10F;
-            this.kryptonButton1.Location = new System.Drawing.Point(3, 65);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
-            this.kryptonButton1.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonButton1.Size = new System.Drawing.Size(240, 56);
-            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonButton1.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.Purchase_Order;
-            this.kryptonButton1.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
-            this.kryptonButton1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.StateCommon.Border.Rounding = 10F;
-            this.kryptonButton1.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.kryptonButton1.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.kryptonButton1.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Purchase_Order___Contrast;
-            this.kryptonButton1.TabIndex = 13;
-            this.kryptonButton1.Values.Text = "Đơn hàng";
-            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // btnPN
             // 
@@ -271,9 +306,14 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnPN.StateCommon.Border.Rounding = 10F;
+            this.btnPN.StateCommon.Border.Width = 3;
+            this.btnPN.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPN.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btnPN.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btnPN.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.Import___Contrast;
+            this.btnPN.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnPN.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnPN.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPN.TabIndex = 14;
             this.btnPN.Values.Text = "Phiếu nhập";
             this.btnPN.Click += new System.EventHandler(this.btnPN_Click);
@@ -290,6 +330,7 @@
             // 
             // PnProfile
             // 
+            this.PnProfile.Controls.Add(this.kryptonLabel3);
             this.PnProfile.Controls.Add(this.kryptonLabel2);
             this.PnProfile.Controls.Add(this.Avatar);
             this.PnProfile.Controls.Add(this.lbName);
@@ -300,6 +341,18 @@
             this.PnProfile.Size = new System.Drawing.Size(250, 75);
             this.PnProfile.StateCommon.Color1 = System.Drawing.Color.White;
             this.PnProfile.TabIndex = 5;
+            // 
+            // kryptonLabel3
+            // 
+            this.kryptonLabel3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.kryptonLabel3.LabelStyle = Krypton.Toolkit.LabelStyle.Custom1;
+            this.kryptonLabel3.Location = new System.Drawing.Point(12, 33);
+            this.kryptonLabel3.Name = "kryptonLabel3";
+            this.kryptonLabel3.Size = new System.Drawing.Size(89, 19);
+            this.kryptonLabel3.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonLabel3.TabIndex = 4;
+            this.kryptonLabel3.Values.Text = "Đổi mật khẩu";
+            this.kryptonLabel3.Click += new System.EventHandler(this.kryptonLabel3_Click);
             // 
             // kryptonLabel2
             // 
@@ -328,7 +381,7 @@
             // lbName
             // 
             this.lbName.LabelStyle = Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.lbName.Location = new System.Drawing.Point(12, 23);
+            this.lbName.Location = new System.Drawing.Point(73, 3);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(55, 24);
             this.lbName.TabIndex = 1;
@@ -338,7 +391,7 @@
             // kryptonLabel1
             // 
             this.kryptonLabel1.LabelStyle = Krypton.Toolkit.LabelStyle.ItalicPanel;
-            this.kryptonLabel1.Location = new System.Drawing.Point(12, 3);
+            this.kryptonLabel1.Location = new System.Drawing.Point(11, 3);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(73, 24);
             this.kryptonLabel1.TabIndex = 0;
@@ -394,6 +447,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette2.FormStyles.FormMain.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
             this.kryptonPalette2.FormStyles.FormMain.StateCommon.Border.Rounding = 16F;
+            this.kryptonPalette2.FormStyles.FormMain.StateCommon.Border.Width = 5;
             this.kryptonPalette2.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonPalette2.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonPalette2.HeaderStyles.HeaderForm.StateCommon.ButtonEdgeInset = 12;
@@ -405,7 +459,7 @@
             this.PnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnContainer.Location = new System.Drawing.Point(250, 0);
             this.PnContainer.Name = "PnContainer";
-            this.PnContainer.Size = new System.Drawing.Size(932, 653);
+            this.PnContainer.Size = new System.Drawing.Size(962, 653);
             this.PnContainer.StateCommon.Color1 = System.Drawing.Color.White;
             this.PnContainer.TabIndex = 4;
             // 
@@ -414,11 +468,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1182, 653);
+            this.ClientSize = new System.Drawing.Size(1212, 653);
             this.Controls.Add(this.PnContainer);
             this.Controls.Add(this.Sidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Menu";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
@@ -461,6 +516,7 @@
         private Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private System.Windows.Forms.PictureBox Avatar;
         private Krypton.Toolkit.KryptonButton btnPN;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel3;
     }
 }
 
