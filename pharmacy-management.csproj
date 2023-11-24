@@ -39,6 +39,10 @@
     <Reference Include="Krypton.Toolkit, Version=70.22.11.312, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <HintPath>packages\Krypton.Toolkit.70.22.11.312\lib\net472\Krypton.Toolkit.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -193,11 +197,35 @@
     <Compile Include="GUI\Dash\ThongKe.Designer.cs">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\KhachHang\DiemKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\KhachHang\DiemKhachHang.designer.cs">
+      <DependentUpon>DiemKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\KhachHang\KhachHangfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\KhachHang\KhachHangfrm.designer.cs">
+      <DependentUpon>KhachHangfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhanVien\frmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhanVien\frmNhanVien.designer.cs">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhanVien\FrmQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhanVien\FrmQuyen.designer.cs">
+      <DependentUpon>FrmQuyen.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\NhapHang\ChiTietPhieuNhapFrm.cs">
       <SubType>Form</SubType>
@@ -304,8 +332,20 @@
     <EmbeddedResource Include="GUI\Dash\ThongKe.resx">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\KhachHang\DiemKhachHang.resx">
+      <DependentUpon>DiemKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\KhachHang\KhachHangfrm.resx">
+      <DependentUpon>KhachHangfrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhanVien\frmNhanVien.resx">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhanVien\FrmQuyen.resx">
+      <DependentUpon>FrmQuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhapHang\ChiTietPhieuNhapFrm.resx">
       <DependentUpon>ChiTietPhieuNhapFrm.cs</DependentUpon>
@@ -400,6 +440,11 @@
     <Content Include="Images\Subtract.png" />
     <Content Include="Images\Voucher-Contrast.png" />
     <Content Include="Images\Voucher.png" />
+    <None Include="Resources\icons8-add-30.png" />
+    <None Include="Resources\icons8-remove-30.png" />
+    <None Include="Resources\icons8-fix-30.png" />
+    <None Include="Resources\icons8-import-30.png" />
+    <None Include="Resources\icons8-export-30.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -16,7 +16,7 @@ namespace pharmacy_management.GUI.NhapHang
 {
     public partial class LoHangFrm : Krypton.Toolkit.KryptonForm
     {
-        public static NhanVien nv = new NhanVien();
+        public static DTO.NhanVien nv = new DTO.NhanVien();
         List<DTO.Thuoc> list_cart;
         private float total_price = 0;
         public LoHangFrm()

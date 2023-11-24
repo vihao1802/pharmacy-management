@@ -52,7 +52,7 @@ namespace pharmacy_management.GUI.BanHang
             KhachHangBUS khBUS = new KhachHangBUS();
             //Console.WriteLine(dropBtn_KH.SelectedIndex);
             khBUS.loadList();
-            foreach (KhachHang kh in khBUS.getList())
+            foreach (DTO.KhachHang kh in khBUS.getList())
             {
                 string item_name = kh.MaKH.ToString() + "_" + kh.TenKH;
                 dropBtn_KH.Items.Add(item_name);

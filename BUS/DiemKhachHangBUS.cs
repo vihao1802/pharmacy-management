@@ -32,5 +32,10 @@ namespace pharmacy_management.BUS
         {
             dao.updateDiemKH(diem, ma);
         }
+
+        public void add()
+        {
+            dao.add();
+        }
     }
 }

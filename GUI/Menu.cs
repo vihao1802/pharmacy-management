@@ -23,7 +23,7 @@ namespace pharmacy_management.GUI
 {
     public partial class Menu : KryptonForm
     {
-        public static NhanVien nv = new NhanVien();
+        public static DTO.NhanVien nv = new DTO.NhanVien();
 
         bool sidebarExpand;
         BanHangFrm bhFrm;

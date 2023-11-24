@@ -57,5 +57,34 @@ namespace pharmacy_management.DAO
             Console.WriteLine(query);
             conn.ExecuteNonQuery(query);
         }
+
+        public void add()
+        {
+            ConnectDB conn = new ConnectDB();
+
+            // Step 1: Retrieve the latest ID from khachhang table
+            string queryGetLatestID = "SELECT MAX(MaKH) AS LatestID FROM khachhang";
+            object result = conn.ExecuteScalar(queryGetLatestID);
+
+            int latestID;
+
+            if (result != DBNull.Value)
+            {
+                latestID = Convert.ToInt32(result);
+            }
+            else
+            {
+                // Handle the case where the result is null or no records exist in khachhang table
+                Console.WriteLine("No records found in khachhang table.");
+                return;
+            }
+
+
+            // Thêm dòng vào bảng DIEMKHACHHANG
+            string queryDiemKhachHang = string.Format("INSERT INTO DIEMKHACHHANG (MaKH, DiemTichLuy, DiemDaSuDung) VALUES ('{0}', {1}, {2})", latestID, 0, 0);
+            Console.WriteLine(queryDiemKhachHang);
+            conn.ExecuteNonQuery(queryDiemKhachHang);
+
+        }
     }
 }
