@@ -176,6 +176,12 @@ namespace pharmacy_management.GUI
             Login login = new Login();
             login.Show();
         }
+
+        private void kryptonLabel3_Click(object sender, EventArgs e)
+        {
+            DoiMatKhau doiMatKhau = new DoiMatKhau();
+            doiMatKhau.Show();
+        }
     }
 
 }
