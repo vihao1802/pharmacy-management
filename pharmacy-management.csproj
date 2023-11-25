@@ -390,8 +390,9 @@
     <EmbeddedResource Include="GUI\QLDoiTuong\FrmDoiTuong.resx">
       <DependentUpon>FrmDoiTuong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx">
-      <DependentUpon>FrmXuatXu.cs</DependentUpon>
+	  <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx">
+		  <DependentUpon>FrmXuatXu.cs</DependentUpon>
+	  </EmbeddedResource>
     <EmbeddedResource Include="GUI\QLDoiTuong\FrmDoiTuong.resx" />
     <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx" />
     <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx" />
