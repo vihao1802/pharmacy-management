@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,6 +39,7 @@
             this.lbl_MaDH = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.lbl_ThanhTien = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lbl_Giam = new System.Windows.Forms.Label();
@@ -61,7 +64,6 @@
             this.lbl_MaKH = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.kryptonPalette2 = new Krypton.Toolkit.KryptonPalette(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_SanPhamDH)).BeginInit();
@@ -73,15 +75,15 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(13, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 29);
+            this.label1.Size = new System.Drawing.Size(200, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "MÃ ĐƠN HÀNG #";
+            this.label1.Text = "MÃ ĐƠN HÀNG:";
             // 
             // lbl_MaDH
             // 
             this.lbl_MaDH.AutoSize = true;
             this.lbl_MaDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_MaDH.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbl_MaDH.ForeColor = System.Drawing.Color.DodgerBlue;
             this.lbl_MaDH.Location = new System.Drawing.Point(255, 10);
             this.lbl_MaDH.Name = "lbl_MaDH";
             this.lbl_MaDH.Size = new System.Drawing.Size(26, 29);
@@ -93,7 +95,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(15, 114);
+            this.label3.Location = new System.Drawing.Point(13, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 25);
             this.label3.TabIndex = 2;
@@ -103,6 +105,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lbl_ThanhTien);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.lbl_Giam);
@@ -128,9 +131,17 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(1093, 565);
+            this.panel1.Size = new System.Drawing.Size(1082, 611);
             this.panel1.TabIndex = 6;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(640, 546);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(400, 1);
+            this.label6.TabIndex = 34;
+            this.label6.Text = "label6";
             // 
             // lbl_ThanhTien
             // 
@@ -138,7 +149,7 @@
             this.lbl_ThanhTien.AutoSize = true;
             this.lbl_ThanhTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbl_ThanhTien.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_ThanhTien.Location = new System.Drawing.Point(831, 469);
+            this.lbl_ThanhTien.Location = new System.Drawing.Point(910, 564);
             this.lbl_ThanhTien.Name = "lbl_ThanhTien";
             this.lbl_ThanhTien.Size = new System.Drawing.Size(99, 25);
             this.lbl_ThanhTien.TabIndex = 33;
@@ -149,7 +160,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label11.Location = new System.Drawing.Point(703, 469);
+            this.label11.Location = new System.Drawing.Point(782, 564);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(122, 25);
             this.label11.TabIndex = 32;
@@ -161,7 +172,7 @@
             this.lbl_Giam.AutoSize = true;
             this.lbl_Giam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbl_Giam.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_Giam.Location = new System.Drawing.Point(508, 469);
+            this.lbl_Giam.Location = new System.Drawing.Point(916, 506);
             this.lbl_Giam.Name = "lbl_Giam";
             this.lbl_Giam.Size = new System.Drawing.Size(52, 25);
             this.lbl_Giam.TabIndex = 31;
@@ -172,7 +183,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label8.Location = new System.Drawing.Point(398, 469);
+            this.label8.Location = new System.Drawing.Point(806, 506);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 25);
             this.label8.TabIndex = 30;
@@ -184,7 +195,7 @@
             this.lbl_TongGia.AutoSize = true;
             this.lbl_TongGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbl_TongGia.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_TongGia.Location = new System.Drawing.Point(121, 469);
+            this.lbl_TongGia.Location = new System.Drawing.Point(910, 459);
             this.lbl_TongGia.Name = "lbl_TongGia";
             this.lbl_TongGia.Size = new System.Drawing.Size(99, 25);
             this.lbl_TongGia.TabIndex = 29;
@@ -195,7 +206,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(11, 469);
+            this.label2.Location = new System.Drawing.Point(800, 459);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 25);
             this.label2.TabIndex = 28;
@@ -203,10 +214,9 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.AutoSize = true;
             this.panel2.Controls.Add(this.gv_SanPhamDH);
             this.panel2.Location = new System.Drawing.Point(12, 215);
             this.panel2.Name = "panel2";
@@ -219,16 +229,17 @@
             this.gv_SanPhamDH.AllowUserToDeleteRows = false;
             this.gv_SanPhamDH.AllowUserToOrderColumns = true;
             this.gv_SanPhamDH.AllowUserToResizeRows = false;
-            this.gv_SanPhamDH.BackgroundColor = System.Drawing.Color.White;
+            this.gv_SanPhamDH.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.gv_SanPhamDH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gv_SanPhamDH.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gv_SanPhamDH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gv_SanPhamDH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gv_SanPhamDH.ColumnHeadersHeight = 30;
             this.gv_SanPhamDH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gv_SanPhamDH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -251,14 +262,14 @@
             this.gv_SanPhamDH.Location = new System.Drawing.Point(0, 0);
             this.gv_SanPhamDH.Name = "gv_SanPhamDH";
             this.gv_SanPhamDH.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gv_SanPhamDH.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gv_SanPhamDH.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gv_SanPhamDH.RowHeadersVisible = false;
             this.gv_SanPhamDH.RowHeadersWidth = 51;
             this.gv_SanPhamDH.RowTemplate.Height = 24;
@@ -313,7 +324,7 @@
             this.lbl_NgayLap.AutoSize = true;
             this.lbl_NgayLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbl_NgayLap.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_NgayLap.Location = new System.Drawing.Point(869, 14);
+            this.lbl_NgayLap.Location = new System.Drawing.Point(881, 14);
             this.lbl_NgayLap.Name = "lbl_NgayLap";
             this.lbl_NgayLap.Size = new System.Drawing.Size(114, 25);
             this.lbl_NgayLap.TabIndex = 20;
@@ -325,7 +336,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(759, 14);
+            this.label4.Location = new System.Drawing.Point(692, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 25);
             this.label4.TabIndex = 19;
@@ -337,7 +348,7 @@
             this.lbl_MaNV.AutoSize = true;
             this.lbl_MaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbl_MaNV.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_MaNV.Location = new System.Drawing.Point(948, 66);
+            this.lbl_MaNV.Location = new System.Drawing.Point(881, 66);
             this.lbl_MaNV.Name = "lbl_MaNV";
             this.lbl_MaNV.Size = new System.Drawing.Size(23, 25);
             this.lbl_MaNV.TabIndex = 18;
@@ -348,11 +359,11 @@
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label18.Location = new System.Drawing.Point(759, 66);
+            this.label18.Location = new System.Drawing.Point(692, 66);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(160, 25);
+            this.label18.Size = new System.Drawing.Size(149, 25);
             this.label18.TabIndex = 17;
-            this.label18.Text = "Mã nhân viên #";
+            this.label18.Text = "Mã nhân viên:";
             // 
             // lbl_TenNV
             // 
@@ -360,7 +371,7 @@
             this.lbl_TenNV.AutoSize = true;
             this.lbl_TenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbl_TenNV.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_TenNV.Location = new System.Drawing.Point(858, 114);
+            this.lbl_TenNV.Location = new System.Drawing.Point(881, 114);
             this.lbl_TenNV.Name = "lbl_TenNV";
             this.lbl_TenNV.Size = new System.Drawing.Size(113, 25);
             this.lbl_TenNV.TabIndex = 15;
@@ -372,7 +383,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(759, 114);
+            this.label16.Location = new System.Drawing.Point(692, 114);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(82, 25);
             this.label16.TabIndex = 13;
@@ -383,7 +394,7 @@
             this.lbl_sdtKH.AutoSize = true;
             this.lbl_sdtKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbl_sdtKH.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_sdtKH.Location = new System.Drawing.Point(159, 165);
+            this.lbl_sdtKH.Location = new System.Drawing.Point(255, 165);
             this.lbl_sdtKH.Name = "lbl_sdtKH";
             this.lbl_sdtKH.Size = new System.Drawing.Size(122, 25);
             this.lbl_sdtKH.TabIndex = 12;
@@ -394,7 +405,7 @@
             this.lbl_TenKH.AutoSize = true;
             this.lbl_TenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbl_TenKH.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_TenKH.Location = new System.Drawing.Point(114, 114);
+            this.lbl_TenKH.Location = new System.Drawing.Point(255, 114);
             this.lbl_TenKH.Name = "lbl_TenKH";
             this.lbl_TenKH.Size = new System.Drawing.Size(113, 25);
             this.lbl_TenKH.TabIndex = 11;
@@ -403,20 +414,19 @@
             // lbl_MaKH
             // 
             this.lbl_MaKH.AutoSize = true;
+            this.lbl_MaKH.BackColor = System.Drawing.Color.White;
             this.lbl_MaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbl_MaKH.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_MaKH.Location = new System.Drawing.Point(223, 66);
+            this.lbl_MaKH.Location = new System.Drawing.Point(255, 66);
             this.lbl_MaKH.Name = "lbl_MaKH";
-            this.lbl_MaKH.Size = new System.Drawing.Size(23, 25);
-            this.lbl_MaKH.TabIndex = 10;
-            this.lbl_MaKH.Text = "1";
+            this.lbl_MaKH.Size = new System.Drawing.Size(0, 25);
+            this.lbl_MaKH.TabIndex = 35;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(14, 165);
+            this.label9.Location = new System.Drawing.Point(13, 165);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(116, 25);
             this.label9.TabIndex = 9;
@@ -428,9 +438,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.Location = new System.Drawing.Point(13, 66);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(178, 25);
+            this.label5.Size = new System.Drawing.Size(167, 25);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Mã khách hàng #";
+            this.label5.Text = "Mã khách hàng:";
             // 
             // kryptonPalette2
             // 
@@ -446,39 +456,39 @@
             this.kryptonPalette2.ButtonSpecs.FormRestore.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.kryptonPalette2.ButtonStyles.ButtonForm.StateNormal.Back.Color1 = System.Drawing.Color.White;
             this.kryptonPalette2.ButtonStyles.ButtonForm.StateNormal.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonPalette2.ButtonStyles.ButtonForm.StateNormal.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.kryptonPalette2.ButtonStyles.ButtonForm.StateNormal.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | Krypton.Toolkit.PaletteDrawBorders.Left)
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette2.ButtonStyles.ButtonForm.StateNormal.Border.Width = 0;
             this.kryptonPalette2.ButtonStyles.ButtonForm.StatePressed.Back.Color1 = System.Drawing.Color.White;
             this.kryptonPalette2.ButtonStyles.ButtonForm.StatePressed.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonPalette2.ButtonStyles.ButtonForm.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.kryptonPalette2.ButtonStyles.ButtonForm.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | Krypton.Toolkit.PaletteDrawBorders.Left)
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette2.ButtonStyles.ButtonForm.StatePressed.Border.Width = 0;
             this.kryptonPalette2.ButtonStyles.ButtonForm.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.kryptonPalette2.ButtonStyles.ButtonForm.StateTracking.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonPalette2.ButtonStyles.ButtonForm.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.kryptonPalette2.ButtonStyles.ButtonForm.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | Krypton.Toolkit.PaletteDrawBorders.Left)
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette2.ButtonStyles.ButtonForm.StateTracking.Border.Width = 0;
             this.kryptonPalette2.ButtonStyles.ButtonFormClose.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.kryptonPalette2.ButtonStyles.ButtonFormClose.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette2.ButtonStyles.ButtonFormClose.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.kryptonPalette2.ButtonStyles.ButtonFormClose.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | Krypton.Toolkit.PaletteDrawBorders.Left)
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette2.ButtonStyles.ButtonFormClose.StatePressed.Border.Width = 0;
             this.kryptonPalette2.ButtonStyles.ButtonFormClose.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.kryptonPalette2.ButtonStyles.ButtonFormClose.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette2.ButtonStyles.ButtonFormClose.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.kryptonPalette2.ButtonStyles.ButtonFormClose.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | Krypton.Toolkit.PaletteDrawBorders.Left)
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette2.ButtonStyles.ButtonFormClose.StateTracking.Border.Width = 0;
             this.kryptonPalette2.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonPalette2.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonPalette2.FormStyles.FormMain.StateCommon.Border.Color1 = System.Drawing.Color.White;
-            this.kryptonPalette2.FormStyles.FormMain.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.kryptonPalette2.FormStyles.FormMain.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | Krypton.Toolkit.PaletteDrawBorders.Left)
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette2.FormStyles.FormMain.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
             this.kryptonPalette2.FormStyles.FormMain.StateCommon.Border.Rounding = 16F;
@@ -491,15 +501,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1093, 565);
+            this.ClientSize = new System.Drawing.Size(1082, 611);
             this.Controls.Add(this.panel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChiTietDonHangFrm";
-            this.Palette = this.kryptonPalette2;
-            this.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi tiết đơn hàng";
-            this.Load += new System.EventHandler(this.ChiTietDonHangFrm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -514,6 +520,7 @@
         private System.Windows.Forms.Label lbl_MaDH;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lbl_MaNV;
@@ -526,7 +533,6 @@
         private System.Windows.Forms.Label lbl_NgayLap;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView gv_SanPhamDH;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_ThanhTien;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbl_Giam;
@@ -538,6 +544,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Label label6;
         private Krypton.Toolkit.KryptonPalette kryptonPalette2;
     }
 }

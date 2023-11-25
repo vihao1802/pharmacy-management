@@ -15,22 +15,26 @@ namespace pharmacy_management.BUS
     {
         DangNhapDAO dao = new DangNhapDAO();
         public DangNhapBUS() { }
-        public NhanVien dangnhap(string username,string password)
+        public NhanVien dangnhap(string username, string password)
         {
             NhanVien nv = new NhanVien();
             nv.TenDangNhap = username;
             nv.MatKhau = password;
-          
-                nv = dao.taikhoandangnhap(nv);
-                if(nv!=null) { 
-                MessageBox.Show("Đăng nhập thành công");
+
+            nv = dao.taikhoandangnhap(nv);
+            if (nv != null)
+            {
+                //MessageBox.Show("Đăng nhập thành công");
                 return nv;
-            }else { 
-                return null; }
+            }
+            else
+            {
+                return null;
+            }
         }
-        public void DoiPass(string username,string password)
+        public void DoiPass(string username, string password)
         {
-            dao.DoiPass(username,password);
+            dao.DoiPass(username, password);
         }
     }
 }

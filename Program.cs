@@ -1,11 +1,12 @@
-﻿using pharmacy_management.GUI.KhachHang;
-using pharmacy_management.GUI.NhanVien;
+﻿using pharmacy_management.GUI.QLxuatxu;
+using pharmacy_management.GUI.QLDoiTuong;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using thuoc;
+using pharmacy_management.GUI.Thuoc;
 
 namespace pharmacy_management
 {
@@ -21,13 +22,18 @@ namespace pharmacy_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            LoginForm = new Login();
-            LoginForm.Show();
-
-            // Run the application
+            /*LoginForm = new Login();
+            LoginForm.Show();*/
+             FrmXuatXu frmXuatXu = new FrmXuatXu();
+           frmXuatXu.Show();
+            FrmDoiTuong frmdoituong = new FrmDoiTuong();
+            frmdoituong.Show();
+            FormThuoc frmthuoc = new FormThuoc();
+            frmthuoc.Show();
             Application.Run();
+            //Application.Run(new GUI.QuyDoiDiem.QuyDoiDiemFrm());
+            //Application.Run(new GUI.Menu());
 
-            //Application.Run(new KhachHangfrm());
         }
     }
 }

@@ -19,6 +19,15 @@ namespace pharmacy_management.DTO
             this.TrangThai = trangThai;
         }
 
+        public DoiTuong(string tenDT, int trangThai)
+        {
+            
+            this.TenDT = tenDT;
+            this.TrangThai = trangThai;
+        }
+
+        public DoiTuong() { }
+
         public int MaDT { get => maDT; set => maDT = value; }
         public string TenDT { get => tenDT; set => tenDT = value; }
         public int TrangThai { get => trangThai; set => trangThai = value; }

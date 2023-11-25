@@ -15,20 +15,36 @@ namespace pharmacy_management.Database
         public ConnectDB()
         {
             // @autho Hao
-            // string strCnn = "Data Source=LAPTOP-ULQT60JG; Database=ql_nhathuoc;Integrated Security = True";
+            string strCnn = "Data Source=LAPTOP-ULQT60JG; Database=ql_nhathuoc;Integrated Security = True";
+            // @author Thinh
+            string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc; Max Pool Size=1000;Integrated Security = True";
+            // @author Duc
+
+           // string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
+
+            //string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
+
+            sqlConn = new SqlConnection(strCnn);
+        }
+
+        public SqlConnection KetNoiCSDL()
+        {
+            // @autho Hao
+            string strCnn = "Data Source=LAPTOP-ULQT60JG; Database=ql_nhathuoc;Integrated Security = True";
             // @author Thinh
             //string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc;Integrated Security = True";
             // @author Duc
             //string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
-            // @author An
-            string strCnn = "Data Source=DESKTOP-F74SIEE;Initial Catalog=ql_nhathuoc;Integrated Security=True";
             sqlConn = new SqlConnection(strCnn);
+            return sqlConn;
         }
+
         //Phuong thuc de thuc hien cau lenh strSQL truy vân du lieu
         public SqlDataReader Execute(string sqlStr)
         {
             sqlConn.Open();
             SqlCommand command = new SqlCommand(sqlStr, sqlConn);
+            command.CommandTimeout = 0;
             SqlDataReader reader = command.ExecuteReader();
             return reader;
         }
