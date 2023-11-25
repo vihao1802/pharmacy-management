@@ -210,6 +210,7 @@
     </Compile>
     <Compile Include="GUI\KhachHang\KhachHangfrm.designer.cs">
       <DependentUpon>KhachHangfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -386,6 +387,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\KhachHang\KhachHangfrm.resx">
       <DependentUpon>KhachHangfrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
@@ -430,6 +432,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx">
       <DependentUpon>FrmXuatXu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\QLDoiTuong\FrmDoiTuong.resx" />
     <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx" />
     <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx" />
