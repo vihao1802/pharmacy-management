@@ -26,7 +26,7 @@ namespace pharmacy_management.GUI.NhapHang
         }
         public void AddNewContent(DTO.Thuoc thuoc_item)
         {
-              thuoc_item.GiaThuoc = thuoc_item.GiaThuoc * 80 / 100;
+              
 
             thuoc_info = thuoc_item;
            // thuoc_info.GiaThuoc = thuoc_item.GiaThuoc * 80/100;

@@ -28,5 +28,9 @@ namespace pharmacy_management.BUS
             }else { 
                 return null; }
         }
+        public void DoiPass(string username,string password)
+        {
+            dao.DoiPass(username,password);
+        }
     }
 }

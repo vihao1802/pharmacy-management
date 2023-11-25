@@ -28,7 +28,9 @@ namespace pharmacy_management.GUI.BanHang
      
         public void AddNewContent(DTO.Thuoc thuoc_item)
         {
+            thuoc_item.GiaThuoc = thuoc_item.GiaThuoc * 120 / 100;
             thuoc_info = thuoc_item;
+           
 
             lbl_item_name.Text = thuoc_item.TenThuoc;
 
