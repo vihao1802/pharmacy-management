@@ -18,6 +18,7 @@ using pharmacy_management.GUI.BanHang;
 using pharmacy_management.GUI.NhapHang;
 using pharmacy_management.GUI.Dash;
 using pharmacy_management.GUI.Thuoc;
+using pharmacy_management.GUI.QuyDoiDiem;
 
 namespace pharmacy_management.GUI
 {
@@ -32,28 +33,36 @@ namespace pharmacy_management.GUI
         {
             InitializeComponent();
 
+<<<<<<< HEAD
              DashFrm dashFrm = new DashFrm();
             addFormtoPanelContainer(dashFrm );
              nv = Login.nv;
          //   addControls();
              lbName.Text = nv.TenNV;
+=======
+            DashFrm dashFrm = new DashFrm();
+            addFormtoPanelContainer(dashFrm);
+            nv = Login.nv;
+            //addControls();
+            lbName.Text = nv.TenNV;
+>>>>>>> 45b538d1fd72b3699a6445c044f8246d7147cb5d
 
         }
-        private void addControls()
-        {
-            if(nv.MaQuyen == 2)
-            {
-                btnStaff.Visible = false;
-                btnPill.Visible = false;
-                btnPN.Visible = false;
-                btnStorage.Visible = false;
-                btnVoucher.Visible = false;
-            }else if(nv.MaQuyen == 3)
-            {
-                btnCustomer.Visible = false;
+        //private void addControls()
+        //{
+        //    if(nv.MaQuyen == 2)
+        //    {
+        //        btnStaff.Visible = false;
+        //        btnPill.Visible = false;
+        //        btnPN.Visible = false;
+        //        btnStorage.Visible = false;
+        //        btnVoucher.Visible = false;
+        //    }else if(nv.MaQuyen == 3)
+        //    {
+        //        btnCustomer.Visible = false;
 
-            }
-        }
+        //    }
+        //}
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -65,7 +74,7 @@ namespace pharmacy_management.GUI
 
         }
 
-     
+
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -92,7 +101,17 @@ namespace pharmacy_management.GUI
         {
             sidebarTimer.Start();
         }
-
+        public void setDisabled(Boolean flag)
+        {
+            btnSell.Enabled = flag;
+            btnPill.Enabled = flag;
+            btnStaff.Enabled = flag;
+            btnStorage.Enabled = flag;
+            btnVoucher.Enabled = flag;
+            btnCustomer.Enabled = flag;
+            kryptonButton1.Enabled = flag;
+            btnPN.Enabled = flag;
+        }
         private void addFormtoPanelContainer(object Form)
         {
             if (this.PnContainer.Controls.Count > 0)
@@ -108,6 +127,7 @@ namespace pharmacy_management.GUI
             this.PnContainer.Controls.Add(f);
             this.PnContainer.Tag = f;
             f.Show();
+            setDisabled(true);
         }
 
         public void closeFrm(object Form)
@@ -126,6 +146,7 @@ namespace pharmacy_management.GUI
             f.Show();*/
             bhFrm = new BanHangFrm();
             addFormtoPanelContainer(bhFrm);
+            btnSell.Enabled = false;
         }
 
         private void btnStorage_Click(object sender, EventArgs e)
@@ -136,12 +157,13 @@ namespace pharmacy_management.GUI
             PnContainer.Dock = DockStyle.Fill;*/
 
             addFormtoPanelContainer(new NhapHang.NhapHangFrm());
+            btnStorage.Enabled = false;
 
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void dashboard1_Load(object sender, EventArgs e)
@@ -152,6 +174,7 @@ namespace pharmacy_management.GUI
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new DonHangFrm());
+            kryptonButton1.Enabled = false;
 
         }
 
@@ -163,11 +186,15 @@ namespace pharmacy_management.GUI
         private void btnPN_Click(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new PhieuNhapFrm());
+            btnPN.Enabled = false;
+
         }
 
         private void btnPill_Click(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new FormThuoc());
+            btnPill.Enabled = false;
+
         }
 
         private void kryptonLabel2_Click_1(object sender, EventArgs e)
@@ -175,6 +202,19 @@ namespace pharmacy_management.GUI
             this.Close();
             Login login = new Login();
             login.Show();
+        }
+
+        private void btnVoucher_Click(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new QuyDoiDiemFrm());
+            btnVoucher.Enabled = false;
+
+        }
+
+        private void kryptonLabel3_Click(object sender, EventArgs e)
+        {
+            DoiMatKhau doiMatKhau = new DoiMatKhau();
+            doiMatKhau.Show();
         }
     }
 

@@ -50,10 +50,47 @@ namespace pharmacy_management.DAO
 
         }
 
+        public DiemKhachHang GetItem(string ma)
+        {
+            DiemKhachHang diemKH = new DiemKhachHang();
+            ConnectDB conn = new ConnectDB();
+            string query = "SELECT * FROM diemkhachhang WHERE MaKH = '" + ma + "'";
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                if (reader.Read())
+                {
+                    diemKH = new DiemKhachHang(
+                        Int32.Parse(reader["MaBangDiem"].ToString()),
+                        Int32.Parse(reader["MaKH"].ToString()),
+                        Int32.Parse(reader["DiemTichLuy"].ToString()),
+                        Int32.Parse(reader["DiemDaSuDung"].ToString())
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at DiemKhachHangDAO GetItem: " + ex.Message);
+            }
+
+            return diemKH;
+
+        }
+
         public void updateDiemKH(string diem, string ma)
         {
             ConnectDB conn = new ConnectDB();
             string query = string.Format("UPDATE diemkhachhang SET DiemTichLuy = DiemTichLuy + {0} WHERE MaKH = '{1}'", diem, ma);
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
+        }
+
+        public void updateDiemKHSauQD(string diem, string ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("UPDATE diemkhachhang SET DiemTichLuy = {0} WHERE MaKH = '{1}'", diem, ma);
             Console.WriteLine(query);
             conn.ExecuteNonQuery(query);
         }
