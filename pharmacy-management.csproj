@@ -261,7 +261,6 @@
     <Compile Include="GUI\NhapHang\SPNhaphang.Designer.cs">
       <DependentUpon>SPNhaphang.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="GUI\QLDoiTuong\FrmDoiTuong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,7 +269,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\QLxuatxu\FrmXuatXu.Designer.cs" />
-=======
     <Compile Include="GUI\QuyDoiDiem\PhieuGiamGiaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -383,11 +381,16 @@
     <EmbeddedResource Include="GUI\NhapHang\SPNhaphang.resx">
       <DependentUpon>SPNhaphang.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
+    <EmbeddedResource Include="GUI\QLDoiTuong\FrmDoiTuong.resx">
+      <DependentUpon>FrmDoiTuong.cs</DependentUpon>
+    </EmbeddedResource>
+	  <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx">
+		  <DependentUpon>FrmXuatXu.cs</DependentUpon>
+	  </EmbeddedResource>
+
     <EmbeddedResource Include="GUI\QLDoiTuong\FrmDoiTuong.resx" />
     <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx" />
     <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx" />
-=======
     <EmbeddedResource Include="GUI\QuyDoiDiem\PhieuGiamGiaFrm.resx">
       <DependentUpon>PhieuGiamGiaFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -401,8 +404,7 @@
     <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx">
       <DependentUpon>FormThuoc.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> 45b538d1fd72b3699a6445c044f8246d7147cb5d
-    <EmbeddedResource Include="Login.resx">
+	<EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
