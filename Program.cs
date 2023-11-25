@@ -24,6 +24,9 @@ namespace pharmacy_management
 
             // Run the application
             Application.Run();
+            //Application.Run(new GUI.QuyDoiDiem.QuyDoiDiemFrm());
+            //Application.Run(new GUI.Menu());
+
         }
     }
 }
