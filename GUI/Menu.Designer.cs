@@ -42,8 +42,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonPalette2 = new Krypton.Toolkit.KryptonPalette(this.components);
             this.PnContainer = new Krypton.Toolkit.KryptonPanel();
-            this.dashboard1 = new pharmacy_management.GUI.Dashboard();
-            this.nhapHang1 = new pharmacy_management.GUI.NhapHang.NhapHang();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
@@ -282,32 +280,12 @@
             // 
             // PnContainer
             // 
-            this.PnContainer.Controls.Add(this.dashboard1);
-            this.PnContainer.Controls.Add(this.nhapHang1);
             this.PnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnContainer.Location = new System.Drawing.Point(250, 0);
             this.PnContainer.Name = "PnContainer";
             this.PnContainer.Size = new System.Drawing.Size(932, 653);
             this.PnContainer.StateCommon.Color1 = System.Drawing.Color.White;
             this.PnContainer.TabIndex = 4;
-            // 
-            // dashboard1
-            // 
-            this.dashboard1.BackColor = System.Drawing.Color.White;
-            this.dashboard1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dashboard1.Location = new System.Drawing.Point(0, 0);
-            this.dashboard1.Name = "dashboard1";
-            this.dashboard1.Size = new System.Drawing.Size(932, 653);
-            this.dashboard1.TabIndex = 0;
-            this.dashboard1.Load += new System.EventHandler(this.dashboard1_Load);
-            // 
-            // nhapHang1
-            // 
-            this.nhapHang1.BackColor = System.Drawing.Color.White;
-            this.nhapHang1.Location = new System.Drawing.Point(0, 0);
-            this.nhapHang1.Name = "nhapHang1";
-            this.nhapHang1.Size = new System.Drawing.Size(932, 603);
-            this.nhapHang1.TabIndex = 13;
             // 
             // kryptonButton1
             // 
@@ -370,8 +348,6 @@
         private Krypton.Toolkit.KryptonButton btnVoucher;
         private System.Windows.Forms.Timer sidebarTimer;
         private System.Windows.Forms.Timer timer1;
-        private Dashboard dashboard1;
-        private NhapHang.NhapHang nhapHang1;
         private Krypton.Toolkit.KryptonButton kryptonButton1;
     }
 }
