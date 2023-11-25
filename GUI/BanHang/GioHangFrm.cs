@@ -292,10 +292,12 @@ namespace pharmacy_management.GUI.BanHang
             if (dropBtn_KH.SelectedIndex == 0)
             {
                 dropBtn_PG.Visible = false;
+                setVisible(false);
             }
             else
             {
                 dropBtn_PG.Visible = true;
+                setVisible(true);
             }
             dropBtn_PG.SelectedIndex = -1;
             dropBtn_PG.Text = "Chọn phiếu giảm";
@@ -306,6 +308,8 @@ namespace pharmacy_management.GUI.BanHang
         {
             label5.Visible = flag;
             lbl_DiemHienCo.Visible = flag;
+            label3.Visible = flag;
+            lbl_bonus.Visible = flag;
         }
         public void load_diemTichLuy()
         {

@@ -40,6 +40,8 @@
             this.dropBtn_KH = new Krypton.Toolkit.KryptonComboBox();
             this.dropBtn_PG = new Krypton.Toolkit.KryptonComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_bonus = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_DiemHienCo = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
@@ -160,8 +162,8 @@
             this.dropBtn_KH.Location = new System.Drawing.Point(19, 12);
             this.dropBtn_KH.Name = "dropBtn_KH";
             this.dropBtn_KH.Size = new System.Drawing.Size(222, 29);
-            this.dropBtn_KH.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.dropBtn_KH.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | Krypton.Toolkit.PaletteDrawBorders.Left)
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.dropBtn_KH.StateCommon.ComboBox.Border.Rounding = 5F;
             this.dropBtn_KH.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
@@ -177,8 +179,8 @@
             this.dropBtn_PG.Location = new System.Drawing.Point(339, 12);
             this.dropBtn_PG.Name = "dropBtn_PG";
             this.dropBtn_PG.Size = new System.Drawing.Size(215, 29);
-            this.dropBtn_PG.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            this.dropBtn_PG.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
+            | Krypton.Toolkit.PaletteDrawBorders.Left)
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.dropBtn_PG.StateCommon.ComboBox.Border.Rounding = 5F;
             this.dropBtn_PG.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
@@ -196,6 +198,26 @@
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 20);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(602, 390);
             this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(352, 47);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 22);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Điểm :";
+            // 
+            // lbl_bonus
+            // 
+            this.lbl_bonus.AutoSize = true;
+            this.lbl_bonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_bonus.Location = new System.Drawing.Point(426, 45);
+            this.lbl_bonus.Name = "lbl_bonus";
+            this.lbl_bonus.Size = new System.Drawing.Size(35, 25);
+            this.lbl_bonus.TabIndex = 8;
+            this.lbl_bonus.Text = "+0";
             // 
             // label5
             // 

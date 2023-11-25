@@ -252,6 +252,12 @@
     <Compile Include="GUI\NhapHang\SPNhaphang.Designer.cs">
       <DependentUpon>SPNhaphang.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\QuyDoiDiem\PhieuGiamGiaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuyDoiDiem\PhieuGiamGiaFrm.Designer.cs">
+      <DependentUpon>PhieuGiamGiaFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\QuyDoiDiem\QuyDoiDiemFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,6 +362,9 @@
     <EmbeddedResource Include="GUI\NhapHang\SPNhaphang.resx">
       <DependentUpon>SPNhaphang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuyDoiDiem\PhieuGiamGiaFrm.resx">
+      <DependentUpon>PhieuGiamGiaFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuyDoiDiem\QuyDoiDiemFrm.resx">
       <DependentUpon>QuyDoiDiemFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,23 +438,22 @@
     <Content Include="Images\Subtract.png" />
     <Content Include="Images\Voucher-Contrast.png" />
     <Content Include="Images\Voucher.png" />
-	  <None Include="ql_nhathuocDataSet1.xsc">
-		  <DependentUpon>ql_nhathuocDataSet1.xsd</DependentUpon>
-	  </None>
-	  <None Include="ql_nhathuocDataSet1.xsd">
-		  <Generator>MSDataSetGenerator</Generator>
-		  <LastGenOutput>ql_nhathuocDataSet1.Designer.cs</LastGenOutput>
-		  <SubType>Designer</SubType>
-	  </None>
-	  <None Include="ql_nhathuocDataSet1.xss">
-		  <DependentUpon>ql_nhathuocDataSet1.xsd</DependentUpon>
-	  </None>
-	  <None Include="Resources\icons8-report-24.png" />
-	  <None Include="Resources\icons8-plus-24.png" />
-	  <None Include="Resources\icons8-setting-24.png" />
-	  <None Include="Resources\icons8-search-24.png" />
-
-	  <Content Include="SqlServerTypes\readme.htm" />
+    <None Include="ql_nhathuocDataSet1.xsc">
+      <DependentUpon>ql_nhathuocDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ql_nhathuocDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ql_nhathuocDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ql_nhathuocDataSet1.xss">
+      <DependentUpon>ql_nhathuocDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\icons8-report-24.png" />
+    <None Include="Resources\icons8-plus-24.png" />
+    <None Include="Resources\icons8-setting-24.png" />
+    <None Include="Resources\icons8-search-24.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

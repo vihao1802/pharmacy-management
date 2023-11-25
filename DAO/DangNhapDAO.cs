@@ -14,17 +14,19 @@ namespace pharmacy_management.DAO
 {
     internal class DangNhapDAO
     {
+        SqlConnection sqlcon;
 
         public DangNhapDAO()
         {
-            KetNoiCSDL();
+            ConnectDB conn = new ConnectDB();
+
+            sqlcon = conn.KetNoiCSDL();
         }
-        SqlConnection sqlcon;
-        void KetNoiCSDL()
-        {
-            string conn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
-            sqlcon = new SqlConnection(conn);
-        }
+        //void KetNoiCSDL()
+        //{
+        //    string conn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
+        //    sqlcon = new SqlConnection(conn);
+        //}
 
         public bool kiemtradangnhap(string username, string password)
         {

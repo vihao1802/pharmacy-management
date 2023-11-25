@@ -190,5 +190,6 @@ namespace pharmacy_management.GUI.QuyDoiDiem
         {
             load_data();
         }
+
     }
 }

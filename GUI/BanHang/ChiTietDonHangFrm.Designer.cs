@@ -60,29 +60,6 @@
             this.lbl_MaKH = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbl_Giam = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lbl_ThanhTien = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbl_TongGia = new System.Windows.Forms.Label();
-            this.lbl_Giam = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lbl_ThanhTien = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_SanPhamDH)).BeginInit();
@@ -166,11 +143,11 @@
             // 
             this.lbl_ThanhTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_ThanhTien.AutoSize = true;
-            this.lbl_ThanhTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_ThanhTien.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_ThanhTien.Location = new System.Drawing.Point(881, 557);
+            this.lbl_ThanhTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_ThanhTien.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbl_ThanhTien.Location = new System.Drawing.Point(910, 564);
             this.lbl_ThanhTien.Name = "lbl_ThanhTien";
-            this.lbl_ThanhTien.Size = new System.Drawing.Size(108, 25);
+            this.lbl_ThanhTien.Size = new System.Drawing.Size(99, 25);
             this.lbl_ThanhTien.TabIndex = 33;
             this.lbl_ThanhTien.Text = "300,000 đ";
             // 
@@ -179,7 +156,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label11.Location = new System.Drawing.Point(692, 557);
+            this.label11.Location = new System.Drawing.Point(782, 564);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(122, 25);
             this.label11.TabIndex = 32;
@@ -191,7 +168,7 @@
             this.lbl_Giam.AutoSize = true;
             this.lbl_Giam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbl_Giam.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_Giam.Location = new System.Drawing.Point(881, 507);
+            this.lbl_Giam.Location = new System.Drawing.Point(916, 506);
             this.lbl_Giam.Name = "lbl_Giam";
             this.lbl_Giam.Size = new System.Drawing.Size(52, 25);
             this.lbl_Giam.TabIndex = 31;
@@ -202,7 +179,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label8.Location = new System.Drawing.Point(692, 507);
+            this.label8.Location = new System.Drawing.Point(806, 506);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 25);
             this.label8.TabIndex = 30;
@@ -214,7 +191,7 @@
             this.lbl_TongGia.AutoSize = true;
             this.lbl_TongGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbl_TongGia.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_TongGia.Location = new System.Drawing.Point(881, 457);
+            this.lbl_TongGia.Location = new System.Drawing.Point(910, 459);
             this.lbl_TongGia.Name = "lbl_TongGia";
             this.lbl_TongGia.Size = new System.Drawing.Size(99, 25);
             this.lbl_TongGia.TabIndex = 29;
@@ -225,7 +202,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(692, 457);
+            this.label2.Location = new System.Drawing.Point(800, 459);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 25);
             this.label2.TabIndex = 28;
@@ -236,11 +213,10 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.AutoSize = true;
             this.panel2.Controls.Add(this.gv_SanPhamDH);
             this.panel2.Location = new System.Drawing.Point(12, 215);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1057, 217);
+            this.panel2.Size = new System.Drawing.Size(1068, 227);
             this.panel2.TabIndex = 27;
             // 
             // gv_SanPhamDH
@@ -253,7 +229,7 @@
             this.gv_SanPhamDH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gv_SanPhamDH.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
@@ -282,7 +258,7 @@
             this.gv_SanPhamDH.Location = new System.Drawing.Point(0, 0);
             this.gv_SanPhamDH.Name = "gv_SanPhamDH";
             this.gv_SanPhamDH.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -293,7 +269,7 @@
             this.gv_SanPhamDH.RowHeadersVisible = false;
             this.gv_SanPhamDH.RowHeadersWidth = 51;
             this.gv_SanPhamDH.RowTemplate.Height = 24;
-            this.gv_SanPhamDH.Size = new System.Drawing.Size(1057, 217);
+            this.gv_SanPhamDH.Size = new System.Drawing.Size(1068, 227);
             this.gv_SanPhamDH.TabIndex = 26;
             // 
             // Column1
@@ -438,136 +414,17 @@
             this.lbl_MaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbl_MaKH.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbl_MaKH.Location = new System.Drawing.Point(255, 66);
-            this.label5.Text = "Mã khách hàng:";
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gv_SanPhamDH.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.gv_SanPhamDH.RowHeadersVisible = false;
-            this.gv_SanPhamDH.RowHeadersWidth = 51;
-            this.gv_SanPhamDH.RowTemplate.Height = 24;
-            this.gv_SanPhamDH.TabIndex = 26;
+            this.lbl_MaKH.Name = "lbl_MaKH";
+            this.lbl_MaKH.Size = new System.Drawing.Size(0, 25);
+            this.lbl_MaKH.TabIndex = 35;
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.gv_SanPhamDH);
-            this.panel2.Location = new System.Drawing.Point(12, 215);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1068, 227);
-            this.panel2.TabIndex = 27;
+            // label9
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(11, 469);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 25);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Tổng giá:";
-            // 
-            // lbl_TongGia
-            // 
-            this.lbl_TongGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_TongGia.AutoSize = true;
-            this.lbl_TongGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_TongGia.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_TongGia.Location = new System.Drawing.Point(121, 469);
-            this.lbl_TongGia.Name = "lbl_TongGia";
-            this.lbl_TongGia.Size = new System.Drawing.Size(99, 25);
-            this.lbl_TongGia.TabIndex = 29;
-            this.lbl_TongGia.Text = "300,000 đ";
-            // 
-            // lbl_Giam
-            // 
-            this.lbl_Giam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Giam.AutoSize = true;
-            this.lbl_Giam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_Giam.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-        private System.Windows.Forms.Label label6;
-            this.lbl_Giam.Location = new System.Drawing.Point(508, 469);
-            this.lbl_Giam.Name = "lbl_Giam";
-            this.lbl_Giam.Size = new System.Drawing.Size(52, 25);
-            this.lbl_Giam.TabIndex = 31;
-            this.lbl_Giam.Text = "15%";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label8.Location = new System.Drawing.Point(398, 469);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(98, 25);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "Đã giảm:";
-            // 
-            // lbl_ThanhTien
-            // 
-            this.lbl_ThanhTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_ThanhTien.AutoSize = true;
-            this.lbl_ThanhTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_ThanhTien.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_ThanhTien.Location = new System.Drawing.Point(831, 469);
-            this.lbl_ThanhTien.Name = "lbl_ThanhTien";
-            this.lbl_ThanhTien.Size = new System.Drawing.Size(99, 25);
-            this.lbl_ThanhTien.TabIndex = 33;
-            this.lbl_ThanhTien.Text = "300,000 đ";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label11.Location = new System.Drawing.Point(703, 469);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(122, 25);
-            this.label11.TabIndex = 32;
-            this.label11.Text = "Thành tiền:";
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column1.HeaderText = "Mã thuốc";
-            this.Column1.MinimumWidth = 80;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 80;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.HeaderText = "Tên thuốc";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column2.HeaderText = "Số lượng";
-            this.Column2.MinimumWidth = 80;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 80;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Đơn giá";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.HeaderText = "Thành tiền";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label9.Location = new System.Drawing.Point(13, 165);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(116, 25);
             this.label9.TabIndex = 9;
             this.label9.Text = "Điện thoại:";
             // 
@@ -587,10 +444,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 611);
             this.Controls.Add(this.panel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChiTietDonHangFrm";
-            this.Palette = this.kryptonPalette2;
-            this.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi tiết đơn hàng";
             this.panel1.ResumeLayout(false);
@@ -607,6 +461,7 @@
         private System.Windows.Forms.Label lbl_MaDH;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lbl_MaNV;
