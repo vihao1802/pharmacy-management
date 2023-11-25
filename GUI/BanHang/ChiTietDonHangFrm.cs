@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace pharmacy_management.GUI.BanHang
 {
-    public partial class ChiTietDonHangFrm : Form
+    public partial class ChiTietDonHangFrm : KryptonForm
     {
         DonHang dh;
         string formattedNumber = "";

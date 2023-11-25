@@ -60,6 +60,15 @@ namespace pharmacy_management.DAO
             catch (Exception ex) { return false; }
         }
 
+        public void DoiPass(string user,string pass)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("UPDATE nhanvien SET MatKhau = {0} WHERE TenDangNhap = '{1}'", pass, user);
+            Console.WriteLine(query);
+            
+            conn.ExecuteNonQuery(query);
+
+        }
         public NhanVien taikhoandangnhap(NhanVien nv)
         {
 

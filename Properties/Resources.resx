@@ -823,4 +823,13 @@
 	<data name="Purchase Order" type="System.Resources.ResXFileRef, System.Windows.Forms">
 		<value>..\Resources\Purchase Order.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
 	</data>
+	<data name="Show Password2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\Show Password2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
+	<data name="Show Password1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\Show Password1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
+	<data name="Show Password" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\Show Password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
 </root>

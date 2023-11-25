@@ -96,6 +96,13 @@ namespace pharmacy_management.GUI
         public void setDisabled(Boolean flag)
         {
             btnSell.Enabled = flag;
+            btnPill.Enabled = flag;
+            btnStaff.Enabled = flag;
+            btnStorage.Enabled = flag;
+            btnVoucher.Enabled = flag;
+            btnCustomer.Enabled = flag;
+            kryptonButton1.Enabled = flag;
+            btnPN.Enabled = flag;
         }
         private void addFormtoPanelContainer(object Form)
         {
@@ -142,6 +149,7 @@ namespace pharmacy_management.GUI
             PnContainer.Dock = DockStyle.Fill;*/
 
             addFormtoPanelContainer(new NhapHang.NhapHangFrm());
+            btnStorage.Enabled = false;
 
         }
 
@@ -158,6 +166,7 @@ namespace pharmacy_management.GUI
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new DonHangFrm());
+            kryptonButton1.Enabled = false;
 
         }
 
@@ -169,11 +178,15 @@ namespace pharmacy_management.GUI
         private void btnPN_Click(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new PhieuNhapFrm());
+            btnPN.Enabled = false;
+
         }
 
         private void btnPill_Click(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new FormThuoc());
+            btnPill.Enabled = false;
+
         }
 
         private void kryptonLabel2_Click_1(object sender, EventArgs e)
@@ -186,6 +199,14 @@ namespace pharmacy_management.GUI
         private void btnVoucher_Click(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new QuyDoiDiemFrm());
+            btnVoucher.Enabled = false;
+
+        }
+
+        private void kryptonLabel3_Click(object sender, EventArgs e)
+        {
+            DoiMatKhau doiMatKhau = new DoiMatKhau();
+            doiMatKhau.Show();
         }
     }
 
