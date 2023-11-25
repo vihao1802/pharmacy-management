@@ -18,9 +18,19 @@ namespace pharmacy_management.DAO
 
         public DangNhapDAO()
         {
+<<<<<<< HEAD
+            KetNoiCSDL();
+        }
+        SqlConnection sqlcon;
+        void KetNoiCSDL()
+        {
+            string conn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc;Integrated Security = True";
+            sqlcon = new SqlConnection(conn);
+=======
             ConnectDB conn = new ConnectDB();
 
             sqlcon = conn.KetNoiCSDL();
+>>>>>>> 45b538d1fd72b3699a6445c044f8246d7147cb5d
         }
         //void KetNoiCSDL()
         //{
