@@ -17,9 +17,13 @@ namespace pharmacy_management.Database
             // @autho Hao
             string strCnn = "Data Source=LAPTOP-ULQT60JG; Database=ql_nhathuoc;Integrated Security = True";
             // @author Thinh
-            //string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc;Integrated Security = True";
+            string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc; Max Pool Size=1000;Integrated Security = True";
             // @author Duc
+<<<<<<< HEAD
+           // string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
+=======
             //string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
+>>>>>>> 45b538d1fd72b3699a6445c044f8246d7147cb5d
             sqlConn = new SqlConnection(strCnn);
         }
 
@@ -40,6 +44,7 @@ namespace pharmacy_management.Database
         {
             sqlConn.Open();
             SqlCommand command = new SqlCommand(sqlStr, sqlConn);
+            command.CommandTimeout = 0;
             SqlDataReader reader = command.ExecuteReader();
             return reader;
         }
