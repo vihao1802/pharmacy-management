@@ -196,7 +196,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btn_remove_item);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
+            this.Margin = new System.Windows.Forms.Padding(3, 3, 15, 15);
             this.Name = "SanPhamGioHang";
             this.Size = new System.Drawing.Size(580, 110);
             this.panel1.ResumeLayout(false);

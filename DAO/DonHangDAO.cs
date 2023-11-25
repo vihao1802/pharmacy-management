@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,10 +37,21 @@ namespace pharmacy_management.DAO
                         maTmp = "0";
                     }
 
-                    DateTime dateTime = DateTime.ParseExact(reader["NgayLap"].ToString(), "MM/dd/yyyy hh:mm:ss tt", null);
-                    string outputString = dateTime.ToString("yyyy-MM-dd");
-                    Console.WriteLine(outputString);
+                    //DateTime dateTime = DateTime.ParseExact(reader["NgayLap"].ToString(), "MM/dd/yyyy hh:mm:ss tt", null);
+                    //string outputString = dateTime.ToString("yyyy-MM-dd");
+                    //Console.WriteLine(outputString);
+                    DateTime dateTime;
+                    string dateString = reader["NgayLap"].ToString();
+                    string outputString = "";
+                    if (DateTime.TryParseExact(dateString, "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime))
+                    {
+                        outputString = dateTime.ToString("yyyy-MM-dd");
 
+                    }
+                    else if (DateTime.TryParseExact(dateString, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime))
+                    {
+                        outputString = dateTime.ToString("yyyy-MM-dd");
+                    }
 
                     Console.WriteLine(maTmp);
                     DonHang tmp = new DonHang(
@@ -85,12 +97,24 @@ namespace pharmacy_management.DAO
                         maTmp = "0";
                     }
 
-                    DateTime dateTime = DateTime.ParseExact(reader["NgayLap"].ToString(), "MM/dd/yyyy hh:mm:ss tt", null);
-                    string outputString = dateTime.ToString("yyyy-MM-dd");
-                    Console.WriteLine(outputString);
+                    //DateTime dateTime = DateTime.ParseExact(reader["NgayLap"].ToString(), "MM/dd/yyyy hh:mm:ss tt", null);
+                    //string outputString = dateTime.ToString("yyyy-MM-dd");
+                    //Console.WriteLine(outputString);
 
+                    DateTime dateTime;
+                    string dateString = reader["NgayLap"].ToString();
+                    string outputString = "";
+                    if (DateTime.TryParseExact(dateString, "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime))
+                    {
+                        outputString = dateTime.ToString("yyyy-MM-dd");
 
-                    Console.WriteLine(maTmp);
+                    }
+                    else if (DateTime.TryParseExact(dateString, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime))
+                    {
+                        outputString = dateTime.ToString("yyyy-MM-dd");
+                    }
+
+                    //Console.WriteLine(maTmp);
                     DonHang tmp = new DonHang(
                         Int32.Parse(reader["MaDH"].ToString()),
                         Int32.Parse(reader["MaNV"].ToString()),
@@ -133,10 +157,21 @@ namespace pharmacy_management.DAO
                         maTmp = "0";
                     }
 
-                    DateTime dateTime = DateTime.ParseExact(reader["NgayLap"].ToString(), "MM/dd/yyyy hh:mm:ss tt", null);
-                    string outputString = dateTime.ToString("yyyy-MM-dd");
-                    Console.WriteLine(outputString);
+                    //DateTime dateTime = DateTime.ParseExact(reader["NgayLap"].ToString(), "MM/dd/yyyy hh:mm:ss tt", null);
+                    //string outputString = dateTime.ToString("yyyy-MM-dd");
+                    //Console.WriteLine(outputString);
+                    DateTime dateTime;
+                    string dateString = reader["NgayLap"].ToString();
+                    string outputString = "";
+                    if (DateTime.TryParseExact(dateString, "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime))
+                    {
+                        outputString = dateTime.ToString("yyyy-MM-dd");
 
+                    }
+                    else if (DateTime.TryParseExact(dateString, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime))
+                    {
+                        outputString = dateTime.ToString("yyyy-MM-dd");
+                    }
 
                     Console.WriteLine(maTmp);
                     DonHang tmp = new DonHang(
