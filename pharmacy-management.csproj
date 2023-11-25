@@ -292,7 +292,6 @@
     <Compile Include="GUI\Report\ReportDonHangFrm.Designer.cs">
       <DependentUpon>ReportDonHangFrm.cs</DependentUpon>
     </Compile>
->>>>>>> main
     <Compile Include="GUI\Thuoc\FormThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
