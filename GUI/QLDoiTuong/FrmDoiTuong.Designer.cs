@@ -39,6 +39,7 @@
             this.kryptonGroupBox2 = new Krypton.Toolkit.KryptonGroupBox();
             this.cbbSearch = new Krypton.Toolkit.KryptonComboBox();
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
+            this.btnRefresh = new Krypton.Toolkit.KryptonButton();
             this.xoabtn = new Krypton.Toolkit.KryptonButton();
             this.btnSua = new Krypton.Toolkit.KryptonButton();
             this.DGVDoiTuong = new Krypton.Toolkit.KryptonDataGridView();
@@ -52,7 +53,6 @@
             this.txtMaDoiTuong = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnRefresh = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).BeginInit();
             this.kryptonGroupBox2.Panel.SuspendLayout();
@@ -207,6 +207,33 @@
             this.kryptonPanel1.StateCommon.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
             this.kryptonPanel1.TabIndex = 12;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.CornerRoundingRadius = 20F;
+            this.btnRefresh.Location = new System.Drawing.Point(747, 387);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(90, 60);
+            this.btnRefresh.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnRefresh.StateCommon.Border.Rounding = 20F;
+            this.btnRefresh.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.StatePressed.Back.Color1 = System.Drawing.Color.LightSkyBlue;
+            this.btnRefresh.StatePressed.Back.Color2 = System.Drawing.Color.LightSkyBlue;
+            this.btnRefresh.StatePressed.Back.ColorAngle = 60F;
+            this.btnRefresh.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
+            this.btnRefresh.StatePressed.Border.Color1 = System.Drawing.Color.White;
+            this.btnRefresh.StatePressed.Border.Color2 = System.Drawing.Color.White;
+            this.btnRefresh.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnRefresh.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.btnRefresh, "Refresh");
+            this.btnRefresh.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Values.Image")));
+            this.btnRefresh.Values.Text = "";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // xoabtn
             // 
             this.xoabtn.CornerRoundingRadius = 20F;
@@ -337,7 +364,7 @@
             this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel1);
             this.kryptonGroupBox1.Size = new System.Drawing.Size(392, 195);
             this.kryptonGroupBox1.TabIndex = 0;
-            this.kryptonGroupBox1.Values.Heading = "Thông tin xuất xứ";
+            this.kryptonGroupBox1.Values.Heading = "Thông tin đối tượng";
             // 
             // ckbTrangThai
             // 
@@ -394,33 +421,6 @@
             this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonLabel1.TabIndex = 0;
             this.kryptonLabel1.Values.Text = "Mã đối tượng";
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.CornerRoundingRadius = 20F;
-            this.btnRefresh.Location = new System.Drawing.Point(747, 387);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(90, 60);
-            this.btnRefresh.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnRefresh.StateCommon.Border.Rounding = 20F;
-            this.btnRefresh.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.StatePressed.Back.Color1 = System.Drawing.Color.LightSkyBlue;
-            this.btnRefresh.StatePressed.Back.Color2 = System.Drawing.Color.LightSkyBlue;
-            this.btnRefresh.StatePressed.Back.ColorAngle = 60F;
-            this.btnRefresh.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
-            this.btnRefresh.StatePressed.Border.Color1 = System.Drawing.Color.White;
-            this.btnRefresh.StatePressed.Border.Color2 = System.Drawing.Color.White;
-            this.btnRefresh.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnRefresh.TabIndex = 17;
-            this.toolTip1.SetToolTip(this.btnRefresh, "Refresh");
-            this.btnRefresh.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.Values.Image")));
-            this.btnRefresh.Values.Text = "";
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // FrmDoiTuong
             // 

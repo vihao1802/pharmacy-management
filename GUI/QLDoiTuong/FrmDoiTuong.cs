@@ -25,7 +25,8 @@ namespace pharmacy_management.GUI.QLDoiTuong
         }
 
         DoiTuongBUS bus = new DoiTuongBUS();
-
+        ThuocBUS thuocbus = new ThuocBUS();
+        int flag = 1;
         public void setup()
         {
             cbbSearch.Items.Add("Mã đối tượng");
@@ -43,6 +44,7 @@ namespace pharmacy_management.GUI.QLDoiTuong
         private void loadds()
         {
             DGVDoiTuong.Rows.Clear();
+            DoiTuongBUS bus = new DoiTuongBUS();
             foreach (DoiTuong item in bus.getList())
             {
                 string temp;
@@ -63,48 +65,52 @@ namespace pharmacy_management.GUI.QLDoiTuong
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (DGVDoiTuong.SelectedRows.Count >= 1)
+            if (flag == 0)
+                MessageBox.Show("Bạn phải làm mới bảng trước");
+            else
             {
-                MessageBox.Show("Có dòng đang được chọn hãy bỏ chọn trước!");
-                return;
-            }
-            if (txtTenDoiTuong.Text == "")
-            {
-                MessageBox.Show("Chưa điền tên đối tượng");
-                return;
-            }
-            if (!ckbTrangThai.Checked)
-            {
-                MessageBox.Show("Thêm đối tượng phải đang hoạt động!!!");
-                return;
-            }
-            try
-            {
-                DoiTuong dt = new DoiTuong(txtTenDoiTuong.Text.ToString(),1);
-                bus.add(dt);
-                
-                int maxDoiTuong = 0;
-                foreach (DoiTuong item in bus.getList())
+                if (DGVDoiTuong.SelectedRows.Count >= 1)
                 {
-                    int ma = int.Parse(item.MaDT.ToString());
-                    if (ma > maxDoiTuong)
-                    {
-                        maxDoiTuong = ma;
-                    }                                   
+                    MessageBox.Show("Có dòng đang được chọn hãy bỏ chọn trước!");
+                    return;
                 }
+                if (txtTenDoiTuong.Text == "")
+                {
+                    MessageBox.Show("Chưa điền tên đối tượng");
+                    return;
+                }
+                if (!ckbTrangThai.Checked)
+                {
+                    MessageBox.Show("Thêm đối tượng phải đang hoạt động!!!");
+                    return;
+                }
+                try
+                {
+                    DoiTuong dt = new DoiTuong(txtTenDoiTuong.Text.ToString(), 1);
+                    bus.add(dt);
 
-                int trangthaiNew = dt.TrangThai;
-                string tenNew = dt.TenDT;
-                string tempNew = (trangthaiNew == 1) ? "Active" : "Not Active";
-                DGVDoiTuong.Rows.Add(maxDoiTuong + 1, tenNew, tempNew);
-                txtTenDoiTuong.Text = "";
-                MessageBox.Show("Thêm thành công");        
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-           
+                    int maxDoiTuong = 0;
+                    foreach (DoiTuong item in bus.getList())
+                    {
+                        int ma = int.Parse(item.MaDT.ToString());
+                        if (ma > maxDoiTuong)
+                        {
+                            maxDoiTuong = ma;
+                        }
+                    }
+
+                    int trangthaiNew = dt.TrangThai;
+                    string tenNew = dt.TenDT;
+                    string tempNew = (trangthaiNew == 1) ? "Active" : "Not Active";
+                    DGVDoiTuong.Rows.Add(maxDoiTuong + 1, tenNew, tempNew);
+                    txtTenDoiTuong.Text = "";
+                    MessageBox.Show("Thêm thành công");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }         
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -153,14 +159,10 @@ namespace pharmacy_management.GUI.QLDoiTuong
                 txtTenDoiTuong.Text = DGVDoiTuong.Rows[e.RowIndex].Cells["TenDT"].Value.ToString();
                 string temp = DGVDoiTuong.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString();
                 ckbTrangThai.Enabled = true;
-                if (temp.Equals("Active", StringComparison.OrdinalIgnoreCase))
-                {
-                    ckbTrangThai.Checked = true;
-                }
-                else
-                {
-                    ckbTrangThai.Checked = false;
-                }
+                if (temp.Equals("Active", StringComparison.OrdinalIgnoreCase))              
+                ckbTrangThai.Checked = true;                
+                else          
+                    ckbTrangThai.Checked = false;               
             }
         }
 
@@ -181,11 +183,16 @@ namespace pharmacy_management.GUI.QLDoiTuong
                     try
                     {
                         //if (trangThai == 1)
-                            bus.delete(ma);
+                        bus.delete(ma);
                         txtTenDoiTuong.Text = "";
                         MessageBox.Show("Hủy kích hoạt đối tượng thành công!!!");
                         DGVDoiTuong.CurrentRow.Cells["TrangThai"].Value = "Not Active";
-                        ckbTrangThai.Checked = true;
+                        ckbTrangThai.Checked = true; 
+                        foreach (DTO.Thuoc item in thuocbus.getList())
+                        {
+                            if (ma == item.MaDoiTuong)
+                                thuocbus.delete(item.MaThuoc);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -209,6 +216,7 @@ namespace pharmacy_management.GUI.QLDoiTuong
 
         private void searchbtn_Click(object sender, EventArgs e)
         {
+
             if (txtSearch.Text.ToString() == "")
             {
                 MessageBox.Show("Bạn chưa nhập điều kiện cần lọc");
@@ -234,6 +242,7 @@ namespace pharmacy_management.GUI.QLDoiTuong
                         temp = "Not Active";
                     }
                     DGVDoiTuong.Rows.Add(ma, ten, temp);
+                    flag = 0;
                 }
 
             }
@@ -255,13 +264,15 @@ namespace pharmacy_management.GUI.QLDoiTuong
                         temp = "Not Active";
                     }
                     DGVDoiTuong.Rows.Add(ma, ten, temp);
+                    flag = 0;
                 }
             }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-
+            loadds();
+            flag = 1;
         }
     }
 }

@@ -77,6 +77,8 @@ namespace pharmacy_management.GUI.Thuoc
         }
         private void loadds()
         {
+            DGVThuoc.Rows.Clear();
+            ThuocBUS thuocbus = new ThuocBUS();
             foreach (DTO.Thuoc item in thuocbus.getList())
             {
                 string temp;
@@ -222,7 +224,8 @@ namespace pharmacy_management.GUI.Thuoc
                 float giathuoc = drug.GiaThuoc;
                 string anhthuoc = globalFilename;
                 string tempNew = (trangthaiNew == 1) ? "Active" : "Not Active";
-                DGVThuoc.Rows.Add(maxThuoc+1, tenNew,tenxuatxu,tendoituong,soluong,giathuoc,anhthuoc,tempNew);
+                DGVThuoc.Rows.Add(maxThuoc + 1, tenNew, tenxuatxu, tendoituong, soluong, giathuoc, anhthuoc, tempNew);
+               
                 Refreshtxt();
                 MessageBox.Show("Thêm thành công");
             }
@@ -248,19 +251,31 @@ namespace pharmacy_management.GUI.Thuoc
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            
+
             int ma = int.Parse(DGVThuoc.CurrentRow.Cells["MaThuoc"].Value.ToString());
-            try
+            int trangThai = ckbTrangThai.Checked ? 1 : 0;
+            if (trangThai == 0)
             {
-                thuocbus.delete(ma);
-                txtTenThuoc.Text = "";
-                MessageBox.Show("Hủy kích hoạt thông tin thuốc thành công!!!");
-                ckbTrangThai.Checked = true;
+                MessageBox.Show("Xuất xứ đã bị hủy kích hoạt từ trước!!!");
+                return;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            else {
+                if (MessageBox.Show("Bạn có chắc chắn muốn hủy kích hoạt xuất xứ không?", "Xác nhận hủy", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        thuocbus.delete(ma);
+                        Refresh();
+                        MessageBox.Show("Hủy kích hoạt thông tin thuốc thành công!!!");
+                        DGVThuoc.CurrentRow.Cells["TrangThai"].Value = "Not Active";
+                        ckbTrangThai.Checked = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+        }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
