@@ -26,10 +26,10 @@ namespace pharmacy_management.GUI.NhapHang
             lbName.Text = nv.TenNV.ToString();
             setup();
         }
-      
+
         public void setup()
         {
-            
+
         }
 
         private void btn_pay_Click(object sender, EventArgs e)

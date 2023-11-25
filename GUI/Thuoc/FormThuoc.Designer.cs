@@ -28,184 +28,474 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormThuoc));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kryptonGroupBox1 = new Krypton.Toolkit.KryptonGroupBox();
-            this.kryptonDropButton2 = new Krypton.Toolkit.KryptonDropButton();
-            this.kryptonStatusStrip1 = new Krypton.Toolkit.KryptonStatusStrip();
-            this.kryptonDropButton1 = new Krypton.Toolkit.KryptonDropButton();
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
-            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
-            this.kryptonTextBox5 = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonTextBox2 = new Krypton.Toolkit.KryptonTextBox();
-            this.txtMaThuoc = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
-            this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
-            this.kryptonButton3 = new Krypton.Toolkit.KryptonButton();
-            this.kryptonButton4 = new Krypton.Toolkit.KryptonButton();
-            this.kryptonButton5 = new Krypton.Toolkit.KryptonButton();
-            this.kryptonButton6 = new Krypton.Toolkit.KryptonButton();
+            this.btnNhap = new Krypton.Toolkit.KryptonButton();
+            this.ckbTrangThai = new Krypton.Toolkit.KryptonCheckBox();
+            this.btnXuat = new Krypton.Toolkit.KryptonButton();
+            this.cbbMaXuatXu = new Krypton.Toolkit.KryptonComboBox();
+            this.cbbMaDoiTuong = new Krypton.Toolkit.KryptonComboBox();
+            this.anhbtn = new Krypton.Toolkit.KryptonButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnThem = new Krypton.Toolkit.KryptonButton();
+            this.btnXoa = new Krypton.Toolkit.KryptonButton();
+            this.kryptonLabel6 = new Krypton.Toolkit.KryptonLabel();
+            this.btnSua = new Krypton.Toolkit.KryptonButton();
+            this.kryptonLabel5 = new Krypton.Toolkit.KryptonLabel();
+            this.txtGiaThuoc = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel4 = new Krypton.Toolkit.KryptonLabel();
+            this.txtTenThuoc = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
+            this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
+            this.DGVThuoc = new Krypton.Toolkit.KryptonDataGridView();
+            this.MaThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaXuatXu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaDoiTuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AnhThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Them = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
             this.kryptonGroupBox1.Panel.SuspendLayout();
             this.kryptonGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbMaXuatXu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbMaDoiTuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
+            this.kryptonPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVThuoc)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonGroupBox1
             // 
-            this.kryptonGroupBox1.GroupBackStyle = Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
-            this.kryptonGroupBox1.Location = new System.Drawing.Point(12, 12);
+            this.kryptonGroupBox1.CaptionOverlap = 0D;
+            this.kryptonGroupBox1.CaptionStyle = Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonGroupBox1.GroupBackStyle = Krypton.Toolkit.PaletteBackStyle.InputControlRibbon;
+            this.kryptonGroupBox1.GroupBorderStyle = Krypton.Toolkit.PaletteBorderStyle.InputControlRibbon;
+            this.kryptonGroupBox1.Location = new System.Drawing.Point(4, 4);
+            this.kryptonGroupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonGroupBox1.Name = "kryptonGroupBox1";
             // 
             // kryptonGroupBox1.Panel
             // 
-            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonDropButton2);
-            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonStatusStrip1);
-            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonDropButton1);
-            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonButton1);
-            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel1);
-            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonTextBox5);
-            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonTextBox2);
-            this.kryptonGroupBox1.Panel.Controls.Add(this.txtMaThuoc);
-            this.kryptonGroupBox1.Size = new System.Drawing.Size(280, 570);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.btnNhap);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.ckbTrangThai);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.btnXuat);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.cbbMaXuatXu);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.cbbMaDoiTuong);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.anhbtn);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.pictureBox1);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.btnThem);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.btnXoa);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel6);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.btnSua);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel5);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.txtGiaThuoc);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel4);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.txtTenThuoc);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel3);
+            this.kryptonGroupBox1.Size = new System.Drawing.Size(924, 242);
             this.kryptonGroupBox1.TabIndex = 0;
+            this.kryptonGroupBox1.Values.Heading = "Thông tin thuốc";
             // 
-            // kryptonDropButton2
+            // btnNhap
             // 
-            this.kryptonDropButton2.Location = new System.Drawing.Point(35, 195);
-            this.kryptonDropButton2.Name = "kryptonDropButton2";
-            this.kryptonDropButton2.Size = new System.Drawing.Size(200, 31);
-            this.kryptonDropButton2.TabIndex = 10;
-            this.kryptonDropButton2.Values.Text = "Mã hãng thuốc";
+            this.btnNhap.CornerRoundingRadius = 20F;
+            this.btnNhap.Location = new System.Drawing.Point(387, 165);
+            this.btnNhap.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNhap.Name = "btnNhap";
+            this.btnNhap.Size = new System.Drawing.Size(75, 48);
+            this.btnNhap.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnNhap.StateCommon.Border.Rounding = 20F;
+            this.btnNhap.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhap.StatePressed.Back.Color1 = System.Drawing.Color.LightSkyBlue;
+            this.btnNhap.StatePressed.Back.Color2 = System.Drawing.Color.LightSkyBlue;
+            this.btnNhap.StatePressed.Back.ColorAngle = 60F;
+            this.btnNhap.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
+            this.btnNhap.StatePressed.Border.Color1 = System.Drawing.Color.White;
+            this.btnNhap.StatePressed.Border.Color2 = System.Drawing.Color.White;
+            this.btnNhap.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnNhap.TabIndex = 12;
+            this.btnNhap.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnNhap.Values.Image")));
+            this.btnNhap.Values.Text = "";
             // 
-            // kryptonStatusStrip1
+            // ckbTrangThai
             // 
-            this.kryptonStatusStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.kryptonStatusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.kryptonStatusStrip1.Location = new System.Drawing.Point(0, 520);
-            this.kryptonStatusStrip1.Name = "kryptonStatusStrip1";
-            this.kryptonStatusStrip1.ProgressBars = null;
-            this.kryptonStatusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.kryptonStatusStrip1.Size = new System.Drawing.Size(276, 22);
-            this.kryptonStatusStrip1.TabIndex = 9;
-            this.kryptonStatusStrip1.Text = "kryptonStatusStrip1";
+            this.ckbTrangThai.Location = new System.Drawing.Point(403, 51);
+            this.ckbTrangThai.Name = "ckbTrangThai";
+            this.ckbTrangThai.Size = new System.Drawing.Size(78, 25);
+            this.ckbTrangThai.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbTrangThai.TabIndex = 21;
+            this.ckbTrangThai.Values.Text = "Active";
             // 
-            // kryptonDropButton1
+            // btnXuat
             // 
-            this.kryptonDropButton1.Location = new System.Drawing.Point(35, 140);
-            this.kryptonDropButton1.Name = "kryptonDropButton1";
-            this.kryptonDropButton1.Size = new System.Drawing.Size(200, 32);
-            this.kryptonDropButton1.TabIndex = 8;
-            this.kryptonDropButton1.Values.Text = "Mã đối tượng";
+            this.btnXuat.CornerRoundingRadius = 20F;
+            this.btnXuat.Location = new System.Drawing.Point(293, 165);
+            this.btnXuat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.Size = new System.Drawing.Size(75, 48);
+            this.btnXuat.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnXuat.StateCommon.Border.Rounding = 20F;
+            this.btnXuat.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuat.StatePressed.Back.Color1 = System.Drawing.Color.LightSkyBlue;
+            this.btnXuat.StatePressed.Back.Color2 = System.Drawing.Color.LightSkyBlue;
+            this.btnXuat.StatePressed.Back.ColorAngle = 60F;
+            this.btnXuat.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
+            this.btnXuat.StatePressed.Border.Color1 = System.Drawing.Color.White;
+            this.btnXuat.StatePressed.Border.Color2 = System.Drawing.Color.White;
+            this.btnXuat.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnXuat.TabIndex = 13;
+            this.btnXuat.ToolTipValues.Description = "";
+            this.btnXuat.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.Values.Image")));
+            this.btnXuat.Values.Text = "";
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
-            // kryptonButton1
+            // cbbMaXuatXu
             // 
-            this.kryptonButton1.CornerRoundingRadius = -1F;
-            this.kryptonButton1.Location = new System.Drawing.Point(35, 487);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(200, 33);
-            this.kryptonButton1.TabIndex = 7;
-            this.kryptonButton1.Values.Text = "Chọn ảnh";
+            this.cbbMaXuatXu.CornerRoundingRadius = 20F;
+            this.cbbMaXuatXu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbMaXuatXu.DropDownWidth = 230;
+            this.cbbMaXuatXu.IntegralHeight = false;
+            this.cbbMaXuatXu.Location = new System.Drawing.Point(260, 112);
+            this.cbbMaXuatXu.Name = "cbbMaXuatXu";
+            this.cbbMaXuatXu.Size = new System.Drawing.Size(235, 34);
+            this.cbbMaXuatXu.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cbbMaXuatXu.StateCommon.ComboBox.Border.Rounding = 20F;
+            this.cbbMaXuatXu.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbMaXuatXu.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cbbMaXuatXu.TabIndex = 20;
             // 
-            // kryptonLabel1
+            // cbbMaDoiTuong
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(79, 377);
-            this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(109, 24);
-            this.kryptonLabel1.TabIndex = 6;
-            this.kryptonLabel1.Values.Text = "kryptonLabel1";
-            this.kryptonLabel1.Click += new System.EventHandler(this.kryptonLabel1_Click);
+            this.cbbMaDoiTuong.CornerRoundingRadius = 20F;
+            this.cbbMaDoiTuong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbMaDoiTuong.DropDownWidth = 199;
+            this.cbbMaDoiTuong.IntegralHeight = false;
+            this.cbbMaDoiTuong.Location = new System.Drawing.Point(9, 112);
+            this.cbbMaDoiTuong.Name = "cbbMaDoiTuong";
+            this.cbbMaDoiTuong.Size = new System.Drawing.Size(235, 34);
+            this.cbbMaDoiTuong.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cbbMaDoiTuong.StateCommon.ComboBox.Border.Rounding = 20F;
+            this.cbbMaDoiTuong.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbMaDoiTuong.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cbbMaDoiTuong.TabIndex = 19;
             // 
-            // kryptonTextBox5
+            // anhbtn
             // 
-            this.kryptonTextBox5.Location = new System.Drawing.Point(35, 255);
-            this.kryptonTextBox5.Name = "kryptonTextBox5";
-            this.kryptonTextBox5.Size = new System.Drawing.Size(200, 27);
-            this.kryptonTextBox5.TabIndex = 4;
-            this.kryptonTextBox5.Text = "Giá";
+            this.anhbtn.CornerRoundingRadius = 20F;
+            this.anhbtn.Location = new System.Drawing.Point(510, 176);
+            this.anhbtn.Name = "anhbtn";
+            this.anhbtn.Size = new System.Drawing.Size(405, 38);
+            this.anhbtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.anhbtn.StateCommon.Border.Rounding = 20F;
+            this.anhbtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.anhbtn.TabIndex = 18;
+            this.anhbtn.Values.Text = "Chọn ảnh";
+            this.anhbtn.Click += new System.EventHandler(this.anhbtn_Click);
             // 
-            // kryptonTextBox2
+            // pictureBox1
             // 
-            this.kryptonTextBox2.Location = new System.Drawing.Point(35, 94);
-            this.kryptonTextBox2.Name = "kryptonTextBox2";
-            this.kryptonTextBox2.Size = new System.Drawing.Size(200, 27);
-            this.kryptonTextBox2.TabIndex = 1;
-            this.kryptonTextBox2.Text = "Tên thuốc";
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Location = new System.Drawing.Point(510, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(405, 167);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
             // 
-            // txtMaThuoc
+            // btnThem
             // 
-            this.txtMaThuoc.Location = new System.Drawing.Point(35, 40);
-            this.txtMaThuoc.Name = "txtMaThuoc";
-            this.txtMaThuoc.Size = new System.Drawing.Size(200, 27);
-            this.txtMaThuoc.TabIndex = 0;
-            this.txtMaThuoc.Text = "Mã thuốc";
+            this.btnThem.CornerRoundingRadius = 20F;
+            this.btnThem.Location = new System.Drawing.Point(11, 165);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 48);
+            this.btnThem.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnThem.StateCommon.Border.Rounding = 20F;
+            this.btnThem.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.StatePressed.Back.Color1 = System.Drawing.Color.LightSkyBlue;
+            this.btnThem.StatePressed.Back.Color2 = System.Drawing.Color.LightSkyBlue;
+            this.btnThem.StatePressed.Back.ColorAngle = 60F;
+            this.btnThem.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
+            this.btnThem.StatePressed.Border.Color1 = System.Drawing.Color.White;
+            this.btnThem.StatePressed.Border.Color2 = System.Drawing.Color.White;
+            this.btnThem.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnThem.TabIndex = 3;
+            this.btnThem.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Values.Image")));
+            this.btnThem.Values.Text = "";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
-            // kryptonDataGridView1
+            // btnXoa
             // 
-            this.kryptonDataGridView1.ColumnHeadersHeight = 36;
-            this.kryptonDataGridView1.Location = new System.Drawing.Point(298, 27);
-            this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.RowHeadersWidth = 51;
-            this.kryptonDataGridView1.RowTemplate.Height = 24;
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(622, 436);
-            this.kryptonDataGridView1.TabIndex = 1;
+            this.btnXoa.CornerRoundingRadius = 20F;
+            this.btnXoa.Location = new System.Drawing.Point(199, 165);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 48);
+            this.btnXoa.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnXoa.StateCommon.Border.Rounding = 20F;
+            this.btnXoa.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.StatePressed.Back.Color1 = System.Drawing.Color.LightSkyBlue;
+            this.btnXoa.StatePressed.Back.Color2 = System.Drawing.Color.LightSkyBlue;
+            this.btnXoa.StatePressed.Back.ColorAngle = 60F;
+            this.btnXoa.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
+            this.btnXoa.StatePressed.Border.Color1 = System.Drawing.Color.White;
+            this.btnXoa.StatePressed.Border.Color2 = System.Drawing.Color.White;
+            this.btnXoa.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnXoa.TabIndex = 16;
+            this.btnXoa.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Values.Image")));
+            this.btnXoa.Values.Text = "";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // kryptonButton2
+            // kryptonLabel6
             // 
-            this.kryptonButton2.CornerRoundingRadius = -1F;
-            this.kryptonButton2.Location = new System.Drawing.Point(388, 488);
-            this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(138, 40);
-            this.kryptonButton2.TabIndex = 2;
-            this.kryptonButton2.Values.Text = "Thêm";
+            this.kryptonLabel6.LabelStyle = Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonLabel6.Location = new System.Drawing.Point(260, 84);
+            this.kryptonLabel6.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLabel6.Name = "kryptonLabel6";
+            this.kryptonLabel6.Size = new System.Drawing.Size(89, 21);
+            this.kryptonLabel6.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonLabel6.TabIndex = 14;
+            this.kryptonLabel6.Values.Text = "Mã xuất xứ";
+            this.kryptonLabel6.Click += new System.EventHandler(this.kryptonLabel6_Click);
             // 
-            // kryptonButton3
+            // btnSua
             // 
-            this.kryptonButton3.CornerRoundingRadius = -1F;
-            this.kryptonButton3.Location = new System.Drawing.Point(559, 488);
-            this.kryptonButton3.Name = "kryptonButton3";
-            this.kryptonButton3.Size = new System.Drawing.Size(138, 40);
-            this.kryptonButton3.TabIndex = 3;
-            this.kryptonButton3.Values.Text = "Xóa";
+            this.btnSua.CornerRoundingRadius = 20F;
+            this.btnSua.Location = new System.Drawing.Point(105, 165);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(75, 48);
+            this.btnSua.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnSua.StateCommon.Border.Rounding = 20F;
+            this.btnSua.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.StatePressed.Back.Color1 = System.Drawing.Color.LightSkyBlue;
+            this.btnSua.StatePressed.Back.Color2 = System.Drawing.Color.LightSkyBlue;
+            this.btnSua.StatePressed.Back.ColorAngle = 60F;
+            this.btnSua.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
+            this.btnSua.StatePressed.Border.Color1 = System.Drawing.Color.White;
+            this.btnSua.StatePressed.Border.Color2 = System.Drawing.Color.White;
+            this.btnSua.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnSua.TabIndex = 15;
+            this.btnSua.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Values.Image")));
+            this.btnSua.Values.Text = "";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // kryptonButton4
+            // kryptonLabel5
             // 
-            this.kryptonButton4.CornerRoundingRadius = -1F;
-            this.kryptonButton4.Location = new System.Drawing.Point(724, 488);
-            this.kryptonButton4.Name = "kryptonButton4";
-            this.kryptonButton4.Size = new System.Drawing.Size(138, 40);
-            this.kryptonButton4.TabIndex = 4;
-            this.kryptonButton4.Values.Text = "Sửa";
+            this.kryptonLabel5.LabelStyle = Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonLabel5.Location = new System.Drawing.Point(9, 84);
+            this.kryptonLabel5.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLabel5.Name = "kryptonLabel5";
+            this.kryptonLabel5.Size = new System.Drawing.Size(104, 21);
+            this.kryptonLabel5.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonLabel5.TabIndex = 13;
+            this.kryptonLabel5.Values.Text = "Mã đối tượng";
             // 
-            // kryptonButton5
+            // txtGiaThuoc
             // 
-            this.kryptonButton5.CornerRoundingRadius = -1F;
-            this.kryptonButton5.Location = new System.Drawing.Point(465, 542);
-            this.kryptonButton5.Name = "kryptonButton5";
-            this.kryptonButton5.Size = new System.Drawing.Size(138, 40);
-            this.kryptonButton5.TabIndex = 5;
-            this.kryptonButton5.Values.Text = "Xuất";
+            this.txtGiaThuoc.Location = new System.Drawing.Point(260, 43);
+            this.txtGiaThuoc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGiaThuoc.Name = "txtGiaThuoc";
+            this.txtGiaThuoc.Size = new System.Drawing.Size(112, 33);
+            this.txtGiaThuoc.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtGiaThuoc.StateCommon.Border.Rounding = 10F;
+            this.txtGiaThuoc.TabIndex = 12;
             // 
-            // kryptonButton6
+            // kryptonLabel4
             // 
-            this.kryptonButton6.CornerRoundingRadius = -1F;
-            this.kryptonButton6.Location = new System.Drawing.Point(631, 542);
-            this.kryptonButton6.Name = "kryptonButton6";
-            this.kryptonButton6.Size = new System.Drawing.Size(138, 40);
-            this.kryptonButton6.TabIndex = 6;
-            this.kryptonButton6.Values.Text = "Nhập";
+            this.kryptonLabel4.LabelStyle = Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonLabel4.Location = new System.Drawing.Point(260, 14);
+            this.kryptonLabel4.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLabel4.Name = "kryptonLabel4";
+            this.kryptonLabel4.Size = new System.Drawing.Size(80, 21);
+            this.kryptonLabel4.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonLabel4.TabIndex = 11;
+            this.kryptonLabel4.Values.Text = "Giá thuốc";
+            // 
+            // txtTenThuoc
+            // 
+            this.txtTenThuoc.Location = new System.Drawing.Point(9, 43);
+            this.txtTenThuoc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenThuoc.Name = "txtTenThuoc";
+            this.txtTenThuoc.Size = new System.Drawing.Size(235, 33);
+            this.txtTenThuoc.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtTenThuoc.StateCommon.Border.Rounding = 10F;
+            this.txtTenThuoc.TabIndex = 10;
+            // 
+            // kryptonLabel3
+            // 
+            this.kryptonLabel3.LabelStyle = Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonLabel3.Location = new System.Drawing.Point(4, 14);
+            this.kryptonLabel3.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLabel3.Name = "kryptonLabel3";
+            this.kryptonLabel3.Size = new System.Drawing.Size(82, 21);
+            this.kryptonLabel3.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonLabel3.TabIndex = 9;
+            this.kryptonLabel3.Values.Text = "Tên thuốc";
+            // 
+            // kryptonPanel1
+            // 
+            this.kryptonPanel1.Controls.Add(this.kryptonGroupBox1);
+            this.kryptonPanel1.Controls.Add(this.DGVThuoc);
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.Size = new System.Drawing.Size(932, 650);
+            this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.Navy;
+            this.kryptonPanel1.StateCommon.Color2 = System.Drawing.Color.Teal;
+            this.kryptonPanel1.StateCommon.ColorAngle = 60F;
+            this.kryptonPanel1.StateCommon.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
+            this.kryptonPanel1.TabIndex = 12;
+            // 
+            // DGVThuoc
+            // 
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.DGVThuoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGVThuoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVThuoc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.DGVThuoc.ColumnHeadersHeight = 36;
+            this.DGVThuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaThuoc,
+            this.TenThuoc,
+            this.MaXuatXu,
+            this.MaDoiTuong,
+            this.SoLuong,
+            this.GiaThuoc,
+            this.AnhThuoc,
+            this.TrangThai});
+            this.DGVThuoc.GridStyles.Style = Krypton.Toolkit.DataGridViewStyle.Sheet;
+            this.DGVThuoc.GridStyles.StyleBackground = Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
+            this.DGVThuoc.GridStyles.StyleColumn = Krypton.Toolkit.GridStyle.Sheet;
+            this.DGVThuoc.GridStyles.StyleDataCells = Krypton.Toolkit.GridStyle.Sheet;
+            this.DGVThuoc.GridStyles.StyleRow = Krypton.Toolkit.GridStyle.Sheet;
+            this.DGVThuoc.Location = new System.Drawing.Point(4, 279);
+            this.DGVThuoc.Margin = new System.Windows.Forms.Padding(4);
+            this.DGVThuoc.Name = "DGVThuoc";
+            this.DGVThuoc.ReadOnly = true;
+            this.DGVThuoc.RowHeadersVisible = false;
+            this.DGVThuoc.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.DGVThuoc.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.DGVThuoc.Size = new System.Drawing.Size(924, 358);
+            this.DGVThuoc.TabIndex = 10;
+            this.DGVThuoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVThuoc_CellClick);
+            this.DGVThuoc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVThuoc_CellDoubleClick);
+            // 
+            // MaThuoc
+            // 
+            this.MaThuoc.DataPropertyName = "MaThuoc";
+            this.MaThuoc.FillWeight = 93.04813F;
+            this.MaThuoc.HeaderText = "Mã";
+            this.MaThuoc.MinimumWidth = 6;
+            this.MaThuoc.Name = "MaThuoc";
+            this.MaThuoc.ReadOnly = true;
+            // 
+            // TenThuoc
+            // 
+            this.TenThuoc.DataPropertyName = "TenThuoc";
+            this.TenThuoc.FillWeight = 106.9519F;
+            this.TenThuoc.HeaderText = "Tên thuốc";
+            this.TenThuoc.MinimumWidth = 6;
+            this.TenThuoc.Name = "TenThuoc";
+            this.TenThuoc.ReadOnly = true;
+            // 
+            // MaXuatXu
+            // 
+            this.MaXuatXu.DataPropertyName = "MaXuatXu";
+            this.MaXuatXu.HeaderText = "Xuất xứ";
+            this.MaXuatXu.MinimumWidth = 6;
+            this.MaXuatXu.Name = "MaXuatXu";
+            this.MaXuatXu.ReadOnly = true;
+            // 
+            // MaDoiTuong
+            // 
+            this.MaDoiTuong.DataPropertyName = "MaDoiTuong";
+            this.MaDoiTuong.HeaderText = "Đối tượng";
+            this.MaDoiTuong.MinimumWidth = 6;
+            this.MaDoiTuong.Name = "MaDoiTuong";
+            this.MaDoiTuong.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.MinimumWidth = 6;
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            // 
+            // GiaThuoc
+            // 
+            this.GiaThuoc.DataPropertyName = "GiaThuoc";
+            this.GiaThuoc.HeaderText = "Giá";
+            this.GiaThuoc.MinimumWidth = 6;
+            this.GiaThuoc.Name = "GiaThuoc";
+            this.GiaThuoc.ReadOnly = true;
+            // 
+            // AnhThuoc
+            // 
+            this.AnhThuoc.DataPropertyName = "AnhThuoc";
+            this.AnhThuoc.HeaderText = "Ảnh thuốc";
+            this.AnhThuoc.MinimumWidth = 6;
+            this.AnhThuoc.Name = "AnhThuoc";
+            this.AnhThuoc.ReadOnly = true;
+            this.AnhThuoc.Visible = false;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trạng Thái";
+            this.TrangThai.MinimumWidth = 6;
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
             // 
             // FormThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 650);
-            this.Controls.Add(this.kryptonButton6);
-            this.Controls.Add(this.kryptonButton5);
-            this.Controls.Add(this.kryptonButton4);
-            this.Controls.Add(this.kryptonButton3);
-            this.Controls.Add(this.kryptonButton2);
-            this.Controls.Add(this.kryptonDataGridView1);
-            this.Controls.Add(this.kryptonGroupBox1);
+            this.Controls.Add(this.kryptonPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormThuoc";
             this.Text = "Form1";
@@ -214,7 +504,12 @@
             this.kryptonGroupBox1.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).EndInit();
             this.kryptonGroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbMaXuatXu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbMaDoiTuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
+            this.kryptonPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVThuoc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -222,19 +517,32 @@
         #endregion
 
         private Krypton.Toolkit.KryptonGroupBox kryptonGroupBox1;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox5;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
-        private Krypton.Toolkit.KryptonTextBox txtMaThuoc;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
-        private Krypton.Toolkit.KryptonDropButton kryptonDropButton2;
-        private Krypton.Toolkit.KryptonStatusStrip kryptonStatusStrip1;
-        private Krypton.Toolkit.KryptonDropButton kryptonDropButton1;
-        private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
-        private Krypton.Toolkit.KryptonButton kryptonButton2;
-        private Krypton.Toolkit.KryptonButton kryptonButton3;
-        private Krypton.Toolkit.KryptonButton kryptonButton4;
-        private Krypton.Toolkit.KryptonButton kryptonButton5;
-        private Krypton.Toolkit.KryptonButton kryptonButton6;
+        private Krypton.Toolkit.KryptonButton btnXuat;
+        private Krypton.Toolkit.KryptonButton btnNhap;
+        private Krypton.Toolkit.KryptonCheckBox ckbTrangThai;
+        private Krypton.Toolkit.KryptonComboBox cbbMaXuatXu;
+        private Krypton.Toolkit.KryptonButton btnXoa;
+        private Krypton.Toolkit.KryptonComboBox cbbMaDoiTuong;
+        private Krypton.Toolkit.KryptonButton btnThem;
+        private Krypton.Toolkit.KryptonButton btnSua;
+        private Krypton.Toolkit.KryptonButton anhbtn;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel6;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel5;
+        private Krypton.Toolkit.KryptonTextBox txtGiaThuoc;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel4;
+        private Krypton.Toolkit.KryptonTextBox txtTenThuoc;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel3;
+        private Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        private Krypton.Toolkit.KryptonDataGridView DGVThuoc;
+        private System.Windows.Forms.ToolTip Them;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaThuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenThuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaXuatXu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDoiTuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaThuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AnhThuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
     }
 }

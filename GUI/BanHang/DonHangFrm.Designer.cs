@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_searching = new Krypton.Toolkit.KryptonRichTextBox();
+            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_refresh = new System.Windows.Forms.Label();
             this.btn_increase_price = new System.Windows.Forms.Label();
@@ -42,8 +45,8 @@
             this.btn_filter = new Krypton.Toolkit.KryptonButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_searching = new Krypton.Toolkit.KryptonRichTextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.toolTip_rpt = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -51,18 +54,78 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.txt_searching);
+            this.panel1.Controls.Add(this.kryptonButton1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.dtp_end);
             this.panel1.Controls.Add(this.dtp_start);
             this.panel1.Controls.Add(this.btn_filter);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txt_searching);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(950, 159);
+            this.panel1.Size = new System.Drawing.Size(950, 140);
             this.panel1.TabIndex = 0;
+            // 
+            // txt_searching
+            // 
+            this.txt_searching.Location = new System.Drawing.Point(432, 25);
+            this.txt_searching.Multiline = false;
+            this.txt_searching.Name = "txt_searching";
+            this.txt_searching.Size = new System.Drawing.Size(174, 40);
+            this.txt_searching.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txt_searching.StateCommon.Border.Rounding = 5F;
+            this.txt_searching.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 5, 10, -1);
+            this.txt_searching.TabIndex = 6;
+            this.txt_searching.Text = "";
+            this.txt_searching.TextChanged += new System.EventHandler(this.txt_searching_TextChanged);
+            // 
+            // kryptonButton1
+            // 
+            this.kryptonButton1.CornerRoundingRadius = 50F;
+            this.kryptonButton1.Location = new System.Drawing.Point(882, 25);
+            this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.Color.Gray;
+            this.kryptonButton1.OverrideDefault.Back.Color2 = System.Drawing.Color.Gray;
+            this.kryptonButton1.OverrideDefault.Back.Image = global::pharmacy_management.Properties.Resources.icons8_report_24;
+            this.kryptonButton1.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.kryptonButton1.OverrideDefault.Border.Color1 = System.Drawing.Color.Gray;
+            this.kryptonButton1.OverrideDefault.Border.Color2 = System.Drawing.Color.Gray;
+            this.kryptonButton1.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton1.OverrideDefault.Border.Rounding = 50F;
+            this.kryptonButton1.OverrideDefault.Border.Width = 5;
+            this.kryptonButton1.Size = new System.Drawing.Size(40, 40);
+            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.Gray;
+            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.Gray;
+            this.kryptonButton1.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
+            this.kryptonButton1.StateCommon.Border.Color2 = System.Drawing.Color.Gray;
+            this.kryptonButton1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton1.StateCommon.Border.Rounding = 50F;
+            this.kryptonButton1.StateCommon.Border.Width = 5;
+            this.kryptonButton1.StateNormal.Back.Image = global::pharmacy_management.Properties.Resources.icons8_report_24;
+            this.kryptonButton1.StateNormal.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.kryptonButton1.StateTracking.Back.Color1 = System.Drawing.Color.DarkGray;
+            this.kryptonButton1.StateTracking.Back.Color2 = System.Drawing.Color.DarkGray;
+            this.kryptonButton1.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.icons8_report_24;
+            this.kryptonButton1.StateTracking.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.kryptonButton1.StateTracking.Border.Color1 = System.Drawing.Color.DarkGray;
+            this.kryptonButton1.StateTracking.Border.Color2 = System.Drawing.Color.DarkGray;
+            this.kryptonButton1.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton1.StateTracking.Border.Rounding = 50F;
+            this.kryptonButton1.StateTracking.Border.Width = 5;
+            this.kryptonButton1.TabIndex = 14;
+            this.toolTip_rpt.SetToolTip(this.kryptonButton1, "Report");
+            this.kryptonButton1.Values.Text = "";
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // panel2
             // 
@@ -77,7 +140,7 @@
             this.panel2.Location = new System.Drawing.Point(22, 85);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(900, 60);
+            this.panel2.Size = new System.Drawing.Size(900, 40);
             this.panel2.TabIndex = 0;
             // 
             // btn_refresh
@@ -88,7 +151,7 @@
             this.btn_refresh.ForeColor = System.Drawing.Color.White;
             this.btn_refresh.Image = global::pharmacy_management.Properties.Resources.icons8_refresh_24;
             this.btn_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_refresh.Location = new System.Drawing.Point(835, 19);
+            this.btn_refresh.Location = new System.Drawing.Point(835, 9);
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.Size = new System.Drawing.Size(28, 22);
             this.btn_refresh.TabIndex = 6;
@@ -103,7 +166,7 @@
             this.btn_increase_price.ForeColor = System.Drawing.Color.White;
             this.btn_increase_price.Image = global::pharmacy_management.Properties.Resources.icons8_down_24_white;
             this.btn_increase_price.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_increase_price.Location = new System.Drawing.Point(652, 19);
+            this.btn_increase_price.Location = new System.Drawing.Point(652, 9);
             this.btn_increase_price.Name = "btn_increase_price";
             this.btn_increase_price.Size = new System.Drawing.Size(130, 22);
             this.btn_increase_price.TabIndex = 5;
@@ -115,7 +178,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(380, 19);
+            this.label7.Location = new System.Drawing.Point(380, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 22);
             this.label7.TabIndex = 4;
@@ -126,7 +189,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(528, 19);
+            this.label6.Location = new System.Drawing.Point(528, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 22);
             this.label6.TabIndex = 3;
@@ -137,7 +200,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(230, 19);
+            this.label5.Location = new System.Drawing.Point(230, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(133, 22);
             this.label5.TabIndex = 2;
@@ -148,7 +211,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(97, 19);
+            this.label4.Location = new System.Drawing.Point(97, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 22);
             this.label4.TabIndex = 1;
@@ -162,7 +225,7 @@
             this.btn_descend_DonHang.ForeColor = System.Drawing.Color.White;
             this.btn_descend_DonHang.Image = global::pharmacy_management.Properties.Resources.icons8_down_24_white;
             this.btn_descend_DonHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_descend_DonHang.Location = new System.Drawing.Point(12, 19);
+            this.btn_descend_DonHang.Location = new System.Drawing.Point(12, 9);
             this.btn_descend_DonHang.Name = "btn_descend_DonHang";
             this.btn_descend_DonHang.Size = new System.Drawing.Size(76, 22);
             this.btn_descend_DonHang.TabIndex = 0;
@@ -177,7 +240,7 @@
             this.dtp_end.CustomFormat = "yyyy-MM-dd";
             this.dtp_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtp_end.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_end.Location = new System.Drawing.Point(716, 30);
+            this.dtp_end.Location = new System.Drawing.Point(268, 29);
             this.dtp_end.Name = "dtp_end";
             this.dtp_end.Size = new System.Drawing.Size(140, 27);
             this.dtp_end.TabIndex = 13;
@@ -189,7 +252,7 @@
             this.dtp_start.CustomFormat = "yyyy-MM-dd";
             this.dtp_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtp_start.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_start.Location = new System.Drawing.Point(519, 30);
+            this.dtp_start.Location = new System.Drawing.Point(71, 29);
             this.dtp_start.Name = "dtp_start";
             this.dtp_start.Size = new System.Drawing.Size(140, 27);
             this.dtp_start.TabIndex = 12;
@@ -198,11 +261,11 @@
             // btn_filter
             // 
             this.btn_filter.CornerRoundingRadius = 50F;
-            this.btn_filter.Location = new System.Drawing.Point(877, 20);
+            this.btn_filter.Location = new System.Drawing.Point(612, 25);
             this.btn_filter.Name = "btn_filter";
             this.btn_filter.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_filter.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.btn_filter.OverrideDefault.Back.Image = global::pharmacy_management.Properties.Resources.icons8_search_30;
+            this.btn_filter.OverrideDefault.Back.Image = global::pharmacy_management.Properties.Resources.icons8_search_24;
             this.btn_filter.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.btn_filter.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_filter.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
@@ -211,7 +274,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_filter.OverrideDefault.Border.Rounding = 50F;
             this.btn_filter.OverrideDefault.Border.Width = 5;
-            this.btn_filter.Size = new System.Drawing.Size(45, 45);
+            this.btn_filter.Size = new System.Drawing.Size(40, 40);
             this.btn_filter.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_filter.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_filter.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
@@ -221,11 +284,11 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btn_filter.StateCommon.Border.Rounding = 50F;
             this.btn_filter.StateCommon.Border.Width = 5;
-            this.btn_filter.StateNormal.Back.Image = global::pharmacy_management.Properties.Resources.icons8_search_30;
+            this.btn_filter.StateNormal.Back.Image = global::pharmacy_management.Properties.Resources.icons8_search_24;
             this.btn_filter.StateNormal.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.btn_filter.StateTracking.Back.Color1 = System.Drawing.Color.Blue;
             this.btn_filter.StateTracking.Back.Color2 = System.Drawing.Color.Blue;
-            this.btn_filter.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.icons8_search_30;
+            this.btn_filter.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.icons8_search_24;
             this.btn_filter.StateTracking.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.btn_filter.StateTracking.Border.Color1 = System.Drawing.Color.Blue;
             this.btn_filter.StateTracking.Border.Color2 = System.Drawing.Color.Blue;
@@ -241,9 +304,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(665, 30);
+            this.label2.Location = new System.Drawing.Point(217, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 25);
             this.label2.TabIndex = 8;
@@ -252,37 +315,23 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(472, 30);
+            this.label1.Location = new System.Drawing.Point(24, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 25);
             this.label1.TabIndex = 7;
             this.label1.Text = "Từ ";
-            // 
-            // txt_searching
-            // 
-            this.txt_searching.Location = new System.Drawing.Point(22, 25);
-            this.txt_searching.Multiline = false;
-            this.txt_searching.Name = "txt_searching";
-            this.txt_searching.Size = new System.Drawing.Size(412, 40);
-            this.txt_searching.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txt_searching.StateCommon.Border.Rounding = 5F;
-            this.txt_searching.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 5, 10, -1);
-            this.txt_searching.TabIndex = 6;
-            this.txt_searching.Text = "";
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 159);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 140);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20, 10, 25, 30);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(950, 491);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(950, 510);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // DonHangFrm
@@ -309,7 +358,6 @@
         private Krypton.Toolkit.KryptonRichTextBox txt_searching;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Krypton.Toolkit.KryptonButton btn_filter;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -320,5 +368,8 @@
         private System.Windows.Forms.DateTimePicker dtp_start;
         private System.Windows.Forms.DateTimePicker dtp_end;
         private System.Windows.Forms.Label btn_refresh;
+        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private Krypton.Toolkit.KryptonButton btn_filter;
+        private System.Windows.Forms.ToolTip toolTip_rpt;
     }
 }

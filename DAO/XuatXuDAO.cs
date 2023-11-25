@@ -48,6 +48,139 @@ namespace pharmacy_management.DAO
 
         }
 
+        public ArrayList searchatMa(int ma)
+        {
+            ArrayList arrayList = new ArrayList();
+
+            ConnectDB conn = new ConnectDB();
+            string query = "SELECT * FROM xuatxu WHERE MaXuatXu = " + ma;
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    XuatXu tmp = new XuatXu(
+                        Int32.Parse(reader["MaXuatXu"].ToString()),
+                        reader["TenXuatXu"].ToString(),
+                        Int32.Parse(reader["TrangThai"].ToString())
+                     );
+                    arrayList.Add(tmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at XuatXuDAO: " + ex.Message);
+            }
+
+            return arrayList;
+        }
+
+        public ArrayList searchatTen(string ten)
+        {
+            ArrayList arrayList = new ArrayList();
+
+            ConnectDB conn = new ConnectDB();
+            string query = "SELECT * FROM xuatxu WHERE TenXuatXu LIKE N'%"+ ten +"%'";
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    XuatXu tmp = new XuatXu(
+                        Int32.Parse(reader["MaXuatXu"].ToString()),
+                        reader["TenXuatXu"].ToString(),
+                        Int32.Parse(reader["TrangThai"].ToString())
+                     );
+                    arrayList.Add(tmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at XuatXuDAO: " + ex.Message);
+            }
+
+            return arrayList;
+        }
+
+
+        public string GetNameatMaDAO(int ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            string name = "";
+            string query = "SELECT TenDT FROM doituong WHERE MaDT = " + ma.ToString();
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    name = reader["TenXuatXu"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at DoiTuongDAO: " + ex.Message);
+            }
+
+            return name;
+        }
+
+        public void add(XuatXu DTO)
+        {
+            ConnectDB conn = new ConnectDB();
+            string sql = "INSERT INTO XUATXU VALUES (N'" + DTO.TenXuatXu + "', " + "1" + ")";
+            conn.ExecuteNonQuery(sql);
+        }
+
+        public void Delete(int ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            string sql = "UPDATE XUATXU SET TrangThai = 0 WHERE MaXuatXu = " + ma;
+            conn.ExecuteNonQuery(sql);
+        }
+
+        public void update(XuatXu DTO)
+        {
+            ConnectDB conn = new ConnectDB();
+            string sql = "UPDATE XUATXU SET TenXuatXu =N'" + DTO.TenXuatXu + "',TrangThai='" + DTO.TrangThai + "' where MaXuatXu = " + DTO.MaXuatXu;
+            conn.ExecuteNonQuery(sql);
+        }
+
+        public ArrayList getActiveMaxuatxu()
+        {
+            ArrayList arrayList = new ArrayList();
+
+            ConnectDB conn = new ConnectDB();
+            string query = "SELECT * FROM xuatxu Where TrangThai = 1";
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    XuatXu tmp = new XuatXu(
+                        Int32.Parse(reader["MaXuatXu"].ToString()),
+                        reader["TenXuatXu"].ToString(),
+                        Int32.Parse(reader["TrangThai"].ToString())
+                     );
+                    arrayList.Add(tmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at XuatXuDAO: " + ex.Message);
+            }
+
+            return arrayList;
+
+        }
+
         public string GetNameDAO(int ma)
         {
             ConnectDB conn = new ConnectDB();
@@ -65,7 +198,7 @@ namespace pharmacy_management.DAO
             {
                 reader.Close();
 
-                Console.WriteLine("An error at DoiTuongDAO: " + ex.Message);
+                Console.WriteLine("An error at XuatXuDAO: " + ex.Message);
             }
 
             return name;

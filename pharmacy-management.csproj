@@ -118,7 +118,6 @@
     <Compile Include="DTO\DiemKhachHang.cs" />
     <Compile Include="DTO\DoiTuong.cs" />
     <Compile Include="DTO\DonHang.cs" />
-    <Compile Include="DTO\HangThuoc.cs" />
     <Compile Include="DTO\ThongKe.cs" />
     <Compile Include="DTO\XuatXu.cs" />
     <Compile Include="DTO\KhachHang.cs" />
@@ -200,7 +199,6 @@
     <Compile Include="GUI\Dash\ThongKe.Designer.cs">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="GUI\KhachHang\DiemKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,13 +210,11 @@
     </Compile>
     <Compile Include="GUI\KhachHang\KhachHangfrm.designer.cs">
       <DependentUpon>KhachHangfrm.cs</DependentUpon>
-=======
     <Compile Include="GUI\DoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\DoiMatKhau.Designer.cs">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
     </Compile>
     <Compile Include="GUI\Menu.cs">
       <SubType>Form</SubType>
@@ -292,10 +288,41 @@
     <Compile Include="GUI\NhapHang\SPNhaphang.Designer.cs">
       <DependentUpon>SPNhaphang.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\QLDoiTuong\FrmDoiTuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QLDoiTuong\FrmDoiTuong.designer.cs">
+      <DependentUpon>FrmDoiTuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QLxuatxu\FrmXuatXu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QLxuatxu\FrmXuatXu.designer.cs">
+      <DependentUpon>FrmXuatXu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QLxuatxu\FrmXuatXu.Designer.cs" />
+    <Compile Include="GUI\QuyDoiDiem\PhieuGiamGiaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuyDoiDiem\PhieuGiamGiaFrm.Designer.cs">
+      <DependentUpon>PhieuGiamGiaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuyDoiDiem\QuyDoiDiemFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuyDoiDiem\QuyDoiDiemFrm.Designer.cs">
+      <DependentUpon>QuyDoiDiemFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\ReportDonHangFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\ReportDonHangFrm.Designer.cs">
+      <DependentUpon>ReportDonHangFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Thuoc\FormThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Thuoc\FormThuoc.Designer.cs">
+    <Compile Include="GUI\Thuoc\FormThuoc.designer.cs">
       <DependentUpon>FormThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -306,6 +333,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GUI\QLNhaCungCap\FrmXuatXu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QLNhaCungCap\FrmXuatXu.designer.cs">
+      <DependentUpon>FrmXuatXu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ql_nhathuocDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ql_nhathuocDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -343,16 +381,13 @@
     <EmbeddedResource Include="GUI\Dash\ThongKe.resx">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="GUI\KhachHang\DiemKhachHang.resx">
       <DependentUpon>DiemKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\KhachHang\KhachHangfrm.resx">
       <DependentUpon>KhachHangfrm.cs</DependentUpon>
-=======
     <EmbeddedResource Include="GUI\DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -389,6 +424,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhapHang\SPNhaphang.resx">
       <DependentUpon>SPNhaphang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLDoiTuong\FrmDoiTuong.resx">
+      <DependentUpon>FrmDoiTuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx">
+      <DependentUpon>FrmXuatXu.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\QLDoiTuong\FrmDoiTuong.resx" />
+    <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx" />
+    <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx" />
+    <EmbeddedResource Include="GUI\QuyDoiDiem\PhieuGiamGiaFrm.resx">
+      <DependentUpon>PhieuGiamGiaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuyDoiDiem\QuyDoiDiemFrm.resx">
+      <DependentUpon>QuyDoiDiemFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\rDonHang.rdlc" />
+    <EmbeddedResource Include="GUI\Report\ReportDonHangFrm.resx">
+      <DependentUpon>ReportDonHangFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx">
       <DependentUpon>FormThuoc.cs</DependentUpon>
@@ -456,17 +509,29 @@
     <Content Include="Images\Subtract.png" />
     <Content Include="Images\Voucher-Contrast.png" />
     <Content Include="Images\Voucher.png" />
-<<<<<<< HEAD
+    <None Include="ql_nhathuocDataSet1.xsc">
+      <DependentUpon>ql_nhathuocDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ql_nhathuocDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ql_nhathuocDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ql_nhathuocDataSet1.xss">
+      <DependentUpon>ql_nhathuocDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\icons8-report-24.png" />
+    <None Include="Resources\icons8-plus-24.png" />
+    <None Include="Resources\icons8-setting-24.png" />
+    <None Include="Resources\icons8-search-24.png" />
     <None Include="Resources\icons8-add-30.png" />
     <None Include="Resources\icons8-remove-30.png" />
     <None Include="Resources\icons8-fix-30.png" />
     <None Include="Resources\icons8-import-30.png" />
     <None Include="Resources\icons8-export-30.png" />
-=======
     <None Include="Resources\Show Password.png" />
     <None Include="Resources\Show Password1.png" />
     <None Include="Resources\Show Password2.png" />
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -707,6 +772,9 @@
     <None Include="Resources\4.jpg" />
     <None Include="Resources\3.jpg" />
     <None Include="Resources\2.jpg" />
+    <EmbeddedResource Include="GUI\QLNhaCungCap\FrmXuatXu.resx">
+      <DependentUpon>FrmXuatXu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\1.jpg" />
   </ItemGroup>
   <ItemGroup>
