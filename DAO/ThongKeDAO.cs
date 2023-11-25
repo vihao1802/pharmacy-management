@@ -63,7 +63,7 @@ namespace pharmacy_management.DAO
             using (SqlCommand cmd = new SqlCommand(query, sqlcon))
             {
                 sqlcon.Open();
-                tk.setDoanhthu(Convert.ToSingle(cmd.ExecuteScalar()));
+                tk.setDoanhthu((float)Convert.ToDouble(cmd.ExecuteScalar()));
                 sqlcon.Close();
             }
             return tk.getDoanhthu();
