@@ -31,6 +31,9 @@ namespace pharmacy_management
             FormThuoc frmthuoc = new FormThuoc();
             frmthuoc.Show();
             Application.Run();
+            //Application.Run(new GUI.QuyDoiDiem.QuyDoiDiemFrm());
+            //Application.Run(new GUI.Menu());
+
         }
     }
 }

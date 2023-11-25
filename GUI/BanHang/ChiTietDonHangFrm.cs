@@ -26,9 +26,9 @@ namespace pharmacy_management.GUI.BanHang
         {
             dh = dh_info;
 
-            lbl_MaDH.Text = dh.MaDH.ToString();
-            lbl_MaKH.Text = dh.MaKH.ToString();
-            lbl_MaNV.Text = dh.MaNV.ToString();
+            lbl_MaDH.Text = "#" + dh.MaDH.ToString();
+            lbl_MaKH.Text = "#" + dh.MaKH.ToString();
+            lbl_MaNV.Text = "#" + dh.MaNV.ToString();
             lbl_NgayLap.Text = dh.NgayLap;
 
             NhanVienBUS nvBUS = new NhanVienBUS();
@@ -72,9 +72,6 @@ namespace pharmacy_management.GUI.BanHang
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
     }
 }

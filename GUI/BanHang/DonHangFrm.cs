@@ -1,5 +1,6 @@
 ﻿using pharmacy_management.BUS;
 using pharmacy_management.DTO;
+using pharmacy_management.GUI.Report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace pharmacy_management.GUI.BanHang
     public partial class DonHangFrm : Form
     {
         DonHangRow dhRow;
+        DonHangBUS dhBUS = new DonHangBUS();
+
         public DonHangFrm()
         {
             InitializeComponent();
@@ -25,7 +28,7 @@ namespace pharmacy_management.GUI.BanHang
         public void setup()
         {
             dtp_start.MaxDate = DateTime.Now.AddYears(0);
-            dtp_start.Value = DateTime.Now.AddDays(-100);
+            dtp_start.Value = DateTime.Parse("1990-01-01");
             dtp_end.MinDate = dtp_start.Value;
             dtp_end.MaxDate = DateTime.Now.AddYears(0);
 
@@ -47,7 +50,6 @@ namespace pharmacy_management.GUI.BanHang
         }
         public void load_invoice()
         {
-            DonHangBUS dhBUS = new DonHangBUS();
 
             DateTime dateStart = dtp_start.Value;
             string formattedDateStart = dateStart.ToString("yyyy-MM-dd");
@@ -65,7 +67,6 @@ namespace pharmacy_management.GUI.BanHang
 
         public void load_invoice_price_ascend()
         {
-            DonHangBUS dhBUS = new DonHangBUS();
 
             DateTime dateStart = dtp_start.Value;
             string formattedDateStart = dateStart.ToString("yyyy-MM-dd");
@@ -84,7 +85,6 @@ namespace pharmacy_management.GUI.BanHang
         }
         public void load_invoice_id_descend()
         {
-            DonHangBUS dhBUS = new DonHangBUS();
 
             DateTime dateStart = dtp_start.Value;
             string formattedDateStart = dateStart.ToString("yyyy-MM-dd");
@@ -128,6 +128,18 @@ namespace pharmacy_management.GUI.BanHang
         {
             setEmpty();
             load_invoice_id_descend();
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            ReportDonHangFrm rpt = new ReportDonHangFrm();
+            rpt.Show();
+        }
+
+        private void txt_searching_TextChanged(object sender, EventArgs e)
+        {
+            setEmpty();
+            load_invoice();
         }
     }
 }
