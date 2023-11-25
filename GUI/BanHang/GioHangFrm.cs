@@ -22,7 +22,7 @@ namespace pharmacy_management.GUI.BanHang
         PhieuGiamGiaBUS pggBUS = new PhieuGiamGiaBUS();
         List<DTO.Thuoc> list_cart;
         private float total_price = 0;
-        public static NhanVien nv = new NhanVien();
+        public static DTO.NhanVien nv = new DTO.NhanVien();
         public GioHangFrm()
         {
             InitializeComponent();

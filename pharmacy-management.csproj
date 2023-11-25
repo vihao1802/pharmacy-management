@@ -200,7 +200,6 @@
     <Compile Include="GUI\Dash\ThongKe.Designer.cs">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="GUI\KhachHang\DiemKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,13 +211,12 @@
     </Compile>
     <Compile Include="GUI\KhachHang\KhachHangfrm.designer.cs">
       <DependentUpon>KhachHangfrm.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="GUI\DoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\DoiMatKhau.Designer.cs">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
     </Compile>
     <Compile Include="GUI\Menu.cs">
       <SubType>Form</SubType>
@@ -343,16 +341,14 @@
     <EmbeddedResource Include="GUI\Dash\ThongKe.resx">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="GUI\KhachHang\DiemKhachHang.resx">
       <DependentUpon>DiemKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\KhachHang\KhachHangfrm.resx">
       <DependentUpon>KhachHangfrm.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -456,17 +452,14 @@
     <Content Include="Images\Subtract.png" />
     <Content Include="Images\Voucher-Contrast.png" />
     <Content Include="Images\Voucher.png" />
-<<<<<<< HEAD
     <None Include="Resources\icons8-add-30.png" />
     <None Include="Resources\icons8-remove-30.png" />
     <None Include="Resources\icons8-fix-30.png" />
     <None Include="Resources\icons8-import-30.png" />
     <None Include="Resources\icons8-export-30.png" />
-=======
     <None Include="Resources\Show Password.png" />
     <None Include="Resources\Show Password1.png" />
     <None Include="Resources\Show Password2.png" />
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

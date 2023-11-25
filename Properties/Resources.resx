@@ -169,13 +169,9 @@
   <data name="icons8-add-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-add-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
-  <data name="_171" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\171.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="_150" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\150.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
+  </data>
   <data name="_157" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\157.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -184,7 +180,6 @@
   </data>
   <data name="_80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\80.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   </data>
   <data name="_23" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\23.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -210,12 +205,9 @@
   <data name="_152" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\152.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
-=======
   <data name="_97" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\97.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   <data name="icons8_down_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-down-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -239,12 +231,6 @@
   </data>
   <data name="_59" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\59.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-<<<<<<< HEAD
-  </data>
-  <data name="_94" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\94.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-=======
   </data>
   <data name="_62" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\62.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -252,7 +238,6 @@
   <data name="_94" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\94.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   <data name="_164" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\164.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -292,12 +277,9 @@
   <data name="icons8_detail_30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-detail-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="icons8-import-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-import-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-=======
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   <data name="_139" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\139.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -345,12 +327,9 @@
   </data>
   <data name="Pharmacy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pharmacy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-<<<<<<< HEAD
   </data>
   <data name="_118" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\118.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   </data>
   <data name="_13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\13.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -361,12 +340,9 @@
   <data name="Storage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Storage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="_169" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\169.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-=======
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   <data name="_77" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\77.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -391,19 +367,17 @@
   <data name="_159" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\159.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="Purchase Order" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Purchase Order.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_157" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\157.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
+  </data>
   <data name="_53" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\53.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_106" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\106.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   </data>
   <data name="_46" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\46.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -465,12 +439,9 @@
   <data name="_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="Double_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Double Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-=======
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   <data name="Get_Revenue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Get Revenue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -525,13 +496,11 @@
   <data name="_18" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\18.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="_151" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\151.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
+  </data>
   <data name="_131" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\131.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   </data>
   <data name="Instagram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Instagram.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -539,13 +508,11 @@
   <data name="_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="_80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\80.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
+  </data>
   <data name="_83" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\83.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   </data>
   <data name="_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\100.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -568,12 +535,9 @@
   <data name="_105" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\105.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
-=======
   <data name="_149" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\149.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   <data name="_87" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\87.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -610,13 +574,11 @@
   <data name="_121" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\121.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="_62" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\62.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
+  </data>
   <data name="Double_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Double Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   </data>
   <data name="_112" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\112.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -654,13 +616,11 @@
   <data name="_127" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\127.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="_149" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\149.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
+  </data>
   <data name="Show Password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Show Password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   </data>
   <data name="icons8_cart_30_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-cart-30_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -676,12 +636,9 @@
   </data>
   <data name="_71" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\71.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-<<<<<<< HEAD
   </data>
   <data name="_103" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\103.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   </data>
   <data name="_45" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\45.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -734,16 +691,14 @@
   <data name="icons8_close_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-close-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="icons8-fix-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-fix-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
+  </data>
   <data name="_151" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\151.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   </data>
   <data name="_65" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\65.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -808,7 +763,6 @@
   <data name="_89" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\89.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\50.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -817,13 +771,9 @@
   </data>
   <data name="_54" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\54.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
+  </data>
   <data name="_150" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\150.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_search_30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-search-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   </data>
   <data name="_54" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\54.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -867,12 +817,9 @@
   <data name="_41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\41.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="_41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\41.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-=======
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   <data name="_107" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\107.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -887,12 +834,9 @@
   </data>
   <data name="_29" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\29.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-<<<<<<< HEAD
   </data>
   <data name="icons8_ellipsis_30_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-ellipsis-30_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   </data>
   <data name="_39" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\39.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -902,12 +846,9 @@
   </data>
   <data name="_142" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\142.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-<<<<<<< HEAD
   </data>
   <data name="icons8-remove-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-remove-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   </data>
   <data name="_99" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\99.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -924,12 +865,10 @@
   <data name="_84" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\84.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
   <data name="icons8-export-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-export-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
+  </data>
   <data name="Show Password2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Show Password2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> de2d86def1a16e82f6217e87fff47d91b7b1333d
   </data>
 </root>

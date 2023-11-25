@@ -56,6 +56,27 @@ namespace pharmacy_management.GUI.KhachHang
             txtNgaySinh.MinDate = new DateTime(1900, 01, 01);
             ckbTrangThai.Checked = true;
             btnThem.Enabled = true;
+            ckbTrangThai.Visible = false;
+            kryptonButton1.Visible = false;
+        }
+
+        private bool IsPhoneNumberExists(string phoneNumber)
+        {
+            foreach (DataGridViewRow row in khachhangDataGridView.Rows)
+            {
+                if (row.Cells["SDT"].Value != null)
+                {
+                    string existingPhoneNumber = row.Cells["SDT"].Value.ToString().Trim();
+
+                    // So sánh số điện thoại
+                    if (existingPhoneNumber.Equals(phoneNumber, StringComparison.OrdinalIgnoreCase))
+                    {
+                        return true; // Số điện thoại đã tồn tại trong DataGridView
+                    }
+                }
+            }
+
+            return false; // Số điện thoại không tồn tại trong DataGridView
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -91,11 +112,17 @@ namespace pharmacy_management.GUI.KhachHang
                 {
                     // Sử dụng biểu thức chính quy để kiểm tra số điện thoại
                     string pattern = @"^0[0-9]{9}$"; // Bắt đầu bằng 0
-                    if (!Regex.IsMatch(txtSDT.Text.ToString(), pattern))
+                    if (!Regex.IsMatch(txtSDT.Text.Trim(), pattern))
                     {
                         MessageBox.Show("Số điện thoại không hợp lệ!!!");
                         return;
                     }
+                    if (IsPhoneNumberExists(txtSDT.Text.Trim()))
+                    {
+                        MessageBox.Show("Số điện thoại đã tồn tại!!!");
+                        return;
+                    }
+
                 }
 
                 // Kiểm tra ngày sinh
@@ -181,6 +208,8 @@ namespace pharmacy_management.GUI.KhachHang
                     ckbTrangThai.Checked = false;
                 }
                 btnThem.Enabled = false;
+                ckbTrangThai.Visible = true;
+                kryptonButton1.Visible = true;
 
             }
         }
@@ -383,6 +412,32 @@ namespace pharmacy_management.GUI.KhachHang
         {
             DiemKhachHang f = new DiemKhachHang();
             f.Show();
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            if (khachhangDataGridView.CurrentRow != null && khachhangDataGridView.CurrentRow.Cells["MaKH"].Value != null)
+            {
+                int ma = int.Parse(khachhangDataGridView.CurrentRow.Cells["MaKH"].Value.ToString());
+                foreach (DTO.DiemKhachHang diem in diembus.getList())
+                {
+                    if (ma == diem.MaKH)
+                    {
+                        int madiem = diem.MaBangDiem;
+                        int makh = diem.MaKH;
+                        int diemtichtuy = diem.DiemTichLuy;
+                        int diemdasd = diem.DiemDaSuDung;
+                        string message = "Mã bảng điểm: " + madiem + "\nMã khách hàng: " + makh + "\nĐiểm tích lũy: " + diemtichtuy + "\nĐiểm đã sử dụng: " + diemdasd;
+                        MessageBox.Show(message, "Điểm khách hàng");
+                        
+                    }
+                    
+                }
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn khách hàng cần xem điểm!!!");
+            }
         }
     }
 }

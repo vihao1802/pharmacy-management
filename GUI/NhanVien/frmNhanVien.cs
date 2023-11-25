@@ -61,6 +61,7 @@ namespace pharmacy_management.GUI.NhanVien
             ckbTrangThai.Checked = true;
             btnThem.Enabled = true;
             txtTenDangNhap.Enabled = true;
+            ckbTrangThai.Visible = false;
         }
 
 
@@ -127,6 +128,7 @@ namespace pharmacy_management.GUI.NhanVien
                 {
                     ckbTrangThai.Checked = false;
                 }
+                ckbTrangThai.Visible = true;
             }
         }
 

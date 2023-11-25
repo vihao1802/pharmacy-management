@@ -18,6 +18,8 @@ using pharmacy_management.GUI.BanHang;
 using pharmacy_management.GUI.NhapHang;
 using pharmacy_management.GUI.Dash;
 using pharmacy_management.GUI.Thuoc;
+using pharmacy_management.GUI.KhachHang;
+using pharmacy_management.GUI.NhanVien;
 
 namespace pharmacy_management.GUI
 {
@@ -35,7 +37,7 @@ namespace pharmacy_management.GUI
              DashFrm dashFrm = new DashFrm();
             addFormtoPanelContainer(dashFrm );
              nv = Login.nv;
-            addControls();
+          //  addControls();
              lbName.Text = nv.TenNV;
 
         }
@@ -181,6 +183,16 @@ namespace pharmacy_management.GUI
         {
             DoiMatKhau doiMatKhau = new DoiMatKhau();
             doiMatKhau.Show();
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new KhachHangfrm());
+        }
+
+        private void btnStaff_Click(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new frmNhanVien());
         }
     }
 
