@@ -1,4 +1,7 @@
-﻿using System;
+﻿using pharmacy_management.BUS;
+using pharmacy_management.DAO;
+using pharmacy_management.DTO;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,15 +11,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using pharmacy_management.BUS;
-using pharmacy_management.DAO;
-using pharmacy_management.DTO;
-using pharmacy_management.GUI.BanHang;
 
 namespace pharmacy_management.GUI.NhapHang
 {
-
-    public partial class NhapHang : UserControl
+    public partial class NhapHangFrm : Form
     {
         private ArrayList listthuoc;
         ThuocDAO thuocdao = new ThuocDAO();
@@ -26,11 +24,12 @@ namespace pharmacy_management.GUI.NhapHang
         List<DTO.Thuoc> thuoc_cart = new List<DTO.Thuoc>();
         Label lbl_not_found = new Label();
         LoHangFrm lh;
-        public NhapHang()
+        public NhapHangFrm()
         {
             InitializeComponent();
             setup();
             pagination();
+
         }
         public void setup()
         {
@@ -124,7 +123,7 @@ namespace pharmacy_management.GUI.NhapHang
             {
                 Console.WriteLine(t.MaThuoc);
 
-              //  spGUI = new SPNhaphang(this);
+                spGUI = new SPNhaphang(this);
                 spGUI.AddNewContent(t);
                 this.container.Controls.Add(spGUI);
                 count++;
@@ -272,5 +271,6 @@ namespace pharmacy_management.GUI.NhapHang
                 //gh.Show();
             }
         }
+    
     }
 }

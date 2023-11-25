@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,38 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="kryptonPalette1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAIAEBAAAAEAIABoBAAAJgAAABkZAAABACAAigEAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAADAE
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/LgDAvy4A/78uAP+/LgD/vy4A/78uAP+/LgD/vy4A/78u
-        AP+/LgD/vy4A/78uAP+/LgD/vy4AwAAAAAAAAAAAvy4AwL8uAP+/LgD/vy4A/78uAP+/LgDvvy4A/78u
-        AP+/LgD/vy4A/78uAP+/LgD/vy4A/78uAMAAAAAAAAAAAL8uAMC/LgD/vy4A/78vAJ+/MABgvzAAcL8w
-        AHC/LgD/vy4A/78uAP+/LgD/vy4A/78uAP+/LgDAAAAAAAAAAAC/LgDAvy4A/78uAP+/MABgvy4A/78u
-        AP+/LwDQvzAAcL8uAP+/LgD/vy4A/78uAP+/LgD/vy4AwAAAAAAAAAAAvy4AwL8uAP+/LwDwvzAAcL8u
-        AP+/LgD/vy4A/78uAIC/MABgvy4A/78uAP+/LgD/vy4A/78uAMAAAAAAAAAAAL8uAMC/LgD/vy4A/78w
-        AHC/LwDPvy4A/78vAJ8AAAAAAAAAAL8wAGC/LgD/vy4A/78uAP+/LgDAAAAAAAAAAAC/LgDAvy4A/78u
-        AP+/LgD/vzAAcL8uAH8AAAAAAAAAAAAAAAAAAAAAvy4AgL8uAP+/LgD/vy4AwAAAAAAAAAAAvy4AwL8u
-        AP+/LgD/vy4A/78uAP+/MABgAAAAAAAAAAAAAAAAAAAAAL8wAEC/LgD/vy4A/78uAMAAAAAAvzAAYL8v
-        AOC/LgD/vy4A/78uAP+/LgD/vy4A/78wAGAAAAAAAAAAAAAAAAC/MABgvy4A/78uAP+/LwDgvzAAcL8w
-        ABC/LwCvvy4A/78uAP+/LgD/vy4A/78uAP+/LgD/vzAAcL8wAEC/MABgvy8A8L8uAP+/LgD/vy8Ar78w
-        ABAAAAAAAAAAAL8wAHC/LgD/vy4A/78uAP+/LgD/vy4A/78uAP+/LgD/vy4A/78uAP+/LgD/vy4AbwAA
-        AAAAAAAAAAAAAAAAAAAAAAAAvzAAQL8uAO+/LgD/vy4A/78uAP+/LgD/vy4A/78uAP+/LgDvvzAAQAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/MAAgvy8Az78uAP+/LgD/vy4A/78uAP+/LwDPvzAAEAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/LgCgvy4A/78uAP+/LwCfAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL8wAGC/MABgAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AACAAQAAgAEAAIcBAACIgQAAiEEAAIjhAACH4QAAg/EAAIHx
-        AACA4QAA4AcAAPAPAAD4HwAA/D8AAP//AACJUE5HDQoaCgAAAA1JSERSAAAAGQAAABkIBgAAAMTphWMA
-        AAAEZ0FNQQAAsY8L/GEFAAABQUlEQVRIS72UDXECMRSEI6ESqiCJBCTUAThoHYATcFAcPBwgoRKogzab
-        nyG8Te4CXPvNLJkL+97e5OfMXXh5CVrH8U/w8mqcnI2VnzjieVG8vIXmlxhw1SXOL4KVnWqutc3OB8C6
-        O5FGUxZ8d++TFx8Kv5oNe4IfdUN42YQivf6jwj5tcqcOVg6q6DE52eeOFfXxnJOT7/i2qEn6iHPsq445
-        1nF0eVIAr7uX1bQfPz1TrV5AwcqJatD3pkYbas0FgNZ9IrShaCQAWDlSLaENUAnAqZs6msnD9YQ21AFl
-        rhUET+/iEtqAownpeSvvuQIB+PT0jz6hDakBn//0H+7JdABEaEM/BPszHwAR2pDeVi/XeABEsAkfu3JR
-        d3FMmzwWABEtE+TkM4zbPLY9PREt07MiWqZnRaRNxvdnGaHf/2HML65Evz1OIp7xAAAAAElFTkSuQmCC
-</value>
-  </data>
 </root>

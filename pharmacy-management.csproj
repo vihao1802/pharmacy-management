@@ -180,6 +180,12 @@
     <Compile Include="GUI\Dash\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Dash\DashFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dash\DashFrm.Designer.cs">
+      <DependentUpon>DashFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Dash\ThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -191,6 +197,12 @@
     </Compile>
     <Compile Include="GUI\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhapHang\ChiTietPhieuNhapFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhapHang\ChiTietPhieuNhapFrm.Designer.cs">
+      <DependentUpon>ChiTietPhieuNhapFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\NhapHang\LoHangFrm.cs">
       <SubType>Form</SubType>
@@ -209,6 +221,24 @@
     </Compile>
     <Compile Include="GUI\BanHang\SanPhamGioHang.Designer.cs">
       <DependentUpon>SanPhamGioHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhapHang\NhapHangFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhapHang\NhapHangFrm.Designer.cs">
+      <DependentUpon>NhapHangFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhapHang\PhieuNhapFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhapHang\PhieuNhapFrm.Designer.cs">
+      <DependentUpon>PhieuNhapFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhapHang\PhieuNhapRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\NhapHang\PhieuNhapRow.Designer.cs">
+      <DependentUpon>PhieuNhapRow.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\NhapHang\SPLohang.cs">
       <SubType>UserControl</SubType>
@@ -290,11 +320,17 @@
     <EmbeddedResource Include="GUI\Dash\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dash\DashFrm.resx">
+      <DependentUpon>DashFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Dash\ThongKe.resx">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhapHang\ChiTietPhieuNhapFrm.resx">
+      <DependentUpon>ChiTietPhieuNhapFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhapHang\LoHangFrm.resx">
       <DependentUpon>LoHangFrm.cs</DependentUpon>
@@ -304,6 +340,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\BanHang\SanPhamGioHang.resx">
       <DependentUpon>SanPhamGioHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhapHang\NhapHangFrm.resx">
+      <DependentUpon>NhapHangFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhapHang\PhieuNhapFrm.resx">
+      <DependentUpon>PhieuNhapFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhapHang\PhieuNhapRow.resx">
+      <DependentUpon>PhieuNhapRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhapHang\SPLohang.resx">
       <DependentUpon>SPLohang.cs</DependentUpon>
@@ -384,22 +429,23 @@
     <Content Include="Images\Subtract.png" />
     <Content Include="Images\Voucher-Contrast.png" />
     <Content Include="Images\Voucher.png" />
-    <None Include="ql_nhathuocDataSet1.xsc">
-      <DependentUpon>ql_nhathuocDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="ql_nhathuocDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ql_nhathuocDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ql_nhathuocDataSet1.xss">
-      <DependentUpon>ql_nhathuocDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Resources\icons8-report-24.png" />
-    <None Include="Resources\icons8-plus-24.png" />
-    <None Include="Resources\icons8-setting-24.png" />
-    <None Include="Resources\icons8-search-24.png" />
-    <Content Include="SqlServerTypes\readme.htm" />
+	  <None Include="ql_nhathuocDataSet1.xsc">
+		  <DependentUpon>ql_nhathuocDataSet1.xsd</DependentUpon>
+	  </None>
+	  <None Include="ql_nhathuocDataSet1.xsd">
+		  <Generator>MSDataSetGenerator</Generator>
+		  <LastGenOutput>ql_nhathuocDataSet1.Designer.cs</LastGenOutput>
+		  <SubType>Designer</SubType>
+	  </None>
+	  <None Include="ql_nhathuocDataSet1.xss">
+		  <DependentUpon>ql_nhathuocDataSet1.xsd</DependentUpon>
+	  </None>
+	  <None Include="Resources\icons8-report-24.png" />
+	  <None Include="Resources\icons8-plus-24.png" />
+	  <None Include="Resources\icons8-setting-24.png" />
+	  <None Include="Resources\icons8-search-24.png" />
+
+	  <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -412,6 +458,10 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Purchase Order.png" />
+    <None Include="Resources\Purchase Order - Contrast.png" />
+    <None Include="Resources\Import.png" />
+    <None Include="Resources\Import - Contrast.png" />
     <None Include="Resources\icons8-refresh-24.png" />
     <None Include="Resources\icons8-down-24_white.png" />
     <None Include="Resources\icons8-down-24.png" />

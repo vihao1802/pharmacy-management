@@ -27,5 +27,14 @@ namespace pharmacy_management.BUS
         {
             list = dao.GetALl();
         }
+        public ArrayList getListWithID(int ma)
+        {
+            return dao.getListWithID(ma);
+        }
+        public void addNewDetailInvoice(int maPN, int maThuoc, int soLuong, float gia, float thanhTien)
+        {
+            dao.addNewDetailInvoice(maPN, maThuoc, soLuong, gia, thanhTien);
+        }
+
     }
 }

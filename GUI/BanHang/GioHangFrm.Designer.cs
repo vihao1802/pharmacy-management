@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbl_bonus = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.lbl_discount = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_pay = new System.Windows.Forms.Button();
@@ -67,26 +65,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(602, 80);
             this.panel2.TabIndex = 1;
-            // 
-            // lbl_bonus
-            // 
-            this.lbl_bonus.AutoSize = true;
-            this.lbl_bonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_bonus.Location = new System.Drawing.Point(426, 45);
-            this.lbl_bonus.Name = "lbl_bonus";
-            this.lbl_bonus.Size = new System.Drawing.Size(35, 25);
-            this.lbl_bonus.TabIndex = 8;
-            this.lbl_bonus.Text = "+0";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(352, 47);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 22);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Điểm :";
             // 
             // lbl_discount
             // 

@@ -243,6 +243,13 @@ namespace pharmacy_management.DAO
             Console.WriteLine(query);
             conn.ExecuteNonQuery(query);
         }
+        public void addQuantity(int ma, int sl)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("UPDATE thuoc SET SoLuong = SoLuong + {0} WHERE MaThuoc = '{1}'", sl, ma);
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
+        }
 
         public DTO.Thuoc getItem(int ma)
         {
