@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using pharmacy_management.Database;
 using pharmacy_management.DTO;
 using pharmacy_management.GUI.BanHang;
 
@@ -16,14 +17,14 @@ namespace pharmacy_management.DAO
         SqlConnection sqlcon;
         public ThongKeDAO()
         {
-            KetNoiCSDL();
+            ConnectDB conn = new ConnectDB();
+            sqlcon = conn.KetNoiCSDL();
         }
-        void KetNoiCSDL()
-        {
-            string conn =
-"Data Source=LAPTOP-ULQT60JG;Initial Catalog=ql_nhathuoc;Integrated Security=True";
-            sqlcon = new SqlConnection(conn);
-        }
+        //        void KetNoiCSDL()
+        //        {
+        //            string conn =
+        //"Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";            sqlcon = new SqlConnection(conn);
+        //        }
         public int getslthuoc()
         {
             string query = "Select Count(*) from thuoc";
@@ -64,7 +65,7 @@ namespace pharmacy_management.DAO
             using (SqlCommand cmd = new SqlCommand(query, sqlcon))
             {
                 sqlcon.Open();
-                tk.setDoanhthu(Convert.ToSingle(cmd.ExecuteScalar()));
+                tk.setDoanhthu((float)Convert.ToDouble(cmd.ExecuteScalar()));
                 sqlcon.Close();
             }
             return tk.getDoanhthu();

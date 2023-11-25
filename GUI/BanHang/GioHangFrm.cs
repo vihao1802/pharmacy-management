@@ -1,4 +1,5 @@
-﻿using pharmacy_management.BUS;
+﻿using Krypton.Toolkit;
+using pharmacy_management.BUS;
 using pharmacy_management.DTO;
 using System;
 using System.Collections;
@@ -7,22 +8,27 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using thuoc;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace pharmacy_management.GUI.BanHang
 {
-    public partial class GioHangFrm : Form
+    public partial class GioHangFrm : KryptonForm
     {
         QuyDoiDiemBUS qdBUS = new QuyDoiDiemBUS();
         PhieuGiamGiaBUS pggBUS = new PhieuGiamGiaBUS();
+        DiemKhachHangBUS dkhBUS = new DiemKhachHangBUS();
         List<DTO.Thuoc> list_cart;
         private float total_price = 0;
+        public static NhanVien nv = new NhanVien();
         public GioHangFrm()
         {
             InitializeComponent();
+            nv = Login.nv;
             setup();
         }
         public void load_QuyDoiDiem()
@@ -35,7 +41,7 @@ namespace pharmacy_management.GUI.BanHang
 
             dropBtn_PG.Items.Add("Chọn phiếu giảm");
 
-            foreach (QuyDoiDiem qd in qdBUS.getList())
+            foreach (DTO.QuyDoiDiem qd in qdBUS.getList())
             {
                 Console.WriteLine("Ma KH duoc chon: " + qd.MaKH);
                 if (maKH == qd.MaKH)
@@ -57,6 +63,8 @@ namespace pharmacy_management.GUI.BanHang
                 dropBtn_KH.Items.Add(item_name);
             }
             dropBtn_PG.Visible = false;
+            setVisible(false);
+
 
         }
 
@@ -107,17 +115,15 @@ namespace pharmacy_management.GUI.BanHang
             string tongTien = lbl_total_price.Text.Replace(" đ", "").Replace(",", "");
             string thanhTien = lbl_final_total_price.Text.Replace(" đ", "").Replace(",", "");
 
-            dhBUS.addNewInvoice("2", maKH, formattedDate, maQD, tongTien, thanhTien);
+            dhBUS.addNewInvoice(nv.MaNV.ToString(), maKH, formattedDate, maQD, tongTien, thanhTien);
 
             if (Int32.Parse(maKH) > 1)
             {
-                DiemKhachHangBUS dkhBUS = new DiemKhachHangBUS();
                 dkhBUS.updateDiemKH(lbl_bonus.Text.Replace("+", ""), maKH);
             }
 
             if (maQD != "null")
             {
-                QuyDoiDiemBUS qdBUS = new QuyDoiDiemBUS();
                 qdBUS.updateStatus(maQD);
             }
 
@@ -146,6 +152,7 @@ namespace pharmacy_management.GUI.BanHang
             setDropDownEmpty();
             qdBUS = new QuyDoiDiemBUS();
             load_QuyDoiDiem();
+            load_diemTichLuy();
             AddCart();
             MessageBox.Show("Thanh toán thành công!");
         }
@@ -165,7 +172,7 @@ namespace pharmacy_management.GUI.BanHang
             formattedNumber = final_price.ToString("#,##0") + " đ";
             lbl_final_total_price.Text = formattedNumber;
 
-            lbl_bonus.Text = "+" + (Int32.Parse(lbl_final_total_price.Text.Replace(",", "").Replace(" đ", "")) / 1000).ToString();
+            lbl_bonus.Text = "+" + ((Int32.Parse(lbl_final_total_price.Text.Replace(",", "").Replace(" đ", "")) / 1000) / 2).ToString();
         }
 
         public void AddCart()
@@ -267,7 +274,7 @@ namespace pharmacy_management.GUI.BanHang
                 maQD = Int32.Parse(arr[0]);
             }
 
-            foreach (QuyDoiDiem qd in qdBUS.getList())
+            foreach (DTO.QuyDoiDiem qd in qdBUS.getList())
             {
                 if (maQD == qd.MaQuyDoi)
                 {
@@ -288,18 +295,46 @@ namespace pharmacy_management.GUI.BanHang
             if (dropBtn_KH.SelectedIndex == 0)
             {
                 dropBtn_PG.Visible = false;
+                setVisible(false);
             }
             else
             {
                 dropBtn_PG.Visible = true;
+                setVisible(true);
             }
             dropBtn_PG.SelectedIndex = -1;
             dropBtn_PG.Text = "Chọn phiếu giảm";
             lbl_discount.Text = "0%";
         }
+
+        public void setVisible(Boolean flag)
+        {
+            label5.Visible = flag;
+            lbl_DiemHienCo.Visible = flag;
+            label3.Visible = flag;
+            lbl_bonus.Visible = flag;
+        }
+        public void load_diemTichLuy()
+        {
+            string selectedText = dropBtn_KH.SelectedItem.ToString();
+            string[] arr = selectedText.Split('_');
+            string maKH = arr[0];
+            if (maKH != "1")
+            {
+                setVisible(true);
+
+            }
+            DiemKhachHang tmp = dkhBUS.GetItem(maKH);
+
+            string formattedNumber = tmp.DiemTichLuy.ToString("#,##0");
+            lbl_DiemHienCo.Text = formattedNumber;
+        }
+
         private void dropBtn_KH_SelectedIndexChanged(object sender, EventArgs e)
         {
             setDropDownEmpty();
+
+            load_diemTichLuy();
         }
 
         private void dropBtn_PG_DropDown(object sender, EventArgs e)

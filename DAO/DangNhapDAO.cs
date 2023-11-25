@@ -14,17 +14,19 @@ namespace pharmacy_management.DAO
 {
     internal class DangNhapDAO
     {
+        SqlConnection sqlcon;
 
         public DangNhapDAO()
         {
-            KetNoiCSDL();
+            ConnectDB conn = new ConnectDB();
+
+            sqlcon = conn.KetNoiCSDL();
         }
-        SqlConnection sqlcon;
-        void KetNoiCSDL()
-        {
-            string conn = "Data Source=LAPTOP-ULQT60JG;Initial Catalog=ql_nhathuoc;Integrated Security=True";
-            sqlcon = new SqlConnection(conn);
-        }
+        //void KetNoiCSDL()
+        //{
+        //    string conn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
+        //    sqlcon = new SqlConnection(conn);
+        //}
 
         public bool kiemtradangnhap(string username, string password)
         {
@@ -58,6 +60,15 @@ namespace pharmacy_management.DAO
             catch (Exception ex) { return false; }
         }
 
+        public void DoiPass(string user,string pass)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("UPDATE nhanvien SET MatKhau = {0} WHERE TenDangNhap = '{1}'", pass, user);
+            Console.WriteLine(query);
+            
+            conn.ExecuteNonQuery(query);
+
+        }
         public NhanVien taikhoandangnhap(NhanVien nv)
         {
 

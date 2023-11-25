@@ -66,9 +66,9 @@
             this.kryptonPanel2.Controls.Add(this.lbl_total_pages);
             this.kryptonPanel2.Controls.Add(this.label1);
             this.kryptonPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.kryptonPanel2.Location = new System.Drawing.Point(0, 563);
+            this.kryptonPanel2.Location = new System.Drawing.Point(0, 610);
             this.kryptonPanel2.Name = "kryptonPanel2";
-            this.kryptonPanel2.Size = new System.Drawing.Size(932, 40);
+            this.kryptonPanel2.Size = new System.Drawing.Size(950, 40);
             this.kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.WhiteSmoke;
             this.kryptonPanel2.StateCommon.Color2 = System.Drawing.Color.WhiteSmoke;
             this.kryptonPanel2.TabIndex = 4;
@@ -202,7 +202,7 @@
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(932, 60);
+            this.kryptonPanel1.Size = new System.Drawing.Size(950, 60);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.White;
             this.kryptonPanel1.StateCommon.Color2 = System.Drawing.Color.White;
             this.kryptonPanel1.TabIndex = 3;
@@ -313,7 +313,7 @@
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container.Location = new System.Drawing.Point(0, 60);
             this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(932, 503);
+            this.container.Size = new System.Drawing.Size(950, 550);
             this.container.TabIndex = 5;
             // 
             // NhapHang
@@ -325,7 +325,7 @@
             this.Controls.Add(this.kryptonPanel2);
             this.Controls.Add(this.kryptonPanel1);
             this.Name = "NhapHang";
-            this.Size = new System.Drawing.Size(932, 603);
+            this.Size = new System.Drawing.Size(950, 650);
             this.Load += new System.EventHandler(this.NhapHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).EndInit();
             this.kryptonPanel2.ResumeLayout(false);

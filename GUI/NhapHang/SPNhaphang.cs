@@ -15,9 +15,9 @@ namespace pharmacy_management.GUI.NhapHang
     public partial class SPNhaphang : UserControl
     {
         DTO.Thuoc thuoc_info;
-        NhapHang nhapHang;
-       
-        public SPNhaphang(NhapHang nhaphang)
+        NhapHangFrm nhapHang;
+
+        public SPNhaphang(NhapHangFrm nhaphang)
         {
 
             InitializeComponent();
@@ -26,16 +26,16 @@ namespace pharmacy_management.GUI.NhapHang
         }
         public void AddNewContent(DTO.Thuoc thuoc_item)
         {
-              thuoc_item.GiaThuoc = thuoc_item.GiaThuoc * 80 / 100;
+
 
             thuoc_info = thuoc_item;
-           // thuoc_info.GiaThuoc = thuoc_item.GiaThuoc * 80/100;
+            // thuoc_info.GiaThuoc = thuoc_item.GiaThuoc * 80/100;
             lbl_item_name.Text = thuoc_item.TenThuoc;
-           // float importprice = thuoc_item.GiaThuoc * 80 /100;
+            // float importprice = thuoc_item.GiaThuoc * 80 /100;
 
             string formattedNumber = thuoc_item.GiaThuoc.ToString("#,##0") + " đ";
             lbl_item_price.Text = formattedNumber;
-
+            txtsl.Text = thuoc_item.SoLuong.ToString();
             string imageName = thuoc_item.AnhThuoc.Replace("images/", "");
             string directoryPath = @"..\..\Resources";
             string fileName = imageName;

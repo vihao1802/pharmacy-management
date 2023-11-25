@@ -1,4 +1,5 @@
 ﻿using pharmacy_management.DAO;
+using pharmacy_management.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -28,9 +29,19 @@ namespace pharmacy_management.BUS
             list = dao.GetALl();
         }
 
+        public DiemKhachHang GetItem(string ma)
+        {
+            return dao.GetItem(ma);
+        }
+
         public void updateDiemKH(string diem, string ma)
         {
             dao.updateDiemKH(diem, ma);
+        }
+
+        public void updateDiemKHSauQD(string diem, string ma)
+        {
+            dao.updateDiemKHSauQD(diem, ma);
         }
     }
 }

@@ -84,7 +84,6 @@
             this.Banners.Size = new System.Drawing.Size(932, 100);
             this.Banners.StateCommon.Color1 = System.Drawing.Color.White;
             this.Banners.StateCommon.Color2 = System.Drawing.Color.White;
-            this.Banners.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.Banners.TabIndex = 8;
             // 
             // btnRight
@@ -136,7 +135,6 @@
             this.TKthuoc.Name = "TKthuoc";
             this.TKthuoc.Size = new System.Drawing.Size(200, 75);
             this.TKthuoc.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.TKthuoc.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.TKthuoc.TabIndex = 9;
             // 
             // Numthuoc
@@ -185,7 +183,6 @@
             this.TKkhach.Name = "TKkhach";
             this.TKkhach.Size = new System.Drawing.Size(200, 75);
             this.TKkhach.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.TKkhach.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.TKkhach.TabIndex = 10;
             // 
             // Numkhach
@@ -234,7 +231,6 @@
             this.TKslban.Name = "TKslban";
             this.TKslban.Size = new System.Drawing.Size(200, 75);
             this.TKslban.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.TKslban.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.TKslban.TabIndex = 10;
             // 
             // Numslban
@@ -283,7 +279,6 @@
             this.TKdoanhthu.Name = "TKdoanhthu";
             this.TKdoanhthu.Size = new System.Drawing.Size(200, 75);
             this.TKdoanhthu.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.TKdoanhthu.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.TKdoanhthu.TabIndex = 10;
             // 
             // Numdoanhthu

@@ -20,11 +20,13 @@ namespace thuoc
     public partial class Login : KryptonForm
     {
         public static NhanVien nv;
-        DangNhapDAO dao = new DangNhapDAO();
         DangNhapBUS bus = new DangNhapBUS();
         public Login()
         {
             InitializeComponent();
+            txtuser.Text = pharmacy_management.Properties.Settings.Default.Username;
+            txtpass.Text = pharmacy_management.Properties.Settings.Default.Password;
+            ckbRemember.Checked = pharmacy_management.Properties.Settings.Default.Check;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,14 +36,26 @@ namespace thuoc
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
+            if (ckbRemember.Checked)
+            {
+                pharmacy_management.Properties.Settings.Default.Username = txtuser.Text;
+                pharmacy_management.Properties.Settings.Default.Password = txtpass.Text;
+                pharmacy_management.Properties.Settings.Default.Check = true;
+                pharmacy_management.Properties.Settings.Default.Save();
+            }
             XulyDangNhap();
         }
         private void XulyDangNhap()
         {
             nv = bus.dangnhap(txtuser.Text, txtpass.Text);
+            if (txtuser.Text.Trim().Equals("") || txtpass.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                return;
+            }
             if (nv != null)
             {
-               pharmacy_management.GUI. Menu menu = new pharmacy_management.GUI.Menu();
+                pharmacy_management.GUI.Menu menu = new pharmacy_management.GUI.Menu();
                 menu.Show();
 
                 this.Close();
@@ -53,6 +67,7 @@ namespace thuoc
                 return;
 
             }
+           
         }
         private void txtuser_TextChanged(object sender, EventArgs e)
         {
@@ -63,9 +78,10 @@ namespace thuoc
         {
             if (e.KeyCode == Keys.Enter)
             {
-                kryptonButton1_Click((object)sender, e);
+                XulyDangNhap();
             }
         }
+
 
         private void txtuser_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -81,6 +97,29 @@ namespace thuoc
             {
                 XulyDangNhap();
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (txtpass.UseSystemPasswordChar)
+            {
+                txtpass.UseSystemPasswordChar = false;
+            }else txtpass.UseSystemPasswordChar=true;
+        }
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+           // txtpass.UseSystemPasswordChar = false;
+            
+        }
+
+        private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
+        {
+            //txtpass.UseSystemPasswordChar = true;
+        }
+
+        private void kryptonCheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using pharmacy_management.BUS;
+﻿using Krypton.Toolkit;
+using pharmacy_management.BUS;
 using pharmacy_management.DTO;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace pharmacy_management.GUI.BanHang
 {
-    public partial class ChiTietDonHangFrm : Form
+    public partial class ChiTietDonHangFrm : KryptonForm
     {
         DonHang dh;
         string formattedNumber = "";
@@ -25,9 +26,9 @@ namespace pharmacy_management.GUI.BanHang
         {
             dh = dh_info;
 
-            lbl_MaDH.Text = dh.MaDH.ToString();
-            lbl_MaKH.Text = dh.MaKH.ToString();
-            lbl_MaNV.Text = dh.MaNV.ToString();
+            lbl_MaDH.Text = "#" + dh.MaDH.ToString();
+            lbl_MaKH.Text = "#" + dh.MaKH.ToString();
+            lbl_MaNV.Text = "#" + dh.MaNV.ToString();
             lbl_NgayLap.Text = dh.NgayLap;
 
             NhanVienBUS nvBUS = new NhanVienBUS();
@@ -71,9 +72,6 @@ namespace pharmacy_management.GUI.BanHang
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
     }
 }
