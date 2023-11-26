@@ -91,5 +91,29 @@ namespace pharmacy_management.DAO
 
 
         }
+
+        public void add(NhanVien DTO)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("INSERT INTO NHANVIEN (TenNV, SDT, DiaChi, Email, TrangThai, TenDangNhap, MatKhau, MaQuyen) VALUES (N'{0}', '{1}', '{2}', '{3}', {4}, '{5}', '{6}', {7})", DTO.TenNV, DTO.SDT, DTO.DiaChi, DTO.Email, 1, DTO.TenDangNhap, DTO.MatKhau, DTO.MaQuyen);
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
+        }
+
+        public void delete(int ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = "UPDATE NHANVIEN SET TrangThai = 0 WHERE MaNV = " + ma;
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
+        }
+
+        public void update(NhanVien DTO, int ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("UPDATE NHANVIEN SET TenNV = N'{0}', SDT = '{1}', DiaChi = '{2}', Email = '{3}', TrangThai = {4}, TenDangNhap = '{5}', MatKhau = '{6}', MaQuyen = {7} WHERE MaNV = {8}", DTO.TenNV, DTO.SDT, DTO.DiaChi, DTO.Email, DTO.TrangThai, DTO.TenDangNhap, DTO.MatKhau, DTO.MaQuyen, ma);
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
+        }
     }
 }

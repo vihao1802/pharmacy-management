@@ -15,17 +15,18 @@ using pharmacy_management;
 using static System.Net.Mime.MediaTypeNames;
 using thuoc;
 using pharmacy_management.GUI.BanHang;
-using pharmacy_management.GUI.Thuoc;
 using pharmacy_management.GUI.NhapHang;
 using pharmacy_management.GUI.Dash;
 using pharmacy_management.GUI.Thuoc;
+using pharmacy_management.GUI.KhachHang;
+using pharmacy_management.GUI.NhanVien;
 using pharmacy_management.GUI.QuyDoiDiem;
 
 namespace pharmacy_management.GUI
 {
     public partial class Menu : KryptonForm
     {
-        public static NhanVien nv = new NhanVien();
+        public static DTO.NhanVien nv = new DTO.NhanVien();
 
         bool sidebarExpand;
         BanHangFrm bhFrm;
@@ -215,6 +216,17 @@ namespace pharmacy_management.GUI
         {
             addFormtoPanelContainer(new PhieuGiamGiaFrm());
             btnCoupon.Enabled = false;
+        }
+
+        private void btnCustomer_Click_1(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new KhachHangfrm());
+
+        }
+
+        private void btnStaff_Click_1(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new frmNhanVien());
         }
     }
 
