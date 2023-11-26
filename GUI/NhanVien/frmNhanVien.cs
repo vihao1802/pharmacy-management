@@ -645,30 +645,33 @@ namespace pharmacy_management.GUI.NhanVien
 
         private void nhanvienDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (nhanvienDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                nhanvienDataGridView.CurrentRow.Selected = true;
-                txtMaNV.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["MaNV"].Value.ToString();
-                txtTenNV.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["TenNV"].Value.ToString();
-                txtSDT.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["SDT"].Value.ToString();
-                txtDiaChi.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["DiaChi"].Value.ToString();
-                txtEmail.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["Email"].Value.ToString();
-                txtTenDangNhap.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["TenDangNhap"].Value.ToString();
-                txtMatKhau.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["MatKhau"].Value.ToString();
-                cbxMaQuyen.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["MaQuyen"].Value.ToString();
-                string temp = nhanvienDataGridView.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString();
-                ckbTrangThai.Enabled = true;
-                txtTenDangNhap.Enabled = false;
-                btnThem.Enabled = false;
-                if (temp.Equals("Đang hoạt động", StringComparison.OrdinalIgnoreCase))
+                if (nhanvienDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
-                    ckbTrangThai.Checked = true;
+                    nhanvienDataGridView.CurrentRow.Selected = true;
+                    txtMaNV.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["MaNV"].Value.ToString();
+                    txtTenNV.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["TenNV"].Value.ToString();
+                    txtSDT.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["SDT"].Value.ToString();
+                    txtDiaChi.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["DiaChi"].Value.ToString();
+                    txtEmail.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+                    txtTenDangNhap.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["TenDangNhap"].Value.ToString();
+                    txtMatKhau.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["MatKhau"].Value.ToString();
+                    cbxMaQuyen.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["MaQuyen"].Value.ToString();
+                    string temp = nhanvienDataGridView.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString();
+                    ckbTrangThai.Enabled = true;
+                    txtTenDangNhap.Enabled = false;
+                    btnThem.Enabled = false;
+                    if (temp.Equals("Đang hoạt động", StringComparison.OrdinalIgnoreCase))
+                    {
+                        ckbTrangThai.Checked = true;
+                    }
+                    else
+                    {
+                        ckbTrangThai.Checked = false;
+                    }
+                    ckbTrangThai.Visible = true;
                 }
-                else
-                {
-                    ckbTrangThai.Checked = false;
-                }
-                ckbTrangThai.Visible = true;
             }
         }
 
