@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+      <HintPath>..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Krypton.Toolkit, Version=70.22.11.312, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <HintPath>packages\Krypton.Toolkit.70.22.11.312\lib\net472\Krypton.Toolkit.dll</HintPath>

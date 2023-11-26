@@ -58,6 +58,7 @@ namespace pharmacy_management.GUI.KhachHang
             btnThem.Enabled = true;
             ckbTrangThai.Visible = false;
             kryptonButton1.Visible = false;
+            kryptonButton2.Visible = false;
         }
 
         private bool IsPhoneNumberExists(string phoneNumber)
@@ -187,31 +188,7 @@ namespace pharmacy_management.GUI.KhachHang
 
         private void khachhangDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (khachhangDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-            {
-                khachhangDataGridView.CurrentRow.Selected = true;
-                txtMaKH.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["MaKH"].Value.ToString();
-                txtTenKH.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["TenKH"].Value.ToString();
-                txtSDT.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["SDT"].Value.ToString();
-                if (DateTime.TryParse(khachhangDataGridView.Rows[e.RowIndex].Cells["NgaySinh"].Value.ToString(), out DateTime ngaySinh))
-                {
-                    txtNgaySinh.Value = ngaySinh;
-                }
-                string temp = khachhangDataGridView.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString();
-                ckbTrangThai.Enabled = true;
-                if (temp.Equals("Đang hoạt động", StringComparison.OrdinalIgnoreCase))
-                {
-                    ckbTrangThai.Checked = true;
-                }
-                else
-                {
-                    ckbTrangThai.Checked = false;
-                }
-                btnThem.Enabled = false;
-                ckbTrangThai.Visible = true;
-                kryptonButton1.Visible = true;
-
-            }
+            
         }
 
         private void kryptonPanel1_Paint(object sender, PaintEventArgs e)
@@ -343,7 +320,7 @@ namespace pharmacy_management.GUI.KhachHang
 
         private void khachhangDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            RefreshTextBox();
+            
         }
 
         private void btnXuat_Click(object sender, EventArgs e)
@@ -438,6 +415,52 @@ namespace pharmacy_management.GUI.KhachHang
             {
                 MessageBox.Show("Chưa chọn khách hàng cần xem điểm!!!");
             }
+        }
+
+        private void kryptonButton2_Click(object sender, EventArgs e)
+        {
+            DiemKhachHang diem = new DiemKhachHang();
+            diem.Show();
+        }
+
+        private void khachhangDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            khachhangDataGridView.CurrentRow.Selected = true;
+        }
+
+        private void khachhangDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (khachhangDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                khachhangDataGridView.CurrentRow.Selected = true;
+                txtMaKH.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["MaKH"].Value.ToString();
+                txtTenKH.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["TenKH"].Value.ToString();
+                txtSDT.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["SDT"].Value.ToString();
+                if (DateTime.TryParse(khachhangDataGridView.Rows[e.RowIndex].Cells["NgaySinh"].Value.ToString(), out DateTime ngaySinh))
+                {
+                    txtNgaySinh.Value = ngaySinh;
+                }
+                string temp = khachhangDataGridView.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString();
+                ckbTrangThai.Enabled = true;
+                if (temp.Equals("Đang hoạt động", StringComparison.OrdinalIgnoreCase))
+                {
+                    ckbTrangThai.Checked = true;
+                }
+                else
+                {
+                    ckbTrangThai.Checked = false;
+                }
+                btnThem.Enabled = false;
+                ckbTrangThai.Visible = true;
+                kryptonButton1.Visible = true;
+                kryptonButton2.Visible = true;
+
+            }
+        }
+
+        private void khachhangDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            RefreshTextBox();
         }
     }
 }

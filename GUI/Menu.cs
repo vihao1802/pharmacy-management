@@ -212,20 +212,21 @@ namespace pharmacy_management.GUI
             doiMatKhau.Show();
         }
 
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-            addFormtoPanelContainer(new KhachHangfrm());
-        }
-
-        private void btnStaff_Click(object sender, EventArgs e)
-        {
-            addFormtoPanelContainer(new frmNhanVien());
-        }
-
         private void btnCoupon_Click(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new PhieuGiamGiaFrm());
             btnCoupon.Enabled = false;
+        }
+
+        private void btnCustomer_Click_1(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new KhachHangfrm());
+
+        }
+
+        private void btnStaff_Click_1(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new frmNhanVien());
         }
     }
 

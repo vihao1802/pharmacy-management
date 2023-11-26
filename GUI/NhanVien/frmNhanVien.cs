@@ -1,4 +1,5 @@
 ﻿using pharmacy_management.BUS;
+using pharmacy_management.DAO;
 using pharmacy_management.DTO;
 using System;
 using System.Collections;
@@ -28,6 +29,7 @@ namespace pharmacy_management.GUI.NhanVien
         {
             InitializeComponent();
             loads();
+           
             cbxMaQuyen.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxMaQuyen.AutoCompleteMode = AutoCompleteMode.None;
             cbxMaQuyen.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -62,6 +64,7 @@ namespace pharmacy_management.GUI.NhanVien
             btnThem.Enabled = true;
             txtTenDangNhap.Enabled = true;
             ckbTrangThai.Visible = false;
+            nhanvienDataGridView.ClearSelection();
         }
 
 
@@ -105,31 +108,7 @@ namespace pharmacy_management.GUI.NhanVien
 
         private void nhanvienDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (nhanvienDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-            {
-                nhanvienDataGridView.CurrentRow.Selected = true;
-                txtMaNV.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["MaNV"].Value.ToString();
-                txtTenNV.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["TenNV"].Value.ToString();
-                txtSDT.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["SDT"].Value.ToString();
-                txtDiaChi.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["DiaChi"].Value.ToString();
-                txtEmail.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["Email"].Value.ToString();
-                txtTenDangNhap.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["TenDangNhap"].Value.ToString();
-                txtMatKhau.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["MatKhau"].Value.ToString();
-                cbxMaQuyen.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["MaQuyen"].Value.ToString();
-                string temp = nhanvienDataGridView.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString();
-                ckbTrangThai.Enabled = true;
-                txtTenDangNhap.Enabled = false;
-                btnThem.Enabled = false;
-                if (temp.Equals("Đang hoạt động", StringComparison.OrdinalIgnoreCase))
-                {
-                    ckbTrangThai.Checked = true;
-                }
-                else
-                {
-                    ckbTrangThai.Checked = false;
-                }
-                ckbTrangThai.Visible = true;
-            }
+            
         }
 
         private bool IsPhoneNumberExists(string phoneNumber)
@@ -644,7 +623,7 @@ namespace pharmacy_management.GUI.NhanVien
 
         private void nhanvienDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            RefreshTextBox();
+            
         }
 
         private void kryptonButton1_Click(object sender, EventArgs e)
@@ -652,6 +631,50 @@ namespace pharmacy_management.GUI.NhanVien
             FrmQuyen f = new FrmQuyen();
             f.Show();
 
+        }
+
+        private void nhanvienDataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+
+        }
+
+        private void nhanvienDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            nhanvienDataGridView.CurrentRow.Selected = true;
+        }
+
+        private void nhanvienDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (nhanvienDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                nhanvienDataGridView.CurrentRow.Selected = true;
+                txtMaNV.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["MaNV"].Value.ToString();
+                txtTenNV.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["TenNV"].Value.ToString();
+                txtSDT.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["SDT"].Value.ToString();
+                txtDiaChi.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["DiaChi"].Value.ToString();
+                txtEmail.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+                txtTenDangNhap.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["TenDangNhap"].Value.ToString();
+                txtMatKhau.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["MatKhau"].Value.ToString();
+                cbxMaQuyen.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["MaQuyen"].Value.ToString();
+                string temp = nhanvienDataGridView.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString();
+                ckbTrangThai.Enabled = true;
+                txtTenDangNhap.Enabled = false;
+                btnThem.Enabled = false;
+                if (temp.Equals("Đang hoạt động", StringComparison.OrdinalIgnoreCase))
+                {
+                    ckbTrangThai.Checked = true;
+                }
+                else
+                {
+                    ckbTrangThai.Checked = false;
+                }
+                ckbTrangThai.Visible = true;
+            }
+        }
+
+        private void nhanvienDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            RefreshTextBox();
         }
     }
 }
