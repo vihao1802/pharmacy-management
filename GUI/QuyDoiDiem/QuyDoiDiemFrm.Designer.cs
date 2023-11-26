@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
-            this.lbl_DiemYeuCau = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lbl_DiemHienCo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dropDown_PG = new Krypton.Toolkit.KryptonComboBox();
             this.dropBtn_KH = new Krypton.Toolkit.KryptonComboBox();
             this.btn_ThemQDD = new Krypton.Toolkit.KryptonButton();
             this.txt_searching = new Krypton.Toolkit.KryptonRichTextBox();
@@ -48,26 +48,31 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gv_QDD = new System.Windows.Forms.DataGridView();
+            this.toolTip_rpt = new System.Windows.Forms.ToolTip(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbl_Giam = new System.Windows.Forms.Label();
+            this.cb_ChonDiem = new Krypton.Toolkit.KryptonComboBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolTip_rpt = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dropDown_PG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dropBtn_KH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_QDD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cb_ChonDiem)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
             // 
-            this.kryptonPanel1.Controls.Add(this.lbl_DiemYeuCau);
+            this.kryptonPanel1.Controls.Add(this.cb_ChonDiem);
+            this.kryptonPanel1.Controls.Add(this.lbl_Giam);
+            this.kryptonPanel1.Controls.Add(this.label7);
             this.kryptonPanel1.Controls.Add(this.label6);
+            this.kryptonPanel1.Controls.Add(this.label5);
+            this.kryptonPanel1.Controls.Add(this.label4);
             this.kryptonPanel1.Controls.Add(this.lbl_DiemHienCo);
             this.kryptonPanel1.Controls.Add(this.label3);
-            this.kryptonPanel1.Controls.Add(this.dropDown_PG);
             this.kryptonPanel1.Controls.Add(this.dropBtn_KH);
             this.kryptonPanel1.Controls.Add(this.btn_ThemQDD);
             this.kryptonPanel1.Controls.Add(this.txt_searching);
@@ -88,34 +93,45 @@
             this.kryptonPanel1.StateCommon.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
             this.kryptonPanel1.TabIndex = 2;
             // 
-            // lbl_DiemYeuCau
-            // 
-            this.lbl_DiemYeuCau.AutoSize = true;
-            this.lbl_DiemYeuCau.BackColor = System.Drawing.Color.White;
-            this.lbl_DiemYeuCau.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_DiemYeuCau.Location = new System.Drawing.Point(602, 591);
-            this.lbl_DiemYeuCau.Name = "lbl_DiemYeuCau";
-            this.lbl_DiemYeuCau.Size = new System.Drawing.Size(26, 29);
-            this.lbl_DiemYeuCau.TabIndex = 46;
-            this.lbl_DiemYeuCau.Text = "0";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(434, 594);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(270, 619);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 25);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "Điểm yêu cầu:";
+            this.label6.Size = new System.Drawing.Size(570, 22);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "-  Mỗi 100 điểm, khách hàng quy đổi được 01 % phiếu giảm tương ứng.";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(270, 591);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(585, 22);
+            this.label5.TabIndex = 47;
+            this.label5.Text = "-  Hóa đơn từ 10.000 đồng, khách hàng tích lũy được 01 điểm tương ứng.";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(269, 544);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 25);
+            this.label4.TabIndex = 45;
+            this.label4.Text = "Chọn điểm:";
             // 
             // lbl_DiemHienCo
             // 
             this.lbl_DiemHienCo.AutoSize = true;
             this.lbl_DiemHienCo.BackColor = System.Drawing.Color.White;
             this.lbl_DiemHienCo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_DiemHienCo.Location = new System.Drawing.Point(174, 591);
+            this.lbl_DiemHienCo.Location = new System.Drawing.Point(16, 613);
             this.lbl_DiemHienCo.Name = "lbl_DiemHienCo";
             this.lbl_DiemHienCo.Size = new System.Drawing.Size(71, 29);
             this.lbl_DiemHienCo.TabIndex = 44;
@@ -126,28 +142,11 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(12, 594);
+            this.label3.Location = new System.Drawing.Point(12, 588);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 25);
             this.label3.TabIndex = 43;
             this.label3.Text = "Điểm hiện có:";
-            // 
-            // dropDown_PG
-            // 
-            this.dropDown_PG.CornerRoundingRadius = 5F;
-            this.dropDown_PG.DropDownWidth = 121;
-            this.dropDown_PG.IntegralHeight = false;
-            this.dropDown_PG.Location = new System.Drawing.Point(439, 541);
-            this.dropDown_PG.Name = "dropDown_PG";
-            this.dropDown_PG.Size = new System.Drawing.Size(208, 29);
-            this.dropDown_PG.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.dropDown_PG.StateCommon.ComboBox.Border.Rounding = 5F;
-            this.dropDown_PG.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.dropDown_PG.TabIndex = 41;
-            this.dropDown_PG.Text = "Chọn phiếu giảm";
-            this.dropDown_PG.SelectedIndexChanged += new System.EventHandler(this.dropDown_PG_SelectedIndexChanged);
             // 
             // dropBtn_KH
             // 
@@ -169,7 +168,7 @@
             // btn_ThemQDD
             // 
             this.btn_ThemQDD.CornerRoundingRadius = 5F;
-            this.btn_ThemQDD.Location = new System.Drawing.Point(838, 541);
+            this.btn_ThemQDD.Location = new System.Drawing.Point(832, 540);
             this.btn_ThemQDD.Name = "btn_ThemQDD";
             this.btn_ThemQDD.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_ThemQDD.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
@@ -332,50 +331,88 @@
             this.gv_QDD.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gv_QDD.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gv_QDD.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gv_QDD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gv_QDD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gv_QDD.ColumnHeadersHeight = 30;
             this.gv_QDD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gv_QDD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column6,
             this.Column5,
-            this.Column2,
             this.Column3});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gv_QDD.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gv_QDD.DefaultCellStyle = dataGridViewCellStyle6;
             this.gv_QDD.EnableHeadersVisualStyles = false;
             this.gv_QDD.GridColor = System.Drawing.Color.Black;
             this.gv_QDD.Location = new System.Drawing.Point(12, 76);
             this.gv_QDD.Name = "gv_QDD";
             this.gv_QDD.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gv_QDD.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gv_QDD.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.gv_QDD.RowHeadersVisible = false;
             this.gv_QDD.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gv_QDD.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gv_QDD.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.gv_QDD.RowTemplate.Height = 24;
             this.gv_QDD.Size = new System.Drawing.Size(926, 448);
             this.gv_QDD.TabIndex = 27;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.Location = new System.Drawing.Point(596, 544);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 25);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "Giảm:";
+            // 
+            // lbl_Giam
+            // 
+            this.lbl_Giam.AutoSize = true;
+            this.lbl_Giam.BackColor = System.Drawing.Color.White;
+            this.lbl_Giam.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_Giam.Location = new System.Drawing.Point(680, 541);
+            this.lbl_Giam.Name = "lbl_Giam";
+            this.lbl_Giam.Size = new System.Drawing.Size(54, 29);
+            this.lbl_Giam.TabIndex = 50;
+            this.lbl_Giam.Text = "5 %";
+            // 
+            // cb_ChonDiem
+            // 
+            this.cb_ChonDiem.CornerRoundingRadius = 5F;
+            this.cb_ChonDiem.DropDownWidth = 121;
+            this.cb_ChonDiem.IntegralHeight = false;
+            this.cb_ChonDiem.Location = new System.Drawing.Point(412, 544);
+            this.cb_ChonDiem.Name = "cb_ChonDiem";
+            this.cb_ChonDiem.Size = new System.Drawing.Size(150, 29);
+            this.cb_ChonDiem.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cb_ChonDiem.StateCommon.ComboBox.Border.Rounding = 5F;
+            this.cb_ChonDiem.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.cb_ChonDiem.TabIndex = 51;
+            this.cb_ChonDiem.Text = "100";
+            this.cb_ChonDiem.SelectedIndexChanged += new System.EventHandler(this.cb_ChonDiem_SelectedIndexChanged);
             // 
             // Column1
             // 
@@ -403,15 +440,6 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column2.HeaderText = "Mã PG";
-            this.Column2.MinimumWidth = 80;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 98;
-            // 
             // Column3
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -432,9 +460,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dropDown_PG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dropBtn_KH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_QDD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cb_ChonDiem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -450,17 +478,19 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip toolTip_rpt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private Krypton.Toolkit.KryptonButton btn_ThemQDD;
-        private Krypton.Toolkit.KryptonComboBox dropDown_PG;
         private Krypton.Toolkit.KryptonComboBox dropBtn_KH;
         private System.Windows.Forms.Label lbl_DiemHienCo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbl_DiemYeuCau;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_Giam;
+        private System.Windows.Forms.Label label7;
+        private Krypton.Toolkit.KryptonComboBox cb_ChonDiem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

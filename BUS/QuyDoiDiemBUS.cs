@@ -49,9 +49,14 @@ namespace pharmacy_management.BUS
             return dao.getQDD(ma);
         }
 
-        public void insertItem(string maKH, string date, string maPG)
+        public void insertItem(string maKH, string date)
         {
-            dao.insertItem(maKH, date, maPG);
+            dao.insertItem(maKH, date);
+        }
+
+        public QuyDoiDiem getItem()
+        {
+            return dao.getItem();
         }
     }
 }
