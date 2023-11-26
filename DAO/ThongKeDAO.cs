@@ -17,17 +17,12 @@ namespace pharmacy_management.DAO
         SqlConnection sqlcon;
         public ThongKeDAO()
         {
-
             KetNoiCSDL();
         }
         void KetNoiCSDL()
         {
-            //string conn ="Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc;Integrated Security = True";           
-            string conn = "Data Source=DESKTOP-F74SIEE;Initial Catalog=ql_nhathuoc;Integrated Security=True";
-            sqlcon = new SqlConnection(conn);
             ConnectDB conn = new ConnectDB();
             sqlcon = conn.KetNoiCSDL();
-
         }
         //        void KetNoiCSDL()
         //        {

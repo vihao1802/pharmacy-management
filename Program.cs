@@ -22,14 +22,14 @@ namespace pharmacy_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            /*LoginForm = new Login();
-            LoginForm.Show();*/
-             FrmXuatXu frmXuatXu = new FrmXuatXu();
-           frmXuatXu.Show();
-            FrmDoiTuong frmdoituong = new FrmDoiTuong();
-            frmdoituong.Show();
-            FormThuoc frmthuoc = new FormThuoc();
-            frmthuoc.Show();
+            LoginForm = new Login();
+            LoginForm.Show();
+            //  FrmXuatXu frmXuatXu = new FrmXuatXu();
+            //frmXuatXu.Show();
+            // FrmDoiTuong frmdoituong = new FrmDoiTuong();
+            // frmdoituong.Show();
+            // FormThuoc frmthuoc = new FormThuoc();
+            // frmthuoc.Show();
             Application.Run();
             //Application.Run(new GUI.QuyDoiDiem.QuyDoiDiemFrm());
             //Application.Run(new GUI.Menu());

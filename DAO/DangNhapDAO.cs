@@ -18,21 +18,12 @@ namespace pharmacy_management.DAO
 
         public DangNhapDAO()
         {
-
             KetNoiCSDL();
         }
-        SqlConnection sqlcon;
         void KetNoiCSDL()
         {
-            string conn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc;Integrated Security = True";
-            //string conn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
-            //string conn = "Data Source=DESKTOP-F74SIEE;Initial Catalog=ql_nhathuoc;Integrated Security=True";
-            sqlcon = new SqlConnection(conn);
-
             ConnectDB conn = new ConnectDB();
-
             sqlcon = conn.KetNoiCSDL();
-
         }
         //void KetNoiCSDL()
         //{
@@ -72,12 +63,12 @@ namespace pharmacy_management.DAO
             catch (Exception ex) { return false; }
         }
 
-        public void DoiPass(string user,string pass)
+        public void DoiPass(string user, string pass)
         {
             ConnectDB conn = new ConnectDB();
             string query = string.Format("UPDATE nhanvien SET MatKhau = {0} WHERE TenDangNhap = '{1}'", pass, user);
             Console.WriteLine(query);
-            
+
             conn.ExecuteNonQuery(query);
 
         }
