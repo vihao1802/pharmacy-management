@@ -208,6 +208,12 @@ namespace pharmacy_management.GUI.KhachHang
                 {
                     try
                     {
+                        if (txtMaKH.Text.Trim() == "1")
+                        {
+                            MessageBox.Show("Khách vãng lai không được xóa!!!");
+                            return;
+                        }
+
                         if (trangThai == 1)
                         {
                             bus.delete(ma);
@@ -259,6 +265,11 @@ namespace pharmacy_management.GUI.KhachHang
                     }
                 }
 
+                if (txtMaKH.Text.Trim() == "1")
+                {
+                    MessageBox.Show("Khách vãng lai không được sửa!!!");
+                    return;
+                }
 
                 // Kiểm tra số điện thoại
                 if (txtSDT.Text == "")
@@ -403,8 +414,8 @@ namespace pharmacy_management.GUI.KhachHang
                         int madiem = diem.MaBangDiem;
                         int makh = diem.MaKH;
                         int diemtichtuy = diem.DiemTichLuy;
-                        int diemdasd = diem.DiemDaSuDung;
-                        string message = "Mã bảng điểm: " + madiem + "\nMã khách hàng: " + makh + "\nĐiểm tích lũy: " + diemtichtuy + "\nĐiểm đã sử dụng: " + diemdasd;
+                        //int diemdasd = diem.DiemDaSuDung;
+                        string message = "Mã bảng điểm: " + madiem + "\nMã khách hàng: " + makh + "\nĐiểm tích lũy: " + diemtichtuy;
                         MessageBox.Show(message, "Điểm khách hàng");
                         
                     }
@@ -430,31 +441,35 @@ namespace pharmacy_management.GUI.KhachHang
 
         private void khachhangDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (khachhangDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                khachhangDataGridView.CurrentRow.Selected = true;
-                txtMaKH.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["MaKH"].Value.ToString();
-                txtTenKH.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["TenKH"].Value.ToString();
-                txtSDT.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["SDT"].Value.ToString();
-                if (DateTime.TryParse(khachhangDataGridView.Rows[e.RowIndex].Cells["NgaySinh"].Value.ToString(), out DateTime ngaySinh))
+                if (khachhangDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
-                    txtNgaySinh.Value = ngaySinh;
-                }
-                string temp = khachhangDataGridView.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString();
-                ckbTrangThai.Enabled = true;
-                if (temp.Equals("Đang hoạt động", StringComparison.OrdinalIgnoreCase))
-                {
-                    ckbTrangThai.Checked = true;
-                }
-                else
-                {
-                    ckbTrangThai.Checked = false;
-                }
-                btnThem.Enabled = false;
-                ckbTrangThai.Visible = true;
-                kryptonButton1.Visible = true;
-                kryptonButton2.Visible = true;
 
+                    khachhangDataGridView.CurrentRow.Selected = true;
+                    txtMaKH.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["MaKH"].Value.ToString();
+                    txtTenKH.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["TenKH"].Value.ToString();
+                    txtSDT.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["SDT"].Value.ToString();
+                    if (DateTime.TryParse(khachhangDataGridView.Rows[e.RowIndex].Cells["NgaySinh"].Value.ToString(), out DateTime ngaySinh))
+                    {
+                        txtNgaySinh.Value = ngaySinh;
+                    }
+                    string temp = khachhangDataGridView.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString();
+                    ckbTrangThai.Enabled = true;
+                    if (temp.Equals("Đang hoạt động", StringComparison.OrdinalIgnoreCase))
+                    {
+                        ckbTrangThai.Checked = true;
+                    }
+                    else
+                    {
+                        ckbTrangThai.Checked = false;
+                    }
+                    btnThem.Enabled = false;
+                    ckbTrangThai.Visible = true;
+                    kryptonButton1.Visible = true;
+                    kryptonButton2.Visible = true;
+
+                }
             }
         }
 
