@@ -33,16 +33,13 @@ namespace pharmacy_management.GUI.Dash
             counter = 0;
             Numthuoc.Text = tkbus.getslthuoc().ToString();
             Numkhach.Text = tkbus.getslkh().ToString();
-          //  Numslban.Text = tkbus.getslban().ToString();
-          //  Numdoanhthu.Text = tkbus.getdoanhthu().ToString();
             Numslban.Text = tkbus.getslban().ToString();
             string formattedNumber = tkbus.getdoanhthu().ToString("#,##0") + " đ";
             Numdoanhthu.Text = formattedNumber;
-
         }
 
 
-        
+
         private void timer_tick(object sender, EventArgs e)
         {
             counter++;

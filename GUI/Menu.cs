@@ -33,11 +33,12 @@ namespace pharmacy_management.GUI
 
         public Menu()
         {
-            InitializeComponent();           
+            InitializeComponent();
+
             DashFrm dashFrm = new DashFrm();
             addFormtoPanelContainer(dashFrm);
             nv = Login.nv;
-            //addControls();
+            //   addControls();
             lbName.Text = nv.TenNV;
 
         }
@@ -104,6 +105,7 @@ namespace pharmacy_management.GUI
             btnCustomer.Enabled = flag;
             kryptonButton1.Enabled = flag;
             btnPN.Enabled = flag;
+            btnCoupon.Enabled = flag;
         }
         private void addFormtoPanelContainer(object Form)
         {
@@ -218,6 +220,12 @@ namespace pharmacy_management.GUI
         private void btnStaff_Click(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new frmNhanVien());
+        }
+
+        private void btnCoupon_Click(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new PhieuGiamGiaFrm());
+            btnCoupon.Enabled = false;
         }
     }
 

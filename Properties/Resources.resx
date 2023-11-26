@@ -1143,9 +1143,9 @@
   <data name="Purchase Order" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Purchase Order.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_157" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\157.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+	<data name="_157" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\157.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
   <data name="_53" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\53.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -1349,7 +1349,7 @@
   </data>
   <data name="_62" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\62.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+	  </data>
   <data name="Double_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Double Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -1641,9 +1641,9 @@
   <data name="_84" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\84.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-export-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-export-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+	  <data name="icons8-export-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		  <value>..\Resources\icons8-export-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	  </data>
   <data name="Show Password2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Show Password2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

@@ -39,7 +39,7 @@ namespace pharmacy_management.GUI.BanHang
             string[] arr = selectedText.Split('_');
             int maKH = Int32.Parse(arr[0]);
 
-            dropBtn_PG.Items.Add("Chọn phiếu giảm");
+            dropBtn_PG.Items.Add("Chọn phiếu quy đổi");
 
             foreach (DTO.QuyDoiDiem qd in qdBUS.getList())
             {
@@ -47,7 +47,7 @@ namespace pharmacy_management.GUI.BanHang
                 if (maKH == qd.MaKH)
                 {
                     // Combobox Quy Doi Diem
-                    string item_name = qd.MaQuyDoi.ToString() + "_" + pggBUS.GetNameBUS(qd.MaPhieuGiam);
+                    string item_name = qd.MaQuyDoi.ToString() + "_" + pggBUS.GetNameBUS(qd.MaQuyDoi);
                     dropBtn_PG.Items.Add(item_name);
                 }
             }
@@ -97,7 +97,7 @@ namespace pharmacy_management.GUI.BanHang
 
             selectedText = dropBtn_PG.Text;
             string maQD;
-            if (selectedText == "Chọn phiếu giảm")
+            if (selectedText == "Chọn phiếu quy đổi")
             {
                 maQD = "null";
             }
@@ -172,7 +172,7 @@ namespace pharmacy_management.GUI.BanHang
             formattedNumber = final_price.ToString("#,##0") + " đ";
             lbl_final_total_price.Text = formattedNumber;
 
-            lbl_bonus.Text = "+" + ((Int32.Parse(lbl_final_total_price.Text.Replace(",", "").Replace(" đ", "")) / 1000) / 2).ToString();
+            lbl_bonus.Text = "+" + ((Int32.Parse(lbl_final_total_price.Text.Replace(",", "").Replace(" đ", "")) / 1000) / 10).ToString();
         }
 
         public void AddCart()
@@ -259,10 +259,10 @@ namespace pharmacy_management.GUI.BanHang
             string[] arr = selectedText.Split('_');
             int maQD;
 
-            if (selectedText == "Chọn phiếu giảm" || dropBtn_PG.SelectedIndex == -1)
+            if (selectedText == "Chọn phiếu quy đổi" || dropBtn_PG.SelectedIndex == -1)
             {
                 //dropBtn_PG.SelectedIndex = -1;
-                dropBtn_PG.Text = "Chọn phiếu giảm";
+                dropBtn_PG.Text = "Chọn phiếu quy đổi";
                 lbl_discount.Text = "0%";
                 //AddCart();
                 setTotalPrice();
@@ -279,7 +279,7 @@ namespace pharmacy_management.GUI.BanHang
                 if (maQD == qd.MaQuyDoi)
                 {
                     // Combobox Quy Doi Diem
-                    string percent = pggBUS.getPhanTramGiamBUS(qd.MaPhieuGiam);
+                    string percent = pggBUS.getPhanTramGiamBUS(qd.MaQuyDoi);
                     lbl_discount.Text = percent + "%";
                     break;
                 }
@@ -303,7 +303,7 @@ namespace pharmacy_management.GUI.BanHang
                 setVisible(true);
             }
             dropBtn_PG.SelectedIndex = -1;
-            dropBtn_PG.Text = "Chọn phiếu giảm";
+            dropBtn_PG.Text = "Chọn phiếu quy đổi";
             lbl_discount.Text = "0%";
         }
 

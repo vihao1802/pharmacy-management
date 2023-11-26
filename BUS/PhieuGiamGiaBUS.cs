@@ -28,6 +28,11 @@ namespace pharmacy_management.BUS
             list = dao.GetALl();
         }
 
+        public void loadListCondition(string search)
+        {
+            list = dao.GetALlCondition(search);
+        }
+
         public string GetNameBUS(int ma)
         {
             return dao.GetNameDAO(ma);
@@ -36,6 +41,11 @@ namespace pharmacy_management.BUS
         public string getPhanTramGiamBUS(int ma)
         {
             return dao.GetPhanTramGiamDAO(ma);
+        }
+
+        public void insertItem(string mota, string diem, string phanTram, string maqd)
+        {
+            dao.insertItem(mota, diem, phanTram, maqd);
         }
     }
 }
