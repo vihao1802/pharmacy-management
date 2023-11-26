@@ -43,7 +43,7 @@ namespace pharmacy_management.GUI.BanHang
 
             foreach (DTO.QuyDoiDiem qd in qdBUS.getList())
             {
-                Console.WriteLine("Ma KH duoc chon: " + qd.MaKH);
+                //Console.WriteLine("Ma KH duoc chon: " + qd.MaKH);
                 if (maKH == qd.MaKH)
                 {
                     // Combobox Quy Doi Diem
@@ -130,12 +130,12 @@ namespace pharmacy_management.GUI.BanHang
             DonHang tmp = dhBUS.getItem();
 
 
-            Console.WriteLine("Don Hang:\nMaNV: " + "2" +
-                "\nMaKH: " + maKH +
-                "\nNgayLap: " + formattedDate +
-                "\nMaQDD: " + maQD +
-                "\nTongGia: " + lbl_total_price.Text.Replace(" đ", "").Replace(",", "") +
-                "\nThanhTien: " + lbl_final_total_price.Text.Replace(" đ", "").Replace(",", ""));
+            /* Console.WriteLine("Don Hang:\nMaNV: " + "2" +
+                 "\nMaKH: " + maKH +
+                 "\nNgayLap: " + formattedDate +
+                 "\nMaQDD: " + maQD +
+                 "\nTongGia: " + lbl_total_price.Text.Replace(" đ", "").Replace(",", "") +
+                 "\nThanhTien: " + lbl_final_total_price.Text.Replace(" đ", "").Replace(",", ""));*/
 
             ChiTietDonHangBUS ctdhBUS = new ChiTietDonHangBUS();
             ThuocBUS tUpdate = new ThuocBUS();
