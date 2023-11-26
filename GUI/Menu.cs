@@ -33,13 +33,7 @@ namespace pharmacy_management.GUI
 
         public Menu()
         {
-            InitializeComponent();
-
-             DashFrm dashFrm = new DashFrm();
-            addFormtoPanelContainer(dashFrm );
-             nv = Login.nv;
-         //   addControls();
-             lbName.Text = nv.TenNV;
+            InitializeComponent();           
             DashFrm dashFrm = new DashFrm();
             addFormtoPanelContainer(dashFrm);
             nv = Login.nv;

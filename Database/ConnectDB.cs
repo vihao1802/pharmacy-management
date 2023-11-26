@@ -15,26 +15,24 @@ namespace pharmacy_management.Database
         public ConnectDB()
         {
             // @autho Hao
-            string strCnn = "Data Source=LAPTOP-ULQT60JG; Database=ql_nhathuoc;Integrated Security = True";
+            //string strCnn = "Data Source=LAPTOP-ULQT60JG; Database=ql_nhathuoc;Integrated Security = True";
             // @author Thinh
-            string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc; Max Pool Size=1000;Integrated Security = True";
+            //string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc; Max Pool Size=1000;Integrated Security = True";
             // @author Duc
-
            // string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
-
-            //string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
-
+            string strCnn = "Data Source=DESKTOP-F74SIEE;Initial Catalog=ql_nhathuoc;Integrated Security =True; Max Pool Size=100; Connection Timeout=30";
             sqlConn = new SqlConnection(strCnn);
         }
 
         public SqlConnection KetNoiCSDL()
         {
             // @autho Hao
-            string strCnn = "Data Source=LAPTOP-ULQT60JG; Database=ql_nhathuoc;Integrated Security = True";
+            //string strCnn = "Data Source=LAPTOP-ULQT60JG; Database=ql_nhathuoc;Integrated Security = True";
             // @author Thinh
             //string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc;Integrated Security = True";
             // @author Duc
             //string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
+            string strCnn = "Data Source= DESKTOP-F74SIEE;Initial Catalog=ql_nhathuoc;Integrated Security = True; Max Pool Size=100; Connection Timeout=30";
             sqlConn = new SqlConnection(strCnn);
             return sqlConn;
         }

@@ -21,17 +21,18 @@ namespace pharmacy_management.DAO
 
             KetNoiCSDL();
         }
-        SqlConnection sqlcon;
+        //SqlConnection sqlcon;
         void KetNoiCSDL()
         {
-            string conn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc;Integrated Security = True";
+            //string conn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc;Integrated Security = True";
             //string conn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
             //string conn = "Data Source=DESKTOP-F74SIEE;Initial Catalog=ql_nhathuoc;Integrated Security=True";
+            //sqlcon = new SqlConnection(conn);
+
+            //ConnectDB conn = new ConnectDB();
+            string conn = "Data Source=DESKTOP-F74SIEE;Initial Catalog=ql_nhathuoc;Integrated Security=True;Max Pool Size=100; Connection Timeout=30";
             sqlcon = new SqlConnection(conn);
-
-            ConnectDB conn = new ConnectDB();
-
-            sqlcon = conn.KetNoiCSDL();
+            //sqlcon = conn.KetNoiCSDL();
 
         }
         //void KetNoiCSDL()
