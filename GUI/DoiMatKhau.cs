@@ -16,7 +16,7 @@ namespace pharmacy_management.GUI
 {
     public partial class DoiMatKhau : KryptonForm
     {
-        private static NhanVien nv = new NhanVien();
+        private static DTO.NhanVien nv = new DTO.NhanVien();
         DangNhapBUS bus = new DangNhapBUS();
         public DoiMatKhau()
         {

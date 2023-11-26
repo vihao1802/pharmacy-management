@@ -333,6 +333,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ql_nhathuocDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -426,11 +431,6 @@
     <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx">
       <DependentUpon>FrmXuatXu.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="GUI\QLDoiTuong\FrmDoiTuong.resx" />
-    <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx" />
-=======
->>>>>>> 6990a9cd30b57916dc46c9bd8545decc26a02349
     <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx" />
     <EmbeddedResource Include="GUI\QuyDoiDiem\PhieuGiamGiaFrm.resx">
       <DependentUpon>PhieuGiamGiaFrm.cs</DependentUpon>
@@ -457,11 +457,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
