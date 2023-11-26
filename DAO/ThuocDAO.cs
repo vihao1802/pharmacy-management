@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace pharmacy_management.DAO
@@ -235,21 +236,7 @@ namespace pharmacy_management.DAO
             return arrayList;
 
         }
-
-        public void updateQuantity(int ma, int sl)
-        {
-            ConnectDB conn = new ConnectDB();
-            string query = string.Format("UPDATE thuoc SET SoLuong = SoLuong - {0} WHERE MaThuoc = '{1}'", sl, ma);
-            Console.WriteLine(query);
-            conn.ExecuteNonQuery(query);
-        }
-        public void addQuantity(int ma, int sl)
-        {
-            ConnectDB conn = new ConnectDB();
-            string query = string.Format("UPDATE thuoc SET SoLuong = SoLuong + {0} WHERE MaThuoc = '{1}'", sl, ma);
-            Console.WriteLine(query);
-            conn.ExecuteNonQuery(query);
-        }
+     
 
         public DTO.Thuoc getItem(int ma)
         {
@@ -281,6 +268,48 @@ namespace pharmacy_management.DAO
                 Console.WriteLine("An error at ThuocDAO: " + ex.Message);
             }
             return t;
+        }
+
+        public void updateQuantity(int ma, int sl)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("UPDATE thuoc SET SoLuong = SoLuong - {0} WHERE MaThuoc = '{1}'", sl, ma);
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
+        }
+        public void addQuantity(int ma, int sl)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("UPDATE thuoc SET SoLuong = SoLuong + {0} WHERE MaThuoc = '{1}'", sl, ma);
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
+        }
+        public void add(Thuoc Drug)
+        {
+            ConnectDB conn = new ConnectDB();
+            try
+            {
+                string sql = "INSERT INTO THUOC VALUES (N'" + Drug.TenThuoc + "', '" + Drug.MaDoiTuong +"', '" + Drug.GiaThuoc + "','" + Drug.AnhThuoc + "', '"  + "1'" + ",'" + Drug.MaXuatXu + "','0')";
+                conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+      
+        public void update(Thuoc Drug)
+        {
+            ConnectDB conn = new ConnectDB();
+            string sql = "UPDATE DOITUONG SET TENThuoc =N'" + Drug.TenThuoc + "', MaDoiTuong='" + Drug.MaDoiTuong + "', GiaThuoc='" + Drug.GiaThuoc + "',AnhThuoc='" + Drug.AnhThuoc + "',TrangThai='" + Drug.TrangThai + "',MaXuatXu='" + Drug.MaXuatXu + "','0" + "' where MaDT = " + Drug.MaThuoc;
+            conn.ExecuteNonQuery(sql);
+        }
+
+        public void Delete(int ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            string sql = "UPDATE THUOC SET TrangThai = 0 WHERE MaThuoc = " + ma;
+            conn.ExecuteNonQuery(sql);
         }
     }
 }

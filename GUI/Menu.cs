@@ -15,6 +15,7 @@ using pharmacy_management;
 using static System.Net.Mime.MediaTypeNames;
 using thuoc;
 using pharmacy_management.GUI.BanHang;
+using pharmacy_management.GUI.Thuoc;
 using pharmacy_management.GUI.NhapHang;
 using pharmacy_management.GUI.Dash;
 using pharmacy_management.GUI.Thuoc;
@@ -36,7 +37,7 @@ namespace pharmacy_management.GUI
             DashFrm dashFrm = new DashFrm();
             addFormtoPanelContainer(dashFrm);
             nv = Login.nv;
-            //addControls();
+            //   addControls();
             lbName.Text = nv.TenNV;
 
         }

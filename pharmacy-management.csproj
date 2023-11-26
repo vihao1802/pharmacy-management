@@ -261,6 +261,18 @@
     <Compile Include="GUI\NhapHang\SPNhaphang.Designer.cs">
       <DependentUpon>SPNhaphang.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\QLDoiTuong\FrmDoiTuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QLDoiTuong\FrmDoiTuong.designer.cs">
+      <DependentUpon>FrmDoiTuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QLxuatxu\FrmXuatXu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QLxuatxu\FrmXuatXu.designer.cs">
+      <DependentUpon>FrmXuatXu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\QuyDoiDiem\PhieuGiamGiaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,7 +294,7 @@
     <Compile Include="GUI\Thuoc\FormThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Thuoc\FormThuoc.Designer.cs">
+    <Compile Include="GUI\Thuoc\FormThuoc.designer.cs">
       <DependentUpon>FormThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -293,12 +305,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GUI\QLNhaCungCap\FrmXuatXu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\QLNhaCungCap\FrmXuatXu.designer.cs">
-      <DependentUpon>FrmXuatXu.cs</DependentUpon>
-    </Compile>
     <Compile Include="ql_nhathuocDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -374,6 +380,13 @@
     <EmbeddedResource Include="GUI\NhapHang\SPNhaphang.resx">
       <DependentUpon>SPNhaphang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLDoiTuong\FrmDoiTuong.resx">
+      <DependentUpon>FrmDoiTuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx">
+      <DependentUpon>FrmXuatXu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx" />
     <EmbeddedResource Include="GUI\QuyDoiDiem\PhieuGiamGiaFrm.resx">
       <DependentUpon>PhieuGiamGiaFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -383,9 +396,6 @@
     <EmbeddedResource Include="GUI\Report\rDonHang.rdlc" />
     <EmbeddedResource Include="GUI\Report\ReportDonHangFrm.resx">
       <DependentUpon>ReportDonHangFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx">
-      <DependentUpon>FormThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -708,9 +718,6 @@
     <None Include="Resources\4.jpg" />
     <None Include="Resources\3.jpg" />
     <None Include="Resources\2.jpg" />
-    <EmbeddedResource Include="GUI\QLNhaCungCap\FrmXuatXu.resx">
-      <DependentUpon>FrmXuatXu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\1.jpg" />
   </ItemGroup>
   <ItemGroup>
