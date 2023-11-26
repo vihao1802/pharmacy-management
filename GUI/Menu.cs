@@ -103,6 +103,7 @@ namespace pharmacy_management.GUI
             btnCustomer.Enabled = flag;
             kryptonButton1.Enabled = flag;
             btnPN.Enabled = flag;
+            btnCoupon.Enabled = flag;
         }
         private void addFormtoPanelContainer(object Form)
         {
@@ -207,6 +208,12 @@ namespace pharmacy_management.GUI
         {
             DoiMatKhau doiMatKhau = new DoiMatKhau();
             doiMatKhau.Show();
+        }
+
+        private void btnCoupon_Click(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new PhieuGiamGiaFrm());
+            btnCoupon.Enabled = false;
         }
     }
 

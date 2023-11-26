@@ -57,7 +57,7 @@ namespace pharmacy_management.GUI.BanHang
 
             QuyDoiDiemBUS qdBUS = new QuyDoiDiemBUS();
             PhieuGiamGiaBUS pgBUS = new PhieuGiamGiaBUS();
-            string percent = pgBUS.getPhanTramGiamBUS(qdBUS.getQDD(dh.MaQuyDoi).MaPhieuGiam);
+            string percent = pgBUS.getPhanTramGiamBUS(dh.MaQuyDoi);
             if (percent == "")
             {
                 lbl_Giam.Text = "0%";
