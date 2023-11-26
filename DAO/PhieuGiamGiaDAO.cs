@@ -34,7 +34,7 @@ namespace pharmacy_management.DAO
                         reader["MoTaPG"].ToString(),
                         Int32.Parse(reader["SoDiemQuyDoi"].ToString()),
                         Int32.Parse(reader["PhanTramGiam"].ToString()),
-                        Int32.Parse(reader["ThoiHan"].ToString())
+                        Int32.Parse(reader["MaQuyDoi"].ToString())
                     );
                     arrayList.Add(tmp);
                 }
@@ -50,11 +50,43 @@ namespace pharmacy_management.DAO
 
         }
 
+        public ArrayList GetALlCondition(string search)
+        {
+            ArrayList arrayList = new ArrayList();
+
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("SELECT * FROM phieugiamgia WHERE MoTaPG LIKE N'%{0}%'", search);
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    PhieuGiamGia tmp = new PhieuGiamGia(
+                        Int32.Parse(reader["MaPhieuGiam"].ToString()),
+                        reader["MoTaPG"].ToString(),
+                        Int32.Parse(reader["SoDiemQuyDoi"].ToString()),
+                        Int32.Parse(reader["PhanTramGiam"].ToString()),
+                        Int32.Parse(reader["MaQuyDoi"].ToString())
+
+                    );
+                    arrayList.Add(tmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at PhieuGiamGiaDAO get all condition: " + ex.Message);
+            }
+
+            return arrayList;
+
+        }
         public string GetNameDAO(int ma)
         {
             ConnectDB conn = new ConnectDB();
             string name = "";
-            string query = "SELECT MoTaPG FROM phieugiamgia WHERE MaPhieuGiam = " + ma.ToString();
+            string query = "SELECT MoTaPG FROM phieugiamgia WHERE MaQuyDoi = " + ma.ToString();
             //Console.WriteLine(query);
             SqlDataReader reader = conn.Execute(query);
             try
@@ -78,7 +110,7 @@ namespace pharmacy_management.DAO
         {
             ConnectDB conn = new ConnectDB();
             string percent = "";
-            string query = "SELECT PhanTramGiam FROM phieugiamgia WHERE MaPhieuGiam = " + ma.ToString();
+            string query = "SELECT PhanTramGiam FROM phieugiamgia WHERE MaQuyDoi = " + ma.ToString();
             //Console.WriteLine(query);
             SqlDataReader reader = conn.Execute(query);
             try
@@ -96,6 +128,14 @@ namespace pharmacy_management.DAO
             }
 
             return percent;
+        }
+
+        public void insertItem(string mota, string diem, string phanTram, string maqd)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("INSERT INTO phieugiamgia VALUES(N'{0}','{1}','{2}','{3}')", mota, diem, phanTram, maqd);
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
         }
     }
 }

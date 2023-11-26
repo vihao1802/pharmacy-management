@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_bonus = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.lbl_discount = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_pay = new System.Windows.Forms.Button();
@@ -37,13 +39,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_total_price = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_DiemHienCo = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.dropBtn_KH = new Krypton.Toolkit.KryptonComboBox();
             this.dropBtn_PG = new Krypton.Toolkit.KryptonComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbl_bonus = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbl_DiemHienCo = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dropBtn_KH)).BeginInit();
@@ -65,14 +65,34 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 473);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(602, 80);
+            this.panel2.Size = new System.Drawing.Size(582, 80);
             this.panel2.TabIndex = 1;
+            // 
+            // lbl_bonus
+            // 
+            this.lbl_bonus.AutoSize = true;
+            this.lbl_bonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_bonus.Location = new System.Drawing.Point(406, 44);
+            this.lbl_bonus.Name = "lbl_bonus";
+            this.lbl_bonus.Size = new System.Drawing.Size(35, 25);
+            this.lbl_bonus.TabIndex = 8;
+            this.lbl_bonus.Text = "+0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(332, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 22);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Điểm :";
             // 
             // lbl_discount
             // 
             this.lbl_discount.AutoSize = true;
             this.lbl_discount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_discount.Location = new System.Drawing.Point(426, 16);
+            this.lbl_discount.Location = new System.Drawing.Point(406, 15);
             this.lbl_discount.Name = "lbl_discount";
             this.lbl_discount.Size = new System.Drawing.Size(41, 25);
             this.lbl_discount.TabIndex = 6;
@@ -82,7 +102,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(352, 16);
+            this.label4.Location = new System.Drawing.Point(332, 15);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 22);
             this.label4.TabIndex = 5;
@@ -94,7 +114,7 @@
             this.btn_pay.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btn_pay.ForeColor = System.Drawing.Color.White;
-            this.btn_pay.Location = new System.Drawing.Point(499, 0);
+            this.btn_pay.Location = new System.Drawing.Point(479, 0);
             this.btn_pay.Name = "btn_pay";
             this.btn_pay.Size = new System.Drawing.Size(103, 80);
             this.btn_pay.TabIndex = 4;
@@ -151,8 +171,28 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(602, 83);
+            this.panel1.Size = new System.Drawing.Size(582, 83);
             this.panel1.TabIndex = 0;
+            // 
+            // lbl_DiemHienCo
+            // 
+            this.lbl_DiemHienCo.AutoSize = true;
+            this.lbl_DiemHienCo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_DiemHienCo.Location = new System.Drawing.Point(165, 56);
+            this.lbl_DiemHienCo.Name = "lbl_DiemHienCo";
+            this.lbl_DiemHienCo.Size = new System.Drawing.Size(23, 25);
+            this.lbl_DiemHienCo.TabIndex = 9;
+            this.lbl_DiemHienCo.Text = "0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(15, 58);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(132, 22);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Điểm hiện có:";
             // 
             // dropBtn_KH
             // 
@@ -162,8 +202,8 @@
             this.dropBtn_KH.Location = new System.Drawing.Point(19, 12);
             this.dropBtn_KH.Name = "dropBtn_KH";
             this.dropBtn_KH.Size = new System.Drawing.Size(222, 29);
-            this.dropBtn_KH.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.dropBtn_KH.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.dropBtn_KH.StateCommon.ComboBox.Border.Rounding = 5F;
             this.dropBtn_KH.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
@@ -179,8 +219,8 @@
             this.dropBtn_PG.Location = new System.Drawing.Point(339, 12);
             this.dropBtn_PG.Name = "dropBtn_PG";
             this.dropBtn_PG.Size = new System.Drawing.Size(215, 29);
-            this.dropBtn_PG.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)
-            | Krypton.Toolkit.PaletteDrawBorders.Left)
+            this.dropBtn_PG.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.dropBtn_PG.StateCommon.ComboBox.Border.Rounding = 5F;
             this.dropBtn_PG.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
@@ -196,48 +236,8 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 20);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(602, 390);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(582, 390);
             this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(352, 47);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 22);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Điểm :";
-            // 
-            // lbl_bonus
-            // 
-            this.lbl_bonus.AutoSize = true;
-            this.lbl_bonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_bonus.Location = new System.Drawing.Point(426, 45);
-            this.lbl_bonus.Name = "lbl_bonus";
-            this.lbl_bonus.Size = new System.Drawing.Size(35, 25);
-            this.lbl_bonus.TabIndex = 8;
-            this.lbl_bonus.Text = "+0";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(15, 58);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 22);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Điểm hiện có:";
-            // 
-            // lbl_DiemHienCo
-            // 
-            this.lbl_DiemHienCo.AutoSize = true;
-            this.lbl_DiemHienCo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_DiemHienCo.Location = new System.Drawing.Point(165, 56);
-            this.lbl_DiemHienCo.Name = "lbl_DiemHienCo";
-            this.lbl_DiemHienCo.Size = new System.Drawing.Size(23, 25);
-            this.lbl_DiemHienCo.TabIndex = 9;
-            this.lbl_DiemHienCo.Text = "0";
             // 
             // GioHangFrm
             // 
@@ -245,11 +245,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(602, 553);
+            this.ClientSize = new System.Drawing.Size(582, 553);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "GioHangFrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giỏ hàng";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

@@ -179,6 +179,7 @@
             this.picb_item.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picb_item.TabIndex = 0;
             this.picb_item.TabStop = false;
+            this.picb_item.Click += new System.EventHandler(this.btn_item_detail_Click);
             this.picb_item.MouseEnter += new System.EventHandler(this.pnl_item_container_MouseEnter);
             this.picb_item.MouseLeave += new System.EventHandler(this.pnl_item_container_MouseLeave);
             // 

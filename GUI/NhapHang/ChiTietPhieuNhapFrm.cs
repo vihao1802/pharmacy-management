@@ -16,7 +16,7 @@ namespace pharmacy_management.GUI.NhapHang
 {
     public partial class ChiTietPhieuNhapFrm : KryptonForm
     {
-        public static NhanVien nv = new NhanVien();
+        public static DTO.NhanVien nv = new DTO.NhanVien();
         PhieuNhap pn;
         string formattedNumber = "";
         public ChiTietPhieuNhapFrm()
@@ -34,7 +34,7 @@ namespace pharmacy_management.GUI.NhapHang
             lbl_NgayLap.Text = pn.NgayLap.ToString();
 
             NhanVienBUS nvBUS = new NhanVienBUS();
-            NhanVien nv = nvBUS.getNhanVien(pn.MaNV);
+            DTO.NhanVien nv = nvBUS.getNhanVien(pn.MaNV);
             lbl_TenNV.Text = nv.TenNV;
 
 

@@ -19,7 +19,7 @@ namespace pharmacy_management.GUI.QuyDoiDiem
         KhachHangBUS khBUS = new KhachHangBUS();
         PhieuGiamGiaBUS pggBUS = new PhieuGiamGiaBUS();
         DiemKhachHangBUS dkhBUS = new DiemKhachHangBUS();
-
+        int soLuongChonDiem = 5;
         public QuyDoiDiemFrm()
         {
             InitializeComponent();
@@ -28,11 +28,14 @@ namespace pharmacy_management.GUI.QuyDoiDiem
 
         public void setVisible(Boolean flag)
         {
-            dropDown_PG.Visible = flag;
             label3.Visible = flag;
             lbl_DiemHienCo.Visible = flag;
-            lbl_DiemYeuCau.Visible = flag;
+            label4.Visible = flag;
+            cb_ChonDiem.Visible = flag;
+            label5.Visible = flag;
             label6.Visible = flag;
+            label7.Visible = flag;
+            lbl_Giam.Visible = flag;
         }
         public void setup()
         {
@@ -43,15 +46,20 @@ namespace pharmacy_management.GUI.QuyDoiDiem
 
             //Console.WriteLine(dropBtn_KH.SelectedIndex);
             khBUS.loadList();
-            foreach (KhachHang kh in khBUS.getList())
+            foreach (DTO.KhachHang kh in khBUS.getList())
             {
                 if (kh.MaKH == 1) { continue; }
                 string item_name = kh.MaKH.ToString() + "_" + kh.TenKH;
                 dropBtn_KH.Items.Add(item_name);
             }
 
+            for (int i = 1; i <= soLuongChonDiem; i++)
+            {
+                cb_ChonDiem.Items.Add(i * 100);
+            }
+            cb_ChonDiem.SelectedIndex = 0;
+
             load_data();
-            load_PhieuGiam();
             setVisible(false);
         }
 
@@ -76,18 +84,7 @@ namespace pharmacy_management.GUI.QuyDoiDiem
                 {
                     status = "Đã dùng";
                 }
-                gv_QDD.Rows.Add(qd.MaQuyDoi, qd.MaKH, qd.NgayQuyDoi, qd.MaPhieuGiam, status);
-            }
-        }
-
-        public void load_PhieuGiam()
-        {
-            dropDown_PG.Items.Clear();
-
-            foreach (PhieuGiamGia gg in pggBUS.getList())
-            {
-                string item_name = gg.MaPhieuGiam.ToString() + "_" + gg.MoTaPG;
-                dropDown_PG.Items.Add(item_name);
+                gv_QDD.Rows.Add(qd.MaQuyDoi, qd.MaKH, qd.NgayQuyDoi, status);
             }
         }
 
@@ -108,24 +105,6 @@ namespace pharmacy_management.GUI.QuyDoiDiem
 
             string formattedNumber = tmp.DiemTichLuy.ToString("#,##0");
             lbl_DiemHienCo.Text = formattedNumber;
-
-
-        }
-
-        private void dropDown_PG_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedText = dropDown_PG.SelectedItem.ToString();
-            string[] arr = selectedText.Split('_');
-            string maPG = arr[0];
-            foreach (PhieuGiamGia gg in pggBUS.getList())
-            {
-                if (gg.MaPhieuGiam.ToString().Equals(maPG))
-                {
-                    string formattedNumber = gg.SoDiemQuyDoi.ToString("#,##0");
-                    lbl_DiemYeuCau.Text = formattedNumber;
-                    break;
-                }
-            }
         }
 
         private void btn_filter_Click(object sender, EventArgs e)
@@ -140,24 +119,14 @@ namespace pharmacy_management.GUI.QuyDoiDiem
                 MessageBox.Show("Hãy chọn khách hàng trước khi quy đổi điểm");
                 return;
             }
-            if (dropDown_PG.SelectedIndex < 0)
-            {
-                MessageBox.Show("Hãy chọn phiếu giảm trước khi quy đổi điểm");
-                return;
-            }
 
 
-            string selectedText = dropDown_PG.SelectedItem.ToString();
+            string selectedText = dropBtn_KH.SelectedItem.ToString();
             string[] arr = selectedText.Split('_');
-            string maPG = arr[0];
-
-            selectedText = dropBtn_KH.SelectedItem.ToString();
-            arr = selectedText.Split('_');
             string maKH = arr[0];
 
             int diemKH = Int32.Parse(lbl_DiemHienCo.Text.Replace(",", ""));
-            int diemYeuCau = Int32.Parse(lbl_DiemYeuCau.Text.Replace(",", ""));
-
+            int diemYeuCau = Int32.Parse(cb_ChonDiem.Text);
 
             if (diemKH < diemYeuCau || diemKH == 0)
             {
@@ -174,7 +143,11 @@ namespace pharmacy_management.GUI.QuyDoiDiem
                 return;
             }
 
-            qdBUS.insertItem(maKH, currentDate, maPG);
+            qdBUS.insertItem(maKH, currentDate);
+
+            DTO.QuyDoiDiem tmp = qdBUS.getItem();
+
+            pggBUS.insertItem("Phiếu giảm " + lbl_Giam.Text, cb_ChonDiem.Text, lbl_Giam.Text.Replace(" %", ""), tmp.MaQuyDoi.ToString());
 
             diemKH -= diemYeuCau;
             string formattedNumber = diemKH.ToString("#,##0");
@@ -191,5 +164,11 @@ namespace pharmacy_management.GUI.QuyDoiDiem
             load_data();
         }
 
+        private void cb_ChonDiem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            int giam = (Int32.Parse(cb_ChonDiem.Text) / 100) * 5;
+            lbl_Giam.Text = giam + " %";
+        }
     }
 }
