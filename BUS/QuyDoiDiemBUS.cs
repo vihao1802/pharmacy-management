@@ -29,6 +29,16 @@ namespace pharmacy_management.BUS
             list = dao.GetALlNotUse();
         }
 
+        public void loadAll(string dateStart, string dateEnd, string search)
+        {
+            list = dao.GetALl(dateStart, dateEnd, search);
+        }
+
+        //public void loadWithCondition()
+        //{
+        //    list = dao.GetWithCondition();
+        //}
+
         public void updateStatus(string ma)
         {
             dao.updateStatus(ma);
@@ -37,6 +47,11 @@ namespace pharmacy_management.BUS
         public QuyDoiDiem getQDD(int ma)
         {
             return dao.getQDD(ma);
+        }
+
+        public void insertItem(string maKH, string date, string maPG)
+        {
+            dao.insertItem(maKH, date, maPG);
         }
     }
 }

@@ -29,6 +29,17 @@ namespace pharmacy_management.DTO
             this.soLuong = soLuong;
         }
 
+        public Thuoc(string tenThuoc, int maDoiTuong, float giaThuoc, string anhThuoc, int trangThai, int maXuatXu, int soLuong)
+        {          
+            this.tenThuoc = tenThuoc;
+            this.maDoiTuong = maDoiTuong;
+            this.giaThuoc = giaThuoc;
+            this.anhThuoc = anhThuoc;
+            this.trangThai = trangThai;
+            this.maXuatXu = maXuatXu;
+            this.soLuong = soLuong;
+        }
+
         public int MaThuoc { get => maThuoc; set => maThuoc = value; }
         public string TenThuoc { get => tenThuoc; set => tenThuoc = value; }
         public int MaDoiTuong { get => maDoiTuong; set => maDoiTuong = value; }

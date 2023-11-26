@@ -19,13 +19,13 @@ namespace pharmacy_management.GUI.BanHang
     {
         DTO.Thuoc thuoc_info;
         BanHangFrm bhFrm;
-      
+
         public SanPham(BanHangFrm bhFrm)
         {
             InitializeComponent();
             this.bhFrm = bhFrm;
         }
-     
+
         public void AddNewContent(DTO.Thuoc thuoc_item)
         {
             thuoc_item.GiaThuoc = thuoc_item.GiaThuoc * 120 / 100;

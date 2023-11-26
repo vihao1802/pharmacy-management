@@ -57,6 +57,9 @@ namespace pharmacy_management.GUI.BanHang
             // 
             // flow_pnl_contain_item
             // 
+            this.flow_pnl_contain_item.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flow_pnl_contain_item.AutoScroll = true;
             this.flow_pnl_contain_item.BackColor = System.Drawing.Color.White;
             this.flow_pnl_contain_item.Location = new System.Drawing.Point(0, 66);
@@ -68,13 +71,14 @@ namespace pharmacy_management.GUI.BanHang
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonPanel1.Controls.Add(this.btn_show_cart);
             this.kryptonPanel1.Controls.Add(this.cb_DoiTuong);
             this.kryptonPanel1.Controls.Add(this.kryptonLabel1);
             this.kryptonPanel1.Controls.Add(this.lbl_DoiTuong);
             this.kryptonPanel1.Controls.Add(this.txt_searching);
             this.kryptonPanel1.Controls.Add(this.cb_XuatXu);
-            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.Size = new System.Drawing.Size(950, 60);
@@ -183,6 +187,8 @@ namespace pharmacy_management.GUI.BanHang
             // 
             // kryptonPanel2
             // 
+            this.kryptonPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonPanel2.Controls.Add(this.btn_search_page);
             this.kryptonPanel2.Controls.Add(this.txt_page_value);
             this.kryptonPanel2.Controls.Add(this.label3);
@@ -192,7 +198,6 @@ namespace pharmacy_management.GUI.BanHang
             this.kryptonPanel2.Controls.Add(this.label2);
             this.kryptonPanel2.Controls.Add(this.lbl_total_pages);
             this.kryptonPanel2.Controls.Add(this.label1);
-            this.kryptonPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.kryptonPanel2.Location = new System.Drawing.Point(0, 610);
             this.kryptonPanel2.Name = "kryptonPanel2";
             this.kryptonPanel2.Size = new System.Drawing.Size(950, 40);
@@ -326,6 +331,7 @@ namespace pharmacy_management.GUI.BanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(950, 650);
             this.Controls.Add(this.kryptonPanel2);
@@ -333,6 +339,7 @@ namespace pharmacy_management.GUI.BanHang
             this.Controls.Add(this.kryptonPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(2500, 2500);
             this.MinimizeBox = false;
             this.Name = "BanHangFrm";
             this.Text = "BanHang";
