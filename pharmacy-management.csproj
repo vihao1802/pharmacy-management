@@ -523,6 +523,8 @@
     <None Include="Resources\Show Password.png" />
     <None Include="Resources\Show Password1.png" />
     <None Include="Resources\Show Password2.png" />
+    <None Include="Resources\icons8-delete-24.png" />
+    <None Include="Resources\icons8-microsoft-excel-24.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

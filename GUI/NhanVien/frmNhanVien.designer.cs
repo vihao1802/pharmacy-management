@@ -97,154 +97,130 @@
             // btnXoa
             // 
             this.btnXoa.CornerRoundingRadius = 20F;
-            this.btnXoa.Location = new System.Drawing.Point(210, 227);
+            this.btnXoa.Location = new System.Drawing.Point(479, 227);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(73, 46);
-            this.btnXoa.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.btnXoa.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btnXoa.StateCommon.Border.Color1 = System.Drawing.Color.SteelBlue;
-            this.btnXoa.StateCommon.Border.Color2 = System.Drawing.Color.SteelBlue;
+            this.btnXoa.StateCommon.Back.Color1 = System.Drawing.Color.Brown;
+            this.btnXoa.StateCommon.Back.Color2 = System.Drawing.Color.DarkRed;
             this.btnXoa.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnXoa.StateCommon.Border.Rounding = 20F;
             this.btnXoa.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.StatePressed.Back.Color1 = System.Drawing.Color.SteelBlue;
-            this.btnXoa.StatePressed.Back.Color2 = System.Drawing.Color.PowderBlue;
-            this.btnXoa.StatePressed.Back.ColorAngle = 60F;
-            this.btnXoa.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
-            this.btnXoa.StatePressed.Border.Color1 = System.Drawing.Color.SteelBlue;
-            this.btnXoa.StatePressed.Border.Color2 = System.Drawing.Color.PowderBlue;
+            this.btnXoa.StateDisabled.Back.Color1 = System.Drawing.Color.Brown;
+            this.btnXoa.StateDisabled.Back.Color2 = System.Drawing.Color.DarkRed;
+            this.btnXoa.StatePressed.Back.Color1 = System.Drawing.Color.Brown;
+            this.btnXoa.StatePressed.Back.Color2 = System.Drawing.Color.DarkRed;
             this.btnXoa.StatePressed.Border.ColorAngle = 60F;
             this.btnXoa.StatePressed.Border.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
             this.btnXoa.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnXoa.StateTracking.Back.Color1 = System.Drawing.Color.White;
-            this.btnXoa.StateTracking.Back.Color2 = System.Drawing.Color.White;
-            this.btnXoa.StateTracking.Border.Color1 = System.Drawing.Color.SteelBlue;
-            this.btnXoa.StateTracking.Border.Color2 = System.Drawing.Color.SteelBlue;
+            this.btnXoa.StateTracking.Back.Color1 = System.Drawing.Color.Brown;
+            this.btnXoa.StateTracking.Back.Color2 = System.Drawing.Color.DarkRed;
             this.btnXoa.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnXoa.TabIndex = 6;
-            this.btnXoa.Values.Image = global::pharmacy_management.Properties.Resources.icons8_remove_30;
+            this.btnXoa.Values.Image = global::pharmacy_management.Properties.Resources.icons8_delete_24;
             this.btnXoa.Values.Text = "";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnExport
             // 
             this.btnExport.CornerRoundingRadius = 20F;
-            this.btnExport.Location = new System.Drawing.Point(561, 227);
+            this.btnExport.Location = new System.Drawing.Point(636, 227);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(73, 46);
-            this.btnExport.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.btnExport.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btnExport.StateCommon.Border.Color1 = System.Drawing.Color.SteelBlue;
-            this.btnExport.StateCommon.Border.Color2 = System.Drawing.Color.SteelBlue;
+            this.btnExport.StateCommon.Back.Color1 = System.Drawing.Color.ForestGreen;
+            this.btnExport.StateCommon.Back.Color2 = System.Drawing.Color.DarkGreen;
             this.btnExport.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnExport.StateCommon.Border.Rounding = 20F;
             this.btnExport.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.StatePressed.Back.Color1 = System.Drawing.Color.SteelBlue;
-            this.btnExport.StatePressed.Back.Color2 = System.Drawing.Color.PowderBlue;
-            this.btnExport.StatePressed.Back.ColorAngle = 60F;
-            this.btnExport.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
-            this.btnExport.StatePressed.Border.Color1 = System.Drawing.Color.SteelBlue;
-            this.btnExport.StatePressed.Border.Color2 = System.Drawing.Color.PowderBlue;
+            this.btnExport.StateDisabled.Back.Color1 = System.Drawing.Color.ForestGreen;
+            this.btnExport.StateDisabled.Back.Color2 = System.Drawing.Color.DarkGreen;
+            this.btnExport.StatePressed.Back.Color1 = System.Drawing.Color.ForestGreen;
+            this.btnExport.StatePressed.Back.Color2 = System.Drawing.Color.DarkGreen;
             this.btnExport.StatePressed.Border.ColorAngle = 60F;
             this.btnExport.StatePressed.Border.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
             this.btnExport.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnExport.StateTracking.Back.Color1 = System.Drawing.Color.White;
-            this.btnExport.StateTracking.Back.Color2 = System.Drawing.Color.White;
-            this.btnExport.StateTracking.Border.Color1 = System.Drawing.Color.SteelBlue;
-            this.btnExport.StateTracking.Border.Color2 = System.Drawing.Color.SteelBlue;
+            this.btnExport.StateTracking.Back.Color1 = System.Drawing.Color.ForestGreen;
+            this.btnExport.StateTracking.Back.Color2 = System.Drawing.Color.DarkGreen;
             this.btnExport.StateTracking.Border.ColorAngle = 60F;
             this.btnExport.StateTracking.Border.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
             this.btnExport.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnExport.TabIndex = 5;
-            this.btnExport.Values.Image = global::pharmacy_management.Properties.Resources.icons8_export_30;
+            this.btnExport.Values.Image = global::pharmacy_management.Properties.Resources.icons8_microsoft_excel_24;
             this.btnExport.Values.Text = "";
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnSua
             // 
             this.btnSua.CornerRoundingRadius = 20F;
-            this.btnSua.Location = new System.Drawing.Point(391, 227);
+            this.btnSua.Location = new System.Drawing.Point(557, 227);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(73, 46);
-            this.btnSua.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.btnSua.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btnSua.StateCommon.Border.Color1 = System.Drawing.Color.SteelBlue;
-            this.btnSua.StateCommon.Border.Color2 = System.Drawing.Color.SteelBlue;
+            this.btnSua.StateCommon.Back.Color1 = System.Drawing.Color.LightSlateGray;
+            this.btnSua.StateCommon.Back.Color2 = System.Drawing.Color.DimGray;
             this.btnSua.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnSua.StateCommon.Border.Rounding = 20F;
             this.btnSua.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.StatePressed.Back.Color1 = System.Drawing.Color.SteelBlue;
-            this.btnSua.StatePressed.Back.Color2 = System.Drawing.Color.PowderBlue;
-            this.btnSua.StatePressed.Back.ColorAngle = 60F;
-            this.btnSua.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
-            this.btnSua.StatePressed.Border.Color1 = System.Drawing.Color.SteelBlue;
-            this.btnSua.StatePressed.Border.Color2 = System.Drawing.Color.PowderBlue;
+            this.btnSua.StateDisabled.Back.Color1 = System.Drawing.Color.LightSlateGray;
+            this.btnSua.StateDisabled.Back.Color2 = System.Drawing.Color.DimGray;
+            this.btnSua.StatePressed.Back.Color1 = System.Drawing.Color.LightSlateGray;
+            this.btnSua.StatePressed.Back.Color2 = System.Drawing.Color.DimGray;
             this.btnSua.StatePressed.Border.ColorAngle = 60F;
             this.btnSua.StatePressed.Border.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
             this.btnSua.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnSua.StateTracking.Back.Color1 = System.Drawing.Color.White;
-            this.btnSua.StateTracking.Back.Color2 = System.Drawing.Color.White;
-            this.btnSua.StateTracking.Border.Color1 = System.Drawing.Color.SteelBlue;
-            this.btnSua.StateTracking.Border.Color2 = System.Drawing.Color.SteelBlue;
+            this.btnSua.StateTracking.Back.Color1 = System.Drawing.Color.LightSlateGray;
+            this.btnSua.StateTracking.Back.Color2 = System.Drawing.Color.DimGray;
             this.btnSua.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnSua.TabIndex = 4;
-            this.btnSua.Values.Image = global::pharmacy_management.Properties.Resources.icons8_fix_30;
+            this.btnSua.Values.Image = global::pharmacy_management.Properties.Resources.icons8_setting_24;
             this.btnSua.Values.Text = "";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
             this.btnThem.CornerRoundingRadius = 20F;
-            this.btnThem.Location = new System.Drawing.Point(48, 227);
+            this.btnThem.Location = new System.Drawing.Point(400, 227);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(73, 46);
-            this.btnThem.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.btnThem.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.btnThem.StateCommon.Border.Color1 = System.Drawing.Color.SteelBlue;
-            this.btnThem.StateCommon.Border.Color2 = System.Drawing.Color.SteelBlue;
+            this.btnThem.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnThem.StateCommon.Back.Color2 = System.Drawing.Color.MidnightBlue;
             this.btnThem.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnThem.StateCommon.Border.Rounding = 20F;
             this.btnThem.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.StatePressed.Back.Color1 = System.Drawing.Color.SteelBlue;
-            this.btnThem.StatePressed.Back.Color2 = System.Drawing.Color.PowderBlue;
-            this.btnThem.StatePressed.Back.ColorAngle = 60F;
-            this.btnThem.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
-            this.btnThem.StatePressed.Border.Color1 = System.Drawing.Color.SteelBlue;
-            this.btnThem.StatePressed.Border.Color2 = System.Drawing.Color.PowderBlue;
+            this.btnThem.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnThem.StateDisabled.Back.Color2 = System.Drawing.Color.MidnightBlue;
+            this.btnThem.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnThem.StatePressed.Back.Color2 = System.Drawing.Color.MidnightBlue;
             this.btnThem.StatePressed.Border.ColorAngle = 60F;
             this.btnThem.StatePressed.Border.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
             this.btnThem.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnThem.StateTracking.Back.Color1 = System.Drawing.Color.White;
-            this.btnThem.StateTracking.Back.Color2 = System.Drawing.Color.White;
-            this.btnThem.StateTracking.Border.Color1 = System.Drawing.Color.SteelBlue;
-            this.btnThem.StateTracking.Border.Color2 = System.Drawing.Color.SteelBlue;
+            this.btnThem.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnThem.StateTracking.Back.Color2 = System.Drawing.Color.MidnightBlue;
             this.btnThem.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnThem.TabIndex = 3;
-            this.btnThem.Values.Image = global::pharmacy_management.Properties.Resources.icons8_add_30;
+            this.btnThem.Values.Image = global::pharmacy_management.Properties.Resources.icons8_plus_24;
             this.btnThem.Values.Text = "";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
