@@ -75,7 +75,7 @@ namespace pharmacy_management.DAO
         public void resetPass(NhanVien nv)
         {
             ConnectDB conn = new ConnectDB();
-            string query = string.Format("UPDATE nhanvien SET MatKhau = '123' WHERE Email = '{0}'",nv.Email);
+            string query = string.Format("UPDATE nhanvien SET MatKhau = '123456' WHERE Email = '{0}'",nv.Email);
             conn.ExecuteNonQuery(query);
         }
         public NhanVien taikhoandangnhap(NhanVien nv)

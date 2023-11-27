@@ -45,7 +45,7 @@ namespace pharmacy_management.BUS
             MailAddress from = new MailAddress("nhathuocsgu@gmail.com");
             MailMessage message = new MailMessage(from,to);
             message.Subject = "Reset mật khẩu";
-            message.Body = "Xin chào, chúng tôi đã đặt lại mật khẩu cho tài khoản của bạn là: 123";
+            message.Body = "Xin chào, chúng tôi đã đặt lại mật khẩu cho tài khoản của bạn là: 123456";
             SmtpClient smtp = new SmtpClient();
             smtp.Host = "smtp.gmail.com";
             smtp.Port = 587;
