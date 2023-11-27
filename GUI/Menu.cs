@@ -1,4 +1,4 @@
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,13 +21,16 @@ using pharmacy_management.GUI.Thuoc;
 using pharmacy_management.GUI.KhachHang;
 using pharmacy_management.GUI.NhanVien;
 using pharmacy_management.GUI.QuyDoiDiem;
+using pharmacy_management.BUS;
+using System.Xml.Schema;
+
 
 namespace pharmacy_management.GUI
 {
     public partial class Menu : KryptonForm
     {
         public static DTO.NhanVien nv = new DTO.NhanVien();
-
+        QuyenBUS qbus = new QuyenBUS();
         bool sidebarExpand;
         BanHangFrm bhFrm;
 
@@ -35,11 +38,19 @@ namespace pharmacy_management.GUI
         {
             InitializeComponent();
 
-            DashFrm dashFrm = new DashFrm();
+
+             DashFrm dashFrm = new DashFrm();
+            addFormtoPanelContainer(dashFrm );
+             nv = Login.nv;
+         //   addControls();
+             lbName.Text = nv.TenNV;
+
+          /*  DashFrm dashFrm = new DashFrm();
             addFormtoPanelContainer(dashFrm);
             nv = Login.nv;
-            //   addControls();
-            lbName.Text = nv.TenNV;
+              addControls();
+            lbName.Text = nv.TenNV;*/
+
 
         }
         //private void addControls()
@@ -227,6 +238,11 @@ namespace pharmacy_management.GUI
         private void btnStaff_Click_1(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new frmNhanVien());
+        }
+
+        private void kryptonLabel4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

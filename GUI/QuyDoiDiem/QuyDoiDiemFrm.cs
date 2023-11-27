@@ -48,6 +48,7 @@ namespace pharmacy_management.GUI.QuyDoiDiem
             khBUS.loadList();
             foreach (DTO.KhachHang kh in khBUS.getList())
             {
+                Console.WriteLine(kh.MaKH.ToString() + kh.TenKH.ToString());
                 if (kh.MaKH == 1) { continue; }
                 string item_name = kh.MaKH.ToString() + "_" + kh.TenKH;
                 dropBtn_KH.Items.Add(item_name);

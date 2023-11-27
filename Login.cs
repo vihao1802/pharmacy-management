@@ -43,6 +43,13 @@ namespace thuoc
                 pharmacy_management.Properties.Settings.Default.Check = true;
                 pharmacy_management.Properties.Settings.Default.Save();
             }
+            else
+            {
+                pharmacy_management.Properties.Settings.Default.Username = "";
+                pharmacy_management.Properties.Settings.Default.Password = "";
+                pharmacy_management.Properties.Settings.Default.Check = true;
+                pharmacy_management.Properties.Settings.Default.Save();
+            }
             XulyDangNhap();
         }
         private void XulyDangNhap()
@@ -120,6 +127,17 @@ namespace thuoc
         private void kryptonCheckBox1_CheckedChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void kryptonLabel1_Paint(object sender, PaintEventArgs e)
+        {
+       
+        }
+
+        private void kryptonLabel1_Click(object sender, EventArgs e)
+        {
+            QuenMKfrm quenMKfrm = new QuenMKfrm();
+            quenMKfrm.Show();
         }
     }
 }
