@@ -42,6 +42,10 @@
     <Reference Include="Krypton.Toolkit, Version=70.22.11.312, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <HintPath>packages\Krypton.Toolkit.70.22.11.312\lib\net472\Krypton.Toolkit.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -273,7 +277,6 @@
     <Compile Include="GUI\QLxuatxu\FrmXuatXu.designer.cs">
       <DependentUpon>FrmXuatXu.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QLxuatxu\FrmXuatXu.Designer.cs" />
     <Compile Include="GUI\QuyDoiDiem\PhieuGiamGiaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,7 +295,6 @@
     <Compile Include="GUI\Report\ReportDonHangFrm.Designer.cs">
       <DependentUpon>ReportDonHangFrm.cs</DependentUpon>
     </Compile>
->>>>>>> main
     <Compile Include="GUI\Thuoc\FormThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,12 +309,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GUI\QLNhaCungCap\FrmXuatXu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\QLNhaCungCap\FrmXuatXu.designer.cs">
-      <DependentUpon>FrmXuatXu.cs</DependentUpon>
-    </Compile>
     <Compile Include="ql_nhathuocDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -393,9 +389,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx">
       <DependentUpon>FrmXuatXu.cs</DependentUpon>
-    <EmbeddedResource Include="GUI\QLDoiTuong\FrmDoiTuong.resx" />
-    <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx" />
-    <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx" />
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuyDoiDiem\PhieuGiamGiaFrm.resx">
       <DependentUpon>PhieuGiamGiaFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -730,9 +724,6 @@
     <None Include="Resources\4.jpg" />
     <None Include="Resources\3.jpg" />
     <None Include="Resources\2.jpg" />
-    <EmbeddedResource Include="GUI\QLNhaCungCap\FrmXuatXu.resx">
-      <DependentUpon>FrmXuatXu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\1.jpg" />
   </ItemGroup>
   <ItemGroup>

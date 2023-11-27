@@ -21,6 +21,8 @@ namespace pharmacy_management.GUI.QLxuatxu
             InitializeComponent();
             loadds();
             setup();
+            
+            ckbTrangThai.Visible = false;
         }
         int flag = 1;
         XuatXuBUS bus = new XuatXuBUS();
@@ -71,11 +73,7 @@ namespace pharmacy_management.GUI.QLxuatxu
                     MessageBox.Show("Chưa điền tên xuất xứ");
                     return;
                 }
-                if (!ckbTrangThai.Checked)
-                {
-                    MessageBox.Show("Thêm xuất xứ phải đang hoạt động!!!");
-                    return;
-                }
+                
                 try
                 {
                     XuatXu DTO = new XuatXu(txtTenXuatXu.Text.ToString(), 1);
@@ -90,11 +88,11 @@ namespace pharmacy_management.GUI.QLxuatxu
                             maxXuatXu = ma;
                         }
                     }
-                    /*                int trangthaiNew = DTO.TrangThai;
-                                    string tenNew = DTO.TenXuatXu;
-                                    string tempNew = (trangthaiNew == 1) ? "Active" : "Not Active";
-                                    DGVXuatXu.Rows.Add(maxXuatXu + 1, tenNew, tempNew);*/
-                    loadds();
+                    int trangthaiNew = DTO.TrangThai;
+                    string tenNew = DTO.TenXuatXu;
+                    string tempNew = (trangthaiNew == 1) ? "Active" : "Not Active";
+                    DGVXuatXu.Rows.Add(maxXuatXu + 1, tenNew, tempNew);
+                    /*loadds();*/
                     txtTenXuatXu.Text = "";
                     MessageBox.Show("Thêm thành công");
                 }
@@ -107,14 +105,8 @@ namespace pharmacy_management.GUI.QLxuatxu
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            int state;
-            
-                if (DGVXuatXu.SelectedRows.Count > 1)
-                {
-                    MessageBox.Show("Chỉ chọn 1 xuất xứ để sửa!");
-                    return;
-                }
-                else if (DGVXuatXu.SelectedRows.Count < 1)
+            int state;          
+                if (DGVXuatXu.SelectedRows.Count < 1)
                 {
                     MessageBox.Show("Chưa chọn xuất xứ để sửa!");
                     return;
@@ -166,7 +158,7 @@ namespace pharmacy_management.GUI.QLxuatxu
                         txtTenXuatXu.Text = "";
                         MessageBox.Show("Hủy kích hoạt xuất xứ thành công!!!");
                         DGVXuatXu.CurrentRow.Cells["TrangThai"].Value = "Not Active";
-                        ckbTrangThai.Checked = true;
+                        ckbTrangThai.Checked = false;
                         foreach (DTO.Thuoc item in thuocbus.getList())
                         {
                             if (ma == item.MaXuatXu)
@@ -180,38 +172,9 @@ namespace pharmacy_management.GUI.QLxuatxu
                 }
             }
         }
-
-        private void DGVXuatXu_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (DGVXuatXu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-            {
-                DGVXuatXu.CurrentRow.Selected = true;
-                // Lấy giá trị từ cột tương ứng và hiển thị lên TextBox
-                txtMaXuatXu.Text = DGVXuatXu.Rows[e.RowIndex].Cells["maXuatXu"].Value.ToString();
-                txtTenXuatXu.Text = DGVXuatXu.Rows[e.RowIndex].Cells["tenXuatXu"].Value.ToString();
-                string temp = DGVXuatXu.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString();
-                ckbTrangThai.Enabled = true;
-                if (temp.Equals("Active", StringComparison.OrdinalIgnoreCase))
-                {
-                    ckbTrangThai.Checked = true;
-                }
-                else
-                {
-                    ckbTrangThai.Checked = false;
-                }
-            }
-        }
-
-        private void DGVXuatXu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DGVXuatXu.ClearSelection();
-            txtMaXuatXu.Text = "";
-            txtTenXuatXu.Text = "";
-        }
-
         private void searchbtn_Click(object sender, EventArgs e)
         {
-            if (txtSearch.Text.ToString() == "")
+            if (txtSearch.Text.Trim().ToString() == "")
             {
                 MessageBox.Show("Bạn chưa nhập điều kiện cần lọc");
                 return;
@@ -268,5 +231,89 @@ namespace pharmacy_management.GUI.QLxuatxu
             loadds();
             flag = 1;
         }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Create a new instance of Excel application
+                Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlApp.Visible = true;
+
+                // Create a new workbook
+                Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Add(Type.Missing);
+
+                // Get the active sheet
+                Microsoft.Office.Interop.Excel.Worksheet xlWorksheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkbook.ActiveSheet;
+
+                // Column headers
+                string[] headers = { "maXuatXu", "tenXuatXu","TrangThai" };
+
+                // Add column headers
+                for (int j = 0; j < headers.Length; j++)
+                {
+                    xlWorksheet.Cells[1, j + 1] = headers[j];
+                    xlWorksheet.Columns[j + 1].ColumnWidth = DGVXuatXu.Columns[headers[j]].Width / 7; // Adjust column width based on DataGridView column width
+                    xlWorksheet.Columns[j + 1].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter; // Center align the column
+                }
+
+                // Loop through each row in the DataGridView
+                for (int i = 0; i < DGVXuatXu.Rows.Count; i++)
+                {
+                    // Loop through each column in the DataGridView
+                    for (int j = 0; j < headers.Length; j++)
+                    {
+                        // Populate Excel cells with data from the DataGridView
+                        object value = DGVXuatXu.Rows[i].Cells[headers[j]].Value;
+
+                        // Format cells based on data types
+                        if (value != null)
+                        {
+                            if (headers[j] == "tenXuatXu") // Assuming SDT is the column name for phone number
+                                xlWorksheet.Cells[i + 2, j + 1] = "'" + value.ToString(); // Prepend with a single quote to treat it as text                        
+                            else if (headers[j] == "maXuatXu") // Assuming MaKH is the column name for customer ID
+                                xlWorksheet.Cells[i + 2, j + 1] = Convert.ToInt32(value);
+                            else
+                                xlWorksheet.Cells[i + 2, j + 1] = value;
+
+                            xlWorksheet.Cells[i + 2, j + 1].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter; // Center align the cell
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        private void DGVXuatXu_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ckbTrangThai.Visible = true;
+            DGVXuatXu.CurrentRow.Selected = true;
+            // Lấy giá trị từ cột tương ứng và hiển thị lên TextBox
+            txtMaXuatXu.Text = DGVXuatXu.CurrentRow.Cells["maXuatXu"].Value.ToString();
+            txtTenXuatXu.Text = DGVXuatXu.CurrentRow.Cells["tenXuatXu"].Value.ToString();
+            string temp = DGVXuatXu.CurrentRow.Cells["TrangThai"].Value.ToString();
+            ckbTrangThai.Enabled = true;
+            if (temp.Equals("Active", StringComparison.OrdinalIgnoreCase))
+            {
+                ckbTrangThai.Checked = true;
+            }
+            else
+            {
+                ckbTrangThai.Checked = false;
+            }
+        }
+
+        private void DGVXuatXu_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ckbTrangThai.Visible = false;
+            DGVXuatXu.ClearSelection();
+            txtMaXuatXu.Text = "";
+            txtTenXuatXu.Text = "";
+        }
     }
+                        
+    
 }

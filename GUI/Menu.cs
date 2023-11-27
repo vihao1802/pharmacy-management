@@ -18,12 +18,9 @@ using pharmacy_management.GUI.BanHang;
 using pharmacy_management.GUI.Thuoc;
 using pharmacy_management.GUI.NhapHang;
 using pharmacy_management.GUI.Dash;
-<<<<<<< HEAD
-
-=======
 using pharmacy_management.GUI.Thuoc;
 using pharmacy_management.GUI.QuyDoiDiem;
->>>>>>> main
+
 
 namespace pharmacy_management.GUI
 {
@@ -38,36 +35,36 @@ namespace pharmacy_management.GUI
         {
             InitializeComponent();
 
-<<<<<<< HEAD
+
              DashFrm dashFrm = new DashFrm();
             addFormtoPanelContainer(dashFrm );
              nv = Login.nv;
-         //   addControls();
+            //addControls();
              lbName.Text = nv.TenNV;
-=======
-            DashFrm dashFrm = new DashFrm();
+
+          /*  DashFrm dashFrm = new DashFrm();
             addFormtoPanelContainer(dashFrm);
             nv = Login.nv;
             //addControls();
             lbName.Text = nv.TenNV;
->>>>>>> 45b538d1fd72b3699a6445c044f8246d7147cb5d
+*/
 
         }
-        //private void addControls()
-        //{
-        //    if(nv.MaQuyen == 2)
-        //    {
-        //        btnStaff.Visible = false;
-        //        btnPill.Visible = false;
-        //        btnPN.Visible = false;
-        //        btnStorage.Visible = false;
-        //        btnVoucher.Visible = false;
-        //    }else if(nv.MaQuyen == 3)
-        //    {
-        //        btnCustomer.Visible = false;
+       /* private void addControls()
+        {
+            if(nv.MaQuyen == 2)
+            {
+                btnStaff.Visible = false;
+                btnPill.Visible = false;
+                btnPN.Visible = false;
+                btnStorage.Visible = false;
+                btnVoucher.Visible = false;
+            }else if(nv.MaQuyen == 3)
+            {
+                btnCustomer.Visible = false;
 
-        //    }
-        //}
+            }
+        }*/
 
         private void btnClose_Click(object sender, EventArgs e)
         {
