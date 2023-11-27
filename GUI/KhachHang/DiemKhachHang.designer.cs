@@ -305,6 +305,7 @@
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
             this.Text = "Điểm khách hàng";
+            this.Load += new System.EventHandler(this.DiemKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bangdiemDataGridView)).EndInit();

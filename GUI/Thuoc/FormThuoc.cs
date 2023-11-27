@@ -1,4 +1,5 @@
-﻿
+﻿using pharmacy_management.GUI.QLDoiTuong;
+using pharmacy_management.GUI.QLxuatxu;
 using Krypton.Toolkit;
 using pharmacy_management.BUS;
 using pharmacy_management.DTO;
@@ -27,16 +28,17 @@ namespace pharmacy_management.GUI.Thuoc
             InitializeComponent();
             loadds();
             setup();
+
             ckbTrangThai.Visible = false;
-           
+
         }
         int flag = 1;
         ThuocBUS thuocbus = new ThuocBUS();
         DoiTuongBUS dtbus = new DoiTuongBUS();
         XuatXuBUS xxbus = new XuatXuBUS();
-        
+
         public string globalFilename;
-       
+
         private bool checkInput()
         {
             Boolean result = true;
@@ -53,10 +55,10 @@ namespace pharmacy_management.GUI.Thuoc
             }
             /*foreach (char c in txtTenThuoc.Text)
                     if (char.IsDigit(c))
-                        return true;*/            
+                        return true;*/
             return result;
         }
-        
+
 
         public void setup()
         {
@@ -66,14 +68,14 @@ namespace pharmacy_management.GUI.Thuoc
             {
                 string temp = dt.MaDT + " - " + dt.TenDT;
                 cbbMaDoiTuong.Items.Add(temp);
-            }            
+            }
             XuatXuBUS xx_list = new XuatXuBUS();
             //cbbMaXuatXu.SelectedIndex = 0;
             foreach (XuatXu xx in xx_list.getActiveMaxuatxu())
             {
                 string temp = xx.MaXuatXu + " - " + xx.TenXuatXu;
                 cbbMaXuatXu.Items.Add(temp);
-            }        
+            }
             cbbSearch.Items.Add("Mã Thuốc");
             cbbSearch.Items.Add("Tên Thuốc");
             cbbSearch.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -98,10 +100,10 @@ namespace pharmacy_management.GUI.Thuoc
                 int state = int.Parse(item.TrangThai.ToString());
                 string tenxuatxu = xxbus.GetNameBUS(maxuatxu);
                 string tendoituong = dtbus.GetNameBUS(madoituong);
-                if (state == 1)               
+                if (state == 1)
                     temp = "Còn bán";
-                else             
-                    temp = "Ngừng bán";               
+                else
+                    temp = "Ngừng bán";
                 DGVThuoc.Rows.Add(ma, tenthuoc, tenxuatxu, tendoituong, soluong, price, anh, temp);
             }
         }
@@ -120,7 +122,7 @@ namespace pharmacy_management.GUI.Thuoc
                     {
                         string FileName = openFileDialog.FileName;
                         // gan ten File vao bien globalFilename
-                        globalFilename += "images/"+Path.GetFileName(FileName);
+                        globalFilename += "images/" + Path.GetFileName(FileName);
                         MessageBox.Show(globalFilename);
                         if (myStream.Length > 512000)
                         {
@@ -132,8 +134,9 @@ namespace pharmacy_management.GUI.Thuoc
                         }
                     }
                 }
-                catch (Exception ex) { 
-                     MessageBox.Show(ex.Message);
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -187,17 +190,17 @@ namespace pharmacy_management.GUI.Thuoc
             }
         }
 
-        
-         private void Refreshtxt()
-        {        
+
+        private void Refreshtxt()
+        {
             txtTenThuoc.Text = "";
-            txtGiaThuoc.Text = "";     
+            txtGiaThuoc.Text = "";
             cbbMaDoiTuong.Text = "";
             cbbMaXuatXu.Text = "";
             txtMaThuoc.Text = "";
             txtGiaThuoc.Text = "";
             txtSoLuong.Text = "";
-            pictureBox1.Image = null;        
+            pictureBox1.Image = null;
             DGVThuoc.ClearSelection();
         }
         private void btnXoa_Click(object sender, EventArgs e)
@@ -210,7 +213,8 @@ namespace pharmacy_management.GUI.Thuoc
                 MessageBox.Show("Thuốc này đã hủy kích hoạt từ trước!!!");
                 return;
             }
-            else {
+            else
+            {
                 if (MessageBox.Show("Bạn có chắc chắn muốn hủy kích hoạt thông tin thuốc không?", "Xác nhận hủy", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     try
@@ -227,28 +231,28 @@ namespace pharmacy_management.GUI.Thuoc
                         MessageBox.Show(ex.Message);
                     }
                 }
-        }
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            int state;         
+            int state;
             checkInput();
-            
-           
+
+
             if (DGVThuoc.SelectedRows.Count < 1)
             {
                 MessageBox.Show("Chưa chọn dòng để sửa!");
                 return;
             }
-            
+
             if (!ckbTrangThai.Checked)
                 state = 0;
             else state = 1;
             XuatXuBUS xxbus = new XuatXuBUS();
             DoiTuongBUS dtbus = new DoiTuongBUS();
-            int maxx = int.Parse(cbbMaXuatXu.Text.Trim().Substring(0,cbbMaXuatXu.Text.Trim().IndexOf('-')));
-            int madt = int.Parse(cbbMaDoiTuong.Text.Trim().Substring(0,cbbMaDoiTuong.Text.Trim().IndexOf('-')));
+            int maxx = int.Parse(cbbMaXuatXu.Text.Trim().Substring(0, cbbMaXuatXu.Text.Trim().IndexOf('-')));
+            int madt = int.Parse(cbbMaDoiTuong.Text.Trim().Substring(0, cbbMaDoiTuong.Text.Trim().IndexOf('-')));
             if ((xxbus.GetStateBUS(maxx) == 0 || dtbus.GetStateBUS(madt) == 0) && state == 1)
             {
                 MessageBox.Show("Mã đối tượng hoặc mã xuất xứ đang trong trạng thái không hoạt động, không thể kích hoạt lại thuốc.Vui lòng kiểm tra lại");
@@ -257,9 +261,9 @@ namespace pharmacy_management.GUI.Thuoc
             }
             try
             {
-                
+
                 int mt = int.Parse(DGVThuoc.CurrentRow.Cells["MaThuoc"].Value.ToString());
-                DTO.Thuoc drug = new DTO.Thuoc(mt, txtTenThuoc.Text.ToString(), madt, float.Parse(txtGiaThuoc.Text.ToString()), globalFilename, 1,maxx, 0);
+                DTO.Thuoc drug = new DTO.Thuoc(mt, txtTenThuoc.Text.ToString(), madt, float.Parse(txtGiaThuoc.Text.ToString()), globalFilename, 1, maxx, 0);
                 thuocbus.update(drug);
                 int trangthaiNew = drug.TrangThai;
                 string tenNew = drug.TenThuoc;
@@ -283,9 +287,9 @@ namespace pharmacy_management.GUI.Thuoc
                 MessageBox.Show(ex.Message);
             }
         }
-         
-        
-        
+
+
+
 
         private void btnXuat_Click(object sender, EventArgs e)
         {
@@ -302,7 +306,7 @@ namespace pharmacy_management.GUI.Thuoc
                 Microsoft.Office.Interop.Excel.Worksheet xlWorksheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkbook.ActiveSheet;
 
                 // Column headers
-                string[] headers = { "MaThuoc", "TenThuoc","MaXuatXu", "MaDoiTuong", "SoLuong", "GiaThuoc", "TrangThai" };
+                string[] headers = { "MaThuoc", "TenThuoc", "MaXuatXu", "MaDoiTuong", "SoLuong", "GiaThuoc", "TrangThai" };
 
                 // Add column headers
                 for (int j = 0; j < headers.Length; j++)
@@ -324,11 +328,11 @@ namespace pharmacy_management.GUI.Thuoc
                         // Format cells based on data types
                         if (value != null)
                         {
-                            if (headers[j] == "TenThuoc") 
-                                xlWorksheet.Cells[i + 2, j + 1] = "'" + value.ToString(); 
-                            else if (headers[j] == "MaXuatXu") 
+                            if (headers[j] == "TenThuoc")
                                 xlWorksheet.Cells[i + 2, j + 1] = "'" + value.ToString();
-                            else if (headers[j] == "MaDoiTuong")                           
+                            else if (headers[j] == "MaXuatXu")
+                                xlWorksheet.Cells[i + 2, j + 1] = "'" + value.ToString();
+                            else if (headers[j] == "MaDoiTuong")
                                 xlWorksheet.Cells[i + 2, j + 1] = "'" + value.ToString();
                             else if (headers[j] == "SoLuong") // Assuming MaKH is the column name for customer ID
                                 xlWorksheet.Cells[i + 2, j + 1] = Convert.ToInt32(value);
@@ -350,11 +354,11 @@ namespace pharmacy_management.GUI.Thuoc
             }
         }
 
-       
+
 
         private void DGVThuoc_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            ThuocBUS thuocbus = new ThuocBUS(); 
+            ThuocBUS thuocbus = new ThuocBUS();
             ckbTrangThai.Visible = true;
             string xuatxu = "", doituong = "";
             if (DGVThuoc.CurrentRow.Cells != null)
@@ -362,7 +366,7 @@ namespace pharmacy_management.GUI.Thuoc
                 DGVThuoc.CurrentRow.Selected = true;
                 // Lấy giá trị từ cột tương ứng và hiển thị lên TextBox
                 String mt = DGVThuoc.CurrentRow.Cells["MaThuoc"].Value.ToString();
-                string temp = DGVThuoc.CurrentRow.Cells["TrangThai"].Value.ToString();             
+                string temp = DGVThuoc.CurrentRow.Cells["TrangThai"].Value.ToString();
 
                 foreach (DTO.Thuoc drug in thuocbus.getList())
                 {
@@ -403,14 +407,14 @@ namespace pharmacy_management.GUI.Thuoc
 
         private void DGVThuoc_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            
+
             Refreshtxt();
             ckbTrangThai.Visible = false;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            flag = 1;           
+            flag = 1;
             loadds();
         }
 
@@ -434,7 +438,7 @@ namespace pharmacy_management.GUI.Thuoc
             e.SuppressKeyPress = true;
         }
 
-       
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (txtSearch.Text.Trim().ToString() == "")
@@ -495,6 +499,34 @@ namespace pharmacy_management.GUI.Thuoc
             }
         }
 
-       
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            FrmDoiTuong frmdoituong = new FrmDoiTuong();
+           addFormtoPanelContainer(frmdoituong);
+
+        }
+
+
+        private void kryptonButton2_Click(object sender, EventArgs e)
+        {
+
+            FrmXuatXu frmXuatXu = new FrmXuatXu();
+            addFormtoPanelContainer((frmXuatXu));
+
+        }
+        private void addFormtoPanelContainer(object Form)
+        {
+            if (this.kryptonPanel1.Controls.Count > 0)
+            {
+                this.kryptonPanel1.Controls.Clear();
+
+                Form f = Form as Form;
+                f.TopLevel = false;
+                f.Dock = DockStyle.Fill;
+                this.kryptonPanel1.Controls.Add(f);
+                this.kryptonPanel1.Tag = f;
+                f.Show();
+            }
+        }
     }
 }

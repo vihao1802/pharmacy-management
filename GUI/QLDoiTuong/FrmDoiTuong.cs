@@ -1,4 +1,5 @@
 ﻿using System;
+using pharmacy_management.GUI.Thuoc;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -310,12 +311,33 @@ namespace pharmacy_management.GUI.QLDoiTuong
                 ckbTrangThai.Checked = false;
         }
 
+        private void addFormtoPanelContainer(object Form)
+        {
+            if (this.kryptonPanel1.Controls.Count > 0)
+            {
+                this.kryptonPanel1.Controls.Clear();
+
+                Form f = Form as Form;
+                f.TopLevel = false;
+                f.Dock = DockStyle.Fill;
+                this.kryptonPanel1.Controls.Add(f);
+                this.kryptonPanel1.Tag = f;
+                f.Show();
+            }
+        }
+
         private void DGVDoiTuong_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ckbTrangThai.Visible = false;
             DGVDoiTuong.ClearSelection();
             txtMaDoiTuong.Text = "";
             txtTenDoiTuong.Text = "";
+        }
+
+        private void backlbl_MouseClick(object sender, MouseEventArgs e)
+        {
+            FormThuoc formthuoc = new FormThuoc();
+            addFormtoPanelContainer(formthuoc);
         }
     }
 }

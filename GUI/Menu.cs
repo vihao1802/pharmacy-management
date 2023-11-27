@@ -38,19 +38,19 @@ namespace pharmacy_management.GUI
         {
             InitializeComponent();
 
-<<<<<<< HEAD
+
              DashFrm dashFrm = new DashFrm();
             addFormtoPanelContainer(dashFrm );
              nv = Login.nv;
          //   addControls();
              lbName.Text = nv.TenNV;
-=======
-            DashFrm dashFrm = new DashFrm();
+
+          /*  DashFrm dashFrm = new DashFrm();
             addFormtoPanelContainer(dashFrm);
             nv = Login.nv;
               addControls();
-            lbName.Text = nv.TenNV;
->>>>>>> 45b538d1fd72b3699a6445c044f8246d7147cb5d
+            lbName.Text = nv.TenNV;*/
+
 
         }
         //private void addControls()

@@ -117,6 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="kryptonLabel3.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAADASURBVFhH7dbNCgFRHIbxKd/F5Qppch1ugLLBRkpWuC08
+        bzl1mmym6LyL/1O/ktXbORlTRVEURVGxRqixxEBfOKVxF7w+NNKmIc5I42QFi3SVJ+TjrtCJFq+PI/Jx
+        N4xRvB4OyMfdYTNuj+a4CYrXwRb5uAcsxnWxQz7uiQ3WPzSFbqlVOjkNycf90xytsh+orK84Zf0jSVk/
+        ZlLWD+qU9V9dyvplIfXtdWsBq5ovrDPYpZPUA1b0OYqiKIrsqqo3QN2WR+E9xcMAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="maXuatXu.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -126,20 +139,4 @@
   <metadata name="TrangThai.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnThem.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAAJ1JREFUSEtjGFQgqHanb2TL/nNR7QdPgWgQHypFPRBSvzOrZsXD/93bP/wH0SA+
-        VIp6YNQSksCoJSQBii0BZSyQJnw4uH7nCmRLQHxs6pAxSoYF5WCQRkK4fcsbsCUgGps8OgaZC7WCgQFU
-        VIA0UxuDzIVaQSef0CVOiAEgTciWgPhQKeqBUUtIAqOWkAToYgkoY4FyME1bK+QDBgYA7z4apL2j6KIA
-        AAAASUVORK5CYII=
-</value>
-  </data>
 </root>

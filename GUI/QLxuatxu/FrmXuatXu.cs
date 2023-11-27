@@ -1,5 +1,6 @@
 ﻿using pharmacy_management.BUS;
 using pharmacy_management.DTO;
+using pharmacy_management.GUI.Thuoc;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -312,6 +313,26 @@ namespace pharmacy_management.GUI.QLxuatxu
             DGVXuatXu.ClearSelection();
             txtMaXuatXu.Text = "";
             txtTenXuatXu.Text = "";
+        }
+        private void addFormtoPanelContainer(object Form)
+        {
+            if (this.kryptonPanel1.Controls.Count > 0)
+            {
+                this.kryptonPanel1.Controls.Clear();
+
+                Form f = Form as Form;
+                f.TopLevel = false;
+                f.Dock = DockStyle.Fill;
+                this.kryptonPanel1.Controls.Add(f);
+                this.kryptonPanel1.Tag = f;
+                f.Show();
+            }
+        }
+
+        private void backlbl_MouseClick(object sender, MouseEventArgs e)
+        {
+            FormThuoc formthuoc = new FormThuoc();
+            addFormtoPanelContainer(formthuoc);
         }
     }
                         
