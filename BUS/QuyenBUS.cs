@@ -43,5 +43,14 @@ namespace pharmacy_management.BUS
         {
             dao.update(DTO, ma);
         }
+        public string getTenfromMa(int ma)
+        {
+            foreach(Quyen q in list)
+            {
+                if (q.MaQuyen == ma)
+                    return q.TenQuyen;
+            }
+            return "";
+        }
     }
 }
