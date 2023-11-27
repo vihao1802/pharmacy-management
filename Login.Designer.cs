@@ -134,6 +134,7 @@
             this.txtuser.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.txtuser.TabIndex = 2;
             this.txtuser.TextChanged += new System.EventHandler(this.txtuser_TextChanged);
+            this.txtuser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             // 
             // label3
             // 
