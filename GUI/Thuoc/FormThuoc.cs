@@ -87,7 +87,7 @@ namespace pharmacy_management.GUI.Thuoc
                 int maxuatxu = int.Parse(item.MaXuatXu.ToString());
                 int madoituong = int.Parse(item.MaDoiTuong.ToString());
                 int soluong = int.Parse(item.SoLuong.ToString());
-                int price = int.Parse(item.GiaThuoc.ToString());
+                float price = float.Parse(item.GiaThuoc.ToString());
                 string anh = item.AnhThuoc.ToString();
                 int state = int.Parse(item.TrangThai.ToString());
                 string tenxuatxu = xxbus.GetNameBUS(maxuatxu);
