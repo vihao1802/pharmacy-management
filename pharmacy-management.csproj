@@ -39,9 +39,6 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
-    </Reference>
     <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
     </Reference>
@@ -88,7 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\DangNhapBUS.cs" />
-    <Compile Include="BUS\DoiTuongBUS.cs" />
     <Compile Include="BUS\ThongKeBUS.cs" />
     <Compile Include="BUS\ChiTietDonHangBUS.cs" />
     <Compile Include="BUS\ChiTietPhieuNhapBUS.cs" />
@@ -307,6 +303,12 @@
     <Compile Include="GUI\QLxuatxu\FrmXuatXu.designer.cs">
       <DependentUpon>FrmXuatXu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\QuenMKfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuenMKfrm.Designer.cs">
+      <DependentUpon>QuenMKfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\QuyDoiDiem\PhieuGiamGiaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -436,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QLxuatxu\FrmXuatXu.resx">
       <DependentUpon>FrmXuatXu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuenMKfrm.resx">
+      <DependentUpon>QuenMKfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Thuoc\FormThuoc.resx" />
     <EmbeddedResource Include="GUI\QuyDoiDiem\PhieuGiamGiaFrm.resx">

@@ -77,7 +77,6 @@
             this.cb_XuatXu.StateCommon.ComboBox.Border.Rounding = 5F;
             this.cb_XuatXu.TabIndex = 2;
             this.cb_XuatXu.Text = "Chọn xuất xứ";
-            this.cb_XuatXu.SelectedIndexChanged += new System.EventHandler(this.cb_XuatXu_SelectedIndexChanged);
             // 
             // btn_search_page
             // 
@@ -218,7 +217,6 @@
             this.cb_DoiTuong.StateCommon.ComboBox.Border.Rounding = 5F;
             this.cb_DoiTuong.TabIndex = 8;
             this.cb_DoiTuong.Text = "Chọn đối tượng";
-            this.cb_DoiTuong.SelectedIndexChanged += new System.EventHandler(this.cb_DoiTuong_SelectedIndexChanged);
             // 
             // kryptonLabel1
             // 

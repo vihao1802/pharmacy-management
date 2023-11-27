@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace pharmacy_management.DAO
 {
@@ -46,6 +47,31 @@ namespace pharmacy_management.DAO
 
             return arrayList;
 
+        }
+        
+        public int GetStateDAO(int ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            int state = 0;
+            string query = "SELECT TRANGTHAI FROM xuatxu WHERE MaXuatXu = " + ma.ToString();
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    if (reader["TrangThai"] != DBNull.Value)
+                        state = Convert.ToInt32(reader["TrangThai"].ToString());
+                    else MessageBox.Show("Ma xuat xu khong ton tai");
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at XuatXuDAO: " + ex.Message);
+            }
+
+            return state;
         }
 
         public ArrayList searchatMa(int ma)
