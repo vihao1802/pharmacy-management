@@ -76,9 +76,9 @@ namespace pharmacy_management.GUI.BanHang
 
         }
 
-        /*private void btn_export_PDF_Click(object sender, EventArgs e)
+        private void btn_export_PDF_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog
+            /*SaveFileDialog saveFileDialog = new SaveFileDialog
             {
                 Filter = "PDF files (*.pdf)|*.pdf",
                 Title = "Save PDF File",
@@ -88,8 +88,8 @@ namespace pharmacy_management.GUI.BanHang
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 ExportDataGridViewToPdf(gv_SanPhamDH, saveFileDialog.FileName);
-            }
-        }*/
+            }*/
+        }
 
         /*private void ExportDataGridViewToPdf(DataGridView dataGridView, string filePath)
         {

@@ -30,19 +30,18 @@
         {
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
             this.bangdiemDataGridView = new Krypton.Toolkit.KryptonDataGridView();
-            this.MaBangDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiemTichLuy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiemDaSuDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kryptonGroupBox1 = new Krypton.Toolkit.KryptonGroupBox();
             this.txtMaKH = new Krypton.Toolkit.KryptonTextBox();
             this.txtDiemDaSuDung = new Krypton.Toolkit.KryptonTextBox();
             this.txtDiemTichLuy = new Krypton.Toolkit.KryptonTextBox();
             this.txtMaBangDiem = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonLabel4 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
+            this.MaBangDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemTichLuy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemDaSuDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bangdiemDataGridView)).BeginInit();
@@ -59,7 +58,7 @@
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(580, 353);
+            this.kryptonPanel1.Size = new System.Drawing.Size(580, 291);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.White;
             this.kryptonPanel1.StateCommon.Color2 = System.Drawing.Color.White;
             this.kryptonPanel1.StateCommon.ColorAngle = 60F;
@@ -84,7 +83,7 @@
             this.bangdiemDataGridView.Name = "bangdiemDataGridView";
             this.bangdiemDataGridView.RowHeadersVisible = false;
             this.bangdiemDataGridView.RowHeadersWidth = 51;
-            this.bangdiemDataGridView.Size = new System.Drawing.Size(389, 344);
+            this.bangdiemDataGridView.Size = new System.Drawing.Size(389, 272);
             this.bangdiemDataGridView.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
             this.bangdiemDataGridView.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.SteelBlue;
             this.bangdiemDataGridView.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.SteelBlue;
@@ -101,32 +100,6 @@
             this.bangdiemDataGridView.TabIndex = 2;
             this.bangdiemDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bangdiemDataGridView_CellContentClick);
             // 
-            // MaBangDiem
-            // 
-            this.MaBangDiem.HeaderText = "Mã bảng điểm";
-            this.MaBangDiem.MinimumWidth = 6;
-            this.MaBangDiem.Name = "MaBangDiem";
-            this.MaBangDiem.ReadOnly = true;
-            // 
-            // MaKhachHang
-            // 
-            this.MaKhachHang.HeaderText = "Mã khách hàng";
-            this.MaKhachHang.MinimumWidth = 6;
-            this.MaKhachHang.Name = "MaKhachHang";
-            this.MaKhachHang.ReadOnly = true;
-            // 
-            // DiemTichLuy
-            // 
-            this.DiemTichLuy.HeaderText = "Điểm tích lũy";
-            this.DiemTichLuy.MinimumWidth = 6;
-            this.DiemTichLuy.Name = "DiemTichLuy";
-            // 
-            // DiemDaSuDung
-            // 
-            this.DiemDaSuDung.HeaderText = "Điểm đã tích lũy";
-            this.DiemDaSuDung.MinimumWidth = 6;
-            this.DiemDaSuDung.Name = "DiemDaSuDung";
-            // 
             // kryptonGroupBox1
             // 
             this.kryptonGroupBox1.CaptionOverlap = 0D;
@@ -142,11 +115,10 @@
             this.kryptonGroupBox1.Panel.Controls.Add(this.txtDiemDaSuDung);
             this.kryptonGroupBox1.Panel.Controls.Add(this.txtDiemTichLuy);
             this.kryptonGroupBox1.Panel.Controls.Add(this.txtMaBangDiem);
-            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel4);
             this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel3);
             this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel2);
             this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel1);
-            this.kryptonGroupBox1.Size = new System.Drawing.Size(182, 344);
+            this.kryptonGroupBox1.Size = new System.Drawing.Size(182, 272);
             this.kryptonGroupBox1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonGroupBox1.TabIndex = 0;
             this.kryptonGroupBox1.Values.Heading = "Thông tin điểm khách hàng";
@@ -173,6 +145,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtDiemDaSuDung.StateCommon.Border.Rounding = 10F;
             this.txtDiemDaSuDung.TabIndex = 7;
+            this.txtDiemDaSuDung.Visible = false;
             // 
             // txtDiemTichLuy
             // 
@@ -196,15 +169,6 @@
             this.txtMaBangDiem.StateCommon.Border.Rounding = 10F;
             this.txtMaBangDiem.TabIndex = 4;
             this.txtMaBangDiem.TextChanged += new System.EventHandler(this.kryptonTextBox1_TextChanged);
-            // 
-            // kryptonLabel4
-            // 
-            this.kryptonLabel4.Location = new System.Drawing.Point(11, 250);
-            this.kryptonLabel4.Name = "kryptonLabel4";
-            this.kryptonLabel4.Size = new System.Drawing.Size(92, 16);
-            this.kryptonLabel4.StateCommon.ShortText.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel4.TabIndex = 3;
-            this.kryptonLabel4.Values.Text = "Điểm đã sử dụng";
             // 
             // kryptonLabel3
             // 
@@ -233,11 +197,37 @@
             this.kryptonLabel1.TabIndex = 0;
             this.kryptonLabel1.Values.Text = "Mã bảng điểm";
             // 
+            // MaBangDiem
+            // 
+            this.MaBangDiem.HeaderText = "Mã bảng điểm";
+            this.MaBangDiem.MinimumWidth = 6;
+            this.MaBangDiem.Name = "MaBangDiem";
+            this.MaBangDiem.ReadOnly = true;
+            // 
+            // MaKhachHang
+            // 
+            this.MaKhachHang.HeaderText = "Mã khách hàng";
+            this.MaKhachHang.MinimumWidth = 6;
+            this.MaKhachHang.Name = "MaKhachHang";
+            this.MaKhachHang.ReadOnly = true;
+            // 
+            // DiemTichLuy
+            // 
+            this.DiemTichLuy.HeaderText = "Điểm tích lũy";
+            this.DiemTichLuy.MinimumWidth = 6;
+            this.DiemTichLuy.Name = "DiemTichLuy";
+            // 
+            // DiemDaSuDung
+            // 
+            this.DiemDaSuDung.HeaderText = "Điểm đã sử dụng";
+            this.DiemDaSuDung.Name = "DiemDaSuDung";
+            this.DiemDaSuDung.Visible = false;
+            // 
             // DiemKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 353);
+            this.ClientSize = new System.Drawing.Size(580, 291);
             this.Controls.Add(this.kryptonPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DiemKhachHang";
@@ -262,7 +252,6 @@
         private Krypton.Toolkit.KryptonTextBox txtDiemDaSuDung;
         private Krypton.Toolkit.KryptonTextBox txtDiemTichLuy;
         private Krypton.Toolkit.KryptonTextBox txtMaBangDiem;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel4;
         private Krypton.Toolkit.KryptonLabel kryptonLabel3;
         private Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;

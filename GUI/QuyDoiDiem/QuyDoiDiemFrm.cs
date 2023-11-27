@@ -45,7 +45,7 @@ namespace pharmacy_management.GUI.QuyDoiDiem
             dtp_end.MaxDate = DateTime.Now.AddYears(0);
 
             //Console.WriteLine(dropBtn_KH.SelectedIndex);
-            khBUS.loadList();
+            khBUS.loadListActive();
             foreach (DTO.KhachHang kh in khBUS.getList())
             {
                 if (kh.MaKH == 1) { continue; }

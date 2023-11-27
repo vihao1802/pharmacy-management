@@ -65,7 +65,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(950, 140);
+            this.panel1.Size = new System.Drawing.Size(950, 128);
             this.panel1.TabIndex = 0;
             // 
             // txt_searching
@@ -85,8 +85,8 @@
             // 
             // kryptonButton1
             // 
-            this.kryptonButton1.CornerRoundingRadius = 50F;
-            this.kryptonButton1.Location = new System.Drawing.Point(882, 25);
+            this.kryptonButton1.CornerRoundingRadius = 5F;
+            this.kryptonButton1.Location = new System.Drawing.Point(822, 25);
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.Color.Gray;
             this.kryptonButton1.OverrideDefault.Back.Color2 = System.Drawing.Color.Gray;
@@ -97,9 +97,9 @@
             this.kryptonButton1.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.OverrideDefault.Border.Rounding = 50F;
+            this.kryptonButton1.OverrideDefault.Border.Rounding = 5F;
             this.kryptonButton1.OverrideDefault.Border.Width = 5;
-            this.kryptonButton1.Size = new System.Drawing.Size(40, 40);
+            this.kryptonButton1.Size = new System.Drawing.Size(100, 40);
             this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.Gray;
             this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.Gray;
             this.kryptonButton1.StateCommon.Border.Color1 = System.Drawing.Color.Gray;
@@ -107,7 +107,7 @@
             this.kryptonButton1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.StateCommon.Border.Rounding = 50F;
+            this.kryptonButton1.StateCommon.Border.Rounding = 5F;
             this.kryptonButton1.StateCommon.Border.Width = 5;
             this.kryptonButton1.StateNormal.Back.Image = global::pharmacy_management.Properties.Resources.icons8_report_24;
             this.kryptonButton1.StateNormal.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
@@ -120,7 +120,7 @@
             this.kryptonButton1.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.StateTracking.Border.Rounding = 50F;
+            this.kryptonButton1.StateTracking.Border.Rounding = 5F;
             this.kryptonButton1.StateTracking.Border.Width = 5;
             this.kryptonButton1.TabIndex = 14;
             this.toolTip_rpt.SetToolTip(this.kryptonButton1, "Report");
@@ -130,6 +130,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btn_refresh);
             this.panel2.Controls.Add(this.btn_increase_price);
             this.panel2.Controls.Add(this.label7);
@@ -328,10 +329,10 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 140);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 128);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20, 10, 25, 30);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(950, 510);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(950, 522);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // DonHangFrm
