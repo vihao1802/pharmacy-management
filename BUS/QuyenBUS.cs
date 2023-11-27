@@ -1,4 +1,5 @@
 ﻿using pharmacy_management.DAO;
+using pharmacy_management.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,6 +27,30 @@ namespace pharmacy_management.BUS
         public void loadList()
         {
             list = dao.GetALl();
+        }
+
+        public void add(Quyen DTO)
+        {
+            dao.add(DTO);
+        }
+
+        public void delete(int ma)
+        {
+            dao.delete(ma);
+        }
+
+        public void update(Quyen DTO, int ma)
+        {
+            dao.update(DTO, ma);
+        }
+        public string getTenfromMa(int ma)
+        {
+            foreach(Quyen q in list)
+            {
+                if (q.MaQuyen == ma)
+                    return q.TenQuyen;
+            }
+            return "";
         }
     }
 }

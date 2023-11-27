@@ -32,11 +32,11 @@ namespace pharmacy_management.GUI.BanHang
             lbl_NgayLap.Text = dh.NgayLap;
 
             NhanVienBUS nvBUS = new NhanVienBUS();
-            NhanVien nv = nvBUS.getNhanVien(dh.MaNV);
+            DTO.NhanVien nv = nvBUS.getNhanVien(dh.MaNV);
             lbl_TenNV.Text = nv.TenNV;
 
             KhachHangBUS khBUS = new KhachHangBUS();
-            KhachHang kh = khBUS.getKH(dh.MaKH);
+            DTO.KhachHang kh = khBUS.getKH(dh.MaKH);
             lbl_TenKH.Text = kh.TenKH;
             lbl_sdtKH.Text = kh.Sdt;
 
@@ -57,7 +57,7 @@ namespace pharmacy_management.GUI.BanHang
 
             QuyDoiDiemBUS qdBUS = new QuyDoiDiemBUS();
             PhieuGiamGiaBUS pgBUS = new PhieuGiamGiaBUS();
-            string percent = pgBUS.getPhanTramGiamBUS(qdBUS.getQDD(dh.MaQuyDoi).MaPhieuGiam);
+            string percent = pgBUS.getPhanTramGiamBUS(dh.MaQuyDoi);
             if (percent == "")
             {
                 lbl_Giam.Text = "0%";
