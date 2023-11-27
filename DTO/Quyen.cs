@@ -11,6 +11,14 @@ namespace pharmacy_management.DTO
         private int maQuyen;
         private string tenQuyen;
 
+        public Quyen() { }
+
+        public Quyen(string tenQuyen)
+        {
+            this.TenQuyen = tenQuyen;
+        }
+
+
         public Quyen(int maQuyen, string tenQuyen)
         {
             this.MaQuyen = maQuyen;

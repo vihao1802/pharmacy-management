@@ -16,7 +16,7 @@ namespace pharmacy_management.GUI
 {
     public partial class DoiMatKhau : KryptonForm
     {
-        private static NhanVien nv = new NhanVien();
+        private static DTO.NhanVien nv = new DTO.NhanVien();
         DangNhapBUS bus = new DangNhapBUS();
         public DoiMatKhau()
         {
@@ -47,6 +47,10 @@ namespace pharmacy_management.GUI
             }else if (txtpassnew.Text.Trim().Equals(txtpassold.Text))
             {
                 MessageBox.Show("Mật khẩu mới trùng mật khẩu cũ");
+                return;
+            }else if(txtpassnew.TextLength <6 || txtpassnew1.TextLength <6)
+            {
+                MessageBox.Show("Mật khẩu phải trên 6 ký tự");
                 return;
             }
                 if (txtpassold.Text.Equals(nv.MatKhau))

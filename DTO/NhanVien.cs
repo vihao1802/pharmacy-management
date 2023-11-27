@@ -18,6 +18,20 @@ namespace pharmacy_management.DTO
         private string matKhau;
         private int maQuyen;
 
+        public NhanVien() { }
+
+        public NhanVien(string tenNV, string sdt, string diaChi, string email, int trangThai, string tenDangNhap, string matKhau, int maQuyen)
+        {
+            this.TenNV = tenNV;
+            this.sdt = sdt;
+            this.DiaChi = diaChi;
+            this.Email = email;
+            this.TrangThai = trangThai;
+            this.TenDangNhap = tenDangNhap;
+            this.MatKhau = matKhau;
+            this.MaQuyen = maQuyen;
+        }
+
         public NhanVien(int maNV, string tenNV, string sdt, string diaChi, string email, int trangThai, string tenDangNhap, string matKhau, int maQuyen)
         {
             this.MaNV = maNV;
@@ -30,7 +44,7 @@ namespace pharmacy_management.DTO
             this.MatKhau = matKhau;
             this.MaQuyen = maQuyen;
         }
-        public NhanVien() { }
+        
         public int MaNV { get => maNV; set => maNV = value; }
         public string TenNV { get => tenNV; set => tenNV = value; }
         public string SDT { get => sdt; set => sdt = value; }

@@ -17,7 +17,7 @@ namespace pharmacy_management.BUS
         public NhanVienBUS()
         {
             dao = new NhanVienDAO();
-            //loadList();
+            loadList();
         }
 
         public ArrayList getList()
@@ -32,6 +32,25 @@ namespace pharmacy_management.BUS
         public NhanVien getNhanVien(int ma)
         {
             return dao.getNhanVien(ma);
+        }
+
+        public void add(NhanVien DTO)
+        {
+            dao.add(DTO);
+        }
+
+        public void delete(int ma)
+        {
+            dao.delete(ma);
+        }
+
+        public void update(NhanVien DTO, int ma)
+        {
+            dao.update(DTO, ma);
+        }
+        public NhanVien checkMail(string mail)
+        {
+            return dao.checkMail(mail);
         }
     }
 }
