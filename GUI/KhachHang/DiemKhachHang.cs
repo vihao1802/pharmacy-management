@@ -1,4 +1,5 @@
-﻿using pharmacy_management.BUS;
+﻿using Krypton.Toolkit;
+using pharmacy_management.BUS;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace pharmacy_management.GUI.KhachHang
 {
-    public partial class DiemKhachHang : Form
+    public partial class DiemKhachHang : KryptonForm
     {
         private ArrayList list;
         DiemKhachHangBUS bus = new DiemKhachHangBUS();

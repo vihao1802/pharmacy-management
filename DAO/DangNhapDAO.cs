@@ -36,7 +36,7 @@ namespace pharmacy_management.DAO
             try
             {
                 sqlcon.Open();
-                string query = "SELECT TenDangNhap, MatKhau FROM NhanVien WHERE TenDangNhap = @TenDangNhap AND MatKhau = @MatKhau";
+                string query = "SELECT TenDangNhap, MatKhau FROM NhanVien WHERE TenDangNhap = @TenDangNhap AND MatKhau = @MatKhau AND Trangthai=1";
                 SqlCommand cmd = new SqlCommand(query, sqlcon);
                 cmd.Parameters.AddWithValue("@TenDangNhap", username); // assuming txtUser is the textbox for username
                 cmd.Parameters.AddWithValue("@MatKhau", password); // assuming txtPass is the textbox for password
@@ -72,12 +72,18 @@ namespace pharmacy_management.DAO
             conn.ExecuteNonQuery(query);
 
         }
+        public void resetPass(NhanVien nv)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("UPDATE nhanvien SET MatKhau = '123' WHERE Email = '{0}'",nv.Email);
+            conn.ExecuteNonQuery(query);
+        }
         public NhanVien taikhoandangnhap(NhanVien nv)
         {
 
             sqlcon.Open();
             ConnectDB conn = new ConnectDB();
-            string query = "SELECT * FROM nhanvien where TenDangNhap = @username AND MatKhau = @password";
+            string query = "SELECT * FROM nhanvien where TenDangNhap = @username AND MatKhau = @password AND TrangThai =1";
             using (SqlCommand cmd = new SqlCommand(query, sqlcon))
             {
                 cmd.Parameters.AddWithValue("@username", nv.TenDangNhap);

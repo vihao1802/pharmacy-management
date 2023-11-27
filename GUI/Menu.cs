@@ -1,4 +1,4 @@
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,13 +21,15 @@ using pharmacy_management.GUI.Thuoc;
 using pharmacy_management.GUI.KhachHang;
 using pharmacy_management.GUI.NhanVien;
 using pharmacy_management.GUI.QuyDoiDiem;
+using pharmacy_management.BUS;
+using System.Xml.Schema;
 
 namespace pharmacy_management.GUI
 {
     public partial class Menu : KryptonForm
     {
         public static DTO.NhanVien nv = new DTO.NhanVien();
-
+        QuyenBUS qbus = new QuyenBUS();
         bool sidebarExpand;
         BanHangFrm bhFrm;
 
@@ -38,25 +40,28 @@ namespace pharmacy_management.GUI
             DashFrm dashFrm = new DashFrm();
             addFormtoPanelContainer(dashFrm);
             nv = Login.nv;
-            //   addControls();
+              addControls();
             lbName.Text = nv.TenNV;
+            lbquyen.Text = qbus.getTenfromMa(nv.MaQuyen);
 
         }
-        //private void addControls()
-        //{
-        //    if(nv.MaQuyen == 2)
-        //    {
-        //        btnStaff.Visible = false;
-        //        btnPill.Visible = false;
-        //        btnPN.Visible = false;
-        //        btnStorage.Visible = false;
-        //        btnVoucher.Visible = false;
-        //    }else if(nv.MaQuyen == 3)
-        //    {
-        //        btnCustomer.Visible = false;
+        private void addControls()
+        {
+            string quyen = qbus.getTenfromMa(nv.MaQuyen);
+            if (quyen.Equals("Nhân viên"))
+            {
+                btnStaff.Visible = false;
+                btnPill.Visible = false;
+                btnPN.Visible = false;
+                btnStorage.Visible = false;
+             
+            }
+            else if (quyen.Equals("Quản lý"))
+            {
+                btnCustomer.Visible = false;
 
-        //    }
-        //}
+            }
+        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -227,6 +232,11 @@ namespace pharmacy_management.GUI
         private void btnStaff_Click_1(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new frmNhanVien());
+        }
+
+        private void kryptonLabel4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
