@@ -1,4 +1,5 @@
 ﻿using System;
+using pharmacy_management.GUI.Thuoc;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,7 @@ namespace pharmacy_management.GUI.QLDoiTuong
             InitializeComponent();
             loadds();
             setup();
+            ckbTrangThai.Visible = false;
         }
 
         DoiTuongBUS bus = new DoiTuongBUS();
@@ -78,12 +80,7 @@ namespace pharmacy_management.GUI.QLDoiTuong
                 {
                     MessageBox.Show("Chưa điền tên đối tượng");
                     return;
-                }
-                if (!ckbTrangThai.Checked)
-                {
-                    MessageBox.Show("Thêm đối tượng phải đang hoạt động!!!");
-                    return;
-                }
+                }              
                 try
                 {
                     DoiTuong dt = new DoiTuong(txtTenDoiTuong.Text.ToString(), 1);
@@ -116,12 +113,7 @@ namespace pharmacy_management.GUI.QLDoiTuong
         private void btnSua_Click(object sender, EventArgs e)
         {
             int state;
-            if (DGVDoiTuong.SelectedRows.Count > 1)
-            {
-                MessageBox.Show("Chỉ chọn 1 đối tượng để sửa!");
-                return;
-            }
-            else if (DGVDoiTuong.SelectedRows.Count < 1)
+            if (DGVDoiTuong.SelectedRows.Count < 1)
             {
                 MessageBox.Show("Chưa chọn dòng để sửa!");
                 return;
@@ -149,23 +141,6 @@ namespace pharmacy_management.GUI.QLDoiTuong
             //DGVDoiTuong.Refresh();
         }
 
-        private void DGVDoiTuong_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (DGVDoiTuong.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-            {
-                DGVDoiTuong.CurrentRow.Selected = true;
-                // Lấy giá trị từ cột tương ứng và hiển thị lên TextBox
-                txtMaDoiTuong.Text = DGVDoiTuong.Rows[e.RowIndex].Cells["MaDT"].Value.ToString();
-                txtTenDoiTuong.Text = DGVDoiTuong.Rows[e.RowIndex].Cells["TenDT"].Value.ToString();
-                string temp = DGVDoiTuong.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString();
-                ckbTrangThai.Enabled = true;
-                if (temp.Equals("Active", StringComparison.OrdinalIgnoreCase))              
-                ckbTrangThai.Checked = true;                
-                else          
-                    ckbTrangThai.Checked = false;               
-            }
-        }
-
         private void xoabtn_Click(object sender, EventArgs e)
         {
             int ma = int.Parse(DGVDoiTuong.CurrentRow.Cells["MaDT"].Value.ToString());
@@ -187,7 +162,7 @@ namespace pharmacy_management.GUI.QLDoiTuong
                         txtTenDoiTuong.Text = "";
                         MessageBox.Show("Hủy kích hoạt đối tượng thành công!!!");
                         DGVDoiTuong.CurrentRow.Cells["TrangThai"].Value = "Not Active";
-                        ckbTrangThai.Checked = true; 
+                        ckbTrangThai.Checked = false; 
                         foreach (DTO.Thuoc item in thuocbus.getList())
                         {
                             if (ma == item.MaDoiTuong)
@@ -202,17 +177,6 @@ namespace pharmacy_management.GUI.QLDoiTuong
             }
         }
 
-        private void DGVDoiTuong_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DGVDoiTuong.ClearSelection();
-            txtMaDoiTuong.Text = "";
-            txtTenDoiTuong.Text = "";
-        }
-
-        private void cbbSearch_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void searchbtn_Click(object sender, EventArgs e)
         {
@@ -273,6 +237,107 @@ namespace pharmacy_management.GUI.QLDoiTuong
         {
             loadds();
             flag = 1;
+        }
+
+     
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Create a new instance of Excel application
+                Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlApp.Visible = true;
+
+                // Create a new workbook
+                Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Add(Type.Missing);
+
+                // Get the active sheet
+                Microsoft.Office.Interop.Excel.Worksheet xlWorksheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkbook.ActiveSheet;
+
+                // Column headers
+                string[] headers = { "MaDT", "TenDT", "TrangThai" };
+
+                // Add column headers
+                for (int j = 0; j < headers.Length; j++)
+                {
+                    xlWorksheet.Cells[1, j + 1] = headers[j];
+                    xlWorksheet.Columns[j + 1].ColumnWidth = DGVDoiTuong.Columns[headers[j]].Width / 7; // Adjust column width based on DataGridView column width
+                    xlWorksheet.Columns[j + 1].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter; // Center align the column
+                }
+
+                // Loop through each row in the DataGridView
+                for (int i = 0; i < DGVDoiTuong.Rows.Count; i++)
+                {
+                    // Loop through each column in the DataGridView
+                    for (int j = 0; j < headers.Length; j++)
+                    {
+                        // Populate Excel cells with data from the DataGridView
+                        object value = DGVDoiTuong.Rows[i].Cells[headers[j]].Value;
+
+                        // Format cells based on data types
+                        if (value != null)
+                        {
+                            if (headers[j] == "TenDT") // Assuming SDT is the column name for phone number
+                                xlWorksheet.Cells[i + 2, j + 1] = "'" + value.ToString(); // Prepend with a single quote to treat it as text                        
+                            else if (headers[j] == "MaDT") // Assuming MaKH is the column name for customer ID
+                                xlWorksheet.Cells[i + 2, j + 1] = Convert.ToInt32(value);
+                            else
+                                xlWorksheet.Cells[i + 2, j + 1] = value;
+
+                            xlWorksheet.Cells[i + 2, j + 1].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter; // Center align the cell
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        private void DGVDoiTuong_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ckbTrangThai.Visible = true;
+            DGVDoiTuong.CurrentRow.Selected = true;
+            // Lấy giá trị từ cột tương ứng và hiển thị lên TextBox
+            txtMaDoiTuong.Text = DGVDoiTuong.CurrentRow.Cells["MaDT"].Value.ToString();
+            txtTenDoiTuong.Text = DGVDoiTuong.CurrentRow.Cells["TenDT"].Value.ToString();
+            string temp = DGVDoiTuong.CurrentRow.Cells["TrangThai"].Value.ToString();
+            ckbTrangThai.Enabled = true;
+            if (temp.Equals("Active", StringComparison.OrdinalIgnoreCase))
+                ckbTrangThai.Checked = true;
+            else
+                ckbTrangThai.Checked = false;
+        }
+
+        private void addFormtoPanelContainer(object Form)
+        {
+            if (this.kryptonPanel1.Controls.Count > 0)
+            {
+                this.kryptonPanel1.Controls.Clear();
+
+                Form f = Form as Form;
+                f.TopLevel = false;
+                f.Dock = DockStyle.Fill;
+                this.kryptonPanel1.Controls.Add(f);
+                this.kryptonPanel1.Tag = f;
+                f.Show();
+            }
+        }
+
+        private void DGVDoiTuong_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ckbTrangThai.Visible = false;
+            DGVDoiTuong.ClearSelection();
+            txtMaDoiTuong.Text = "";
+            txtTenDoiTuong.Text = "";
+        }
+
+        private void backlbl_MouseClick(object sender, MouseEventArgs e)
+        {
+            FormThuoc formthuoc = new FormThuoc();
+            addFormtoPanelContainer(formthuoc);
         }
     }
 }

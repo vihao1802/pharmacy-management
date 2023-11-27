@@ -24,6 +24,7 @@ using pharmacy_management.GUI.QuyDoiDiem;
 using pharmacy_management.BUS;
 using System.Xml.Schema;
 
+
 namespace pharmacy_management.GUI
 {
     public partial class Menu : KryptonForm
@@ -37,31 +38,36 @@ namespace pharmacy_management.GUI
         {
             InitializeComponent();
 
-            DashFrm dashFrm = new DashFrm();
+
+             DashFrm dashFrm = new DashFrm();
+            addFormtoPanelContainer(dashFrm );
+             nv = Login.nv;
+         //   addControls();
+             lbName.Text = nv.TenNV;
+
+          /*  DashFrm dashFrm = new DashFrm();
             addFormtoPanelContainer(dashFrm);
             nv = Login.nv;
               addControls();
-            lbName.Text = nv.TenNV;
-            lbquyen.Text = qbus.getTenfromMa(nv.MaQuyen);
+            lbName.Text = nv.TenNV;*/
+
 
         }
-        private void addControls()
-        {
-            string quyen = qbus.getTenfromMa(nv.MaQuyen);
-            if (quyen.Equals("Nhân viên"))
-            {
-                btnStaff.Visible = false;
-                btnPill.Visible = false;
-                btnPN.Visible = false;
-                btnStorage.Visible = false;
-             
-            }
-            else if (quyen.Equals("Quản lý"))
-            {
-                btnCustomer.Visible = false;
+        //private void addControls()
+        //{
+        //    if(nv.MaQuyen == 2)
+        //    {
+        //        btnStaff.Visible = false;
+        //        btnPill.Visible = false;
+        //        btnPN.Visible = false;
+        //        btnStorage.Visible = false;
+        //        btnVoucher.Visible = false;
+        //    }else if(nv.MaQuyen == 3)
+        //    {
+        //        btnCustomer.Visible = false;
 
-            }
-        }
+        //    }
+        //}
 
         private void btnClose_Click(object sender, EventArgs e)
         {

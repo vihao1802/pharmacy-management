@@ -100,5 +100,10 @@ namespace pharmacy_management.GUI.KhachHang
             txtDiemTichLuy.Clear();
             //txtDiemThem.Clear();
         }
+
+        private void DiemKhachHang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -22,8 +22,13 @@ namespace pharmacy_management.DAO
         }
         void KetNoiCSDL()
         {
-            ConnectDB conn = new ConnectDB();
-            sqlcon = conn.KetNoiCSDL();
+            string conn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc;Integrated Security = True";
+            sqlcon = new SqlConnection(conn);
+
+            /*ConnectDB conn = new ConnectDB();
+
+            sqlcon = conn.KetNoiCSDL();*/
+
         }
         //void KetNoiCSDL()
         //{
