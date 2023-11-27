@@ -24,11 +24,13 @@ namespace pharmacy_management.GUI.BanHang
         DiemKhachHangBUS dkhBUS = new DiemKhachHangBUS();
         List<DTO.Thuoc> list_cart;
         private float total_price = 0;
-        public static NhanVien nv = new NhanVien();
-        public GioHangFrm()
+        public static DTO.NhanVien nv = new DTO.NhanVien();
+        BanHangFrm bhFrm;
+        public GioHangFrm(BanHangFrm bh)
         {
             InitializeComponent();
             nv = Login.nv;
+            this.bhFrm = bh;
             setup();
         }
         public void load_QuyDoiDiem()
@@ -57,7 +59,7 @@ namespace pharmacy_management.GUI.BanHang
             KhachHangBUS khBUS = new KhachHangBUS();
             //Console.WriteLine(dropBtn_KH.SelectedIndex);
             khBUS.loadList();
-            foreach (KhachHang kh in khBUS.getList())
+            foreach (DTO.KhachHang kh in khBUS.getList())
             {
                 string item_name = kh.MaKH.ToString() + "_" + kh.TenKH;
                 dropBtn_KH.Items.Add(item_name);
@@ -154,6 +156,8 @@ namespace pharmacy_management.GUI.BanHang
             load_QuyDoiDiem();
             load_diemTichLuy();
             AddCart();
+            this.bhFrm.setEmpty();
+            this.bhFrm.pagination();
             MessageBox.Show("Thanh toán thành công!");
         }
 

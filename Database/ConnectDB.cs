@@ -20,6 +20,8 @@ namespace pharmacy_management.Database
             //string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc; Max Pool Size=1000;Integrated Security = True";
             // @author Duc
             //string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
+            //@author an
+            //string strCnn = "Data Source=DESKTOP-F74SIEE;Initial Catalog=ql_nhathuoc;Max Pool Size=1000;Integrated Security=True";
             sqlConn = new SqlConnection(strCnn);
         }
 
@@ -31,6 +33,8 @@ namespace pharmacy_management.Database
             //string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc;Integrated Security = True";
             // @author Duc
             //string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Integrated Security=True";
+            //@author an
+            //string strCnn = "Data Source=DESKTOP-F74SIEE;Initial Catalog=ql_nhathuoc;Max Pool Size=1000;Integrated Security=True";
             sqlConn = new SqlConnection(strCnn);
             return sqlConn;
         }
@@ -61,6 +65,27 @@ namespace pharmacy_management.Database
             {
                 sqlConn.Close();
 
+            }
+        }
+
+        public object ExecuteScalar(string strSQL)
+        {
+            try
+            {
+                using (SqlCommand sqlcmd = new SqlCommand(strSQL, sqlConn))
+                {
+                    sqlConn.Open();
+                    return sqlcmd.ExecuteScalar();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error at ConnectDB.cs: " + ex.Message);
+                return null;
+            }
+            finally
+            {
+                sqlConn.Close();
             }
         }
 

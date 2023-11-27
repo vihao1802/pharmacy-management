@@ -80,5 +80,29 @@ namespace pharmacy_management.DAO
             return kh;
 
         }
+
+        public void add(KhachHang DTO)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("INSERT INTO KHACHHANG (TenKH, SDT, NgaySinh, TrangThai) VALUES (N'{0}', '{1}', '{2}', {3})", DTO.TenKH, DTO.Sdt, DTO.NgaySinh, 1);
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
+        }
+
+        public void delete(int ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = "UPDATE KHACHHANG SET TrangThai = 0 WHERE MaKH = " + ma;
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
+        }
+
+        public void update(KhachHang DTO, int ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("UPDATE KHACHHANG SET TenKH = N'{0}', SDT = '{1}', NgaySinh = '{2}', TrangThai = {3} WHERE MaKH = {4}", DTO.TenKH, DTO.Sdt, DTO.NgaySinh, DTO.TrangThai, ma);
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
+        }
     }
 }

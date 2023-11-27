@@ -33,6 +33,8 @@ namespace pharmacy_management
             Application.Run();
             //Application.Run(new GUI.QuyDoiDiem.QuyDoiDiemFrm());
             //Application.Run(new GUI.Menu());
+            //Application.Run(new GUI.NhanVien.frmNhanVien());
+            // Application.Run(new GUI.KhachHang.KhachHangfrm());
 
         }
     }

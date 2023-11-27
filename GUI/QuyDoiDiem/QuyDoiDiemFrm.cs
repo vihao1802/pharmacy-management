@@ -19,7 +19,7 @@ namespace pharmacy_management.GUI.QuyDoiDiem
         KhachHangBUS khBUS = new KhachHangBUS();
         PhieuGiamGiaBUS pggBUS = new PhieuGiamGiaBUS();
         DiemKhachHangBUS dkhBUS = new DiemKhachHangBUS();
-        int soLuongChonDiem = 5;
+        int soLuongChonDiem = 10;
         public QuyDoiDiemFrm()
         {
             InitializeComponent();
@@ -46,7 +46,7 @@ namespace pharmacy_management.GUI.QuyDoiDiem
 
             //Console.WriteLine(dropBtn_KH.SelectedIndex);
             khBUS.loadList();
-            foreach (KhachHang kh in khBUS.getList())
+            foreach (DTO.KhachHang kh in khBUS.getList())
             {
                 if (kh.MaKH == 1) { continue; }
                 string item_name = kh.MaKH.ToString() + "_" + kh.TenKH;
