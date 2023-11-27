@@ -23,7 +23,7 @@ namespace pharmacy_management.DAO
             ArrayList arrayList = new ArrayList();
 
             ConnectDB conn = new ConnectDB();
-            string query = string.Format("SELECT * FROM quydoidiem WHERE (MaPhieuGiam LIKE '%{2}%' OR MaKH LIKE '%{2}%' OR MaQuyDoi LIKE '%{2}%') AND NgayQuyDoi BETWEEN '{0}' AND '{1}'", dateStart, dateEnd, search);
+            string query = string.Format("SELECT * FROM quydoidiem WHERE ( MaKH LIKE '%{2}%' OR MaQuyDoi LIKE '%{2}%') AND NgayQuyDoi BETWEEN '{0}' AND '{1}'", dateStart, dateEnd, search);
             SqlDataReader reader = conn.Execute(query);
             try
             {
@@ -47,7 +47,6 @@ namespace pharmacy_management.DAO
                         Int32.Parse(reader["MaQuyDoi"].ToString()),
                         Int32.Parse(reader["MaKH"].ToString()),
                         outputString,
-                        Int32.Parse(reader["MaPhieuGiam"].ToString()),
                         Int32.Parse(reader["DaSuDung"].ToString())
 
                     );
@@ -91,7 +90,6 @@ namespace pharmacy_management.DAO
                         Int32.Parse(reader["MaQuyDoi"].ToString()),
                         Int32.Parse(reader["MaKH"].ToString()),
                         outputString,
-                        Int32.Parse(reader["MaPhieuGiam"].ToString()),
                         Int32.Parse(reader["DaSuDung"].ToString())
 
                     );
@@ -119,10 +117,10 @@ namespace pharmacy_management.DAO
             conn.ExecuteNonQuery(query);
         }
 
-        public void insertItem(string maKH, string date, string maPG)
+        public void insertItem(string maKH, string date)
         {
             ConnectDB conn = new ConnectDB();
-            string query = string.Format("INSERT INTO quydoidiem VALUES('{0}','{1}','{2}','0')", maKH, date, maPG);
+            string query = string.Format("INSERT INTO quydoidiem VALUES('{0}','{1}','0')", maKH, date);
             Console.WriteLine(query);
             conn.ExecuteNonQuery(query);
         }
@@ -141,7 +139,6 @@ namespace pharmacy_management.DAO
                         Int32.Parse(reader["MaQuyDoi"].ToString()),
                         Int32.Parse(reader["MaKH"].ToString()),
                         reader["NgayQuyDoi"].ToString(),
-                        Int32.Parse(reader["MaPhieuGiam"].ToString()),
                         Int32.Parse(reader["DaSuDung"].ToString())
 
                     );
@@ -152,6 +149,35 @@ namespace pharmacy_management.DAO
                 reader.Close();
 
                 Console.WriteLine("An error at QuyDoiDiemDAO getQDD: " + ex.Message);
+            }
+
+            return qdd;
+        }
+
+        public QuyDoiDiem getItem()
+        {
+            QuyDoiDiem qdd = new QuyDoiDiem();
+            ConnectDB conn = new ConnectDB();
+            string query = "SELECT TOP 1 MaQuyDoi FROM quydoidiem ORDER BY MaQuyDoi DESC";
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                if (reader.Read())
+                {
+                    qdd = new QuyDoiDiem(
+                        Int32.Parse(reader["MaQuyDoi"].ToString()),
+                        0,
+                        "",
+                        0
+
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at QuyDoiDiemDAO getItem: " + ex.Message);
             }
 
             return qdd;

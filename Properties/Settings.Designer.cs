@@ -26,7 +26,7 @@ namespace pharmacy_management.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-ULQT60JG;Initial Catalog=ql_nhathuoc;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source= DESKTOP-F74SIEE;Initial Catalog=ql_nhathuoc;Integrated Security=True")]
         public string ql_nhathuocConnectionString {
             get {
                 return ((string)(this["ql_nhathuocConnectionString"]));
