@@ -18,13 +18,15 @@ using pharmacy_management.GUI.BanHang;
 using pharmacy_management.GUI.NhapHang;
 using pharmacy_management.GUI.Dash;
 using pharmacy_management.GUI.Thuoc;
+using pharmacy_management.GUI.KhachHang;
+using pharmacy_management.GUI.NhanVien;
 using pharmacy_management.GUI.QuyDoiDiem;
 
 namespace pharmacy_management.GUI
 {
     public partial class Menu : KryptonForm
     {
-        public static NhanVien nv = new NhanVien();
+        public static DTO.NhanVien nv = new DTO.NhanVien();
 
         bool sidebarExpand;
         BanHangFrm bhFrm;
@@ -36,7 +38,7 @@ namespace pharmacy_management.GUI
             DashFrm dashFrm = new DashFrm();
             addFormtoPanelContainer(dashFrm);
             nv = Login.nv;
-            //addControls();
+            //   addControls();
             lbName.Text = nv.TenNV;
 
         }
@@ -103,6 +105,7 @@ namespace pharmacy_management.GUI
             btnCustomer.Enabled = flag;
             kryptonButton1.Enabled = flag;
             btnPN.Enabled = flag;
+            btnCoupon.Enabled = flag;
         }
         private void addFormtoPanelContainer(object Form)
         {
@@ -207,6 +210,23 @@ namespace pharmacy_management.GUI
         {
             DoiMatKhau doiMatKhau = new DoiMatKhau();
             doiMatKhau.Show();
+        }
+
+        private void btnCoupon_Click(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new PhieuGiamGiaFrm());
+            btnCoupon.Enabled = false;
+        }
+
+        private void btnCustomer_Click_1(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new KhachHangfrm());
+
+        }
+
+        private void btnStaff_Click_1(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new frmNhanVien());
         }
     }
 

@@ -332,7 +332,7 @@
             this.Controls.Add(this.Banners);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DashFrm";
-            this.Text = "DashFrm";
+            this.Text = "9";
             ((System.ComponentModel.ISupportInitialize)(this.TKdoanhthu)).EndInit();
             this.TKdoanhthu.ResumeLayout(false);
             this.TKdoanhthu.PerformLayout();

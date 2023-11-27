@@ -39,7 +39,7 @@ namespace pharmacy_management.GUI.Dash
         }
 
 
-        
+
         private void timer_tick(object sender, EventArgs e)
         {
             counter++;

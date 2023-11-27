@@ -46,5 +46,29 @@ namespace pharmacy_management.DAO
             return arrayList;
 
         }
+
+        public void add(Quyen DTO)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("INSERT INTO QUYEN (TenQuyen) VALUES (N'{0}')", DTO.TenQuyen);
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
+        }
+
+        public void delete(int ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = "DELETE FROM QUYEN WHERE MaQuyen = " + ma;
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
+        }
+
+        public void update(Quyen DTO, int ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("UPDATE QUYEN SET TenQuyen = N'{0}' WHERE MaQuyen = {1}", DTO.TenQuyen, ma);
+            Console.WriteLine(query);
+            conn.ExecuteNonQuery(query);
+        }
     }
 }

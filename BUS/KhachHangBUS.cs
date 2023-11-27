@@ -17,7 +17,7 @@ namespace pharmacy_management.BUS
         public KhachHangBUS()
         {
             dao = new KhachHangDAO();
-            //loadList();
+            loadList();
         }
 
         public ArrayList getList()
@@ -32,6 +32,21 @@ namespace pharmacy_management.BUS
         public KhachHang getKH(int ma)
         {
             return dao.getKH(ma);
+        }
+
+        public void add(KhachHang DTO)
+        {
+            dao.add(DTO);
+        }
+
+        public void delete(int ma)
+        {
+            dao.delete(ma);
+        }
+
+        public void update(KhachHang DTO, int ma)
+        {
+            dao.update(DTO, ma);
         }
     }
 }

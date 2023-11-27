@@ -17,6 +17,10 @@ namespace pharmacy_management.DAO
         SqlConnection sqlcon;
         public ThongKeDAO()
         {
+            KetNoiCSDL();
+        }
+        void KetNoiCSDL()
+        {
             ConnectDB conn = new ConnectDB();
             sqlcon = conn.KetNoiCSDL();
         }
