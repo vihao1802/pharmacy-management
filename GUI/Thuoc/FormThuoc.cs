@@ -58,7 +58,12 @@ namespace pharmacy_management.GUI.Thuoc
                         return true;*/
             return result;
         }
-
+        public void setEnable(bool flag)
+        {
+            btnThem.Enabled = flag;
+            btnSua.Enabled = !flag;
+            btnXoa.Enabled = !flag;
+        }
 
         public void setup()
         {
@@ -81,7 +86,7 @@ namespace pharmacy_management.GUI.Thuoc
             cbbSearch.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbSearch.AutoCompleteMode = AutoCompleteMode.None;
             cbbSearch.AutoCompleteSource = AutoCompleteSource.ListItems;
-
+            setEnable(true);
         }
         private void loadds()
         {
@@ -402,6 +407,7 @@ namespace pharmacy_management.GUI.Thuoc
                 {
                     ckbTrangThai.Checked = false;
                 }
+                setEnable(false);
             }
         }
 
@@ -410,6 +416,7 @@ namespace pharmacy_management.GUI.Thuoc
 
             Refreshtxt();
             ckbTrangThai.Visible = false;
+            setEnable(true);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -502,7 +509,7 @@ namespace pharmacy_management.GUI.Thuoc
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
             FrmDoiTuong frmdoituong = new FrmDoiTuong();
-           addFormtoPanelContainer(frmdoituong);
+            addFormtoPanelContainer(frmdoituong);
 
         }
 

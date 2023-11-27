@@ -97,7 +97,7 @@
             this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(51, 478);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(283, 500);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(285, 500);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // btnSell
@@ -160,7 +160,7 @@
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
             this.kryptonButton1.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonButton1.Size = new System.Drawing.Size(320, 69);
+            this.kryptonButton1.Size = new System.Drawing.Size(240, 69);
             this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonButton1.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.Voucher;
@@ -542,6 +542,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(59, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -550,6 +551,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // PnProfile
             // 

@@ -29,7 +29,7 @@ namespace pharmacy_management.GUI.NhanVien
         {
             InitializeComponent();
             loads();
-           
+
             cbxMaQuyen.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxMaQuyen.AutoCompleteMode = AutoCompleteMode.None;
             cbxMaQuyen.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -40,6 +40,8 @@ namespace pharmacy_management.GUI.NhanVien
                 string temp = dt.TenQuyen;
                 cbxMaQuyen.Items.Add(temp);
             }
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
         }
 
         private void RefreshTextBox()
@@ -62,8 +64,12 @@ namespace pharmacy_management.GUI.NhanVien
             ckbTrangThai.Enabled = false;
             ckbTrangThai.Checked = true;
             btnThem.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
             txtTenDangNhap.Enabled = true;
             ckbTrangThai.Visible = false;
+            label8.Visible = true;
+            txtMatKhau.Visible = true;
             nhanvienDataGridView.ClearSelection();
         }
 
@@ -83,7 +89,6 @@ namespace pharmacy_management.GUI.NhanVien
                 int trangthai = item.TrangThai;
                 string temp = (trangthai == 1) ? "Đang hoạt động" : "Dừng hoạt động";
                 string tendangnhap = item.TenDangNhap;
-                string matkhau = item.MatKhau;
                 int maquyen = item.MaQuyen;
                 string tenquyen = "";
 
@@ -101,14 +106,14 @@ namespace pharmacy_management.GUI.NhanVien
 
 
 
-                nhanvienDataGridView.Rows.Add(ma, ten, sdt, diachi, email, temp, tendangnhap, matkhau, tenquyen);
+                nhanvienDataGridView.Rows.Add(ma, ten, sdt, diachi, email, tendangnhap, temp, tenquyen);
             }
         }
-        
+
 
         private void nhanvienDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private bool IsPhoneNumberExists(string phoneNumber)
@@ -307,7 +312,7 @@ namespace pharmacy_management.GUI.NhanVien
                     }
                 }
 
-                
+
 
                 //Kiểm tra mã quyền
                 if (cbxMaQuyen.Text == "")
@@ -578,7 +583,7 @@ namespace pharmacy_management.GUI.NhanVien
                 Microsoft.Office.Interop.Excel.Worksheet xlWorksheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkbook.ActiveSheet;
 
                 // Column headers
-                string[] headers = { "MaNV", "TenNV", "SDT", "DiaChi", "Email", "TrangThai", "TenDangNhap", "MatKhau", "MaQuyen" };
+                string[] headers = { "MaNV", "TenNV", "SDT", "DiaChi", "Email", "TenDangNhap", "TrangThai", "MaQuyen" };
 
                 // Add column headers
                 for (int j = 0; j < headers.Length; j++)
@@ -623,7 +628,7 @@ namespace pharmacy_management.GUI.NhanVien
 
         private void nhanvienDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void kryptonButton1_Click(object sender, EventArgs e)
@@ -656,7 +661,6 @@ namespace pharmacy_management.GUI.NhanVien
                     txtDiaChi.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["DiaChi"].Value.ToString();
                     txtEmail.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["Email"].Value.ToString();
                     txtTenDangNhap.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["TenDangNhap"].Value.ToString();
-                    txtMatKhau.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["MatKhau"].Value.ToString();
                     cbxMaQuyen.Text = nhanvienDataGridView.Rows[e.RowIndex].Cells["MaQuyen"].Value.ToString();
                     string temp = nhanvienDataGridView.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString();
                     ckbTrangThai.Enabled = true;
@@ -671,6 +675,10 @@ namespace pharmacy_management.GUI.NhanVien
                         ckbTrangThai.Checked = false;
                     }
                     ckbTrangThai.Visible = true;
+                    label8.Visible = false;
+                    txtMatKhau.Visible = false;
+                    btnSua.Enabled = true;
+                    btnXoa.Enabled = true;
                 }
             }
         }
