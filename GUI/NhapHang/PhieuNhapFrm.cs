@@ -1,6 +1,7 @@
 ﻿using pharmacy_management.BUS;
 using pharmacy_management.DTO;
 using pharmacy_management.GUI.BanHang;
+using pharmacy_management.GUI.Report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace pharmacy_management.GUI.NhapHang
     public partial class PhieuNhapFrm : Form
     {
         PhieuNhapRow pnRow;
+        PhieuNhapBUS pnBUS = new PhieuNhapBUS();
+        NhanVienBUS nvBUS = new NhanVienBUS();
         public PhieuNhapFrm()
         {
             InitializeComponent();
@@ -25,7 +28,7 @@ namespace pharmacy_management.GUI.NhapHang
         public void setup()
         {
             dtp_start.MaxDate = DateTime.Now.AddYears(0);
-            dtp_start.Value = DateTime.Now.AddDays(-100);
+            dtp_start.Value = DateTime.Parse("1990-01-01");
             dtp_end.MinDate = dtp_start.Value;
             dtp_end.MaxDate = DateTime.Now.AddYears(0);
 
@@ -36,99 +39,176 @@ namespace pharmacy_management.GUI.NhapHang
         public void setEmpty()
         {
             //flowLayoutPanel1.Controls.Clear();
-            var controlsToRemove = flowLayoutPanel1.Controls.OfType<PhieuNhapRow>().ToList();
+            //var controlsToRemove = flowLayoutPanel1.Controls.OfType<PhieuNhapRow>().ToList();
 
-            foreach (var control in controlsToRemove)
-            {
-                flowLayoutPanel1.Controls.Remove(control);
-                control.Dispose();
-            }
+            //foreach (var control in controlsToRemove)
+            //{
+            //    flowLayoutPanel1.Controls.Remove(control);
+            //    control.Dispose();
+            //}
+
+            this.gd_PhieuNhap.Rows.Clear();
 
         }
         public void load_invoice()
         {
-            PhieuNhapBUS pnBUS = new PhieuNhapBUS();
 
             DateTime dateStart = dtp_start.Value;
             string formattedDateStart = dateStart.ToString("yyyy-MM-dd");
             DateTime dateEnd = dtp_end.Value;
             string formattedDateEnd = dateEnd.ToString("yyyy-MM-dd");
-            //Console.WriteLine(formattedDateStart + "," + formattedDateEnd);
             pnBUS.loadList(formattedDateStart, formattedDateEnd, txt_searching.Text.Trim());
             foreach (PhieuNhap pn in pnBUS.getList())
             {
-                pnRow = new PhieuNhapRow();
-                pnRow.AddNewContent(pn);
-                this.flowLayoutPanel1.Controls.Add(pnRow);
+               
+                string tenNV = nvBUS.getNhanVien(pn.MaNV).TenNV;
+
+                string formattedNumber = pn.TongTien.ToString("#,##0") + " đ";
+                this.gd_PhieuNhap.Rows.Add(pn.MaPN, tenNV,pn.NgayLap, formattedNumber);
+
             }
         }
 
-        public void load_invoice_price_ascend()
+        /*public void load_invoice_price_ascend()
         {
-            PhieuNhapBUS pnBUS = new PhieuNhapBUS();
 
             DateTime dateStart = dtp_start.Value;
             string formattedDateStart = dateStart.ToString("yyyy-MM-dd");
             DateTime dateEnd = dtp_end.Value;
             string formattedDateEnd = dateEnd.ToString("yyyy-MM-dd");
 
-            pnBUS.loadList_price_ascend(formattedDateStart, formattedDateEnd, txt_searching.Text.Trim());
+            dhBUS.loadList_price_ascend(formattedDateStart, formattedDateEnd, txt_searching.Text.Trim());
             //Console.WriteLine(formattedDateStart + "," + formattedDateEnd);
 
-            foreach (PhieuNhap pn in pnBUS.getList())
+            foreach (PhieuNhap dh in dhBUS.getList())
             {
-                pnRow = new PhieuNhapRow();
-                pnRow.AddNewContent(pn);
-                this.flowLayoutPanel1.Controls.Add(pnRow);
+                dhRow = new PhieuNhapRow();
+                dhRow.AddNewContent(dh);
+                this.flowLayoutPanel1.Controls.Add(dhRow);
             }
-        }
-        public void load_invoice_id_descend()
+        }*/
+        /*public void load_invoice_id_descend()
         {
-            PhieuNhapBUS pnBUS = new PhieuNhapBUS();
 
             DateTime dateStart = dtp_start.Value;
             string formattedDateStart = dateStart.ToString("yyyy-MM-dd");
             DateTime dateEnd = dtp_end.Value;
             string formattedDateEnd = dateEnd.ToString("yyyy-MM-dd");
 
-            pnBUS.load_invoice_id_descend(formattedDateStart, formattedDateEnd, txt_searching.Text.Trim());
+            dhBUS.load_invoice_id_descend(formattedDateStart, formattedDateEnd, txt_searching.Text.Trim());
             //Console.WriteLine(formattedDateStart + "," + formattedDateEnd);
 
-            foreach (PhieuNhap pn in pnBUS.getList())
+            foreach (PhieuNhap dh in dhBUS.getList())
             {
-                pnRow = new PhieuNhapRow();
-                pnRow.AddNewContent(pn);
-                this.flowLayoutPanel1.Controls.Add(pnRow);
+                dhRow = new PhieuNhapRow();
+                dhRow.AddNewContent(dh);
+                this.flowLayoutPanel1.Controls.Add(dhRow);
             }
-        }
+        }*/
         private void dtp_start_ValueChanged(object sender, EventArgs e)
         {
             dtp_end.MinDate = dtp_start.Value;
+            setEmpty();
+            load_invoice();
         }
 
-        private void btn_increase_price_Click(object sender, EventArgs e)
+      
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void txt_searching_TextChanged(object sender, EventArgs e)
         {
             setEmpty();
-            load_invoice_price_ascend();
+            load_invoice();
+        }
+
+        private void gd_PhieuNhap_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            foreach (PhieuNhap dh in pnBUS.getList())
+            {
+                if (dh.MaPN.ToString() == gd_PhieuNhap.CurrentRow.Cells["MaPN"].Value.ToString())
+                {
+                    ChiTietPhieuNhapFrm f = new ChiTietPhieuNhapFrm();
+                    f.AddNewContent(dh);
+                    f.Show();
+                    break;
+                }
+            }
+        }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Create a new instance of Excel application
+                Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlApp.Visible = true;
+
+                // Create a new workbook
+                Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Add(Type.Missing);
+
+                // Get the active sheet
+                Microsoft.Office.Interop.Excel.Worksheet xlWorksheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkbook.ActiveSheet;
+
+                // Column headers
+                string[] headers = { "MaPN", "MaNV","Ngay", "TongTien" };
+
+                // Add column headers
+                for (int j = 0; j < headers.Length; j++)
+                {
+                    xlWorksheet.Cells[1, j + 1] = headers[j];
+                    xlWorksheet.Columns[j + 1].ColumnWidth = gd_PhieuNhap.Columns[headers[j]].Width / 7; // Adjust column width based on DataGridView column width
+                    xlWorksheet.Columns[j + 1].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter; // Center align the column
+                }
+
+                // Loop through each row in the DataGridView
+                for (int i = 0; i < gd_PhieuNhap.Rows.Count; i++)
+                {
+                    // Loop through each column in the DataGridView
+                    for (int j = 0; j < headers.Length; j++)
+                    {
+                        // Populate Excel cells with data from the DataGridView
+                        object value = gd_PhieuNhap.Rows[i].Cells[headers[j]].Value;
+
+                        // Format cells based on data types
+                        if (value != null)
+                        {
+                            if (headers[j] == "MaPN")
+                                xlWorksheet.Cells[i + 2, j + 1] = Convert.ToInt32(value);
+                            else
+                                xlWorksheet.Cells[i + 2, j + 1] = value;
+
+                            xlWorksheet.Cells[i + 2, j + 1].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter; // Center align the cell
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        private void gd_PhieuNhap_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             setEmpty();
-            load_invoice();
+            txt_searching.Text = "";
+            setup();
         }
 
-        private void btn_filter_Click(object sender, EventArgs e)
+        private void dtp_end_ValueChanged(object sender, EventArgs e)
         {
             setEmpty();
             load_invoice();
-        }
-
-        private void btn_descend_PhieuNhap_Click(object sender, EventArgs e)
-        {
-            setEmpty();
-            load_invoice_id_descend();
         }
     }
 }
+
 
