@@ -30,8 +30,7 @@ namespace pharmacy_management.GUI.KhachHang
             InitializeComponent();
             loads();
 
-            btnSua.Enabled = false;
-            btnXoa.Enabled = false;
+            btnSua.Enabled = false;         
             label5.Visible = false;
             lbl_DiemKH.Visible = false;
         }
@@ -61,8 +60,7 @@ namespace pharmacy_management.GUI.KhachHang
             txtNgaySinh.MinDate = new DateTime(1900, 01, 01);
             ckbTrangThai.Checked = true;
             btnThem.Enabled = true;
-            btnSua.Enabled = false;
-            btnXoa.Enabled = false;
+            btnSua.Enabled = false;         
             ckbTrangThai.Visible = false;
             label5.Visible = false;
             lbl_DiemKH.Visible = false;
@@ -482,8 +480,7 @@ namespace pharmacy_management.GUI.KhachHang
                         label1.Visible = false;
                         label3.Visible = false;
                         label5.Visible = false;
-                        lbl_DiemKH.Visible = false;
-                        btnXoa.Enabled = false;
+                        lbl_DiemKH.Visible = false;                     
                         ckbTrangThai.Visible = false;
                     }
                     else
@@ -494,8 +491,7 @@ namespace pharmacy_management.GUI.KhachHang
                         label1.Visible = true;
                         label3.Visible = true;
                         label5.Visible = true;
-                        lbl_DiemKH.Visible = true;
-                        btnXoa.Enabled = true;
+                        lbl_DiemKH.Visible = true;                     
                         ckbTrangThai.Visible = true;
                     }
                     foreach (DTO.DiemKhachHang diem in diembus.getList())
