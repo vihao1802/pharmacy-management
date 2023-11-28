@@ -215,12 +215,13 @@ namespace pharmacy_management.GUI
         private void btnCustomer_Click_1(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new KhachHangfrm());
-
+            btnCustomer.Enabled = false;
         }
 
         private void btnStaff_Click_1(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new frmNhanVien());
+            btnStaff.Enabled = false;
         }
 
         private void kryptonLabel4_Click(object sender, EventArgs e)

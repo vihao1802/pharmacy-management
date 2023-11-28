@@ -163,7 +163,7 @@
             this.kryptonButton1.Size = new System.Drawing.Size(240, 69);
             this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonButton1.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.Voucher;
+            this.kryptonButton1.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.Purchase_Order;
             this.kryptonButton1.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
             this.kryptonButton1.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.kryptonButton1.StateCommon.Border.Color2 = System.Drawing.Color.White;
