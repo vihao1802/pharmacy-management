@@ -40,8 +40,7 @@ namespace pharmacy_management.GUI.NhanVien
                 string temp = dt.TenQuyen;
                 cbxMaQuyen.Items.Add(temp);
             }
-            btnSua.Enabled = false;
-            btnXoa.Enabled = false;
+            btnSua.Enabled = false;          
         }
 
         private void RefreshTextBox()
@@ -65,8 +64,7 @@ namespace pharmacy_management.GUI.NhanVien
             ckbTrangThai.Enabled = false;
             ckbTrangThai.Checked = true;
             btnThem.Enabled = true;
-            btnSua.Enabled = false;
-            btnXoa.Enabled = false;
+            btnSua.Enabled = false;          
             txtTenDangNhap.Enabled = true;
             ckbTrangThai.Visible = false;
             label8.Visible = true;
@@ -678,8 +676,7 @@ namespace pharmacy_management.GUI.NhanVien
                     ckbTrangThai.Visible = true;
                     label8.Visible = false;
                     txtMatKhau.Visible = false;
-                    btnSua.Enabled = true;
-                    btnXoa.Enabled = true;
+                    btnSua.Enabled = true;                 
                 }
             }
         }
