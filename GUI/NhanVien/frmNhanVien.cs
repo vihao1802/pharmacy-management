@@ -691,6 +691,11 @@ namespace pharmacy_management.GUI.NhanVien
 
         private void txt_searching_TextChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void txt_searching_TextChanged_1(object sender, EventArgs e)
+        {
             nhanvienDataGridView.Rows.Clear();
             string tim = txt_searching.Text.Trim().ToString();
             foreach (DTO.NhanVien item in bus.search(tim))
@@ -715,14 +720,15 @@ namespace pharmacy_management.GUI.NhanVien
                         tenquyen = dt.TenQuyen;
                     };
 
-
-
                 }
-
-
-
                 nhanvienDataGridView.Rows.Add(ma, ten, sdt, diachi, email, tendangnhap, temp, tenquyen);
             }
+        }
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            loads();
+            RefreshTextBox();
         }
     }
 }

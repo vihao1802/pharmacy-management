@@ -541,15 +541,12 @@ namespace pharmacy_management.GUI.KhachHang
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            
-
-        }
+       
 
         private void btn_refresh_Click(object sender, EventArgs e)
         {
-
+            loads();
+            RefreshTextBox();
         }
     }
 }
