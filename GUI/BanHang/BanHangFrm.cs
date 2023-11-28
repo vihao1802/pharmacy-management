@@ -235,7 +235,7 @@ namespace pharmacy_management.GUI.BanHang
             }
             else
             {
-                gh = new GioHangFrm();
+                gh = new GioHangFrm(this);
                 gh.setCart(thuoc_cart);
                 gh.Show();
             }

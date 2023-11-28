@@ -41,7 +41,7 @@
             this.txtpass = new Krypton.Toolkit.KryptonTextBox();
             this.ckbRemember = new Krypton.Toolkit.KryptonCheckBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonPalette2 = new Krypton.Toolkit.KryptonPalette(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -283,7 +283,7 @@
             // kryptonLabel1
             // 
             this.kryptonLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kryptonLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ItalicPanel;
+            this.kryptonLabel1.LabelStyle = Krypton.Toolkit.LabelStyle.ItalicPanel;
             this.kryptonLabel1.Location = new System.Drawing.Point(697, 300);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(123, 24);
@@ -396,7 +396,7 @@
         private Krypton.Toolkit.KryptonTextBox txtpass;
         private Krypton.Toolkit.KryptonCheckBox ckbRemember;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private Krypton.Toolkit.KryptonPalette kryptonPalette2;
     }
 }

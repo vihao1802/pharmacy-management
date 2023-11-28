@@ -25,10 +25,12 @@ namespace pharmacy_management.GUI.BanHang
         List<DTO.Thuoc> list_cart;
         private float total_price = 0;
         public static DTO.NhanVien nv = new DTO.NhanVien();
-        public GioHangFrm()
+        BanHangFrm bhFrm;
+        public GioHangFrm(BanHangFrm bh)
         {
             InitializeComponent();
             nv = Login.nv;
+            this.bhFrm = bh;
             setup();
         }
         public void load_QuyDoiDiem()
@@ -43,7 +45,7 @@ namespace pharmacy_management.GUI.BanHang
 
             foreach (DTO.QuyDoiDiem qd in qdBUS.getList())
             {
-                Console.WriteLine("Ma KH duoc chon: " + qd.MaKH);
+                //Console.WriteLine("Ma KH duoc chon: " + qd.MaKH);
                 if (maKH == qd.MaKH)
                 {
                     // Combobox Quy Doi Diem
@@ -56,7 +58,7 @@ namespace pharmacy_management.GUI.BanHang
         {
             KhachHangBUS khBUS = new KhachHangBUS();
             //Console.WriteLine(dropBtn_KH.SelectedIndex);
-            khBUS.loadList();
+            khBUS.loadListActive();
             foreach (DTO.KhachHang kh in khBUS.getList())
             {
                 string item_name = kh.MaKH.ToString() + "_" + kh.TenKH;
@@ -130,12 +132,12 @@ namespace pharmacy_management.GUI.BanHang
             DonHang tmp = dhBUS.getItem();
 
 
-            Console.WriteLine("Don Hang:\nMaNV: " + "2" +
-                "\nMaKH: " + maKH +
-                "\nNgayLap: " + formattedDate +
-                "\nMaQDD: " + maQD +
-                "\nTongGia: " + lbl_total_price.Text.Replace(" đ", "").Replace(",", "") +
-                "\nThanhTien: " + lbl_final_total_price.Text.Replace(" đ", "").Replace(",", ""));
+            /* Console.WriteLine("Don Hang:\nMaNV: " + "2" +
+                 "\nMaKH: " + maKH +
+                 "\nNgayLap: " + formattedDate +
+                 "\nMaQDD: " + maQD +
+                 "\nTongGia: " + lbl_total_price.Text.Replace(" đ", "").Replace(",", "") +
+                 "\nThanhTien: " + lbl_final_total_price.Text.Replace(" đ", "").Replace(",", ""));*/
 
             ChiTietDonHangBUS ctdhBUS = new ChiTietDonHangBUS();
             ThuocBUS tUpdate = new ThuocBUS();
@@ -154,6 +156,8 @@ namespace pharmacy_management.GUI.BanHang
             load_QuyDoiDiem();
             load_diemTichLuy();
             AddCart();
+            this.bhFrm.setEmpty();
+            this.bhFrm.pagination();
             MessageBox.Show("Thanh toán thành công!");
         }
 

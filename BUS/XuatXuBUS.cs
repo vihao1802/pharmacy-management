@@ -68,6 +68,10 @@ namespace pharmacy_management.BUS
             return dao.GetNameDAO(ma);
         }
 
+        public int GetStateBUS(int ma)
+        {
+            return dao.GetStateDAO(ma);
+        }
         public string GetNameatMaBUS(int ma)
         {
             return dao.GetNameatMaDAO(ma);

@@ -271,6 +271,24 @@ namespace pharmacy_management.GUI.NhapHang
                 //gh.Show();
             }
         }
-    
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            this.cb_DoiTuong.SelectedIndexChanged -= new System.EventHandler(this.cb_DoiTuong_SelectedIndexChanged);
+            cb_DoiTuong.SelectedIndex = 0;
+            this.cb_XuatXu.SelectedIndexChanged -= new System.EventHandler(this.cb_XuatXu_SelectedIndexChanged);
+            cb_XuatXu.SelectedIndex = 0;
+            this.txt_searching.TextChanged -= new System.EventHandler(this.txt_searching_TextChanged);
+            txt_searching.Text = "";
+            setEmpty();
+            lbl_current_page.Text = "1";
+            pagination();
+
+            this.txt_searching.TextChanged += new System.EventHandler(this.txt_searching_TextChanged);
+            this.cb_DoiTuong.SelectedIndexChanged += new System.EventHandler(this.cb_DoiTuong_SelectedIndexChanged);
+            this.cb_XuatXu.SelectedIndexChanged += new System.EventHandler(this.cb_XuatXu_SelectedIndexChanged);
+
+
+        }
     }
 }
