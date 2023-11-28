@@ -81,11 +81,6 @@ namespace pharmacy_management.GUI.Thuoc
                 string temp = xx.MaXuatXu + " - " + xx.TenXuatXu;
                 cbbMaXuatXu.Items.Add(temp);
             }
-            cbbSearch.Items.Add("Mã Thuốc");
-            cbbSearch.Items.Add("Tên Thuốc");
-            cbbSearch.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbbSearch.AutoCompleteMode = AutoCompleteMode.None;
-            cbbSearch.AutoCompleteSource = AutoCompleteSource.ListItems;
             setEnable(true);
         }
         private void loadds()
@@ -154,12 +149,10 @@ namespace pharmacy_management.GUI.Thuoc
                 MessageBox.Show("Có dòng đang được chọn hãy bỏ chọn trước!");
                 return;
             }
-            if (flag == 0)
-                MessageBox.Show("Bạn phải làm mới bảng trước");
-            else
-            {
+           
                 try
                 {
+                loadds();
                     string maxx = cbbMaXuatXu.Text.Trim();
                     string madt = cbbMaDoiTuong.Text.Trim();
                     DTO.Thuoc drug = new DTO.Thuoc(txtTenThuoc.Text.ToString(), int.Parse(madt[0].ToString()), float.Parse(txtGiaThuoc.Text.ToString()), globalFilename, 1, int.Parse(maxx[0].ToString()), 0);
@@ -191,21 +184,22 @@ namespace pharmacy_management.GUI.Thuoc
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                }
+                
             }
         }
 
 
         private void Refreshtxt()
         {
-            txtTenThuoc.Text = "";
-            txtGiaThuoc.Text = "";
+            txtTenThuoc.Clear();
+            txtGiaThuoc.Clear();
             cbbMaDoiTuong.Text = "";
             cbbMaXuatXu.Text = "";
-            txtMaThuoc.Text = "";
-            txtGiaThuoc.Text = "";
-            txtSoLuong.Text = "";
+            txtMaThuoc.Clear();
+            txtGiaThuoc.Clear();
+            txtSoLuong.Clear();
             pictureBox1.Image = null;
+            txtSearch.Clear();
             DGVThuoc.ClearSelection();
         }
         private void btnXoa_Click(object sender, EventArgs e)
@@ -421,8 +415,8 @@ namespace pharmacy_management.GUI.Thuoc
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            flag = 1;
             loadds();
+            Refreshtxt();
         }
 
         private void cbbMaDoiTuong_KeyPress(object sender, KeyPressEventArgs e)
@@ -446,65 +440,7 @@ namespace pharmacy_management.GUI.Thuoc
         }
 
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            if (txtSearch.Text.Trim().ToString() == "")
-            {
-                MessageBox.Show("Bạn chưa nhập điều kiện cần lọc");
-                return;
-            }
-
-            DGVThuoc.Rows.Clear();
-            if (cbbSearch.SelectedItem.ToString() == "Mã Thuốc")
-            {
-                int maXuatXu = int.Parse(txtSearch.Text.ToString());
-                foreach (DTO.Thuoc item in thuocbus.searchatMa(maXuatXu))
-                {
-                    string temp;
-                    int ma = int.Parse(item.MaThuoc.ToString());
-                    string tenthuoc = item.TenThuoc.ToString();
-                    int maxuatxu = int.Parse(item.MaXuatXu.ToString());
-                    int madoituong = int.Parse(item.MaDoiTuong.ToString());
-                    int soluong = int.Parse(item.SoLuong.ToString());
-                    float price = float.Parse(item.GiaThuoc.ToString());
-                    string anh = item.AnhThuoc.ToString();
-                    int state = int.Parse(item.TrangThai.ToString());
-                    string tenxuatxu = xxbus.GetNameBUS(maxuatxu);
-                    string tendoituong = dtbus.GetNameBUS(madoituong);
-                    if (state == 1)
-                        temp = "Còn bán";
-                    else
-                        temp = "Ngừng bán";
-                    DGVThuoc.Rows.Add(ma, tenthuoc, tenxuatxu, tendoituong, soluong, price, anh, temp);
-                    flag = 0;
-                }
-
-            }
-            else if (cbbSearch.SelectedItem.ToString() == "Tên Thuốc")
-            {
-                string tenThuoc = txtSearch.Text.Trim().ToString();
-                foreach (DTO.Thuoc item in thuocbus.searchatTen(tenThuoc))
-                {
-                    string temp;
-                    int ma = int.Parse(item.MaThuoc.ToString());
-                    string tenthuoc = item.TenThuoc.ToString();
-                    int maxuatxu = int.Parse(item.MaXuatXu.ToString());
-                    int madoituong = int.Parse(item.MaDoiTuong.ToString());
-                    int soluong = int.Parse(item.SoLuong.ToString());
-                    float price = float.Parse(item.GiaThuoc.ToString());
-                    string anh = item.AnhThuoc.ToString();
-                    int state = int.Parse(item.TrangThai.ToString());
-                    string tenxuatxu = xxbus.GetNameBUS(maxuatxu);
-                    string tendoituong = dtbus.GetNameBUS(madoituong);
-                    if (state == 1)
-                        temp = "Còn bán";
-                    else
-                        temp = "Ngừng bán";
-                    DGVThuoc.Rows.Add(ma, tenthuoc, tenxuatxu, tendoituong, soluong, price, anh, temp);
-                    flag = 0;
-                }
-            }
-        }
+       
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
@@ -533,6 +469,31 @@ namespace pharmacy_management.GUI.Thuoc
                 this.kryptonPanel1.Controls.Add(f);
                 this.kryptonPanel1.Tag = f;
                 f.Show();
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {       
+                DGVThuoc.Rows.Clear();
+                string text = txtSearch.Text.Trim().ToString();
+                foreach (DTO.Thuoc item in thuocbus.search(text))
+                {
+                    string temp;
+                    int ma = int.Parse(item.MaThuoc.ToString());
+                    string tenthuoc = item.TenThuoc.ToString();
+                    int maxuatxu = int.Parse(item.MaXuatXu.ToString());
+                    int madoituong = int.Parse(item.MaDoiTuong.ToString());
+                    int soluong = int.Parse(item.SoLuong.ToString());
+                    float price = float.Parse(item.GiaThuoc.ToString());
+                    string anh = item.AnhThuoc.ToString();
+                    int state = int.Parse(item.TrangThai.ToString());
+                    string tenxuatxu = xxbus.GetNameBUS(maxuatxu);
+                    string tendoituong = dtbus.GetNameBUS(madoituong);
+                    if (state == 1)
+                        temp = "Còn bán";
+                    else
+                        temp = "Ngừng bán";
+                    DGVThuoc.Rows.Add(ma, tenthuoc, tenxuatxu, tendoituong, soluong, price, anh, temp);               
             }
         }
     }
