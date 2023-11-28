@@ -52,5 +52,11 @@ namespace pharmacy_management.BUS
         {
             return dao.checkMail(mail);
         }
+
+        public ArrayList search(string search)
+        {
+            list = dao.search(search);
+            return list;
+        }
     }
 }

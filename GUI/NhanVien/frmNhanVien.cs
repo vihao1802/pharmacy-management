@@ -54,6 +54,7 @@ namespace pharmacy_management.GUI.NhanVien
             txtMatKhau.Clear();
             txtTenDangNhap.Clear();
             cbxMaQuyen.Items.Clear();
+            txt_searching.Clear();
             foreach (Quyen dt in busquyen.getList())
             {
                 if (!cbxMaQuyen.Items.Contains(dt.TenQuyen))
@@ -494,7 +495,7 @@ namespace pharmacy_management.GUI.NhanVien
 
 
                 // Kiểm tra mật khẩu
-                if (txtMatKhau.Text == "")
+                /*if (txtMatKhau.Text == "")
                 {
                     MessageBox.Show("Vui lòng nhập mật khẩu!!!");
                     return;
@@ -509,7 +510,7 @@ namespace pharmacy_management.GUI.NhanVien
                         MessageBox.Show("Mật khẩu phải có ít nhất 8 ký tự và nhiều nhất 20 ký tự!!!");
                         return;
                     }
-                }
+                }*/
 
                 // Kiểm tra địa chỉ
                 if (txtDiaChi.Text == "")
@@ -552,7 +553,7 @@ namespace pharmacy_management.GUI.NhanVien
                     nhanvienDataGridView.CurrentRow.Cells["Email"].Value = txtEmail.Text.ToString();
                     nhanvienDataGridView.CurrentRow.Cells["TrangThai"].Value = trangThai == 1 ? "Đang hoạt động" : "Dừng hoạt động";
                     nhanvienDataGridView.CurrentRow.Cells["TenDangNhap"].Value = txtTenDangNhap.Text.ToString();
-                    nhanvienDataGridView.CurrentRow.Cells["MatKhau"].Value = txtMatKhau.Text.ToString();
+                    //nhanvienDataGridView.CurrentRow.Cells["MatKhau"].Value = txtMatKhau.Text.ToString();
                     nhanvienDataGridView.CurrentRow.Cells["MaQuyen"].Value = cbxMaQuyen.Text.ToString();
 
                     RefreshTextBox();
@@ -685,6 +686,48 @@ namespace pharmacy_management.GUI.NhanVien
 
         private void nhanvienDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            RefreshTextBox();
+        }
+
+        private void txt_searching_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txt_searching_TextChanged_1(object sender, EventArgs e)
+        {
+            nhanvienDataGridView.Rows.Clear();
+            string tim = txt_searching.Text.Trim().ToString();
+            foreach (DTO.NhanVien item in bus.search(tim))
+            {
+
+                int ma = item.MaNV;
+                string ten = item.TenNV;
+                string sdt = item.SDT;
+                string diachi = item.DiaChi;
+                string email = item.Email;
+                int trangthai = item.TrangThai;
+                string temp = (trangthai == 1) ? "Đang hoạt động" : "Dừng hoạt động";
+                string tendangnhap = item.TenDangNhap;
+                int maquyen = item.MaQuyen;
+                string tenquyen = "";
+
+                foreach (Quyen dt in busquyen.getList())
+                {
+
+                    if (maquyen == dt.MaQuyen)
+                    {
+                        tenquyen = dt.TenQuyen;
+                    };
+
+                }
+                nhanvienDataGridView.Rows.Add(ma, ten, sdt, diachi, email, tendangnhap, temp, tenquyen);
+            }
+        }
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            loads();
             RefreshTextBox();
         }
     }
