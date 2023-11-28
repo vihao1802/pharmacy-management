@@ -50,6 +50,29 @@ namespace pharmacy_management.DAO
 
         }
 
+        public int GetStateDAO(int ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            int state = 0;
+            string query = "SELECT TRANGTHAI FROM doituong WHERE MaDT = " + ma.ToString();
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    state = Convert.ToInt32(reader["TrangThai"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at DoiTuongDAO: " + ex.Message);
+            }
+
+            return state;
+        }
+
         public ArrayList getActiveMadoituong()
         {
             ArrayList arrayList = new ArrayList();

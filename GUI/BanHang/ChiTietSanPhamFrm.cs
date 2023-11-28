@@ -1,4 +1,5 @@
-﻿using pharmacy_management.BUS;
+﻿using Krypton.Toolkit;
+using pharmacy_management.BUS;
 using pharmacy_management.DTO;
 
 using System;
@@ -14,7 +15,7 @@ using System.Windows.Forms;
 
 namespace pharmacy_management.GUI.BanHang
 {
-    public partial class ChiTietSanPhamFrm : Form
+    public partial class ChiTietSanPhamFrm : KryptonForm
     {
         public ChiTietSanPhamFrm(pharmacy_management.DTO.Thuoc item)
         {
