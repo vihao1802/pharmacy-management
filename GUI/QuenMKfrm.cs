@@ -41,24 +41,28 @@ namespace pharmacy_management.GUI
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            DTO.NhanVien nv = nvbus.checkMail(txtmail.Text); 
+            DTO.NhanVien nv = nvbus.checkMail(txtmail.Text);
+            if (txtmail.Text.Trim() == "")
+            {
+                MessageBox.Show("Email không để trống!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtmail.Focus();
+                return;
+            }
             if (validate_emailaddress.IsMatch(txtmail.Text) != true)
             {
                 MessageBox.Show("Email không hợp lệ!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtmail.Focus();
                 return;
             }
-            if(nv == null)
+            if (nv.Email == null)
             {
                 MessageBox.Show("Không tìm thấy email!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            else
-            {
-                dnbus.sendMail(nv.Email);
-                dnbus.resetPass(nv);
 
-            }
+            dnbus.sendMail(nv.Email);
+            dnbus.resetPass(nv);
+
         }
     }
 }

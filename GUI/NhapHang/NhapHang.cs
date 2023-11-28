@@ -272,5 +272,10 @@ namespace pharmacy_management.GUI.NhapHang
                 //gh.Show();
             }
         }
+
+        private void txt_searching_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

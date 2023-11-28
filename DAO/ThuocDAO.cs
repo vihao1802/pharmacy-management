@@ -154,7 +154,7 @@ namespace pharmacy_management.DAO
             {
                 while (reader.Read())
                 {
-                    Thuoc tmp = new Thuoc(                      
+                    Thuoc tmp = new Thuoc(
                         Int32.Parse(reader["MaThuoc"].ToString()),
                         reader["TenThuoc"].ToString(),
                         Int32.Parse(reader["MaDoiTuong"].ToString()),
@@ -273,8 +273,8 @@ namespace pharmacy_management.DAO
             }
 
 
-            Console.WriteLine(query);
-            Console.WriteLine(text_searching);
+            //Console.WriteLine(query);
+            //Console.WriteLine(text_searching);
             SqlDataReader reader = conn.Execute(query);
             try
             {
@@ -304,7 +304,7 @@ namespace pharmacy_management.DAO
             return arrayList;
 
         }
-     
+
 
         public DTO.Thuoc getItem(int ma)
         {
@@ -357,7 +357,7 @@ namespace pharmacy_management.DAO
             ConnectDB conn = new ConnectDB();
             try
             {
-                string sql = "INSERT INTO THUOC VALUES (N'" + Drug.TenThuoc + "', '" + Drug.MaDoiTuong +"', '" + Drug.GiaThuoc + "','" + Drug.AnhThuoc + "', '"  + "1'" + ",'" + Drug.MaXuatXu + "','0')";
+                string sql = "INSERT INTO THUOC VALUES (N'" + Drug.TenThuoc + "', '" + Drug.MaDoiTuong + "', '" + Drug.GiaThuoc + "','" + Drug.AnhThuoc + "', '" + "1'" + ",'" + Drug.MaXuatXu + "','0')";
                 conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
@@ -365,7 +365,7 @@ namespace pharmacy_management.DAO
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-      
+
         public void update(Thuoc Drug)
         {
             ConnectDB conn = new ConnectDB();
