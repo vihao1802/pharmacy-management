@@ -64,6 +64,8 @@ namespace pharmacy_management.GUI.KhachHang
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
             ckbTrangThai.Visible = false;
+            label5.Visible = false;
+            lbl_DiemKH.Visible = false;
             txt_searching.Clear();
             //kryptonButton1.Visible = false;
         }
@@ -542,6 +544,11 @@ namespace pharmacy_management.GUI.KhachHang
         private void btnSearch_Click(object sender, EventArgs e)
         {
             
+
+        }
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
 
         }
     }
