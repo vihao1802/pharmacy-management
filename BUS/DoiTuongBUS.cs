@@ -60,6 +60,11 @@ namespace pharmacy_management.BUS
             return list;
         }
 
+        public int GetStateBUS(int ma)
+        {
+            return dao.GetStateDAO(ma);
+        }
+
         public ArrayList searchatTen(string ten)
         {
             list = dao.searchatTen(ten);

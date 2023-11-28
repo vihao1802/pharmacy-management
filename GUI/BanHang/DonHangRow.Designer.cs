@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_invoice_detail = new Krypton.Toolkit.KryptonButton();
             this.lbl_ThanhTien = new System.Windows.Forms.Label();
             this.lbl_MaQD = new System.Windows.Forms.Label();
             this.lbl_NgayLap = new System.Windows.Forms.Label();
             this.lbl_MaKH = new System.Windows.Forms.Label();
             this.lbl_MaNV = new System.Windows.Forms.Label();
             this.lbl_MaDH = new System.Windows.Forms.Label();
-            this.btn_invoice_detail = new Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,44 @@
             this.panel1.TabIndex = 0;
             this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             this.panel1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            // 
+            // btn_invoice_detail
+            // 
+            this.btn_invoice_detail.CornerRoundingRadius = 50F;
+            this.btn_invoice_detail.Location = new System.Drawing.Point(832, 18);
+            this.btn_invoice_detail.Name = "btn_invoice_detail";
+            this.btn_invoice_detail.OverrideDefault.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.btn_invoice_detail.OverrideDefault.Back.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.btn_invoice_detail.OverrideDefault.Back.Image = global::pharmacy_management.Properties.Resources.icons8_ellipsis_30_gray;
+            this.btn_invoice_detail.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.btn_invoice_detail.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(132)))), ((int)(((byte)(131)))));
+            this.btn_invoice_detail.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_invoice_detail.OverrideDefault.Border.Rounding = 50F;
+            this.btn_invoice_detail.Size = new System.Drawing.Size(45, 45);
+            this.btn_invoice_detail.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.btn_invoice_detail.StateCommon.Back.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.btn_invoice_detail.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.icons8_ellipsis_30_gray;
+            this.btn_invoice_detail.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.btn_invoice_detail.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(132)))), ((int)(((byte)(131)))));
+            this.btn_invoice_detail.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_invoice_detail.StateCommon.Border.Rounding = 50F;
+            this.btn_invoice_detail.StateTracking.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.btn_invoice_detail.StateTracking.Back.Color2 = System.Drawing.Color.DodgerBlue;
+            this.btn_invoice_detail.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.icons8_ellipsis_30_white;
+            this.btn_invoice_detail.StateTracking.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.btn_invoice_detail.StateTracking.Border.Color1 = System.Drawing.Color.DodgerBlue;
+            this.btn_invoice_detail.StateTracking.Border.Color2 = System.Drawing.Color.DodgerBlue;
+            this.btn_invoice_detail.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_invoice_detail.StateTracking.Border.Rounding = 50F;
+            this.btn_invoice_detail.TabIndex = 18;
+            this.btn_invoice_detail.Values.Text = "";
+            this.btn_invoice_detail.Click += new System.EventHandler(this.btn_invoice_detail_Click);
             // 
             // lbl_ThanhTien
             // 
@@ -121,50 +159,12 @@
             this.lbl_MaDH.TabIndex = 6;
             this.lbl_MaDH.Text = "1";
             // 
-            // btn_invoice_detail
-            // 
-            this.btn_invoice_detail.CornerRoundingRadius = 50F;
-            this.btn_invoice_detail.Location = new System.Drawing.Point(832, 18);
-            this.btn_invoice_detail.Name = "btn_invoice_detail";
-            this.btn_invoice_detail.OverrideDefault.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.btn_invoice_detail.OverrideDefault.Back.Color2 = System.Drawing.Color.WhiteSmoke;
-            this.btn_invoice_detail.OverrideDefault.Back.Image = global::pharmacy_management.Properties.Resources.icons8_ellipsis_30_gray;
-            this.btn_invoice_detail.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            this.btn_invoice_detail.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(132)))), ((int)(((byte)(131)))));
-            this.btn_invoice_detail.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_invoice_detail.OverrideDefault.Border.Rounding = 50F;
-            this.btn_invoice_detail.Size = new System.Drawing.Size(45, 45);
-            this.btn_invoice_detail.StateCommon.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.btn_invoice_detail.StateCommon.Back.Color2 = System.Drawing.Color.WhiteSmoke;
-            this.btn_invoice_detail.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.icons8_ellipsis_30_gray;
-            this.btn_invoice_detail.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            this.btn_invoice_detail.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(132)))), ((int)(((byte)(131)))));
-            this.btn_invoice_detail.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_invoice_detail.StateCommon.Border.Rounding = 50F;
-            this.btn_invoice_detail.StateTracking.Back.Color1 = System.Drawing.Color.DodgerBlue;
-            this.btn_invoice_detail.StateTracking.Back.Color2 = System.Drawing.Color.DodgerBlue;
-            this.btn_invoice_detail.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.icons8_ellipsis_30_white;
-            this.btn_invoice_detail.StateTracking.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            this.btn_invoice_detail.StateTracking.Border.Color1 = System.Drawing.Color.DodgerBlue;
-            this.btn_invoice_detail.StateTracking.Border.Color2 = System.Drawing.Color.DodgerBlue;
-            this.btn_invoice_detail.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btn_invoice_detail.StateTracking.Border.Rounding = 50F;
-            this.btn_invoice_detail.TabIndex = 18;
-            this.btn_invoice_detail.Values.Text = "";
-            this.btn_invoice_detail.Click += new System.EventHandler(this.btn_invoice_detail_Click);
-            // 
             // DonHangRow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
+            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.Name = "DonHangRow";
             this.Size = new System.Drawing.Size(900, 80);
             this.panel1.ResumeLayout(false);

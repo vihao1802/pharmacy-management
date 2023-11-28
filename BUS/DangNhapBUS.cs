@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Net.NetworkInformation;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace pharmacy_management.BUS
 {
     internal class DangNhapBUS
     {
+        NhanVienBUS bus = new NhanVienBUS();
         DangNhapDAO dao = new DangNhapDAO();
         public DangNhapBUS() { }
         public NhanVien dangnhap(string username, string password)
@@ -43,7 +45,7 @@ namespace pharmacy_management.BUS
         {
             MailAddress to = new MailAddress(mail);
             MailAddress from = new MailAddress("nhathuocsgu@gmail.com");
-            MailMessage message = new MailMessage(from,to);
+            MailMessage message = new MailMessage(from, to);
             message.Subject = "Reset mật khẩu";
             message.Body = "Xin chào, chúng tôi đã đặt lại mật khẩu cho tài khoản của bạn là: 123456";
             SmtpClient smtp = new SmtpClient();
