@@ -29,6 +29,10 @@ namespace pharmacy_management.BUS
             list = dao.GetALl();
         }
 
+        public void loadListActive()
+        {
+            list = dao.GetALlActive();
+        }
         public KhachHang getKH(int ma)
         {
             return dao.getKH(ma);

@@ -48,5 +48,9 @@ namespace pharmacy_management.BUS
         {
             dao.update(DTO, ma);
         }
+        public NhanVien checkMail(string mail)
+        {
+            return dao.checkMail(mail);
+        }
     }
 }

@@ -36,6 +36,7 @@ namespace pharmacy_management.GUI.Dash
             Numslban.Text = tkbus.getslban().ToString();
             string formattedNumber = tkbus.getdoanhthu().ToString("#,##0") + " đ";
             Numdoanhthu.Text = formattedNumber;
+
         }
 
 

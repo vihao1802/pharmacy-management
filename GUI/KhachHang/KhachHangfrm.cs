@@ -28,9 +28,12 @@ namespace pharmacy_management.GUI.KhachHang
             InitializeComponent();
             loads();
 
-
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            label5.Visible = false;
+            lbl_DiemKH.Visible = false;
         }
-       
+
 
         private void loads()
         {
@@ -56,6 +59,29 @@ namespace pharmacy_management.GUI.KhachHang
             txtNgaySinh.MinDate = new DateTime(1900, 01, 01);
             ckbTrangThai.Checked = true;
             btnThem.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            ckbTrangThai.Visible = false;
+            //kryptonButton1.Visible = false;
+        }
+
+        private bool IsPhoneNumberExists(string phoneNumber)
+        {
+            foreach (DataGridViewRow row in khachhangDataGridView.Rows)
+            {
+                if (row.Cells["SDT"].Value != null)
+                {
+                    string existingPhoneNumber = row.Cells["SDT"].Value.ToString().Trim();
+
+                    // So sánh số điện thoại
+                    if (existingPhoneNumber.Equals(phoneNumber, StringComparison.OrdinalIgnoreCase))
+                    {
+                        return true; // Số điện thoại đã tồn tại trong DataGridView
+                    }
+                }
+            }
+
+            return false; // Số điện thoại không tồn tại trong DataGridView
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -91,11 +117,17 @@ namespace pharmacy_management.GUI.KhachHang
                 {
                     // Sử dụng biểu thức chính quy để kiểm tra số điện thoại
                     string pattern = @"^0[0-9]{9}$"; // Bắt đầu bằng 0
-                    if (!Regex.IsMatch(txtSDT.Text.ToString(), pattern))
+                    if (!Regex.IsMatch(txtSDT.Text.Trim(), pattern))
                     {
                         MessageBox.Show("Số điện thoại không hợp lệ!!!");
                         return;
                     }
+                    if (IsPhoneNumberExists(txtSDT.Text.Trim()))
+                    {
+                        MessageBox.Show("Số điện thoại đã tồn tại!!!");
+                        return;
+                    }
+
                 }
 
                 // Kiểm tra ngày sinh
@@ -160,29 +192,7 @@ namespace pharmacy_management.GUI.KhachHang
 
         private void khachhangDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (khachhangDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-            {
-                khachhangDataGridView.CurrentRow.Selected = true;
-                txtMaKH.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["MaKH"].Value.ToString();
-                txtTenKH.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["TenKH"].Value.ToString();
-                txtSDT.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["SDT"].Value.ToString();
-                if (DateTime.TryParse(khachhangDataGridView.Rows[e.RowIndex].Cells["NgaySinh"].Value.ToString(), out DateTime ngaySinh))
-                {
-                    txtNgaySinh.Value = ngaySinh;
-                }
-                string temp = khachhangDataGridView.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString();
-                ckbTrangThai.Enabled = true;
-                if (temp.Equals("Đang hoạt động", StringComparison.OrdinalIgnoreCase))
-                {
-                    ckbTrangThai.Checked = true;
-                }
-                else
-                {
-                    ckbTrangThai.Checked = false;
-                }
-                btnThem.Enabled = false;
 
-            }
         }
 
         private void kryptonPanel1_Paint(object sender, PaintEventArgs e)
@@ -202,6 +212,12 @@ namespace pharmacy_management.GUI.KhachHang
                 {
                     try
                     {
+                        if (txtMaKH.Text.Trim() == "1")
+                        {
+                            MessageBox.Show("Khách vãng lai không được xóa!!!");
+                            return;
+                        }
+
                         if (trangThai == 1)
                         {
                             bus.delete(ma);
@@ -253,6 +269,11 @@ namespace pharmacy_management.GUI.KhachHang
                     }
                 }
 
+                if (txtMaKH.Text.Trim() == "1")
+                {
+                    MessageBox.Show("Khách vãng lai không được sửa!!!");
+                    return;
+                }
 
                 // Kiểm tra số điện thoại
                 if (txtSDT.Text == "")
@@ -314,7 +335,7 @@ namespace pharmacy_management.GUI.KhachHang
 
         private void khachhangDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            RefreshTextBox();
+
         }
 
         private void btnXuat_Click(object sender, EventArgs e)
@@ -383,6 +404,118 @@ namespace pharmacy_management.GUI.KhachHang
         {
             DiemKhachHang f = new DiemKhachHang();
             f.Show();
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            if (khachhangDataGridView.CurrentRow != null && khachhangDataGridView.CurrentRow.Cells["MaKH"].Value != null)
+            {
+                int ma = int.Parse(khachhangDataGridView.CurrentRow.Cells["MaKH"].Value.ToString());
+                foreach (DTO.DiemKhachHang diem in diembus.getList())
+                {
+                    if (ma == diem.MaKH)
+                    {
+                        int madiem = diem.MaBangDiem;
+                        int makh = diem.MaKH;
+                        int diemtichtuy = diem.DiemTichLuy;
+                        //int diemdasd = diem.DiemDaSuDung;
+                        string message = "Mã bảng điểm: " + madiem + "\nMã khách hàng: " + makh + "\nĐiểm tích lũy: " + diemtichtuy;
+                        MessageBox.Show(message, "Điểm khách hàng");
+
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn khách hàng cần xem điểm!!!");
+            }
+        }
+
+        private void kryptonButton2_Click(object sender, EventArgs e)
+        {
+            DiemKhachHang diem = new DiemKhachHang();
+            diem.Show();
+        }
+
+        private void khachhangDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            khachhangDataGridView.CurrentRow.Selected = true;
+        }
+
+        private void khachhangDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (khachhangDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+
+                    khachhangDataGridView.CurrentRow.Selected = true;
+                    txtMaKH.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["MaKH"].Value.ToString();
+                    txtTenKH.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["TenKH"].Value.ToString();
+                    txtSDT.Text = khachhangDataGridView.Rows[e.RowIndex].Cells["SDT"].Value.ToString();
+                    if (DateTime.TryParse(khachhangDataGridView.Rows[e.RowIndex].Cells["NgaySinh"].Value.ToString(), out DateTime ngaySinh))
+                    {
+                        txtNgaySinh.Value = ngaySinh;
+                    }
+                    string temp = khachhangDataGridView.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString();
+                    ckbTrangThai.Enabled = true;
+                    if (temp.Equals("Đang hoạt động", StringComparison.OrdinalIgnoreCase))
+                    {
+                        ckbTrangThai.Checked = true;
+                    }
+                    else
+                    {
+                        ckbTrangThai.Checked = false;
+                    }
+
+                    if (txtMaKH.Text == "1")
+                    {
+                        txtSDT.Visible = false;
+                        txtNgaySinh.Visible = false;
+                        ckbTrangThai.Visible = false;
+                        label1.Visible = false;
+                        label3.Visible = false;
+                        label5.Visible = false;
+                        lbl_DiemKH.Visible = false;
+                        btnXoa.Enabled = false;
+                        ckbTrangThai.Visible = false;
+                    }
+                    else
+                    {
+                        txtSDT.Visible = true;
+                        txtNgaySinh.Visible = true;
+                        ckbTrangThai.Visible = true;
+                        label1.Visible = true;
+                        label3.Visible = true;
+                        label5.Visible = true;
+                        lbl_DiemKH.Visible = true;
+                        btnXoa.Enabled = true;
+                        ckbTrangThai.Visible = true;
+                    }
+                    foreach (DTO.DiemKhachHang diem in diembus.getList())
+                    {
+                        if (int.Parse(txtMaKH.Text) == diem.MaKH)
+                        {
+                            int diemtichtuy = diem.DiemTichLuy;
+                            lbl_DiemKH.Text = diemtichtuy.ToString();
+                        }
+
+                    }
+                    btnThem.Enabled = false;
+                    btnSua.Enabled = true;
+                }
+            }
+        }
+
+        private void khachhangDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            RefreshTextBox();
+        }
+
+        private void txt_searching_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

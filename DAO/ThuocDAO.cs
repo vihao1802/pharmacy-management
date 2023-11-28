@@ -143,6 +143,74 @@ namespace pharmacy_management.DAO
 
         }
 
+        public ArrayList searchatMa(int ma)
+        {
+            ArrayList arrayList = new ArrayList();
+
+            ConnectDB conn = new ConnectDB();
+            string query = "SELECT * FROM Thuoc WHERE MaThuoc = " + ma;
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    Thuoc tmp = new Thuoc(                      
+                        Int32.Parse(reader["MaThuoc"].ToString()),
+                        reader["TenThuoc"].ToString(),
+                        Int32.Parse(reader["MaDoiTuong"].ToString()),
+                        float.Parse(reader["GiaThuoc"].ToString()),
+                        reader["AnhThuoc"].ToString(),
+                        Int32.Parse(reader["TrangThai"].ToString()),
+                        Int32.Parse(reader["MaXuatXu"].ToString()),
+                        Int32.Parse(reader["SoLuong"].ToString())
+                     );
+                    arrayList.Add(tmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at ThuocDAO: " + ex.Message);
+            }
+
+            return arrayList;
+        }
+
+        public ArrayList searchatTen(string ten)
+        {
+            ArrayList arrayList = new ArrayList();
+
+            ConnectDB conn = new ConnectDB();
+            string query = "SELECT * FROM Thuoc WHERE TenThuoc LIKE N'%" + ten + "%'";
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    Thuoc tmp = new Thuoc(
+                       Int32.Parse(reader["MaThuoc"].ToString()),
+                       reader["TenThuoc"].ToString(),
+                       Int32.Parse(reader["MaDoiTuong"].ToString()),
+                       float.Parse(reader["GiaThuoc"].ToString()),
+                       reader["AnhThuoc"].ToString(),
+                       Int32.Parse(reader["TrangThai"].ToString()),
+                       Int32.Parse(reader["MaXuatXu"].ToString()),
+                       Int32.Parse(reader["SoLuong"].ToString())
+                    );
+                    arrayList.Add(tmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at ThuocDAO: " + ex.Message);
+            }
+
+            return arrayList;
+        }
+
         public ArrayList GetAllAdvancedDAO(string text_searching, int selected_doiTuong, int selected_xuatXu, int page_value, int perPage)
         {
             ArrayList arrayList = new ArrayList();
@@ -301,14 +369,14 @@ namespace pharmacy_management.DAO
         public void update(Thuoc Drug)
         {
             ConnectDB conn = new ConnectDB();
-            string sql = "UPDATE DOITUONG SET TENThuoc =N'" + Drug.TenThuoc + "', MaDoiTuong='" + Drug.MaDoiTuong + "', GiaThuoc='" + Drug.GiaThuoc + "',AnhThuoc='" + Drug.AnhThuoc + "',TrangThai='" + Drug.TrangThai + "',MaXuatXu='" + Drug.MaXuatXu + "','0" + "' where MaDT = " + Drug.MaThuoc;
+            string sql = "UPDATE THUOC SET TenThuoc =N'" + Drug.TenThuoc + "', MaDoiTuong='" + Drug.MaDoiTuong + "', GiaThuoc='" + Drug.GiaThuoc + "',AnhThuoc='" + Drug.AnhThuoc + "',TrangThai='" + Drug.TrangThai + "',MaXuatXu='" + Drug.MaXuatXu + "',SoLuong='" + Drug.SoLuong + "' where MaThuoc = " + Drug.MaThuoc;
             conn.ExecuteNonQuery(sql);
         }
 
         public void Delete(int ma)
         {
             ConnectDB conn = new ConnectDB();
-            string sql = "UPDATE THUOC SET TrangThai = 0 WHERE MaThuoc = " + ma;
+            string sql = "UPDATE THUOC SET TrangThai = 0,SoLuong = 0  WHERE MaThuoc = " + ma;
             conn.ExecuteNonQuery(sql);
         }
     }

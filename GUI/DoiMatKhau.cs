@@ -48,6 +48,10 @@ namespace pharmacy_management.GUI
             {
                 MessageBox.Show("Mật khẩu mới trùng mật khẩu cũ");
                 return;
+            }else if(txtpassnew.TextLength <6 || txtpassnew1.TextLength <6)
+            {
+                MessageBox.Show("Mật khẩu phải trên 6 ký tự");
+                return;
             }
                 if (txtpassold.Text.Equals(nv.MatKhau))
             {

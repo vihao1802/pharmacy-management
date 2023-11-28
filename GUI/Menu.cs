@@ -1,4 +1,4 @@
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,47 +15,55 @@ using pharmacy_management;
 using static System.Net.Mime.MediaTypeNames;
 using thuoc;
 using pharmacy_management.GUI.BanHang;
-using pharmacy_management.GUI.Thuoc;
 using pharmacy_management.GUI.NhapHang;
 using pharmacy_management.GUI.Dash;
 using pharmacy_management.GUI.Thuoc;
+using pharmacy_management.GUI.KhachHang;
+using pharmacy_management.GUI.NhanVien;
 using pharmacy_management.GUI.QuyDoiDiem;
+using pharmacy_management.BUS;
+using System.Xml.Schema;
+
 
 namespace pharmacy_management.GUI
 {
     public partial class Menu : KryptonForm
     {
         public static DTO.NhanVien nv = new DTO.NhanVien();
-
+        QuyenBUS qbus = new QuyenBUS();
         bool sidebarExpand;
         BanHangFrm bhFrm;
+        DashFrm dashFrm = new DashFrm();
 
         public Menu()
         {
             InitializeComponent();
 
-            DashFrm dashFrm = new DashFrm();
+
             addFormtoPanelContainer(dashFrm);
             nv = Login.nv;
-            //   addControls();
+            addControls();
             lbName.Text = nv.TenNV;
+            lbquyen.Text = qbus.getTenfromMa(nv.MaQuyen);
+
 
         }
-        //private void addControls()
-        //{
-        //    if(nv.MaQuyen == 2)
-        //    {
-        //        btnStaff.Visible = false;
-        //        btnPill.Visible = false;
-        //        btnPN.Visible = false;
-        //        btnStorage.Visible = false;
-        //        btnVoucher.Visible = false;
-        //    }else if(nv.MaQuyen == 3)
-        //    {
-        //        btnCustomer.Visible = false;
+        private void addControls()
+        {
+            if (nv.MaQuyen == 2)
+            {
+                btnStaff.Visible = false;
+                btnPill.Visible = false;
+                btnPN.Visible = false;
+                btnStorage.Visible = false;
+                btnVoucher.Visible = false;
+            }
+            else if (nv.MaQuyen == 3)
+            {
+                btnCustomer.Visible = false;
 
-        //    }
-        //}
+            }
+        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -131,13 +139,6 @@ namespace pharmacy_management.GUI
         }
         private void btnSell_Click_1(object sender, EventArgs e)
         {
-            /*BanHangFrm f = new BanHangFrm();
-            f.TopLevel = false;
-            PnContainer.Controls.Add(f);
-            PnContainer.Dock = DockStyle.Fill;
-            dashboard1.Visible = false;
-            nhapHang1.Visible = false;
-            f.Show();*/
             bhFrm = new BanHangFrm();
             addFormtoPanelContainer(bhFrm);
             btnSell.Enabled = false;
@@ -145,14 +146,8 @@ namespace pharmacy_management.GUI
 
         private void btnStorage_Click(object sender, EventArgs e)
         {
-            /*PnContainer.Controls.Clear();
-           NhapHang.NhapHang nh = new NhapHang.NhapHang();
-            PnContainer.Controls.Add(nh);
-            PnContainer.Dock = DockStyle.Fill;*/
-
             addFormtoPanelContainer(new NhapHang.NhapHangFrm());
             btnStorage.Enabled = false;
-
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -215,6 +210,27 @@ namespace pharmacy_management.GUI
         {
             addFormtoPanelContainer(new PhieuGiamGiaFrm());
             btnCoupon.Enabled = false;
+        }
+
+        private void btnCustomer_Click_1(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new KhachHangfrm());
+
+        }
+
+        private void btnStaff_Click_1(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(new frmNhanVien());
+        }
+
+        private void kryptonLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            addFormtoPanelContainer(dashFrm);
         }
     }
 
