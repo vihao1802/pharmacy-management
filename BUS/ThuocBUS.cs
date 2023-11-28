@@ -41,7 +41,17 @@ namespace pharmacy_management.BUS
             dao.add(Drug);
         }
 
+        public ArrayList searchatMa(int ma)
+        {
+            list = dao.searchatMa(ma);
+            return list;
+        }
 
+        public ArrayList searchatTen(string ten)
+        {
+            list = dao.searchatTen(ten);
+            return list;
+        }
         public void delete(int ma)
         {
             dao.Delete(ma);

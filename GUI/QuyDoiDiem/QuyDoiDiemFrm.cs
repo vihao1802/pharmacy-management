@@ -19,7 +19,7 @@ namespace pharmacy_management.GUI.QuyDoiDiem
         KhachHangBUS khBUS = new KhachHangBUS();
         PhieuGiamGiaBUS pggBUS = new PhieuGiamGiaBUS();
         DiemKhachHangBUS dkhBUS = new DiemKhachHangBUS();
-        int soLuongChonDiem = 5;
+        int soLuongChonDiem = 10;
         public QuyDoiDiemFrm()
         {
             InitializeComponent();
@@ -45,9 +45,10 @@ namespace pharmacy_management.GUI.QuyDoiDiem
             dtp_end.MaxDate = DateTime.Now.AddYears(0);
 
             //Console.WriteLine(dropBtn_KH.SelectedIndex);
-            khBUS.loadList();
+            khBUS.loadListActive();
             foreach (DTO.KhachHang kh in khBUS.getList())
             {
+                Console.WriteLine(kh.MaKH.ToString() + kh.TenKH.ToString());
                 if (kh.MaKH == 1) { continue; }
                 string item_name = kh.MaKH.ToString() + "_" + kh.TenKH;
                 dropBtn_KH.Items.Add(item_name);
@@ -84,14 +85,16 @@ namespace pharmacy_management.GUI.QuyDoiDiem
                 {
                     status = "Đã dùng";
                 }
-                gv_QDD.Rows.Add(qd.MaQuyDoi, qd.MaKH, qd.NgayQuyDoi, status);
+                string tenKH = qd.MaKH + "_" + khBUS.getKH(qd.MaKH).TenKH;
+
+                gv_QDD.Rows.Add(qd.MaQuyDoi, tenKH, qd.NgayQuyDoi, status);
             }
         }
 
         private void dtp_start_ValueChanged(object sender, EventArgs e)
         {
             dtp_end.MinDate = dtp_start.Value;
-
+            load_data();
         }
 
         private void dropBtn_KH_SelectedIndexChanged(object sender, EventArgs e)
@@ -169,6 +172,16 @@ namespace pharmacy_management.GUI.QuyDoiDiem
 
             int giam = (Int32.Parse(cb_ChonDiem.Text) / 100) * 5;
             lbl_Giam.Text = giam + " %";
+        }
+
+        private void dtp_end_ValueChanged(object sender, EventArgs e)
+        {
+            load_data();
+        }
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            setup();
         }
     }
 }

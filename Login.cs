@@ -128,6 +128,17 @@ namespace thuoc
         {
            
         }
+
+        private void kryptonLabel1_Paint(object sender, PaintEventArgs e)
+        {
+       
+        }
+
+        private void kryptonLabel1_Click(object sender, EventArgs e)
+        {
+            QuenMKfrm quenMKfrm = new QuenMKfrm();
+            quenMKfrm.Show();
+        }
     }
 }
 

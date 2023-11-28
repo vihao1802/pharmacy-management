@@ -46,6 +46,7 @@
             this.kryptonPanel2 = new Krypton.Toolkit.KryptonPanel();
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
             this.container = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_refresh = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.cb_XuatXu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_DoiTuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
@@ -76,7 +77,6 @@
             this.cb_XuatXu.StateCommon.ComboBox.Border.Rounding = 5F;
             this.cb_XuatXu.TabIndex = 2;
             this.cb_XuatXu.Text = "Chọn xuất xứ";
-            this.cb_XuatXu.SelectedIndexChanged += new System.EventHandler(this.cb_XuatXu_SelectedIndexChanged);
             // 
             // btn_search_page
             // 
@@ -217,7 +217,6 @@
             this.cb_DoiTuong.StateCommon.ComboBox.Border.Rounding = 5F;
             this.cb_DoiTuong.TabIndex = 8;
             this.cb_DoiTuong.Text = "Chọn đối tượng";
-            this.cb_DoiTuong.SelectedIndexChanged += new System.EventHandler(this.cb_DoiTuong_SelectedIndexChanged);
             // 
             // kryptonLabel1
             // 
@@ -263,7 +262,7 @@
             this.txt_searching.Location = new System.Drawing.Point(15, 17);
             this.txt_searching.Multiline = false;
             this.txt_searching.Name = "txt_searching";
-            this.txt_searching.Size = new System.Drawing.Size(300, 40);
+            this.txt_searching.Size = new System.Drawing.Size(236, 40);
             this.txt_searching.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -294,6 +293,7 @@
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.btn_refresh);
             this.kryptonPanel1.Controls.Add(this.btn_show_cart);
             this.kryptonPanel1.Controls.Add(this.cb_DoiTuong);
             this.kryptonPanel1.Controls.Add(this.kryptonLabel1);
@@ -318,6 +318,49 @@
             this.container.Padding = new System.Windows.Forms.Padding(15, 0, 0, 20);
             this.container.Size = new System.Drawing.Size(950, 550);
             this.container.TabIndex = 0;
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.CornerRoundingRadius = 50F;
+            this.btn_refresh.Location = new System.Drawing.Point(269, 17);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btn_refresh.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btn_refresh.OverrideDefault.Back.Image = global::pharmacy_management.Properties.Resources.icons8_refresh_24;
+            this.btn_refresh.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.btn_refresh.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btn_refresh.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btn_refresh.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_refresh.OverrideDefault.Border.Rounding = 50F;
+            this.btn_refresh.OverrideDefault.Border.Width = 5;
+            this.btn_refresh.Size = new System.Drawing.Size(40, 40);
+            this.btn_refresh.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btn_refresh.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btn_refresh.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btn_refresh.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btn_refresh.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_refresh.StateCommon.Border.Rounding = 50F;
+            this.btn_refresh.StateCommon.Border.Width = 5;
+            this.btn_refresh.StateNormal.Back.Image = global::pharmacy_management.Properties.Resources.icons8_refresh_24;
+            this.btn_refresh.StateNormal.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.btn_refresh.StateTracking.Back.Color1 = System.Drawing.Color.Blue;
+            this.btn_refresh.StateTracking.Back.Color2 = System.Drawing.Color.Blue;
+            this.btn_refresh.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.icons8_refresh_24;
+            this.btn_refresh.StateTracking.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.btn_refresh.StateTracking.Border.Color1 = System.Drawing.Color.Blue;
+            this.btn_refresh.StateTracking.Border.Color2 = System.Drawing.Color.Blue;
+            this.btn_refresh.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_refresh.StateTracking.Border.Rounding = 50F;
+            this.btn_refresh.StateTracking.Border.Width = 5;
+            this.btn_refresh.TabIndex = 33;
+            this.btn_refresh.Values.Text = "";
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
             // 
             // NhapHangFrm
             // 
@@ -362,5 +405,6 @@
         private Krypton.Toolkit.KryptonPanel kryptonPanel2;
         private Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private System.Windows.Forms.FlowLayoutPanel container;
+        private Krypton.Toolkit.KryptonButton btn_refresh;
     }
 }
