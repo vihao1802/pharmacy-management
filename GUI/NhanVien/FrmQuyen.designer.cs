@@ -35,14 +35,14 @@
             this.btnSua = new Krypton.Toolkit.KryptonButton();
             this.btnXoa = new Krypton.Toolkit.KryptonButton();
             this.quyenDataGridView = new Krypton.Toolkit.KryptonDataGridView();
-            this.MaQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kryptonGroupBox1 = new Krypton.Toolkit.KryptonGroupBox();
             this.txtTenQuyen = new Krypton.Toolkit.KryptonTextBox();
             this.txtMaQuyen = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonPalette2 = new Krypton.Toolkit.KryptonPalette(this.components);
+            this.MaQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quyenDataGridView)).BeginInit();
@@ -61,11 +61,10 @@
             this.kryptonPanel1.Controls.Add(this.kryptonGroupBox1);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(740, 354);
-            this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.Navy;
-            this.kryptonPanel1.StateCommon.Color2 = System.Drawing.Color.Teal;
+            this.kryptonPanel1.Size = new System.Drawing.Size(555, 288);
+            this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.White;
+            this.kryptonPanel1.StateCommon.Color2 = System.Drawing.Color.White;
             this.kryptonPanel1.StateCommon.ColorAngle = 60F;
             this.kryptonPanel1.StateCommon.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
             this.kryptonPanel1.TabIndex = 0;
@@ -73,51 +72,54 @@
             // btnThem
             // 
             this.btnThem.CornerRoundingRadius = 20F;
-            this.btnThem.Location = new System.Drawing.Point(78, 267);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThem.Location = new System.Drawing.Point(273, 217);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(120, 62);
+            this.btnThem.Size = new System.Drawing.Size(90, 50);
             this.btnThem.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnThem.StateCommon.Border.Rounding = 20F;
             this.btnThem.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.StateNormal.Back.Color1 = System.Drawing.Color.Blue;
+            this.btnThem.StateNormal.Back.Color2 = System.Drawing.Color.Blue;
             this.btnThem.TabIndex = 4;
-            this.btnThem.Values.Image = global::pharmacy_management.Properties.Resources.icons8_add_30;
+            this.btnThem.Values.Image = global::pharmacy_management.Properties.Resources.icons8_plus_24;
             this.btnThem.Values.Text = "";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
             this.btnSua.CornerRoundingRadius = 20F;
-            this.btnSua.Location = new System.Drawing.Point(524, 267);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSua.Location = new System.Drawing.Point(465, 217);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(120, 62);
+            this.btnSua.Size = new System.Drawing.Size(90, 50);
             this.btnSua.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnSua.StateCommon.Border.Rounding = 20F;
             this.btnSua.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSua.StateNormal.Back.Color2 = System.Drawing.Color.Gray;
             this.btnSua.TabIndex = 3;
-            this.btnSua.Values.Image = global::pharmacy_management.Properties.Resources.icons8_fix_30;
+            this.btnSua.Values.Image = global::pharmacy_management.Properties.Resources.icons8_setting_24;
             this.btnSua.Values.Text = "";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.CornerRoundingRadius = 20F;
-            this.btnXoa.Location = new System.Drawing.Point(290, 267);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXoa.Location = new System.Drawing.Point(369, 217);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(120, 62);
+            this.btnXoa.Size = new System.Drawing.Size(90, 50);
             this.btnXoa.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnXoa.StateCommon.Border.Rounding = 20F;
             this.btnXoa.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnXoa.StateNormal.Back.Color2 = System.Drawing.Color.Gray;
             this.btnXoa.TabIndex = 2;
-            this.btnXoa.Values.Image = global::pharmacy_management.Properties.Resources.icons8_remove_30;
+            this.btnXoa.Values.Image = global::pharmacy_management.Properties.Resources.icons8_delete_24;
             this.btnXoa.Values.Text = "";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -128,29 +130,21 @@
             this.quyenDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaQuyen,
             this.TenQuyen});
-            this.quyenDataGridView.Location = new System.Drawing.Point(254, 15);
-            this.quyenDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.quyenDataGridView.GridStyles.Style = Krypton.Toolkit.DataGridViewStyle.Sheet;
+            this.quyenDataGridView.GridStyles.StyleBackground = Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
+            this.quyenDataGridView.GridStyles.StyleColumn = Krypton.Toolkit.GridStyle.Sheet;
+            this.quyenDataGridView.GridStyles.StyleDataCells = Krypton.Toolkit.GridStyle.Sheet;
+            this.quyenDataGridView.GridStyles.StyleRow = Krypton.Toolkit.GridStyle.Sheet;
+            this.quyenDataGridView.Location = new System.Drawing.Point(190, 12);
             this.quyenDataGridView.Name = "quyenDataGridView";
             this.quyenDataGridView.RowHeadersVisible = false;
             this.quyenDataGridView.RowHeadersWidth = 51;
-            this.quyenDataGridView.Size = new System.Drawing.Size(480, 230);
+            this.quyenDataGridView.Size = new System.Drawing.Size(360, 187);
+            this.quyenDataGridView.StateNormal.HeaderColumn.Back.Color1 = System.Drawing.Color.CornflowerBlue;
+            this.quyenDataGridView.StateNormal.HeaderColumn.Back.Color2 = System.Drawing.Color.RoyalBlue;
             this.quyenDataGridView.TabIndex = 1;
             this.quyenDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.quyenDataGridView_CellContentClick);
             this.quyenDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.quyenDataGridView_CellDoubleClick);
-            // 
-            // MaQuyen
-            // 
-            this.MaQuyen.HeaderText = "MaQuyen";
-            this.MaQuyen.MinimumWidth = 6;
-            this.MaQuyen.Name = "MaQuyen";
-            this.MaQuyen.ReadOnly = true;
-            // 
-            // TenQuyen
-            // 
-            this.TenQuyen.HeaderText = "Tên quyền";
-            this.TenQuyen.MinimumWidth = 6;
-            this.TenQuyen.Name = "TenQuyen";
-            this.TenQuyen.ReadOnly = true;
             // 
             // kryptonGroupBox1
             // 
@@ -158,8 +152,7 @@
             this.kryptonGroupBox1.CaptionStyle = Krypton.Toolkit.LabelStyle.BoldPanel;
             this.kryptonGroupBox1.GroupBackStyle = Krypton.Toolkit.PaletteBackStyle.InputControlRibbon;
             this.kryptonGroupBox1.GroupBorderStyle = Krypton.Toolkit.PaletteBorderStyle.InputControlRibbon;
-            this.kryptonGroupBox1.Location = new System.Drawing.Point(0, 15);
-            this.kryptonGroupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonGroupBox1.Location = new System.Drawing.Point(0, 12);
             this.kryptonGroupBox1.Name = "kryptonGroupBox1";
             // 
             // kryptonGroupBox1.Panel
@@ -168,16 +161,15 @@
             this.kryptonGroupBox1.Panel.Controls.Add(this.txtMaQuyen);
             this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel2);
             this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel1);
-            this.kryptonGroupBox1.Size = new System.Drawing.Size(246, 230);
+            this.kryptonGroupBox1.Size = new System.Drawing.Size(184, 187);
             this.kryptonGroupBox1.TabIndex = 0;
             this.kryptonGroupBox1.Values.Heading = "Thông tin ";
             // 
             // txtTenQuyen
             // 
-            this.txtTenQuyen.Location = new System.Drawing.Point(12, 148);
-            this.txtTenQuyen.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenQuyen.Location = new System.Drawing.Point(9, 120);
             this.txtTenQuyen.Name = "txtTenQuyen";
-            this.txtTenQuyen.Size = new System.Drawing.Size(185, 33);
+            this.txtTenQuyen.Size = new System.Drawing.Size(139, 29);
             this.txtTenQuyen.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -187,10 +179,9 @@
             // txtMaQuyen
             // 
             this.txtMaQuyen.Enabled = false;
-            this.txtMaQuyen.Location = new System.Drawing.Point(12, 58);
-            this.txtMaQuyen.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaQuyen.Location = new System.Drawing.Point(9, 47);
             this.txtMaQuyen.Name = "txtMaQuyen";
-            this.txtMaQuyen.Size = new System.Drawing.Size(185, 33);
+            this.txtMaQuyen.Size = new System.Drawing.Size(139, 29);
             this.txtMaQuyen.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -199,20 +190,18 @@
             // 
             // kryptonLabel2
             // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(12, 121);
-            this.kryptonLabel2.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLabel2.Location = new System.Drawing.Point(9, 98);
             this.kryptonLabel2.Name = "kryptonLabel2";
-            this.kryptonLabel2.Size = new System.Drawing.Size(76, 19);
+            this.kryptonLabel2.Size = new System.Drawing.Size(62, 16);
             this.kryptonLabel2.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonLabel2.TabIndex = 1;
             this.kryptonLabel2.Values.Text = "Tên quyền";
             // 
             // kryptonLabel1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(12, 31);
-            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLabel1.Location = new System.Drawing.Point(9, 25);
             this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(71, 19);
+            this.kryptonLabel1.Size = new System.Drawing.Size(58, 16);
             this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonLabel1.TabIndex = 0;
             this.kryptonLabel1.Values.Text = "Mã quyền";
@@ -272,14 +261,27 @@
             this.kryptonPalette2.HeaderStyles.HeaderForm.StateCommon.ButtonEdgeInset = 12;
             this.kryptonPalette2.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             // 
+            // MaQuyen
+            // 
+            this.MaQuyen.HeaderText = "Mã Quyền";
+            this.MaQuyen.MinimumWidth = 6;
+            this.MaQuyen.Name = "MaQuyen";
+            this.MaQuyen.ReadOnly = true;
+            // 
+            // TenQuyen
+            // 
+            this.TenQuyen.HeaderText = "Tên quyền";
+            this.TenQuyen.MinimumWidth = 6;
+            this.TenQuyen.Name = "TenQuyen";
+            this.TenQuyen.ReadOnly = true;
+            // 
             // FrmQuyen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 354);
+            this.ClientSize = new System.Drawing.Size(555, 288);
             this.Controls.Add(this.kryptonPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmQuyen";
             this.Palette = this.kryptonPalette2;
             this.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
@@ -308,8 +310,8 @@
         private Krypton.Toolkit.KryptonButton btnSua;
         private Krypton.Toolkit.KryptonButton btnXoa;
         private Krypton.Toolkit.KryptonDataGridView quyenDataGridView;
+        private Krypton.Toolkit.KryptonPalette kryptonPalette2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaQuyen;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenQuyen;
-        private Krypton.Toolkit.KryptonPalette kryptonPalette2;
     }
 }
