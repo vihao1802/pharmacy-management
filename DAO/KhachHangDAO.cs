@@ -50,6 +50,38 @@ namespace pharmacy_management.DAO
 
         }
 
+        public ArrayList GetALlActive()
+        {
+            ArrayList arrayList = new ArrayList();
+
+            ConnectDB conn = new ConnectDB();
+            string query = "SELECT * FROM khachhang WHERE TrangThai = '1'";
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    KhachHang tmp = new KhachHang(
+                        Int32.Parse(reader["MaKH"].ToString()),
+                        reader["TenKH"].ToString(),
+                        reader["SDT"].ToString(),
+                        DateTime.Parse(reader["NgaySinh"].ToString()),
+                        Int32.Parse(reader["TrangThai"].ToString())
+                     );
+                    arrayList.Add(tmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at KhachHangDAO: " + ex.Message);
+            }
+
+            return arrayList;
+
+        }
+
         public KhachHang getKH(int ma)
         {
             KhachHang kh = new KhachHang();
@@ -103,6 +135,39 @@ namespace pharmacy_management.DAO
             string query = string.Format("UPDATE KHACHHANG SET TenKH = N'{0}', SDT = '{1}', NgaySinh = '{2}', TrangThai = {3} WHERE MaKH = {4}", DTO.TenKH, DTO.Sdt, DTO.NgaySinh, DTO.TrangThai, ma);
             Console.WriteLine(query);
             conn.ExecuteNonQuery(query);
+        }
+
+        public ArrayList search(string search)
+        {
+            ArrayList arrayList = new ArrayList();
+
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("SELECT * FROM KHACHHANG WHERE (MaKH  LIKE '%{0}%' OR TenKH LIKE N'%{0}%' OR SDT LIKE '%{0}%' OR NgaySinh LIKE '%{0}%')",  search);
+            SqlDataReader reader = conn.Execute(query);
+            Console.WriteLine(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    DTO.KhachHang kh = new KhachHang(
+                        Int32.Parse(reader["MaKH"].ToString()),
+                        reader["TenKH"].ToString(),
+                        reader["SDT"].ToString(),
+                        DateTime.Parse(reader["NgaySinh"].ToString()),
+                        Int32.Parse(reader["TrangThai"].ToString())
+                     );
+                    arrayList.Add(kh);
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at KhachHang: " + ex.Message);
+            }
+
+            return arrayList;
+
         }
     }
 }

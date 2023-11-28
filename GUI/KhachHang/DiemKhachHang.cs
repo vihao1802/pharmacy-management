@@ -37,15 +37,19 @@ namespace pharmacy_management.GUI.KhachHang
 
         private void bangdiemDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (bangdiemDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                bangdiemDataGridView.CurrentRow.Selected = true;
-                txtMaBangDiem.Text = bangdiemDataGridView.Rows[e.RowIndex].Cells["MaBangDiem"].Value.ToString();
-                txtMaKH.Text = bangdiemDataGridView.Rows[e.RowIndex].Cells["MaKhachHang"].Value.ToString();
-                txtDiemTichLuy.Text = bangdiemDataGridView.Rows[e.RowIndex].Cells["DiemTichLuy"].Value.ToString();
-                txtDiemDaSuDung.Text = bangdiemDataGridView.Rows[e.RowIndex].Cells["DiemDaSuDung"].Value.ToString();
+                if (bangdiemDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    bangdiemDataGridView.CurrentRow.Selected = true;
+                    bangdiemDataGridView.CurrentRow.Selected = true;
+                    txtMaBangDiem.Text = bangdiemDataGridView.Rows[e.RowIndex].Cells["MaBangDiem"].Value.ToString();
+                    txtMaKH.Text = bangdiemDataGridView.Rows[e.RowIndex].Cells["MaKhachHang"].Value.ToString();
+                    txtDiemTichLuy.Text = bangdiemDataGridView.Rows[e.RowIndex].Cells["DiemTichLuy"].Value.ToString();
+                    txtDiemDaSuDung.Text = bangdiemDataGridView.Rows[e.RowIndex].Cells["DiemDaSuDung"].Value.ToString();
 
 
+                }
             }
         }
 

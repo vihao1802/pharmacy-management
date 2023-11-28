@@ -24,9 +24,9 @@ namespace pharmacy_management.DAO
             ArrayList arrayList = new ArrayList();
 
             ConnectDB conn = new ConnectDB();
-            string query = string.Format("SELECT * FROM donhang WHERE (MaDH LIKE '%{2}%' OR MaKH LIKE '%{2}%' OR MaNV LIKE '%{2}%' OR MaQuyDoi LIKE '%{2}%') AND NgayLap BETWEEN '{0}' AND '{1}'", dateStart, dateEnd, search);
+            string query = string.Format("SELECT * FROM donhang INNER JOIN khachhang ON donhang.MaKH = khachhang.MaKH INNER JOIN nhanvien ON donhang.MaNV = nhanvien.MaNV WHERE (MaDH LIKE '%{2}%' OR khachhang.TenKH LIKE '%{2}%' OR nhanvien.TenNV LIKE '%{2}%' OR MaQuyDoi LIKE '%{2}%') AND NgayLap BETWEEN '{0}' AND '{1}'", dateStart, dateEnd, search);
             SqlDataReader reader = conn.Execute(query);
-            Console.WriteLine(query);
+            //Console.WriteLine(query);
             try
             {
                 while (reader.Read())
@@ -53,7 +53,7 @@ namespace pharmacy_management.DAO
                         outputString = dateTime.ToString("yyyy-MM-dd");
                     }
 
-                    Console.WriteLine(maTmp);
+                    //Console.WriteLine(maTmp);
                     DonHang tmp = new DonHang(
                         Int32.Parse(reader["MaDH"].ToString()),
                         Int32.Parse(reader["MaNV"].ToString()),
@@ -85,7 +85,7 @@ namespace pharmacy_management.DAO
             ConnectDB conn = new ConnectDB();
             string query = string.Format("SELECT * FROM donhang WHERE (MaDH LIKE '%{2}%' OR MaKH LIKE '%{2}%' OR MaNV LIKE '%{2}%' OR MaQuyDoi LIKE '%{2}%') AND NgayLap BETWEEN '{0}' AND '{1}' ORDER BY ThanhTien", dateStart, dateEnd, search);
             SqlDataReader reader = conn.Execute(query);
-            Console.WriteLine(query);
+            //Console.WriteLine(query);
 
             try
             {
@@ -145,7 +145,7 @@ namespace pharmacy_management.DAO
             ConnectDB conn = new ConnectDB();
             string query = string.Format("SELECT * FROM donhang WHERE (MaDH LIKE '%{2}%' OR MaKH LIKE '%{2}%' OR MaNV LIKE '%{2}%' OR MaQuyDoi LIKE '%{2}%') AND NgayLap BETWEEN '{0}' AND '{1}' ORDER BY MaDH DESC", dateStart, dateEnd, search);
             SqlDataReader reader = conn.Execute(query);
-            Console.WriteLine(query);
+            //Console.WriteLine(query);
 
             try
             {
@@ -173,7 +173,7 @@ namespace pharmacy_management.DAO
                         outputString = dateTime.ToString("yyyy-MM-dd");
                     }
 
-                    Console.WriteLine(maTmp);
+                    //Console.WriteLine(maTmp);
                     DonHang tmp = new DonHang(
                         Int32.Parse(reader["MaDH"].ToString()),
                         Int32.Parse(reader["MaNV"].ToString()),

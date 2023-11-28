@@ -38,6 +38,7 @@
             this.lbl_MaDH = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_export_PDF = new Krypton.Toolkit.KryptonButton();
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_ThanhTien = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -63,6 +64,7 @@
             this.lbl_MaKH = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.kryptonPalette2 = new Krypton.Toolkit.KryptonPalette(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -105,6 +107,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btn_export_PDF);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lbl_ThanhTien);
             this.panel1.Controls.Add(this.label11);
@@ -133,6 +136,57 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
             this.panel1.Size = new System.Drawing.Size(1082, 611);
             this.panel1.TabIndex = 6;
+            // 
+            // btn_export_PDF
+            // 
+            this.btn_export_PDF.CornerRoundingRadius = 5F;
+            this.btn_export_PDF.Location = new System.Drawing.Point(18, 558);
+            this.btn_export_PDF.Name = "btn_export_PDF";
+            this.btn_export_PDF.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
+            this.btn_export_PDF.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
+            this.btn_export_PDF.OverrideDefault.Back.Image = global::pharmacy_management.Properties.Resources.icons8_pdf_30;
+            this.btn_export_PDF.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.btn_export_PDF.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
+            this.btn_export_PDF.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
+            this.btn_export_PDF.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_export_PDF.OverrideDefault.Border.Rounding = 5F;
+            this.btn_export_PDF.OverrideDefault.Border.Width = 5;
+            this.btn_export_PDF.Size = new System.Drawing.Size(100, 40);
+            this.btn_export_PDF.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
+            this.btn_export_PDF.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
+            this.btn_export_PDF.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.icons8_pdf_30;
+            this.btn_export_PDF.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.btn_export_PDF.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
+            this.btn_export_PDF.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
+            this.btn_export_PDF.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_export_PDF.StateCommon.Border.Rounding = 5F;
+            this.btn_export_PDF.StateCommon.Border.Width = 5;
+            this.btn_export_PDF.StateDisabled.Back.Color1 = System.Drawing.Color.Gray;
+            this.btn_export_PDF.StateDisabled.Back.Color2 = System.Drawing.Color.Gray;
+            this.btn_export_PDF.StateDisabled.Border.Color1 = System.Drawing.Color.Gray;
+            this.btn_export_PDF.StateDisabled.Border.Color2 = System.Drawing.Color.Gray;
+            this.btn_export_PDF.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_export_PDF.StateTracking.Back.Color1 = System.Drawing.Color.Crimson;
+            this.btn_export_PDF.StateTracking.Back.Color2 = System.Drawing.Color.Crimson;
+            this.btn_export_PDF.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.icons8_pdf_30;
+            this.btn_export_PDF.StateTracking.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.btn_export_PDF.StateTracking.Border.Color1 = System.Drawing.Color.Crimson;
+            this.btn_export_PDF.StateTracking.Border.Color2 = System.Drawing.Color.Crimson;
+            this.btn_export_PDF.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_export_PDF.StateTracking.Border.Rounding = 5F;
+            this.btn_export_PDF.StateTracking.Border.Width = 5;
+            this.btn_export_PDF.TabIndex = 38;
+            this.toolTip1.SetToolTip(this.btn_export_PDF, "Xuất PDF");
+            this.btn_export_PDF.Values.Text = "";
+            this.btn_export_PDF.Click += new System.EventHandler(this.btn_export_PDF_Click);
             // 
             // label6
             // 
@@ -551,6 +605,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label6;
+        private Krypton.Toolkit.KryptonButton btn_export_PDF;
+        private System.Windows.Forms.ToolTip toolTip1;
         private Krypton.Toolkit.KryptonPalette kryptonPalette2;
         //private Krypton.Toolkit.KryptonPalette kryptonPalette2;
     }
