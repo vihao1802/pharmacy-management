@@ -74,7 +74,7 @@ namespace pharmacy_management.DAO
             return state;
         }
 
-        public ArrayList searchatMa(int ma)
+        public ArrayList searchatMa(string ma)
         {
             ArrayList arrayList = new ArrayList();
 
