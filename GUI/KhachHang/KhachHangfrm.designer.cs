@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
+            this.txt_searching = new Krypton.Toolkit.KryptonRichTextBox();
             this.khachhangDataGridView = new System.Windows.Forms.DataGridView();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +46,8 @@
             this.btnXoa = new Krypton.Toolkit.KryptonButton();
             this.btnThem = new Krypton.Toolkit.KryptonButton();
             this.kryptonGroupBox1 = new Krypton.Toolkit.KryptonGroupBox();
+            this.lbl_DiemKH = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,10 +57,8 @@
             this.txtSDT = new Krypton.Toolkit.KryptonTextBox();
             this.txtTenKH = new Krypton.Toolkit.KryptonTextBox();
             this.txtMaKH = new Krypton.Toolkit.KryptonTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbl_DiemKH = new System.Windows.Forms.Label();
-            this.txt_searching = new Krypton.Toolkit.KryptonRichTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_refresh = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.khachhangDataGridView)).BeginInit();
@@ -69,6 +70,7 @@
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.btn_refresh);
             this.kryptonPanel1.Controls.Add(this.txt_searching);
             this.kryptonPanel1.Controls.Add(this.khachhangDataGridView);
             this.kryptonPanel1.Controls.Add(this.btnXuat);
@@ -88,6 +90,21 @@
             this.kryptonPanel1.TabIndex = 0;
             this.kryptonPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonPanel1_Paint);
             // 
+            // txt_searching
+            // 
+            this.txt_searching.Location = new System.Drawing.Point(12, 202);
+            this.txt_searching.Multiline = false;
+            this.txt_searching.Name = "txt_searching";
+            this.txt_searching.Size = new System.Drawing.Size(309, 40);
+            this.txt_searching.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txt_searching.StateCommon.Border.Rounding = 5F;
+            this.txt_searching.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 5, 10, -1);
+            this.txt_searching.TabIndex = 44;
+            this.txt_searching.Text = "";
+            this.txt_searching.TextChanged += new System.EventHandler(this.txt_searching_TextChanged);
+            // 
             // khachhangDataGridView
             // 
             this.khachhangDataGridView.AllowUserToAddRows = false;
@@ -97,14 +114,14 @@
             this.khachhangDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.khachhangDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.khachhangDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.khachhangDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.khachhangDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.khachhangDataGridView.ColumnHeadersHeight = 30;
             this.khachhangDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.khachhangDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -113,32 +130,33 @@
             this.SDT,
             this.NgaySinh,
             this.TrangThai});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.khachhangDataGridView.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.khachhangDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.khachhangDataGridView.EnableHeadersVisualStyles = false;
             this.khachhangDataGridView.GridColor = System.Drawing.Color.Black;
             this.khachhangDataGridView.Location = new System.Drawing.Point(12, 261);
             this.khachhangDataGridView.Name = "khachhangDataGridView";
             this.khachhangDataGridView.ReadOnly = true;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.khachhangDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.khachhangDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.khachhangDataGridView.RowHeadersVisible = false;
             this.khachhangDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.khachhangDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.khachhangDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.khachhangDataGridView.RowTemplate.Height = 24;
+            this.khachhangDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.khachhangDataGridView.Size = new System.Drawing.Size(925, 377);
             this.khachhangDataGridView.TabIndex = 43;
             this.khachhangDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.khachhangDataGridView_CellMouseClick);
@@ -416,6 +434,28 @@
             this.kryptonGroupBox1.TabIndex = 0;
             this.kryptonGroupBox1.Values.Heading = "Thông tin khách hàng";
             // 
+            // lbl_DiemKH
+            // 
+            this.lbl_DiemKH.AutoSize = true;
+            this.lbl_DiemKH.BackColor = System.Drawing.Color.White;
+            this.lbl_DiemKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_DiemKH.Location = new System.Drawing.Point(659, 130);
+            this.lbl_DiemKH.Name = "lbl_DiemKH";
+            this.lbl_DiemKH.Size = new System.Drawing.Size(61, 25);
+            this.lbl_DiemKH.TabIndex = 51;
+            this.lbl_DiemKH.Text = "3,000";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(584, 130);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 25);
+            this.label5.TabIndex = 50;
+            this.label5.Text = "Điểm";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -530,42 +570,48 @@
             this.txtMaKH.StateCommon.Border.Rounding = 10F;
             this.txtMaKH.TabIndex = 4;
             // 
-            // label5
+            // btn_refresh
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(584, 130);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 25);
-            this.label5.TabIndex = 50;
-            this.label5.Text = "Điểm";
-            // 
-            // lbl_DiemKH
-            // 
-            this.lbl_DiemKH.AutoSize = true;
-            this.lbl_DiemKH.BackColor = System.Drawing.Color.White;
-            this.lbl_DiemKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_DiemKH.Location = new System.Drawing.Point(659, 130);
-            this.lbl_DiemKH.Name = "lbl_DiemKH";
-            this.lbl_DiemKH.Size = new System.Drawing.Size(61, 25);
-            this.lbl_DiemKH.TabIndex = 51;
-            this.lbl_DiemKH.Text = "3,000";
-            // 
-            // txt_searching
-            // 
-            this.txt_searching.Location = new System.Drawing.Point(12, 202);
-            this.txt_searching.Multiline = false;
-            this.txt_searching.Name = "txt_searching";
-            this.txt_searching.Size = new System.Drawing.Size(309, 40);
-            this.txt_searching.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.btn_refresh.CornerRoundingRadius = 50F;
+            this.btn_refresh.Location = new System.Drawing.Point(342, 202);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btn_refresh.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btn_refresh.OverrideDefault.Back.Image = global::pharmacy_management.Properties.Resources.icons8_refresh_24;
+            this.btn_refresh.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.btn_refresh.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btn_refresh.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btn_refresh.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txt_searching.StateCommon.Border.Rounding = 5F;
-            this.txt_searching.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 5, 10, -1);
-            this.txt_searching.TabIndex = 44;
-            this.txt_searching.Text = "";
-            this.txt_searching.TextChanged += new System.EventHandler(this.txt_searching_TextChanged);
+            this.btn_refresh.OverrideDefault.Border.Rounding = 50F;
+            this.btn_refresh.OverrideDefault.Border.Width = 5;
+            this.btn_refresh.Size = new System.Drawing.Size(40, 40);
+            this.btn_refresh.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btn_refresh.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btn_refresh.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btn_refresh.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btn_refresh.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_refresh.StateCommon.Border.Rounding = 50F;
+            this.btn_refresh.StateCommon.Border.Width = 5;
+            this.btn_refresh.StateNormal.Back.Image = global::pharmacy_management.Properties.Resources.icons8_refresh_24;
+            this.btn_refresh.StateNormal.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.btn_refresh.StateTracking.Back.Color1 = System.Drawing.Color.Blue;
+            this.btn_refresh.StateTracking.Back.Color2 = System.Drawing.Color.Blue;
+            this.btn_refresh.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.icons8_refresh_24;
+            this.btn_refresh.StateTracking.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.btn_refresh.StateTracking.Border.Color1 = System.Drawing.Color.Blue;
+            this.btn_refresh.StateTracking.Border.Color2 = System.Drawing.Color.Blue;
+            this.btn_refresh.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btn_refresh.StateTracking.Border.Rounding = 50F;
+            this.btn_refresh.StateTracking.Border.Width = 5;
+            this.btn_refresh.TabIndex = 61;
+            this.btn_refresh.Values.Text = "";
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
             // 
             // KhachHangfrm
             // 
@@ -616,5 +662,6 @@
         private System.Windows.Forms.Label label5;
         private Krypton.Toolkit.KryptonRichTextBox txt_searching;
         private System.Windows.Forms.ToolTip toolTip1;
+        private Krypton.Toolkit.KryptonButton btn_refresh;
     }
 }
