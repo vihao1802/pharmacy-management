@@ -150,5 +150,11 @@ namespace pharmacy_management.GUI.QuyDoiDiem
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            txt_searching.Text = "";
+            load_data();
+        }
     }
 }
