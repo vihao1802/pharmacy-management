@@ -53,10 +53,8 @@
             this.kryptonBorderEdge1 = new Krypton.Toolkit.KryptonBorderEdge();
             this.kryptonGroupBox2 = new Krypton.Toolkit.KryptonGroupBox();
             this.btnRefresh = new Krypton.Toolkit.KryptonButton();
-            this.searchbtn = new Krypton.Toolkit.KryptonButton();
             this.txtSearch = new Krypton.Toolkit.KryptonTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.cbbSearch = new Krypton.Toolkit.KryptonComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
             this.kryptonGroupBox1.Panel.SuspendLayout();
@@ -68,7 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).BeginInit();
             this.kryptonGroupBox2.Panel.SuspendLayout();
             this.kryptonGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonGroupBox1
@@ -441,11 +438,9 @@
             // 
             // kryptonGroupBox2.Panel
             // 
-            this.kryptonGroupBox2.Panel.Controls.Add(this.cbbSearch);
             this.kryptonGroupBox2.Panel.Controls.Add(this.btnRefresh);
-            this.kryptonGroupBox2.Panel.Controls.Add(this.searchbtn);
             this.kryptonGroupBox2.Panel.Controls.Add(this.txtSearch);
-            this.kryptonGroupBox2.Size = new System.Drawing.Size(392, 172);
+            this.kryptonGroupBox2.Size = new System.Drawing.Size(392, 107);
             this.kryptonGroupBox2.StateCommon.Border.Color1 = System.Drawing.Color.Black;
             this.kryptonGroupBox2.StateCommon.Border.Color2 = System.Drawing.Color.Black;
             this.kryptonGroupBox2.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -499,57 +494,18 @@
             this.btnRefresh.Values.Text = "";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // searchbtn
-            // 
-            this.searchbtn.CornerRoundingRadius = 20F;
-            this.searchbtn.Location = new System.Drawing.Point(15, 76);
-            this.searchbtn.Name = "searchbtn";
-            this.searchbtn.Size = new System.Drawing.Size(353, 35);
-            this.searchbtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.searchbtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.searchbtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.searchbtn.StateCommon.Border.Rounding = 20F;
-            this.searchbtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.searchbtn.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.searchbtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchbtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.searchbtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.searchbtn.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.searchbtn.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.searchbtn.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchbtn.TabIndex = 7;
-            this.toolTip1.SetToolTip(this.searchbtn, "Tìm Kiếm");
-            this.searchbtn.Values.Text = "Tìm Kiếm";
-            this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click);
-            // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(151, 22);
+            this.txtSearch.Location = new System.Drawing.Point(20, 22);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(165, 33);
+            this.txtSearch.Size = new System.Drawing.Size(296, 33);
             this.txtSearch.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtSearch.StateCommon.Border.Rounding = 10F;
             this.txtSearch.TabIndex = 4;
-            // 
-            // cbbSearch
-            // 
-            this.cbbSearch.CornerRoundingRadius = 10F;
-            this.cbbSearch.DropDownWidth = 143;
-            this.cbbSearch.IntegralHeight = false;
-            this.cbbSearch.Location = new System.Drawing.Point(15, 22);
-            this.cbbSearch.Name = "cbbSearch";
-            this.cbbSearch.Size = new System.Drawing.Size(129, 31);
-            this.cbbSearch.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.cbbSearch.StateCommon.ComboBox.Border.Rounding = 10F;
-            this.cbbSearch.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.cbbSearch.TabIndex = 8;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // FrmXuatXu
             // 
@@ -574,7 +530,6 @@
             this.kryptonGroupBox2.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).EndInit();
             this.kryptonGroupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbbSearch)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -592,7 +547,6 @@
         private Krypton.Toolkit.KryptonTextBox txtSearch;
         private System.Windows.Forms.ToolTip toolTip1;
         private Krypton.Toolkit.KryptonButton btnRefresh;
-        private Krypton.Toolkit.KryptonButton searchbtn;
         private Krypton.Toolkit.KryptonBorderEdge kryptonBorderEdge1;
         private Krypton.Toolkit.KryptonLabel backlbl;
         private Krypton.Toolkit.KryptonButton btnXuat;
@@ -603,6 +557,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maXuatXu;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenXuatXu;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
-        private Krypton.Toolkit.KryptonComboBox cbbSearch;
     }
 }

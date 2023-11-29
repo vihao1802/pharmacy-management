@@ -30,11 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDoiTuong));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.searchbtn = new Krypton.Toolkit.KryptonButton();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSearch = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonGroupBox2 = new Krypton.Toolkit.KryptonGroupBox();
             this.btnRefresh = new Krypton.Toolkit.KryptonButton();
@@ -55,7 +54,6 @@
             this.txtMaDoiTuong = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.cbbSearch = new Krypton.Toolkit.KryptonComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).BeginInit();
             this.kryptonGroupBox2.Panel.SuspendLayout();
@@ -67,56 +65,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
             this.kryptonGroupBox1.Panel.SuspendLayout();
             this.kryptonGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbSearch)).BeginInit();
             this.SuspendLayout();
-            // 
-            // searchbtn
-            // 
-            this.searchbtn.CornerRoundingRadius = 20F;
-            this.searchbtn.Location = new System.Drawing.Point(15, 76);
-            this.searchbtn.Name = "searchbtn";
-            this.searchbtn.Size = new System.Drawing.Size(353, 35);
-            this.searchbtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.searchbtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.searchbtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.searchbtn.StateCommon.Border.Rounding = 20F;
-            this.searchbtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.searchbtn.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.searchbtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchbtn.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.searchbtn.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.searchbtn.StateDisabled.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.searchbtn.StateDisabled.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.searchbtn.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.searchbtn.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.searchbtn.StateNormal.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.searchbtn.StateNormal.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.searchbtn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.searchbtn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.searchbtn.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.searchbtn.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.searchbtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.searchbtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
-            this.searchbtn.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.searchbtn.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.searchbtn.TabIndex = 7;
-            this.toolTip1.SetToolTip(this.searchbtn, "Tìm Kiếm");
-            this.searchbtn.Values.Text = "Tìm Kiếm";
-            this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click);
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(160, 23);
+            this.txtSearch.Location = new System.Drawing.Point(15, 23);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(174, 33);
+            this.txtSearch.Size = new System.Drawing.Size(304, 33);
             this.txtSearch.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtSearch.StateCommon.Border.Rounding = 10F;
             this.txtSearch.TabIndex = 4;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // kryptonGroupBox2
             // 
@@ -130,10 +92,8 @@
             // kryptonGroupBox2.Panel
             // 
             this.kryptonGroupBox2.Panel.Controls.Add(this.btnRefresh);
-            this.kryptonGroupBox2.Panel.Controls.Add(this.cbbSearch);
-            this.kryptonGroupBox2.Panel.Controls.Add(this.searchbtn);
             this.kryptonGroupBox2.Panel.Controls.Add(this.txtSearch);
-            this.kryptonGroupBox2.Size = new System.Drawing.Size(392, 172);
+            this.kryptonGroupBox2.Size = new System.Drawing.Size(392, 103);
             this.kryptonGroupBox2.StateCommon.Border.Color1 = System.Drawing.Color.Black;
             this.kryptonGroupBox2.StateCommon.Border.Color2 = System.Drawing.Color.Black;
             this.kryptonGroupBox2.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -146,7 +106,7 @@
             // btnRefresh
             // 
             this.btnRefresh.CornerRoundingRadius = 50F;
-            this.btnRefresh.Location = new System.Drawing.Point(341, 20);
+            this.btnRefresh.Location = new System.Drawing.Point(335, 16);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btnRefresh.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
@@ -226,45 +186,45 @@
             this.DGVDoiTuong.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.DGVDoiTuong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVDoiTuong.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVDoiTuong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVDoiTuong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DGVDoiTuong.ColumnHeadersHeight = 30;
             this.DGVDoiTuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DGVDoiTuong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaDT,
             this.TenDT,
             this.TrangThai});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVDoiTuong.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVDoiTuong.DefaultCellStyle = dataGridViewCellStyle6;
             this.DGVDoiTuong.EnableHeadersVisualStyles = false;
             this.DGVDoiTuong.GridColor = System.Drawing.Color.Black;
             this.DGVDoiTuong.Location = new System.Drawing.Point(401, 61);
             this.DGVDoiTuong.Name = "DGVDoiTuong";
             this.DGVDoiTuong.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVDoiTuong.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVDoiTuong.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DGVDoiTuong.RowHeadersVisible = false;
             this.DGVDoiTuong.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DGVDoiTuong.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DGVDoiTuong.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DGVDoiTuong.RowTemplate.Height = 24;
             this.DGVDoiTuong.Size = new System.Drawing.Size(546, 267);
             this.DGVDoiTuong.TabIndex = 65;
@@ -537,21 +497,6 @@
             this.kryptonLabel1.TabIndex = 0;
             this.kryptonLabel1.Values.Text = "Mã đối tượng";
             // 
-            // cbbSearch
-            // 
-            this.cbbSearch.CornerRoundingRadius = 20F;
-            this.cbbSearch.DropDownWidth = 136;
-            this.cbbSearch.IntegralHeight = false;
-            this.cbbSearch.Location = new System.Drawing.Point(8, 23);
-            this.cbbSearch.Name = "cbbSearch";
-            this.cbbSearch.Size = new System.Drawing.Size(145, 37);
-            this.cbbSearch.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.cbbSearch.StateCommon.ComboBox.Border.Rounding = 20F;
-            this.cbbSearch.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.cbbSearch.TabIndex = 8;
-            // 
             // FrmDoiTuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -575,13 +520,11 @@
             this.kryptonGroupBox1.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).EndInit();
             this.kryptonGroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbbSearch)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Krypton.Toolkit.KryptonButton searchbtn;
         private Krypton.Toolkit.KryptonTextBox txtSearch;
         private Krypton.Toolkit.KryptonGroupBox kryptonGroupBox2;
         private Krypton.Toolkit.KryptonPanel kryptonPanel1;
@@ -602,6 +545,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
-        private Krypton.Toolkit.KryptonComboBox cbbSearch;
     }
 }

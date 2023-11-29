@@ -37,11 +37,11 @@ namespace pharmacy_management.GUI.QLDoiTuong
         }
         public void setup()
         {
-            cbbSearch.Items.Add("Mã đối tượng");
+            /*cbbSearch.Items.Add("Mã đối tượng");
             cbbSearch.Items.Add("Tên đối tượng");
             cbbSearch.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbSearch.AutoCompleteMode = AutoCompleteMode.None;
-            cbbSearch.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cbbSearch.AutoCompleteSource = AutoCompleteSource.ListItems;*/
             setEnable(true);
         }
         private void kryptonLabel1_Click(object sender, EventArgs e)
@@ -152,7 +152,7 @@ namespace pharmacy_management.GUI.QLDoiTuong
         private void searchbtn_Click(object sender, EventArgs e)
         {
 
-            if (txtSearch.Text.ToString() == "")
+            /*if (txtSearch.Text.ToString() == "")
             {
                 MessageBox.Show("Bạn chưa nhập điều kiện cần lọc");
                 return;
@@ -201,7 +201,7 @@ namespace pharmacy_management.GUI.QLDoiTuong
                     DGVDoiTuong.Rows.Add(ma, ten, temp);
                     flag = 0;
                 }
-            }
+            }*/
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -312,6 +312,24 @@ namespace pharmacy_management.GUI.QLDoiTuong
         {
             FormThuoc formthuoc = new FormThuoc();
             addFormtoPanelContainer(formthuoc);
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            DGVDoiTuong.Rows.Clear();
+            string text = txtSearch.Text.Trim().ToString();
+            foreach (DoiTuong item in bus.search(text))
+            {
+                string temp;
+                int ma = int.Parse(item.MaDT.ToString());
+                string tenxuatxu = item.TenDT.ToString();
+                int state = int.Parse(item.TrangThai.ToString());
+                if (state == 1)
+                    temp = "Active";
+                else
+                    temp = "Not Active";
+                DGVDoiTuong.Rows.Add(ma, tenxuatxu, temp);
+            }
         }
     }
 }

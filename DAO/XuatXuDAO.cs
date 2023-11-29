@@ -74,41 +74,14 @@ namespace pharmacy_management.DAO
             return state;
         }
 
-        public ArrayList searchatMa(string ma)
+       
+
+        public ArrayList search(string text)
         {
             ArrayList arrayList = new ArrayList();
 
             ConnectDB conn = new ConnectDB();
-            string query = "SELECT * FROM xuatxu WHERE MaXuatXu = " + ma;
-            SqlDataReader reader = conn.Execute(query);
-            try
-            {
-                while (reader.Read())
-                {
-                    XuatXu tmp = new XuatXu(
-                        Int32.Parse(reader["MaXuatXu"].ToString()),
-                        reader["TenXuatXu"].ToString(),
-                        Int32.Parse(reader["TrangThai"].ToString())
-                     );
-                    arrayList.Add(tmp);
-                }
-            }
-            catch (Exception ex)
-            {
-                reader.Close();
-
-                Console.WriteLine("An error at XuatXuDAO: " + ex.Message);
-            }
-
-            return arrayList;
-        }
-
-        public ArrayList searchatTen(string ten)
-        {
-            ArrayList arrayList = new ArrayList();
-
-            ConnectDB conn = new ConnectDB();
-            string query = "SELECT * FROM xuatxu WHERE TenXuatXu LIKE N'%"+ ten +"%'";
+            string query = string.Format("SELECT * FROM xuatxu WHERE TenXuatXu LIKE N'%{0}%' OR MaXuatXu LIKE '{0}'",text);
             SqlDataReader reader = conn.Execute(query);
             try
             {
@@ -137,7 +110,7 @@ namespace pharmacy_management.DAO
         {
             ConnectDB conn = new ConnectDB();
             string name = "";
-            string query = "SELECT TenDT FROM doituong WHERE MaDT = " + ma.ToString();
+            string query = "SELECT TenXuatXu FROM xuatxu WHERE MaXuatXu = " + ma.ToString();
             SqlDataReader reader = conn.Execute(query);
             try
             {
