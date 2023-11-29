@@ -29,13 +29,20 @@ namespace pharmacy_management.GUI.QLDoiTuong
         DoiTuongBUS bus = new DoiTuongBUS();
         ThuocBUS thuocbus = new ThuocBUS();
         int flag = 1;
+
+        public void setEnable(bool flag)
+        {
+            btnThem.Enabled = flag;
+            btnSua.Enabled = !flag;
+        }
         public void setup()
         {
-            cbbSearch.Items.Add("Mã đối tượng");
+            /*cbbSearch.Items.Add("Mã đối tượng");
             cbbSearch.Items.Add("Tên đối tượng");
             cbbSearch.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbSearch.AutoCompleteMode = AutoCompleteMode.None;
-            cbbSearch.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cbbSearch.AutoCompleteSource = AutoCompleteSource.ListItems;*/
+            setEnable(true);
         }
         private void kryptonLabel1_Click(object sender, EventArgs e)
         {
@@ -113,18 +120,19 @@ namespace pharmacy_management.GUI.QLDoiTuong
         private void btnSua_Click(object sender, EventArgs e)
         {
             int state;
-            if (DGVDoiTuong.SelectedRows.Count < 1)
-            {
-                MessageBox.Show("Chưa chọn dòng để sửa!");
-                return;
-            }
+            int ma = int.Parse(txtMaDoiTuong.Text.ToString());
+            DoiTuongBUS bus = new DoiTuongBUS();
+            ThuocBUS thuocbus = new ThuocBUS();           
             if (txtTenDoiTuong.Text == "")
             {
                 MessageBox.Show("Chưa điền tên đối tượng");
                 return;
             }
             if (!ckbTrangThai.Checked)
+            {
                 state = 0;
+                thuocbus.deleteatMaDoiTuong(ma);              
+            }
             else state = 1;
             try
             {
@@ -133,6 +141,8 @@ namespace pharmacy_management.GUI.QLDoiTuong
                 DGVDoiTuong.CurrentRow.Cells["TenDT"].Value = txtTenDoiTuong.Text.ToString();
                 DGVDoiTuong.CurrentRow.Cells["TrangThai"].Value = state == 1 ? "Active" : "Not Active";
                 txtTenDoiTuong.Text = "";
+                txtMaDoiTuong.Text = "";
+                DGVDoiTuong.ClearSelection();
                 MessageBox.Show("Sửa thành công");
             }
             catch (Exception ex) {
@@ -141,57 +151,22 @@ namespace pharmacy_management.GUI.QLDoiTuong
             //DGVDoiTuong.Refresh();
         }
 
-        private void xoabtn_Click(object sender, EventArgs e)
-        {
-            int ma = int.Parse(DGVDoiTuong.CurrentRow.Cells["MaDT"].Value.ToString());
-            int trangThai = ckbTrangThai.Checked ? 1 : 0;
-            // Thêm điều kiện kiểm tra trước khi xóa
-            if (trangThai == 0)
-            {
-                MessageBox.Show("Đối tượng đã bị hủy kích hoạt từ trước!!!");
-                return;
-            }
-            else
-            {
-                if (MessageBox.Show("Bạn có chắc chắn muốn hủy kích hoạt đối tượng không?", "Xác nhận hủy", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    try
-                    {
-                        //if (trangThai == 1)
-                        bus.delete(ma);
-                        txtTenDoiTuong.Text = "";
-                        MessageBox.Show("Hủy kích hoạt đối tượng thành công!!!");
-                        DGVDoiTuong.CurrentRow.Cells["TrangThai"].Value = "Not Active";
-                        ckbTrangThai.Checked = false; 
-                        foreach (DTO.Thuoc item in thuocbus.getList())
-                        {
-                            if (ma == item.MaDoiTuong)
-                                thuocbus.delete(item.MaThuoc);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-            }
-        }
-
-
+       
         private void searchbtn_Click(object sender, EventArgs e)
         {
 
-            if (txtSearch.Text.ToString() == "")
+            /*if (txtSearch.Text.ToString() == "")
             {
                 MessageBox.Show("Bạn chưa nhập điều kiện cần lọc");
                 return;
             }
             DGVDoiTuong.Rows.Clear();
+            string tenDoiTuong = txtSearch.Text.ToString();
             if (cbbSearch.SelectedItem.ToString() == "Mã đối tượng")
             {
 
-                int maDoiTuong = int.Parse(txtSearch.Text.ToString());
-                foreach (DoiTuong item in bus.searchatMa(maDoiTuong))
+                
+                foreach (DoiTuong item in bus.searchatMa(tenDoiTuong))
                 {
                     string temp;
                     int ma = int.Parse(item.MaDT.ToString());
@@ -211,9 +186,8 @@ namespace pharmacy_management.GUI.QLDoiTuong
 
             }
             else if (cbbSearch.SelectedItem.ToString() == "Tên đối tượng")
-            {
-                string tenXuatXu = txtSearch.Text.ToString();
-                foreach (DoiTuong item in bus.searchatTen(tenXuatXu))
+            {              
+                foreach (DoiTuong item in bus.searchatTen(tenDoiTuong))
                 {
                     string temp;
                     int ma = int.Parse(item.MaDT.ToString());
@@ -230,13 +204,18 @@ namespace pharmacy_management.GUI.QLDoiTuong
                     DGVDoiTuong.Rows.Add(ma, ten, temp);
                     flag = 0;
                 }
-            }
+            }*/
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             loadds();
-            flag = 1;
+            flag = 1; 
+            txtTenDoiTuong.Text = "";
+            txtMaDoiTuong.Text = "";
+            ckbTrangThai.Visible = false;
+            setEnable(true);
+            DGVDoiTuong.ClearSelection();
         }
 
      
@@ -309,6 +288,7 @@ namespace pharmacy_management.GUI.QLDoiTuong
                 ckbTrangThai.Checked = true;
             else
                 ckbTrangThai.Checked = false;
+            setEnable(false);
         }
 
         private void addFormtoPanelContainer(object Form)
@@ -332,12 +312,32 @@ namespace pharmacy_management.GUI.QLDoiTuong
             DGVDoiTuong.ClearSelection();
             txtMaDoiTuong.Text = "";
             txtTenDoiTuong.Text = "";
+            setEnable(true);
         }
 
-        private void backlbl_MouseClick(object sender, MouseEventArgs e)
+      
+        private void backlbl_MouseClick(object sender, EventArgs e)
         {
             FormThuoc formthuoc = new FormThuoc();
             addFormtoPanelContainer(formthuoc);
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            DGVDoiTuong.Rows.Clear();
+            string text = txtSearch.Text.Trim().ToString();
+            foreach (DoiTuong item in bus.search(text))
+            {
+                string temp;
+                int ma = int.Parse(item.MaDT.ToString());
+                string tenxuatxu = item.TenDT.ToString();
+                int state = int.Parse(item.TrangThai.ToString());
+                if (state == 1)
+                    temp = "Active";
+                else
+                    temp = "Not Active";
+                DGVDoiTuong.Rows.Add(ma, tenxuatxu, temp);
+            }
         }
     }
 }

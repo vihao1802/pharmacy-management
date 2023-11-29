@@ -30,6 +30,14 @@ namespace pharmacy_management.BUS
             list = dao.GetALl(dateStart, dateEnd, search);
         }
 
+        public void loadListStatis(string dateStart, string dateEnd, string numeric)
+        {
+            list = dao.GetALlStatis(dateStart, dateEnd, numeric);
+        }
+        public void loadListStatisDT(string dateStart, string dateEnd, string numeric)
+        {
+            list = dao.GetALlStatisDT(dateStart, dateEnd, numeric);
+        }
         public void loadList_price_ascend(string dateStart, string dateEnd, string search)
         {
             list = dao.GetALlPriceAscend(dateStart, dateEnd, search);

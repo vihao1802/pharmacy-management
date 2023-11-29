@@ -15,13 +15,13 @@ namespace pharmacy_management.DAO
         private ArrayList list;
         public PhieuNhapDAO()
         {
-            list = GetALl();
+            //list = GetALl();
         }
 
         public ArrayList GetALl()
         {
 
-           ArrayList arrayList = new ArrayList();
+            ArrayList arrayList = new ArrayList();
             ConnectDB conn = new ConnectDB();
             string query = "SELECT * FROM phieunhap";
             SqlDataReader reader = conn.Execute(query);
@@ -29,7 +29,7 @@ namespace pharmacy_management.DAO
             {
                 while (reader.Read())
                 {
-                    
+
                     DateTime dateTime = DateTime.ParseExact(reader["NgayLap"].ToString(), "MM/dd/yyyy hh:mm:ss tt", null);
                     string outputString = dateTime.ToString("yyyy-MM-dd");
                     PhieuNhap tmp = new PhieuNhap(
@@ -51,6 +51,51 @@ namespace pharmacy_management.DAO
             return arrayList;
 
         }
+
+        public ArrayList GetALlStatis(string dateStart, string dateEnd, string numeric)
+        {
+            ArrayList arrayList = new ArrayList();
+
+            ConnectDB conn = new ConnectDB();
+            string query = "";
+            if (numeric == "0")
+            {
+                query = string.Format("SELECT thuoc.MaThuoc, MAX(thuoc.TenThuoc) AS TenThuoc, MAX(thuoc.GiaThuoc) AS GiaNhap, SUM(chitietphieunhap.SoLuong) AS SoLuongNhap FROM phieunhap INNER JOIN chitietphieunhap ON phieunhap.MaPN = chitietphieunhap.MaPN INNER JOIN thuoc ON thuoc.MaThuoc = chitietphieunhap.MaThuoc WHERE phieunhap.NgayLap BETWEEN '{0}' AND '{1}' GROUP BY thuoc.MaThuoc", dateStart, dateEnd);
+            }
+            else
+            {
+                query = string.Format("SELECT TOP {2} thuoc.MaThuoc, MAX(thuoc.TenThuoc) AS TenThuoc, MAX(thuoc.GiaThuoc) AS GiaNhap, SUM(chitietphieunhap.SoLuong) AS SoLuongNhap FROM phieunhap INNER JOIN chitietphieunhap ON phieunhap.MaPN = chitietphieunhap.MaPN INNER JOIN thuoc ON thuoc.MaThuoc = chitietphieunhap.MaThuoc WHERE phieunhap.NgayLap BETWEEN '{0}' AND '{1}' GROUP BY thuoc.MaThuoc ORDER BY SoLuongNhap DESC", dateStart, dateEnd, numeric);
+            }
+
+            SqlDataReader reader = conn.Execute(query);
+            Console.WriteLine(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    Thuoc tmp = new Thuoc(
+                        Int32.Parse(reader["MaThuoc"].ToString()),
+                        reader["TenThuoc"].ToString(),
+                        0,
+                        float.Parse(reader["GiaNhap"].ToString()),
+                        "",
+                        1,
+                        0,
+                        Int32.Parse(reader["SoLuongNhap"].ToString())
+                    );
+                    arrayList.Add(tmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at DonHangDAO getAll: " + ex.Message);
+            }
+
+            return arrayList;
+
+        }
         public ArrayList GetALl(string dateStart, string dateEnd, string search)
         {
             ArrayList arrayList = new ArrayList();
@@ -63,7 +108,7 @@ namespace pharmacy_management.DAO
             {
                 while (reader.Read())
                 {
-                  
+
 
                     DateTime dateTime = DateTime.ParseExact(reader["NgayLap"].ToString(), "MM/dd/yyyy hh:mm:ss tt", null);
                     string outputString = dateTime.ToString("yyyy-MM-dd");
@@ -104,7 +149,7 @@ namespace pharmacy_management.DAO
             {
                 while (reader.Read())
                 {
-                
+
 
                     DateTime dateTime = DateTime.ParseExact(reader["NgayLap"].ToString(), "MM/dd/yyyy hh:mm:ss tt", null);
                     string outputString = dateTime.ToString("yyyy-MM-dd");
@@ -145,7 +190,7 @@ namespace pharmacy_management.DAO
             {
                 while (reader.Read())
                 {
-                 
+
 
                     DateTime dateTime = DateTime.ParseExact(reader["NgayLap"].ToString(), "MM/dd/yyyy hh:mm:ss tt", null);
                     string outputString = dateTime.ToString("yyyy-MM-dd");
@@ -157,7 +202,7 @@ namespace pharmacy_management.DAO
                         Int32.Parse(reader["MaNV"].ToString()),
                        outputString,
                         float.Parse(reader["TongTien"].ToString())
-                     ); 
+                     );
                     arrayList.Add(tmp);
                 }
             }
@@ -181,7 +226,7 @@ namespace pharmacy_management.DAO
 
         public PhieuNhap getItem()
         {
-          //  DateTime date = DateTime.UtcNow();
+            //  DateTime date = DateTime.UtcNow();
             PhieuNhap dh = new PhieuNhap(0, 0, "2020-02-2", 0);
             ConnectDB conn = new ConnectDB();
             string query = "SELECT TOP 1 MaPN FROM PhieuNhap ORDER BY MaPN DESC";
@@ -195,7 +240,7 @@ namespace pharmacy_management.DAO
                         0,
                        "2020-02-02",
                         0
-                       
+
                      );
 
                 }

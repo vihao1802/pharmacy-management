@@ -50,16 +50,10 @@ namespace pharmacy_management.BUS
         {
             dao.update(DTO);
         }
-
-        public ArrayList searchatMa(int ma)
+      
+        public ArrayList search(string text)
         {
-            list = dao.searchatMa(ma);
-            return list;
-        }
-
-        public ArrayList searchatTen(string ten)
-        {
-            list = dao.searchatTen(ten);
+            list = dao.search(text);
             return list;
         }
 

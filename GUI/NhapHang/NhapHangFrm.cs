@@ -232,7 +232,7 @@ namespace pharmacy_management.GUI.NhapHang
             }
             else
             {
-                lh = new LoHangFrm();
+                lh = new LoHangFrm(this);
                 lh.setCart(thuoc_cart);
                 lh.Show();
             }
