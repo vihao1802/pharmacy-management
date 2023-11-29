@@ -18,6 +18,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Collections;
 
 namespace pharmacy_management.GUI.Thuoc
 {
@@ -38,7 +39,7 @@ namespace pharmacy_management.GUI.Thuoc
         XuatXuBUS xxbus = new XuatXuBUS();
 
         public string globalFilename;
-
+        public string originalFileName;
         private bool checkInput()
         {
             Boolean result = true;
@@ -48,11 +49,11 @@ namespace pharmacy_management.GUI.Thuoc
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                 result = false;
             }
-            else if (giathuoc.Any(char.IsLetter) || (float.TryParse(giathuoc, out float gia) && gia <= 1000) || float.Parse(giathuoc) % 1000 !=0)
+            /*else if (giathuoc.Any(char.IsLetter) || (float.TryParse(giathuoc, out float gia) && gia <= 1000) || float.Parse(giathuoc) % 1000 != 0)
             {
                 MessageBox.Show("Giá thuốc không hợp lệ.VD:100000 hoặc 55000 và giá thuốc phải > 1000 VND");
                 result = false;
-            }
+            }*/
             /*foreach (char c in txtTenThuoc.Text)
                     if (char.IsDigit(c))
                         return true;*/
@@ -61,7 +62,7 @@ namespace pharmacy_management.GUI.Thuoc
         public void setEnable(bool flag)
         {
             btnThem.Enabled = flag;
-            btnSua.Enabled = !flag;          
+            btnSua.Enabled = !flag;
         }
 
         public void setup()
@@ -95,7 +96,7 @@ namespace pharmacy_management.GUI.Thuoc
                 int madoituong = int.Parse(item.MaDoiTuong.ToString());
                 int soluong = int.Parse(item.SoLuong.ToString());
                 float price = float.Parse(item.GiaThuoc.ToString());
-                string anh = item.AnhThuoc.ToString();
+                string anh = item.AnhThuoc.ToString().Replace("images/", "");
                 int state = int.Parse(item.TrangThai.ToString());
                 string tenxuatxu = xxbus.GetNameBUS(maxuatxu);
                 string tendoituong = dtbus.GetNameBUS(madoituong);
@@ -121,11 +122,12 @@ namespace pharmacy_management.GUI.Thuoc
                     {
                         string FileName = openFileDialog.FileName;
                         // gan ten File vao bien globalFilename
-                        globalFilename += "images/" + Path.GetFileName(FileName);
-                        MessageBox.Show(globalFilename);
+                        globalFilename += Path.GetFileName(FileName);
+                        originalFileName = FileName;
+                        //MessageBox.Show(globalFilename);
                         if (myStream.Length > 512000)
                         {
-                            MessageBox.Show("File size limit exceeded");
+                            MessageBox.Show("Kích thước file quá lớn");
                         }
                         else
                         {
@@ -142,53 +144,82 @@ namespace pharmacy_management.GUI.Thuoc
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
- 
-            if (checkInput() == false) return;
+
+            //if (checkInput() == false) return;
             if (DGVThuoc.SelectedRows.Count >= 1)
             {
                 MessageBox.Show("Có dòng đang được chọn hãy bỏ chọn trước!");
                 return;
             }
             if (ckbTrangThai.Checked == false) ;
-           
-                try
+
+            try
+            {
+                loadds();
+                string maxx = cbbMaXuatXu.Text.Trim();
+                string madt = cbbMaDoiTuong.Text.Trim();
+
+
+                int maxThuoc = 0;
+                ArrayList thuocList = thuocbus.getList();
+                thuocList.Reverse();
+                foreach (DTO.Thuoc item in thuocbus.getList())
                 {
-                    loadds();
-                    string maxx = cbbMaXuatXu.Text.Trim();
-                    string madt = cbbMaDoiTuong.Text.Trim();
-                    DTO.Thuoc drug = new DTO.Thuoc(txtTenThuoc.Text.ToString(), int.Parse(madt[0].ToString()), float.Parse(txtGiaThuoc.Text.ToString()), globalFilename, 1, int.Parse(maxx[0].ToString()), 0);
-                    thuocbus.add(drug);
-
-                    int maxThuoc = 0;
-                    foreach (DTO.Thuoc item in thuocbus.getList())
-                    {
-                        int ma = int.Parse(item.MaThuoc.ToString());
-                        if (ma > maxThuoc)
-                        {
-                            maxThuoc = ma;
-                        }
-                    }
-
-                    int trangthaiNew = drug.TrangThai;
-                    string tenNew = drug.TenThuoc;
-                    string tenxuatxu = xxbus.GetNameBUS(drug.MaXuatXu);
-                    string tendoituong = dtbus.GetNameBUS(drug.MaDoiTuong);
-                    int soluong = drug.SoLuong;
-                    float giathuoc = drug.GiaThuoc;
-                    string anhthuoc = globalFilename;
-                    string tempNew = (trangthaiNew == 1) ? "Còn bán" : "Ngừng bán";
-                    DGVThuoc.Rows.Add(maxThuoc + 1, tenNew, tenxuatxu, tendoituong, soluong, giathuoc, anhthuoc, tempNew);
-
-                    Refreshtxt();
-                    MessageBox.Show("Thêm thành công");
+                    maxThuoc = item.MaThuoc;
+                    break;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                
+                Console.WriteLine(maxThuoc);
+                string newFileName = maxThuoc + 1 + "." + globalFilename.Split('.')[1];
+                DTO.Thuoc drug = new DTO.Thuoc(txtTenThuoc.Text.ToString(), int.Parse(madt[0].ToString()), float.Parse(txtGiaThuoc.Text.ToString()), newFileName, 1, int.Parse(maxx[0].ToString()), 0);
+                thuocbus.add(drug);
+
+                int trangthaiNew = drug.TrangThai;
+                string tenNew = drug.TenThuoc;
+                string tenxuatxu = xxbus.GetNameBUS(drug.MaXuatXu);
+                string tendoituong = dtbus.GetNameBUS(drug.MaDoiTuong);
+                int soluong = drug.SoLuong;
+                float giathuoc = drug.GiaThuoc;
+                string directoryPath = @"..\..\Resources";
+                SaveImageToDirectory(newFileName, directoryPath);
+                string tempNew = (trangthaiNew == 1) ? "Còn bán" : "Ngừng bán";
+                DGVThuoc.Rows.Add(maxThuoc + 1, tenNew, tenxuatxu, tendoituong, soluong, giathuoc, newFileName, tempNew);
+
+                Refreshtxt();
+                MessageBox.Show("Thêm thành công");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
             }
         }
+        public void SaveImageToDirectory(string newFileName, string directoryPath)
+        {
+            try
+            {
+                if (originalFileName == null)
+                {
+                    Console.WriteLine("User canceled the dialog. Image not saved.");
+                    return;
+                }
 
+                byte[] imageBytes = File.ReadAllBytes(originalFileName);
+
+                if (!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+
+                string destinationPath = Path.Combine(directoryPath, newFileName);
+                Console.WriteLine(destinationPath);
+                // Write the byte array to the destination file
+                File.WriteAllBytes(destinationPath, imageBytes);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+        }
 
         private void Refreshtxt()
         {
@@ -269,7 +300,10 @@ namespace pharmacy_management.GUI.Thuoc
             {
 
                 int mt = int.Parse(DGVThuoc.CurrentRow.Cells["MaThuoc"].Value.ToString());
-                DTO.Thuoc drug = new DTO.Thuoc(mt, txtTenThuoc.Text.ToString(), madt, float.Parse(txtGiaThuoc.Text.ToString()), globalFilename, 1, maxx, soluong);
+                string newFileName = mt + "." + globalFilename.Split('.')[1];
+                string directoryPath = @"..\..\Resources";
+                SaveImageToDirectory(newFileName, directoryPath);
+                DTO.Thuoc drug = new DTO.Thuoc(mt, txtTenThuoc.Text.ToString(), madt, float.Parse(txtGiaThuoc.Text.ToString()), newFileName, 1, maxx, soluong);
                 thuocbus.update(drug);
                 int trangthaiNew = drug.TrangThai;
                 string tenNew = drug.TenThuoc;
@@ -277,7 +311,7 @@ namespace pharmacy_management.GUI.Thuoc
                 string tendoituong = dtbus.GetNameBUS(drug.MaDoiTuong);
                 int quantity = drug.SoLuong;
                 float giathuoc = drug.GiaThuoc;
-                string anhthuoc = globalFilename;
+                string anhthuoc = newFileName;
                 DGVThuoc.CurrentRow.Cells["TenThuoc"].Value = tenNew;
                 DGVThuoc.CurrentRow.Cells["MaXuatXu"].Value = tenxuatxu;
                 DGVThuoc.CurrentRow.Cells["MaDoiTuong"].Value = tendoituong;
@@ -447,7 +481,7 @@ namespace pharmacy_management.GUI.Thuoc
         }
 
 
-       
+
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
@@ -480,27 +514,27 @@ namespace pharmacy_management.GUI.Thuoc
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
-        {       
-                DGVThuoc.Rows.Clear();
-                string text = txtSearch.Text.Trim().ToString();
-                foreach (DTO.Thuoc item in thuocbus.search(text))
-                {
-                    string temp;
-                    int ma = int.Parse(item.MaThuoc.ToString());
-                    string tenthuoc = item.TenThuoc.ToString();
-                    int maxuatxu = int.Parse(item.MaXuatXu.ToString());
-                    int madoituong = int.Parse(item.MaDoiTuong.ToString());
-                    int soluong = int.Parse(item.SoLuong.ToString());
-                    float price = float.Parse(item.GiaThuoc.ToString());
-                    string anh = item.AnhThuoc.ToString();
-                    int state = int.Parse(item.TrangThai.ToString());
-                    string tenxuatxu = xxbus.GetNameBUS(maxuatxu);
-                    string tendoituong = dtbus.GetNameBUS(madoituong);
-                    if (state == 1)
-                        temp = "Còn bán";
-                    else
-                        temp = "Ngừng bán";
-                    DGVThuoc.Rows.Add(ma, tenthuoc, tenxuatxu, tendoituong, soluong, price, anh, temp);               
+        {
+            DGVThuoc.Rows.Clear();
+            string text = txtSearch.Text.Trim().ToString();
+            foreach (DTO.Thuoc item in thuocbus.search(text))
+            {
+                string temp;
+                int ma = int.Parse(item.MaThuoc.ToString());
+                string tenthuoc = item.TenThuoc.ToString();
+                int maxuatxu = int.Parse(item.MaXuatXu.ToString());
+                int madoituong = int.Parse(item.MaDoiTuong.ToString());
+                int soluong = int.Parse(item.SoLuong.ToString());
+                float price = float.Parse(item.GiaThuoc.ToString());
+                string anh = item.AnhThuoc.ToString();
+                int state = int.Parse(item.TrangThai.ToString());
+                string tenxuatxu = xxbus.GetNameBUS(maxuatxu);
+                string tendoituong = dtbus.GetNameBUS(madoituong);
+                if (state == 1)
+                    temp = "Còn bán";
+                else
+                    temp = "Ngừng bán";
+                DGVThuoc.Rows.Add(ma, tenthuoc, tenxuatxu, tendoituong, soluong, price, anh, temp);
             }
         }
 

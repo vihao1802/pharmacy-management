@@ -70,6 +70,7 @@
             this.kryptonBorderEdge1 = new Krypton.Toolkit.KryptonBorderEdge();
             this.Them = new System.Windows.Forms.ToolTip(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.kryptonLabel7 = new Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
             this.kryptonGroupBox1.Panel.SuspendLayout();
@@ -97,6 +98,7 @@
             // 
             // kryptonGroupBox1.Panel
             // 
+            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel7);
             this.kryptonGroupBox1.Panel.Controls.Add(this.txtSoLuong);
             this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel2);
             this.kryptonGroupBox1.Panel.Controls.Add(this.txtMaThuoc);
@@ -286,7 +288,7 @@
             this.txtGiaThuoc.Location = new System.Drawing.Point(277, 98);
             this.txtGiaThuoc.Margin = new System.Windows.Forms.Padding(4);
             this.txtGiaThuoc.Name = "txtGiaThuoc";
-            this.txtGiaThuoc.Size = new System.Drawing.Size(253, 33);
+            this.txtGiaThuoc.Size = new System.Drawing.Size(182, 33);
             this.txtGiaThuoc.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -764,6 +766,17 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
+            // kryptonLabel7
+            // 
+            this.kryptonLabel7.LabelStyle = Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonLabel7.Location = new System.Drawing.Point(467, 106);
+            this.kryptonLabel7.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLabel7.Name = "kryptonLabel7";
+            this.kryptonLabel7.Size = new System.Drawing.Size(59, 25);
+            this.kryptonLabel7.StateCommon.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonLabel7.TabIndex = 26;
+            this.kryptonLabel7.Values.Text = ".000 đ";
+            // 
             // FormThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -832,5 +845,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaThuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn AnhThuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel7;
     }
 }
