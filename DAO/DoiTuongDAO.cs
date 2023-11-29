@@ -163,12 +163,12 @@ namespace pharmacy_management.DAO
             conn.ExecuteNonQuery(sql);
         }
 
-        public ArrayList searchatMa(int ma)
+        public ArrayList searchatMa(string tendoituong)
         {
             ArrayList arrayList = new ArrayList();
 
             ConnectDB conn = new ConnectDB();
-            string query = "SELECT * FROM DoiTuong WHERE MaDT = " + ma;
+            string query = "SELECT * FROM DoiTuong WHERE MaDT = " + tendoituong;
             SqlDataReader reader = conn.Execute(query);
             try
             {
