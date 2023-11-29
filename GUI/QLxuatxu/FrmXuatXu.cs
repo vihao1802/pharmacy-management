@@ -68,8 +68,10 @@ namespace pharmacy_management.GUI.QLxuatxu
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (flag == 0)
+            if (txtSearch.Text.Length > 0) {
                 MessageBox.Show("Bạn phải làm mới bảng trước");
+                return;
+            }
             else
             {
                 if (DGVXuatXu.SelectedRows.Count >= 1)
@@ -156,6 +158,7 @@ namespace pharmacy_management.GUI.QLxuatxu
             flag = 1;
             txtTenXuatXu.Text = "";
             txtMaXuatXu.Text = "";
+            txtSearch.Text = "";
             DGVXuatXu.ClearSelection();
             ckbTrangThai.Visible = false;
             setEnable(true);
