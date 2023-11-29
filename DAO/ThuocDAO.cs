@@ -408,10 +408,17 @@ namespace pharmacy_management.DAO
             conn.ExecuteNonQuery(sql);
         }
 
-        public void Delete(int ma)
+        public void DeleteatMaXuatXu(int ma)
         {
             ConnectDB conn = new ConnectDB();
-            string sql = "UPDATE THUOC SET TrangThai = 0,SoLuong = 0  WHERE MaThuoc = " + ma;
+            string sql = "UPDATE THUOC SET TrangThai = 0,SoLuong = 0  WHERE Thuoc.MaXuatXu = " + ma;
+            conn.ExecuteNonQuery(sql);
+        }
+
+        public void DeleteatMaDoiTuong(int ma)
+        {
+            ConnectDB conn = new ConnectDB();
+            string sql = "UPDATE THUOC SET TrangThai = 0,SoLuong = 0  WHERE Thuoc.MaDoiTuong = " + ma;
             conn.ExecuteNonQuery(sql);
         }
     }

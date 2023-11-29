@@ -120,18 +120,19 @@ namespace pharmacy_management.GUI.QLDoiTuong
         private void btnSua_Click(object sender, EventArgs e)
         {
             int state;
-            if (DGVDoiTuong.SelectedRows.Count < 1)
-            {
-                MessageBox.Show("Chưa chọn dòng để sửa!");
-                return;
-            }
+            int ma = int.Parse(txtMaDoiTuong.Text.ToString());
+            DoiTuongBUS bus = new DoiTuongBUS();
+            ThuocBUS thuocbus = new ThuocBUS();           
             if (txtTenDoiTuong.Text == "")
             {
                 MessageBox.Show("Chưa điền tên đối tượng");
                 return;
             }
             if (!ckbTrangThai.Checked)
+            {
                 state = 0;
+                thuocbus.deleteatMaDoiTuong(ma);              
+            }
             else state = 1;
             try
             {
@@ -140,6 +141,8 @@ namespace pharmacy_management.GUI.QLDoiTuong
                 DGVDoiTuong.CurrentRow.Cells["TenDT"].Value = txtTenDoiTuong.Text.ToString();
                 DGVDoiTuong.CurrentRow.Cells["TrangThai"].Value = state == 1 ? "Active" : "Not Active";
                 txtTenDoiTuong.Text = "";
+                txtMaDoiTuong.Text = "";
+                DGVDoiTuong.ClearSelection();
                 MessageBox.Show("Sửa thành công");
             }
             catch (Exception ex) {
@@ -207,7 +210,12 @@ namespace pharmacy_management.GUI.QLDoiTuong
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             loadds();
-            flag = 1;
+            flag = 1; 
+            txtTenDoiTuong.Text = "";
+            txtMaDoiTuong.Text = "";
+            ckbTrangThai.Visible = false;
+            setEnable(true);
+            DGVDoiTuong.ClearSelection();
         }
 
      
