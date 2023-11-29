@@ -45,8 +45,9 @@
             this.txt_searching = new Krypton.Toolkit.KryptonRichTextBox();
             this.kryptonPanel2 = new Krypton.Toolkit.KryptonPanel();
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
-            this.container = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_refresh = new Krypton.Toolkit.KryptonButton();
+            this.container = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnNhap = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.cb_XuatXu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_DoiTuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
@@ -168,7 +169,7 @@
             // btn_show_cart
             // 
             this.btn_show_cart.CornerRoundingRadius = 5F;
-            this.btn_show_cart.Location = new System.Drawing.Point(814, 28);
+            this.btn_show_cart.Location = new System.Drawing.Point(814, 32);
             this.btn_show_cart.Name = "btn_show_cart";
             this.btn_show_cart.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
             this.btn_show_cart.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
@@ -293,6 +294,7 @@
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.btnNhap);
             this.kryptonPanel1.Controls.Add(this.btn_refresh);
             this.kryptonPanel1.Controls.Add(this.btn_show_cart);
             this.kryptonPanel1.Controls.Add(this.cb_DoiTuong);
@@ -307,17 +309,6 @@
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.White;
             this.kryptonPanel1.StateCommon.Color2 = System.Drawing.Color.White;
             this.kryptonPanel1.TabIndex = 6;
-            // 
-            // container
-            // 
-            this.container.AutoScroll = true;
-            this.container.BackColor = System.Drawing.Color.White;
-            this.container.Location = new System.Drawing.Point(0, 66);
-            this.container.Margin = new System.Windows.Forms.Padding(0);
-            this.container.Name = "container";
-            this.container.Padding = new System.Windows.Forms.Padding(15, 0, 0, 20);
-            this.container.Size = new System.Drawing.Size(950, 550);
-            this.container.TabIndex = 0;
             // 
             // btn_refresh
             // 
@@ -361,6 +352,55 @@
             this.btn_refresh.TabIndex = 33;
             this.btn_refresh.Values.Text = "";
             this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
+            // 
+            // container
+            // 
+            this.container.AutoScroll = true;
+            this.container.BackColor = System.Drawing.Color.White;
+            this.container.Location = new System.Drawing.Point(0, 66);
+            this.container.Margin = new System.Windows.Forms.Padding(0);
+            this.container.Name = "container";
+            this.container.Padding = new System.Windows.Forms.Padding(15, 0, 0, 20);
+            this.container.Size = new System.Drawing.Size(950, 550);
+            this.container.TabIndex = 0;
+            // 
+            // btnNhap
+            // 
+            this.btnNhap.CornerRoundingRadius = 5F;
+            this.btnNhap.Location = new System.Drawing.Point(814, 0);
+            this.btnNhap.Name = "btnNhap";
+            this.btnNhap.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnNhap.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnNhap.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnNhap.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnNhap.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnNhap.OverrideDefault.Border.Rounding = 5F;
+            this.btnNhap.Size = new System.Drawing.Size(124, 28);
+            this.btnNhap.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnNhap.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnNhap.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnNhap.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnNhap.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnNhap.StateCommon.Border.Rounding = 5F;
+            this.btnNhap.StateCommon.Border.Width = 2;
+            this.btnNhap.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnNhap.StateTracking.Back.Color1 = System.Drawing.Color.White;
+            this.btnNhap.StateTracking.Back.Color2 = System.Drawing.Color.White;
+            this.btnNhap.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnNhap.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnNhap.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnNhap.StateTracking.Border.Rounding = 5F;
+            this.btnNhap.StateTracking.Border.Width = 2;
+            this.btnNhap.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(191)))));
+            this.btnNhap.TabIndex = 34;
+            this.btnNhap.Values.Text = "Nhập excel";
+            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
             // 
             // NhapHangFrm
             // 
@@ -406,5 +446,6 @@
         private Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private System.Windows.Forms.FlowLayoutPanel container;
         private Krypton.Toolkit.KryptonButton btn_refresh;
+        private Krypton.Toolkit.KryptonButton btnNhap;
     }
 }

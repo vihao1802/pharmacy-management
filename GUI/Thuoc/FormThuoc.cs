@@ -18,6 +18,9 @@ using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Data.OleDb;
+using System.Data.SqlClient;
+using pharmacy_management.Database;
 
 namespace pharmacy_management.GUI.Thuoc
 {

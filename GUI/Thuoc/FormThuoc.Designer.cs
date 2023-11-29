@@ -62,10 +62,13 @@
             this.GiaThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AnhThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
             this.btnRefresh = new Krypton.Toolkit.KryptonButton();
             this.kryptonGroupBox2 = new Krypton.Toolkit.KryptonGroupBox();
             this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
             this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+
+
             this.txtSearch = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonBorderEdge1 = new Krypton.Toolkit.KryptonBorderEdge();
             this.Them = new System.Windows.Forms.ToolTip(this.components);
@@ -353,7 +356,8 @@
             // btnXuat
             // 
             this.btnXuat.CornerRoundingRadius = 5F;
-            this.btnXuat.Location = new System.Drawing.Point(584, 304);
+            this.btnXuat.Location = new System.Drawing.Point(476, 304);
+           // this.btnXuat.Location = new System.Drawing.Point(584, 304);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.OverrideDefault.Back.Color1 = System.Drawing.Color.Green;
             this.btnXuat.OverrideDefault.Back.Color2 = System.Drawing.Color.Green;
