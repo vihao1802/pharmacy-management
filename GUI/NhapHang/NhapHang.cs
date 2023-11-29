@@ -227,7 +227,7 @@ namespace pharmacy_management.GUI.NhapHang
             }
             else
             {
-                lh = new LoHangFrm();
+                //lh = new LoHangFrm(this);
                 lh.setCart(thuoc_cart);
                 lh.Show();
             }
@@ -271,6 +271,11 @@ namespace pharmacy_management.GUI.NhapHang
                 lh.setCart(thuoc_cart);
                 //gh.Show();
             }
+        }
+
+        private void txt_searching_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

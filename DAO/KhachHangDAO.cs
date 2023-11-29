@@ -136,5 +136,38 @@ namespace pharmacy_management.DAO
             Console.WriteLine(query);
             conn.ExecuteNonQuery(query);
         }
+
+        public ArrayList search(string search)
+        {
+            ArrayList arrayList = new ArrayList();
+
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("SELECT * FROM KHACHHANG WHERE (MaKH  LIKE '%{0}%' OR TenKH LIKE N'%{0}%' OR SDT LIKE '%{0}%' OR NgaySinh LIKE '%{0}%')",  search);
+            SqlDataReader reader = conn.Execute(query);
+            Console.WriteLine(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    DTO.KhachHang kh = new KhachHang(
+                        Int32.Parse(reader["MaKH"].ToString()),
+                        reader["TenKH"].ToString(),
+                        reader["SDT"].ToString(),
+                        DateTime.Parse(reader["NgaySinh"].ToString()),
+                        Int32.Parse(reader["TrangThai"].ToString())
+                     );
+                    arrayList.Add(kh);
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at KhachHang: " + ex.Message);
+            }
+
+            return arrayList;
+
+        }
     }
 }

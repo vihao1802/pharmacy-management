@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace pharmacy_management.GUI.KhachHang
 {
@@ -22,6 +23,7 @@ namespace pharmacy_management.GUI.KhachHang
         private KhachHangBUS khachHangBus;
         DiemKhachHangBUS diembus = new DiemKhachHangBUS();
         private DiemKhachHangBUS diemKhachHangBUS;
+        int flag = 1;
 
         public KhachHangfrm()
         {
@@ -64,6 +66,7 @@ namespace pharmacy_management.GUI.KhachHang
             ckbTrangThai.Visible = false;
             label5.Visible = false;
             lbl_DiemKH.Visible = false;
+            txt_searching.Clear();
             //kryptonButton1.Visible = false;
         }
 
@@ -442,7 +445,7 @@ namespace pharmacy_management.GUI.KhachHang
 
         private void khachhangDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            khachhangDataGridView.CurrentRow.Selected = true;
+           // khachhangDataGridView.CurrentRow.Selected = true;
         }
 
         private void khachhangDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -517,12 +520,33 @@ namespace pharmacy_management.GUI.KhachHang
 
         private void txt_searching_TextChanged(object sender, EventArgs e)
         {
-
+            /*if (txt_searching.Text.Trim().ToString() == "")
+            {
+                MessageBox.Show("Chưa nhập");
+                return;
+            }*/
+            khachhangDataGridView.Rows.Clear();
+            string tim = txt_searching.Text.Trim().ToString();
+            foreach (DTO.KhachHang item in bus.search(tim))
+            {
+                
+                int ma = item.MaKH;
+                string ten = item.TenKH;
+                string sdt = item.Sdt;
+                DateTime ngaysinh = item.NgaySinh;
+                int trangthai = item.TrangThai;
+                string temp = (trangthai == 1) ? "Đang hoạt động" : "Dừng hoạt động";
+                khachhangDataGridView.Rows.Add(ma, ten, sdt, ngaysinh.ToString("yyyy-MM-dd"), temp);
+                //flag = 0;
+            }
         }
+
+       
 
         private void btn_refresh_Click(object sender, EventArgs e)
         {
-
+            loads();
+            RefreshTextBox();
         }
     }
 }

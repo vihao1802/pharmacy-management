@@ -111,7 +111,7 @@ namespace pharmacy_management.DAO
         public void update(NhanVien DTO, int ma)
         {
             ConnectDB conn = new ConnectDB();
-            string query = string.Format("UPDATE NHANVIEN SET TenNV = N'{0}', SDT = '{1}', DiaChi = '{2}', Email = '{3}', TrangThai = {4}, TenDangNhap = '{5}', MatKhau = '{6}', MaQuyen = {7} WHERE MaNV = {8}", DTO.TenNV, DTO.SDT, DTO.DiaChi, DTO.Email, DTO.TrangThai, DTO.TenDangNhap, DTO.MatKhau, DTO.MaQuyen, ma);
+            string query = string.Format("UPDATE NHANVIEN SET TenNV = N'{0}', SDT = '{1}', DiaChi = '{2}', Email = '{3}', TrangThai = {4}, TenDangNhap = '{5}',  MaQuyen = {6} WHERE MaNV = {7}", DTO.TenNV, DTO.SDT, DTO.DiaChi, DTO.Email, DTO.TrangThai, DTO.TenDangNhap,  DTO.MaQuyen, ma);
             Console.WriteLine(query);
             conn.ExecuteNonQuery(query);
         }
@@ -148,6 +148,44 @@ namespace pharmacy_management.DAO
 
             return nv;
 
+
+        }
+
+        public ArrayList search(string search)
+        {
+            ArrayList arrayList = new ArrayList();
+
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("SELECT * FROM NHANVIEN WHERE (MaNV  LIKE '%{0}%' OR TenNV LIKE N'%{0}%' OR SDT LIKE '%{0}%' OR DiaChi LIKE N'%{0}%' OR Email LIKE '%{0}%' OR TenDangNhap  LIKE '%{0}%')", search);
+            SqlDataReader reader = conn.Execute(query);
+            Console.WriteLine(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    DTO.NhanVien nv = new NhanVien(
+                        Int32.Parse(reader["MaNV"].ToString()),
+                        reader["TenNV"].ToString(),
+                        reader["SDT"].ToString(),
+                        reader["DiaChi"].ToString(),
+                        reader["Email"].ToString(),
+                        Int32.Parse(reader["TrangThai"].ToString()),
+                        reader["TenDangNhap"].ToString(),
+                        reader["MatKhau"].ToString(),
+                        Int32.Parse(reader["MaQuyen"].ToString())
+
+                    );
+                    arrayList.Add(nv);
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at NhanVien: " + ex.Message);
+            }
+
+            return arrayList;
 
         }
     }

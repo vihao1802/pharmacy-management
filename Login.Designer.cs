@@ -40,11 +40,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtpass = new Krypton.Toolkit.KryptonTextBox();
             this.ckbRemember = new Krypton.Toolkit.KryptonCheckBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonPalette2 = new Krypton.Toolkit.KryptonPalette(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -266,20 +264,6 @@
             this.ckbRemember.Values.Text = "Nhớ thông tin đăng nhập";
             this.ckbRemember.CheckedChanged += new System.EventHandler(this.kryptonCheckBox1_CheckedChanged);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::pharmacy_management.Properties.Resources.Show_Password;
-            this.pictureBox2.Location = new System.Drawing.Point(782, 258);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
-            this.pictureBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseUp);
-            // 
             // kryptonLabel1
             // 
             this.kryptonLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -356,7 +340,6 @@
             this.ClientSize = new System.Drawing.Size(832, 453);
             this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.ckbRemember);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.label4);
@@ -377,7 +360,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,7 +377,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Krypton.Toolkit.KryptonTextBox txtpass;
         private Krypton.Toolkit.KryptonCheckBox ckbRemember;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private Krypton.Toolkit.KryptonPalette kryptonPalette2;
     }
