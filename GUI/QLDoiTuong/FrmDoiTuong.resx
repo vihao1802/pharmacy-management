@@ -121,13 +121,13 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="kryptonLabel3.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="lblback.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAADASURBVFhH7dbNCgFRHIbxKd/F5Qppch1ugLLBRkpWuC08
-        bzl1mmym6LyL/1O/ktXbORlTRVEURVGxRqixxEBfOKVxF7w+NNKmIc5I42QFi3SVJ+TjrtCJFq+PI/Jx
-        N4xRvB4OyMfdYTNuj+a4CYrXwRb5uAcsxnWxQz7uiQ3WPzSFbqlVOjkNycf90xytsh+orK84Zf0jSVk/
-        ZlLWD+qU9V9dyvplIfXtdWsBq5ovrDPYpZPUA1b0OYqiKIrsqqo3QN2WR+E9xcMAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EAAACxABrSO9dQAAAMBJREFUWEft1s0KAVEchvEp38XlCmlyHW6AssFGSla4LTxvOXWabKbovIv/U7+S
+        1ds5GVNFURRFUbFGqLHEQF84pXEXvD400qYhzkjjZAWLdJUn5OOu0IkWr48j8nE3jFG8Hg7Ix91hM26P
+        5rgJitfBFvm4ByzGdbFDPu6JDdY/NIVuqVU6OQ3Jx/3THK2yH6isrzhl/SNJWT9mUtYP6pT1X13K+mUh
+        9e11awGrmi+sM9ilk9QDVvQ5iqIoiuyqqjdA3ZZH4T3FwwAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="MaDT.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

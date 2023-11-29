@@ -11,13 +11,13 @@ namespace pharmacy_management.Database
     class ConnectDB
     {
         // @autho Hao
-        //string strCnn = "Data Source=LAPTOP-ULQT60JG; Database=ql_nhathuoc;Max Pool Size=1000;Integrated Security = True";
+        string strCnn = "Data Source=LAPTOP-ULQT60JG; Database=ql_nhathuoc;Max Pool Size=1000;Integrated Security = True";
 
         // @author Thinh
-        string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc; Max Pool Size=1000;Integrated Security = True";
+        //string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc; Max Pool Size=1000;Integrated Security = True";
 
         // @author Duc
-        string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Max Pool Size=1000;Integrated Security=True";
+        //string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Max Pool Size=1000;Integrated Security=True";
 
         //@author an
         //string strCnn = "Data Source=DESKTOP-F74SIEE;Initial Catalog=ql_nhathuoc;Max Pool Size=1000;Integrated Security=True";

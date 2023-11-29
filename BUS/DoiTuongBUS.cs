@@ -54,9 +54,9 @@ namespace pharmacy_management.BUS
             dao.update(DTO);
         }
 
-        public ArrayList searchatMa(int ma)
+        public ArrayList searchatMa(string tendoituong)
         {
-            list = dao.searchatMa(ma);
+            list = dao.searchatMa(tendoituong);
             return list;
         }
 
