@@ -11,7 +11,7 @@ namespace pharmacy_management.Database
     class ConnectDB
     {
         // @autho Hao
-        //string strCnn = "Data Source=LAPTOP-ULQT60JG; Database=ql_nhathuoc;Max Pool Size=1000;Integrated Security = True";
+       // string strCnn = "Data Source=LAPTOP-ULQT60JG; Database=ql_nhathuoc;Max Pool Size=1000;Integrated Security = True";
 
         // @author Thinh
         string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc; Max Pool Size=1000;Integrated Security = True";

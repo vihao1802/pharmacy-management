@@ -32,7 +32,10 @@ namespace pharmacy_management.BUS
         {
             list = dao.GetALl(dateStart, dateEnd, search);
         }
-
+        public void loadListStatis(string dateStart, string dateEnd, string numeric)
+        {
+            list = dao.GetALlStatis(dateStart, dateEnd, numeric);
+        }
         public void loadList_price_ascend(string dateStart, string dateEnd, string search)
         {
             list = dao.GetALlPriceAscend(dateStart, dateEnd, search);
@@ -43,7 +46,7 @@ namespace pharmacy_management.BUS
             list = dao.GetALlIdDescend(dateStart, dateEnd, search);
         }
 
-        public void addNewInvoice(int maNV,  string ngayLap, string tongTien)
+        public void addNewInvoice(int maNV, string ngayLap, string tongTien)
         {
             dao.addNewInvoice(maNV, ngayLap, tongTien);
         }

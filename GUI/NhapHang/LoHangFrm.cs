@@ -18,13 +18,15 @@ namespace pharmacy_management.GUI.NhapHang
     {
         public static DTO.NhanVien nv = new DTO.NhanVien();
         List<DTO.Thuoc> list_cart;
+        NhapHangFrm nhFrm;
         private float total_price = 0;
-        public LoHangFrm()
+        public LoHangFrm(NhapHangFrm nhFrm)
         {
             InitializeComponent();
             nv = Login.nv;
             lbName.Text = nv.TenNV.ToString();
             setup();
+            this.nhFrm = nhFrm;
         }
 
         public void setup()
@@ -40,7 +42,7 @@ namespace pharmacy_management.GUI.NhapHang
                     MessageBox.Show("Bạn chưa có sản phẩm nào");
                     return;
                 }
-         
+
             DialogResult result = MessageBox.Show("Bạn có chắc muốn thanh toán?", "Thanh toán", MessageBoxButtons.OKCancel);
 
             if (result != DialogResult.OK)
@@ -61,12 +63,12 @@ namespace pharmacy_management.GUI.NhapHang
 
             pnBUS.addNewInvoice(nv.MaNV, formattedDate, tongTien);
 
-         
+
 
             PhieuNhap tmp = pnBUS.getItem();
 
 
-         
+
             ChiTietPhieuNhapBUS ctpnBUS = new ChiTietPhieuNhapBUS();
             ThuocBUS tUpdate = new ThuocBUS();
 
@@ -80,6 +82,8 @@ namespace pharmacy_management.GUI.NhapHang
             //setEmpty();
             list_cart.Clear();
             AddCart();
+            this.nhFrm.setEmpty();
+            this.nhFrm.pagination();
             MessageBox.Show("Thanh toán thành công!");
         }
 
@@ -106,7 +110,7 @@ namespace pharmacy_management.GUI.NhapHang
 
             string formattedNumber = total_price.ToString("#,##0") + " đ";
             lbl_total_price.Text = formattedNumber;
-            float final_price = total_price ;
+            float final_price = total_price;
             formattedNumber = final_price.ToString("#,##0") + " đ";
             lbl_final_total_price.Text = formattedNumber;
         }
@@ -148,8 +152,8 @@ namespace pharmacy_management.GUI.NhapHang
             }
         }
 
-       
-      
+
+
 
     }
 }

@@ -52,11 +52,11 @@
             this.backlbl = new Krypton.Toolkit.KryptonLabel();
             this.kryptonBorderEdge1 = new Krypton.Toolkit.KryptonBorderEdge();
             this.kryptonGroupBox2 = new Krypton.Toolkit.KryptonGroupBox();
-            this.cbbSearch = new Krypton.Toolkit.KryptonComboBox();
             this.btnRefresh = new Krypton.Toolkit.KryptonButton();
             this.searchbtn = new Krypton.Toolkit.KryptonButton();
             this.txtSearch = new Krypton.Toolkit.KryptonTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cbbSearch = new Krypton.Toolkit.KryptonComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
             this.kryptonGroupBox1.Panel.SuspendLayout();
@@ -455,21 +455,6 @@
             this.kryptonGroupBox2.TabIndex = 14;
             this.kryptonGroupBox2.Values.Heading = "Tìm kiếm";
             // 
-            // cbbSearch
-            // 
-            this.cbbSearch.CornerRoundingRadius = 10F;
-            this.cbbSearch.DropDownWidth = 143;
-            this.cbbSearch.IntegralHeight = false;
-            this.cbbSearch.Location = new System.Drawing.Point(15, 22);
-            this.cbbSearch.Name = "cbbSearch";
-            this.cbbSearch.Size = new System.Drawing.Size(129, 31);
-            this.cbbSearch.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.cbbSearch.StateCommon.ComboBox.Border.Rounding = 10F;
-            this.cbbSearch.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.cbbSearch.TabIndex = 8;
-            // 
             // btnRefresh
             // 
             this.btnRefresh.CornerRoundingRadius = 50F;
@@ -551,6 +536,21 @@
             this.txtSearch.StateCommon.Border.Rounding = 10F;
             this.txtSearch.TabIndex = 4;
             // 
+            // cbbSearch
+            // 
+            this.cbbSearch.CornerRoundingRadius = 10F;
+            this.cbbSearch.DropDownWidth = 143;
+            this.cbbSearch.IntegralHeight = false;
+            this.cbbSearch.Location = new System.Drawing.Point(15, 22);
+            this.cbbSearch.Name = "cbbSearch";
+            this.cbbSearch.Size = new System.Drawing.Size(129, 31);
+            this.cbbSearch.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cbbSearch.StateCommon.ComboBox.Border.Rounding = 10F;
+            this.cbbSearch.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cbbSearch.TabIndex = 8;
+            // 
             // FrmXuatXu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -590,7 +590,6 @@
         private Krypton.Toolkit.KryptonCheckBox ckbTrangThai;
         private Krypton.Toolkit.KryptonGroupBox kryptonGroupBox2;
         private Krypton.Toolkit.KryptonTextBox txtSearch;
-        private Krypton.Toolkit.KryptonComboBox cbbSearch;
         private System.Windows.Forms.ToolTip toolTip1;
         private Krypton.Toolkit.KryptonButton btnRefresh;
         private Krypton.Toolkit.KryptonButton searchbtn;
@@ -604,5 +603,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maXuatXu;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenXuatXu;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private Krypton.Toolkit.KryptonComboBox cbbSearch;
     }
 }

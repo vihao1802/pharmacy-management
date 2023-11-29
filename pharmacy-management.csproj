@@ -366,6 +366,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\BanHang\DonHangFrm.resx">
       <DependentUpon>DonHangFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\BanHang\DonHangRow.resx">
       <DependentUpon>DonHangRow.cs</DependentUpon>

@@ -56,7 +56,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 493);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(602, 60);
+            this.panel2.Size = new System.Drawing.Size(582, 60);
             this.panel2.TabIndex = 4;
             // 
             // btn_pay
@@ -65,7 +65,7 @@
             this.btn_pay.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btn_pay.ForeColor = System.Drawing.Color.White;
-            this.btn_pay.Location = new System.Drawing.Point(495, 0);
+            this.btn_pay.Location = new System.Drawing.Point(475, 0);
             this.btn_pay.Name = "btn_pay";
             this.btn_pay.Size = new System.Drawing.Size(107, 60);
             this.btn_pay.TabIndex = 4;
@@ -120,7 +120,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(602, 50);
+            this.panel1.Size = new System.Drawing.Size(582, 50);
             this.panel1.TabIndex = 3;
             // 
             // lbName
@@ -149,7 +149,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 50);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(602, 443);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(582, 443);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // kryptonPalette2
@@ -211,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 553);
+            this.ClientSize = new System.Drawing.Size(582, 553);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
