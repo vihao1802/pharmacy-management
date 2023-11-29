@@ -62,18 +62,13 @@
             this.GiaThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AnhThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-<<<<<<< HEAD
-            this.btnSearch = new Krypton.Toolkit.KryptonButton();
-=======
->>>>>>> main
+
             this.btnRefresh = new Krypton.Toolkit.KryptonButton();
             this.kryptonGroupBox2 = new Krypton.Toolkit.KryptonGroupBox();
             this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
             this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
-<<<<<<< HEAD
-            this.cbbSearch = new Krypton.Toolkit.KryptonComboBox();
-=======
->>>>>>> main
+
+
             this.txtSearch = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonBorderEdge1 = new Krypton.Toolkit.KryptonBorderEdge();
             this.Them = new System.Windows.Forms.ToolTip(this.components);
@@ -361,11 +356,8 @@
             // btnXuat
             // 
             this.btnXuat.CornerRoundingRadius = 5F;
-<<<<<<< HEAD
             this.btnXuat.Location = new System.Drawing.Point(476, 304);
-=======
-            this.btnXuat.Location = new System.Drawing.Point(584, 304);
->>>>>>> main
+           // this.btnXuat.Location = new System.Drawing.Point(584, 304);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.OverrideDefault.Back.Color1 = System.Drawing.Color.Green;
             this.btnXuat.OverrideDefault.Back.Color2 = System.Drawing.Color.Green;
@@ -568,76 +560,6 @@
             this.DGVThuoc.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVThuoc_CellMouseDoubleClick);
             // 
             // MaThuoc
-<<<<<<< HEAD
-            // 
-            this.MaThuoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.MaThuoc.HeaderText = "Mã";
-            this.MaThuoc.MinimumWidth = 6;
-            this.MaThuoc.Name = "MaThuoc";
-            this.MaThuoc.ReadOnly = true;
-            this.MaThuoc.Width = 6;
-            // 
-            // TenThuoc
-            // 
-            this.TenThuoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenThuoc.HeaderText = "Tên thuốc";
-            this.TenThuoc.MinimumWidth = 6;
-            this.TenThuoc.Name = "TenThuoc";
-            this.TenThuoc.ReadOnly = true;
-            // 
-            // MaXuatXu
-            // 
-            this.MaXuatXu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaXuatXu.HeaderText = "Xuất xứ";
-            this.MaXuatXu.MinimumWidth = 6;
-            this.MaXuatXu.Name = "MaXuatXu";
-            this.MaXuatXu.ReadOnly = true;
-            // 
-            // MaDoiTuong
-            // 
-            this.MaDoiTuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaDoiTuong.HeaderText = "Đối tượng";
-            this.MaDoiTuong.MinimumWidth = 6;
-            this.MaDoiTuong.Name = "MaDoiTuong";
-            this.MaDoiTuong.ReadOnly = true;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.SoLuong.HeaderText = "SL";
-            this.SoLuong.MinimumWidth = 6;
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.ReadOnly = true;
-            this.SoLuong.Width = 6;
-            // 
-            // GiaThuoc
-            // 
-            this.GiaThuoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GiaThuoc.HeaderText = "Giá";
-            this.GiaThuoc.MinimumWidth = 6;
-            this.GiaThuoc.Name = "GiaThuoc";
-            this.GiaThuoc.ReadOnly = true;
-            // 
-            // AnhThuoc
-            // 
-            this.AnhThuoc.HeaderText = "Ảnh";
-            this.AnhThuoc.MinimumWidth = 6;
-            this.AnhThuoc.Name = "AnhThuoc";
-            this.AnhThuoc.ReadOnly = true;
-            this.AnhThuoc.Width = 125;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.MinimumWidth = 6;
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            this.TrangThai.Width = 130;
-            // 
-            // btnSearch
-=======
->>>>>>> main
             // 
             this.MaThuoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.MaThuoc.HeaderText = "Mã";

@@ -447,11 +447,6 @@ namespace pharmacy_management.GUI.Thuoc
                 f.Show();
             }
         }
-<<<<<<< HEAD
-        private void btnNhap_Click(object sender, EventArgs e)
-        {
-        
-=======
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {       
@@ -481,7 +476,6 @@ namespace pharmacy_management.GUI.Thuoc
         private void kryptonPanel1_Paint(object sender, PaintEventArgs e)
         {
 
->>>>>>> main
         }
     }
 }
