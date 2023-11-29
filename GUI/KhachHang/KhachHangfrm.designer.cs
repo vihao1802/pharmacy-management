@@ -252,6 +252,8 @@
             // btnXuat
             // 
             this.btnXuat.CornerRoundingRadius = 5F;
+            this.btnXuat.Location = new System.Drawing.Point(471, 202);
+            this.btnXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXuat.Location = new System.Drawing.Point(545, 202);
             this.btnXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXuat.Name = "btnXuat";
@@ -297,6 +299,8 @@
             // btnSua
             // 
             this.btnSua.CornerRoundingRadius = 5F;
+            this.btnSua.Location = new System.Drawing.Point(715, 202);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Location = new System.Drawing.Point(691, 202);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
@@ -435,7 +439,7 @@
             this.lbl_DiemKH.AutoSize = true;
             this.lbl_DiemKH.BackColor = System.Drawing.Color.White;
             this.lbl_DiemKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_DiemKH.Location = new System.Drawing.Point(879, 160);
+            this.lbl_DiemKH.Location = new System.Drawing.Point(659, 128);
             this.lbl_DiemKH.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DiemKH.Name = "lbl_DiemKH";
             this.lbl_DiemKH.Size = new System.Drawing.Size(61, 25);
@@ -447,7 +451,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(779, 160);
+            this.label5.Location = new System.Drawing.Point(584, 130);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 25);

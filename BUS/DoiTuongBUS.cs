@@ -54,9 +54,9 @@ namespace pharmacy_management.BUS
             dao.update(DTO);
         }
 
-        public ArrayList searchatMa(string tendoituong)
+        public ArrayList search(string text)
         {
-            list = dao.searchatMa(tendoituong);
+            list = dao.search(text);
             return list;
         }
 
@@ -64,13 +64,7 @@ namespace pharmacy_management.BUS
         {
             return dao.GetStateDAO(ma);
         }
-
-        public ArrayList searchatTen(string ten)
-        {
-            list = dao.searchatTen(ten);
-            return list;
-        }
-
+      
         public string GetNameBUS(int ma)
         {
             return dao.GetNameDAO(ma);
