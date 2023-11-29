@@ -146,43 +146,14 @@ namespace pharmacy_management.GUI.Thuoc
         private void btnThem_Click_1(object sender, EventArgs e)
         {
  
-            if (checkInput() == false) return;
-            if (txtSearch.Text.Length>0)
-            
-            {
-                MessageBox.Show("Bạn phải làm mới bảng trước!");
-                return;
-            }
-            if (ckbTrangThai.Checked == false) ;
-           
+            if (checkInput() == false) return;    
                 try
-                {
-                    loadds();
+                {        
                     string maxx = cbbMaXuatXu.Text.Trim();
                     string madt = cbbMaDoiTuong.Text.Trim();
                     DTO.Thuoc drug = new DTO.Thuoc(txtTenThuoc.Text.ToString(), int.Parse(madt[0].ToString()), float.Parse(txtGiaThuoc.Text.ToString()), globalFilename, 1, int.Parse(maxx[0].ToString()), 0);
                     thuocbus.add(drug);
-
-                    int maxThuoc = 0;
-                    foreach (DTO.Thuoc item in thuocbus.getList())
-                    {
-                        int ma = int.Parse(item.MaThuoc.ToString());
-                        if (ma > maxThuoc)
-                        {
-                            maxThuoc = ma;
-                        }
-                    }
-
-                    int trangthaiNew = drug.TrangThai;
-                    string tenNew = drug.TenThuoc;
-                    string tenxuatxu = xxbus.GetNameBUS(drug.MaXuatXu);
-                    string tendoituong = dtbus.GetNameBUS(drug.MaDoiTuong);
-                    int soluong = drug.SoLuong;
-                    float giathuoc = drug.GiaThuoc;
-                    string anhthuoc = globalFilename;
-                    string tempNew = (trangthaiNew == 1) ? "Còn bán" : "Ngừng bán";
-                    DGVThuoc.Rows.Add(maxThuoc + 1, tenNew, tenxuatxu, tendoituong, soluong, giathuoc, anhthuoc, tempNew);
-
+                    loadds();
                     Refreshtxt();
                     MessageBox.Show("Thêm thành công");
                 }
