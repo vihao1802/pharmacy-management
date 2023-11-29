@@ -74,13 +74,7 @@ namespace pharmacy_management.GUI.QLDoiTuong
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtSearch.Text.Length > 0)
-            {
-                MessageBox.Show("Bạn phải làm mới bảng trước");
-                return;
-            }
-            else
-            {            
+           
                 if (txtTenDoiTuong.Text == "")
                 {
                     MessageBox.Show("Chưa điền tên đối tượng");
@@ -90,29 +84,14 @@ namespace pharmacy_management.GUI.QLDoiTuong
                 {
                     DoiTuong dt = new DoiTuong(txtTenDoiTuong.Text.ToString(), 1);
                     bus.add(dt);
-
-                    int maxDoiTuong = 0;
-                    foreach (DoiTuong item in bus.getList())
-                    {
-                        int ma = int.Parse(item.MaDT.ToString());
-                        if (ma > maxDoiTuong)
-                        {
-                            maxDoiTuong = ma;
-                        }
-                    }
-
-                    int trangthaiNew = dt.TrangThai;
-                    string tenNew = dt.TenDT;
-                    string tempNew = (trangthaiNew == 1) ? "Active" : "Not Active";
-                    DGVDoiTuong.Rows.Add(maxDoiTuong + 1, tenNew, tempNew);
+                    loadds();
                     txtTenDoiTuong.Text = "";
                     MessageBox.Show("Thêm thành công");
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                }
-            }         
+                }       
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -150,60 +129,7 @@ namespace pharmacy_management.GUI.QLDoiTuong
         }
 
        
-        private void searchbtn_Click(object sender, EventArgs e)
-        {
-
-            /*if (txtSearch.Text.ToString() == "")
-            {
-                MessageBox.Show("Bạn chưa nhập điều kiện cần lọc");
-                return;
-            }
-            DGVDoiTuong.Rows.Clear();
-            string tenDoiTuong = txtSearch.Text.ToString();
-            if (cbbSearch.SelectedItem.ToString() == "Mã đối tượng")
-            {
-
-                
-                foreach (DoiTuong item in bus.searchatMa(tenDoiTuong))
-                {
-                    string temp;
-                    int ma = int.Parse(item.MaDT.ToString());
-                    string ten = item.TenDT.ToString();
-                    int state = int.Parse(item.TrangThai.ToString());
-                    if (state == 1)
-                    {
-                        temp = "Active";
-                    }
-                    else
-                    {
-                        temp = "Not Active";
-                    }
-                    DGVDoiTuong.Rows.Add(ma, ten, temp);
-                    flag = 0;
-                }
-
-            }
-            else if (cbbSearch.SelectedItem.ToString() == "Tên đối tượng")
-            {              
-                foreach (DoiTuong item in bus.searchatTen(tenDoiTuong))
-                {
-                    string temp;
-                    int ma = int.Parse(item.MaDT.ToString());
-                    string ten = item.TenDT.ToString();
-                    int state = int.Parse(item.TrangThai.ToString());
-                    if (state == 1)
-                    {
-                        temp = "Active";
-                    }
-                    else
-                    {
-                        temp = "Not Active";
-                    }
-                    DGVDoiTuong.Rows.Add(ma, ten, temp);
-                    flag = 0;
-                }
-            }*/
-        }
+     
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
