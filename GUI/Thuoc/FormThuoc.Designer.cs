@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kryptonGroupBox1 = new Krypton.Toolkit.KryptonGroupBox();
             this.txtSoLuong = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
@@ -52,7 +52,6 @@
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
             this.btnXuat = new Krypton.Toolkit.KryptonButton();
             this.btnSua = new Krypton.Toolkit.KryptonButton();
-            this.btnXoa = new Krypton.Toolkit.KryptonButton();
             this.btnThem = new Krypton.Toolkit.KryptonButton();
             this.DGVThuoc = new System.Windows.Forms.DataGridView();
             this.MaThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -332,7 +331,6 @@
             // 
             this.kryptonPanel1.Controls.Add(this.btnXuat);
             this.kryptonPanel1.Controls.Add(this.btnSua);
-            this.kryptonPanel1.Controls.Add(this.btnXoa);
             this.kryptonPanel1.Controls.Add(this.btnThem);
             this.kryptonPanel1.Controls.Add(this.DGVThuoc);
             this.kryptonPanel1.Controls.Add(this.btnRefresh);
@@ -350,11 +348,12 @@
             this.kryptonPanel1.StateCommon.ColorAngle = 60F;
             this.kryptonPanel1.StateCommon.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Sigma;
             this.kryptonPanel1.TabIndex = 12;
+            this.kryptonPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonPanel1_Paint);
             // 
             // btnXuat
             // 
             this.btnXuat.CornerRoundingRadius = 5F;
-            this.btnXuat.Location = new System.Drawing.Point(472, 304);
+            this.btnXuat.Location = new System.Drawing.Point(584, 304);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.OverrideDefault.Back.Color1 = System.Drawing.Color.Green;
             this.btnXuat.OverrideDefault.Back.Color2 = System.Drawing.Color.Green;
@@ -398,7 +397,7 @@
             // btnSua
             // 
             this.btnSua.CornerRoundingRadius = 5F;
-            this.btnSua.Location = new System.Drawing.Point(716, 304);
+            this.btnSua.Location = new System.Drawing.Point(711, 304);
             this.btnSua.Name = "btnSua";
             this.btnSua.OverrideDefault.Back.Color1 = System.Drawing.Color.DarkGray;
             this.btnSua.OverrideDefault.Back.Color2 = System.Drawing.Color.DarkGray;
@@ -445,57 +444,6 @@
             this.Them.SetToolTip(this.btnSua, "Sửa");
             this.btnSua.Values.Text = "";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.CornerRoundingRadius = 5F;
-            this.btnXoa.Location = new System.Drawing.Point(594, 304);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.OverrideDefault.Back.Color1 = System.Drawing.Color.DarkGray;
-            this.btnXoa.OverrideDefault.Back.Color2 = System.Drawing.Color.DarkGray;
-            this.btnXoa.OverrideDefault.Back.Image = global::pharmacy_management.Properties.Resources.icons8_delete_24;
-            this.btnXoa.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            this.btnXoa.OverrideDefault.Border.Color1 = System.Drawing.Color.DarkGray;
-            this.btnXoa.OverrideDefault.Border.Color2 = System.Drawing.Color.DarkGray;
-            this.btnXoa.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnXoa.OverrideDefault.Border.Rounding = 5F;
-            this.btnXoa.OverrideDefault.Border.Width = 5;
-            this.btnXoa.Size = new System.Drawing.Size(100, 40);
-            this.btnXoa.StateCommon.Back.Color1 = System.Drawing.Color.DarkGray;
-            this.btnXoa.StateCommon.Back.Color2 = System.Drawing.Color.DarkGray;
-            this.btnXoa.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.icons8_delete_24;
-            this.btnXoa.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            this.btnXoa.StateCommon.Border.Color1 = System.Drawing.Color.DarkGray;
-            this.btnXoa.StateCommon.Border.Color2 = System.Drawing.Color.DarkGray;
-            this.btnXoa.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnXoa.StateCommon.Border.Rounding = 5F;
-            this.btnXoa.StateCommon.Border.Width = 5;
-            this.btnXoa.StateDisabled.Back.Color1 = System.Drawing.Color.Gray;
-            this.btnXoa.StateDisabled.Back.Color2 = System.Drawing.Color.Gray;
-            this.btnXoa.StateDisabled.Border.Color1 = System.Drawing.Color.Gray;
-            this.btnXoa.StateDisabled.Border.Color2 = System.Drawing.Color.Gray;
-            this.btnXoa.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnXoa.StateTracking.Back.Color1 = System.Drawing.Color.Red;
-            this.btnXoa.StateTracking.Back.Color2 = System.Drawing.Color.Red;
-            this.btnXoa.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.icons8_delete_24;
-            this.btnXoa.StateTracking.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            this.btnXoa.StateTracking.Border.Color1 = System.Drawing.Color.Red;
-            this.btnXoa.StateTracking.Border.Color2 = System.Drawing.Color.Red;
-            this.btnXoa.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnXoa.StateTracking.Border.Rounding = 5F;
-            this.btnXoa.StateTracking.Border.Width = 5;
-            this.btnXoa.TabIndex = 56;
-            this.Them.SetToolTip(this.btnXoa, "Ngừng bán");
-            this.btnXoa.Values.Text = "";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -544,6 +492,7 @@
             this.btnThem.StateTracking.Border.Rounding = 5F;
             this.btnThem.StateTracking.Border.Width = 5;
             this.btnThem.TabIndex = 55;
+            this.Them.SetToolTip(this.btnThem, "Thêm");
             this.btnThem.Values.Text = "";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
@@ -556,14 +505,14 @@
             this.DGVThuoc.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.DGVThuoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVThuoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVThuoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVThuoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVThuoc.ColumnHeadersHeight = 30;
             this.DGVThuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DGVThuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -575,31 +524,31 @@
             this.GiaThuoc,
             this.AnhThuoc,
             this.TrangThai});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVThuoc.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVThuoc.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGVThuoc.EnableHeadersVisualStyles = false;
             this.DGVThuoc.GridColor = System.Drawing.Color.Black;
             this.DGVThuoc.Location = new System.Drawing.Point(9, 365);
             this.DGVThuoc.Name = "DGVThuoc";
             this.DGVThuoc.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVThuoc.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVThuoc.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DGVThuoc.RowHeadersVisible = false;
             this.DGVThuoc.RowHeadersWidth = 51;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DGVThuoc.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DGVThuoc.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGVThuoc.RowTemplate.Height = 24;
             this.DGVThuoc.Size = new System.Drawing.Size(929, 273);
             this.DGVThuoc.TabIndex = 54;
@@ -760,7 +709,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton2.TabIndex = 3;
-            this.kryptonButton2.Values.ExtraText = "QUẢN\r\nLÝ  \r\nĐỐI\r\nTƯỢNG\r\n";
+            this.kryptonButton2.Values.ExtraText = "QUẢN\r\nLÝ  \r\nXUẤT \r\nXỨ";
             this.kryptonButton2.Values.Text = "";
             this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton2_Click);
             // 
@@ -786,7 +735,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton1.TabIndex = 2;
-            this.kryptonButton1.Values.ExtraText = "QUẢN\r\nLÝ  \r\nXUẤT \r\nXỨ";
+            this.kryptonButton1.Values.ExtraText = "QUẢN\r\nLÝ  \r\nĐỐI\r\nTƯỢNG\r\n";
             this.kryptonButton1.Values.Text = "";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
@@ -874,7 +823,6 @@
         private System.Windows.Forms.DataGridView DGVThuoc;
         private Krypton.Toolkit.KryptonButton btnXuat;
         private Krypton.Toolkit.KryptonButton btnSua;
-        private Krypton.Toolkit.KryptonButton btnXoa;
         private Krypton.Toolkit.KryptonButton btnThem;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaThuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenThuoc;

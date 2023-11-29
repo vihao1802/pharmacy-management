@@ -28,6 +28,12 @@ namespace pharmacy_management.GUI.QLxuatxu
         int flag = 1;
         XuatXuBUS bus = new XuatXuBUS();
         ThuocBUS thuocbus= new ThuocBUS();
+
+        public void setEnable(bool flag)
+        {
+            btnThem.Enabled = flag;
+            btnSua.Enabled = !flag;
+        }
         public void setup()
         {
             cbbSearch.Items.Add("Mã xuất xứ");
@@ -35,6 +41,7 @@ namespace pharmacy_management.GUI.QLxuatxu
             cbbSearch.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbSearch.AutoCompleteMode = AutoCompleteMode.None;
             cbbSearch.AutoCompleteSource = AutoCompleteSource.ListItems;
+            setEnable(true);
         }
         private void loadds()
         {
@@ -106,12 +113,7 @@ namespace pharmacy_management.GUI.QLxuatxu
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            int state;          
-                if (DGVXuatXu.SelectedRows.Count < 1)
-                {
-                    MessageBox.Show("Chưa chọn xuất xứ để sửa!");
-                    return;
-                }
+            int state;                        
                 if (txtTenXuatXu.Text == "")
                 {
                     MessageBox.Show("Chưa điền tên xuất xứ");
@@ -138,41 +140,7 @@ namespace pharmacy_management.GUI.QLxuatxu
             //DGVDoiTuong.Refresh();
         }
 
-        private void xoabtn_Click(object sender, EventArgs e)
-        {
-          /*  foreach (DataGridViewRow srows in DGVXuatXu.SelectedRows)
-            {*/
-                int ma = int.Parse(DGVXuatXu.CurrentRow.Cells["maXuatXu"].Value.ToString());
-                int trangThai = ckbTrangThai.Checked ? 1 : 0;
-            if (trangThai == 0)
-            {
-                MessageBox.Show("Xuất xứ đã bị hủy kích hoạt từ trước!!!");
-                return;
-            }
-            else
-            {
-                if (MessageBox.Show("Bạn có chắc chắn muốn hủy kích hoạt xuất xứ không?", "Xác nhận hủy", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    try
-                    {
-                        bus.delete(ma);
-                        txtTenXuatXu.Text = "";
-                        MessageBox.Show("Hủy kích hoạt xuất xứ thành công!!!");
-                        DGVXuatXu.CurrentRow.Cells["TrangThai"].Value = "Not Active";
-                        ckbTrangThai.Checked = false;
-                        foreach (DTO.Thuoc item in thuocbus.getList())
-                        {
-                            if (ma == item.MaXuatXu)
-                                thuocbus.delete(item.MaThuoc);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-            }
-        }
+        
         private void searchbtn_Click(object sender, EventArgs e)
         {
             if (txtSearch.Text.Trim().ToString() == "")
@@ -181,11 +149,12 @@ namespace pharmacy_management.GUI.QLxuatxu
                 return;
             }
             DGVXuatXu.Rows.Clear();
-           if (cbbSearch.SelectedItem.ToString() == "Mã xuất xứ")
+            string tenXuatXu = txtSearch.Text.ToString();
+            if (cbbSearch.SelectedItem.ToString() == "Mã xuất xứ")
             {
                
-                int maXuatXu = int.Parse(txtSearch.Text.ToString());
-                foreach (XuatXu item in bus.searchatMa(maXuatXu))
+               
+                foreach (XuatXu item in bus.searchatMa(tenXuatXu))
                 {
                     string temp;
                     int ma = int.Parse(item.MaXuatXu.ToString());
@@ -206,7 +175,7 @@ namespace pharmacy_management.GUI.QLxuatxu
             }
             else if (cbbSearch.SelectedItem.ToString() == "Tên xuất xứ")
             {
-                string tenXuatXu = txtSearch.Text.ToString();
+               
                 foreach (XuatXu item in bus.searchatTen(tenXuatXu))
                 {
                     string temp;
@@ -305,6 +274,7 @@ namespace pharmacy_management.GUI.QLxuatxu
             {
                 ckbTrangThai.Checked = false;
             }
+            setEnable(false);
         }
 
         private void DGVXuatXu_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -313,6 +283,7 @@ namespace pharmacy_management.GUI.QLxuatxu
             DGVXuatXu.ClearSelection();
             txtMaXuatXu.Text = "";
             txtTenXuatXu.Text = "";
+            setEnable(true);
         }
         private void addFormtoPanelContainer(object Form)
         {
@@ -329,7 +300,7 @@ namespace pharmacy_management.GUI.QLxuatxu
             }
         }
 
-        private void backlbl_MouseClick(object sender, MouseEventArgs e)
+        private void backlbl_MouseClick(object sender, EventArgs e)
         {
             FormThuoc formthuoc = new FormThuoc();
             addFormtoPanelContainer(formthuoc);

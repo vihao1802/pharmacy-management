@@ -44,7 +44,6 @@
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXuat = new Krypton.Toolkit.KryptonButton();
             this.btnSua = new Krypton.Toolkit.KryptonButton();
-            this.btnXoa = new Krypton.Toolkit.KryptonButton();
             this.btnThem = new Krypton.Toolkit.KryptonButton();
             this.kryptonGroupBox1 = new Krypton.Toolkit.KryptonGroupBox();
             this.lbl_DiemKH = new System.Windows.Forms.Label();
@@ -75,7 +74,6 @@
             this.kryptonPanel1.Controls.Add(this.khachhangDataGridView);
             this.kryptonPanel1.Controls.Add(this.btnXuat);
             this.kryptonPanel1.Controls.Add(this.btnSua);
-            this.kryptonPanel1.Controls.Add(this.btnXoa);
             this.kryptonPanel1.Controls.Add(this.btnThem);
             this.kryptonPanel1.Controls.Add(this.kryptonGroupBox1);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -256,6 +254,8 @@
             this.btnXuat.CornerRoundingRadius = 5F;
             this.btnXuat.Location = new System.Drawing.Point(471, 202);
             this.btnXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXuat.Location = new System.Drawing.Point(545, 202);
+            this.btnXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.OverrideDefault.Back.Color1 = System.Drawing.Color.Green;
             this.btnXuat.OverrideDefault.Back.Color2 = System.Drawing.Color.Green;
@@ -300,6 +300,8 @@
             // 
             this.btnSua.CornerRoundingRadius = 5F;
             this.btnSua.Location = new System.Drawing.Point(715, 202);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSua.Location = new System.Drawing.Point(691, 202);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
             this.btnSua.OverrideDefault.Back.Color1 = System.Drawing.Color.DarkGray;
@@ -347,58 +349,6 @@
             this.toolTip1.SetToolTip(this.btnSua, "Sửa khách hàng");
             this.btnSua.Values.Text = "";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.CornerRoundingRadius = 5F;
-            this.btnXoa.Location = new System.Drawing.Point(593, 202);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.OverrideDefault.Back.Color1 = System.Drawing.Color.DarkGray;
-            this.btnXoa.OverrideDefault.Back.Color2 = System.Drawing.Color.DarkGray;
-            this.btnXoa.OverrideDefault.Back.Image = global::pharmacy_management.Properties.Resources.icons8_delete_24;
-            this.btnXoa.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            this.btnXoa.OverrideDefault.Border.Color1 = System.Drawing.Color.DarkGray;
-            this.btnXoa.OverrideDefault.Border.Color2 = System.Drawing.Color.DarkGray;
-            this.btnXoa.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnXoa.OverrideDefault.Border.Rounding = 5F;
-            this.btnXoa.OverrideDefault.Border.Width = 5;
-            this.btnXoa.Size = new System.Drawing.Size(100, 39);
-            this.btnXoa.StateCommon.Back.Color1 = System.Drawing.Color.DarkGray;
-            this.btnXoa.StateCommon.Back.Color2 = System.Drawing.Color.DarkGray;
-            this.btnXoa.StateCommon.Back.Image = global::pharmacy_management.Properties.Resources.icons8_delete_24;
-            this.btnXoa.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            this.btnXoa.StateCommon.Border.Color1 = System.Drawing.Color.DarkGray;
-            this.btnXoa.StateCommon.Border.Color2 = System.Drawing.Color.DarkGray;
-            this.btnXoa.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnXoa.StateCommon.Border.Rounding = 5F;
-            this.btnXoa.StateCommon.Border.Width = 5;
-            this.btnXoa.StateDisabled.Back.Color1 = System.Drawing.Color.Gray;
-            this.btnXoa.StateDisabled.Back.Color2 = System.Drawing.Color.Gray;
-            this.btnXoa.StateDisabled.Border.Color1 = System.Drawing.Color.Gray;
-            this.btnXoa.StateDisabled.Border.Color2 = System.Drawing.Color.Gray;
-            this.btnXoa.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnXoa.StateTracking.Back.Color1 = System.Drawing.Color.Red;
-            this.btnXoa.StateTracking.Back.Color2 = System.Drawing.Color.Red;
-            this.btnXoa.StateTracking.Back.Image = global::pharmacy_management.Properties.Resources.icons8_delete_24;
-            this.btnXoa.StateTracking.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            this.btnXoa.StateTracking.Border.Color1 = System.Drawing.Color.Red;
-            this.btnXoa.StateTracking.Border.Color2 = System.Drawing.Color.Red;
-            this.btnXoa.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnXoa.StateTracking.Border.Rounding = 5F;
-            this.btnXoa.StateTracking.Border.Width = 5;
-            this.btnXoa.TabIndex = 39;
-            this.toolTip1.SetToolTip(this.btnXoa, "Hủy khách hàng");
-            this.btnXoa.Values.Text = "";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -653,7 +603,6 @@
         private Krypton.Toolkit.KryptonTextBox txtTenKH;
         private Krypton.Toolkit.KryptonTextBox txtMaKH;
         private Krypton.Toolkit.KryptonCheckBox ckbTrangThai;
-        private Krypton.Toolkit.KryptonButton btnXoa;
         private Krypton.Toolkit.KryptonButton btnThem;
         private Krypton.Toolkit.KryptonButton btnSua;
         private Krypton.Toolkit.KryptonButton btnXuat;
