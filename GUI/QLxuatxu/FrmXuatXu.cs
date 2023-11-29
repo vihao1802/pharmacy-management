@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design.Serialization;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,19 +23,26 @@ namespace pharmacy_management.GUI.QLxuatxu
             InitializeComponent();
             loadds();
             setup();
-            
+
             ckbTrangThai.Visible = false;
         }
         int flag = 1;
         XuatXuBUS bus = new XuatXuBUS();
-        ThuocBUS thuocbus= new ThuocBUS();
+        ThuocBUS thuocbus = new ThuocBUS();
+
+        public void setEnable(bool flag)
+        {
+            btnThem.Enabled = flag;
+            btnSua.Enabled = !flag;
+        }
         public void setup()
         {
-            cbbSearch.Items.Add("Mã xuất xứ");
-            cbbSearch.Items.Add("Tên xuất xứ");
-            cbbSearch.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbbSearch.AutoCompleteMode = AutoCompleteMode.None;
-            cbbSearch.AutoCompleteSource = AutoCompleteSource.ListItems;
+            /*  cbbSearch.Items.Add("Mã xuất xứ");
+              cbbSearch.Items.Add("Tên xuất xứ");
+              cbbSearch.DropDownStyle = ComboBoxStyle.DropDownList;
+              cbbSearch.AutoCompleteMode = AutoCompleteMode.None;
+              cbbSearch.AutoCompleteSource = AutoCompleteSource.ListItems;*/
+            setEnable(true);
         }
         private void loadds()
         {
@@ -74,7 +82,7 @@ namespace pharmacy_management.GUI.QLxuatxu
                     MessageBox.Show("Chưa điền tên xuất xứ");
                     return;
                 }
-                
+
                 try
                 {
                     XuatXu DTO = new XuatXu(txtTenXuatXu.Text.ToString(), 1);
@@ -106,129 +114,91 @@ namespace pharmacy_management.GUI.QLxuatxu
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            int state;          
-                if (DGVXuatXu.SelectedRows.Count < 1)
-                {
-                    MessageBox.Show("Chưa chọn xuất xứ để sửa!");
-                    return;
-                }
-                if (txtTenXuatXu.Text == "")
-                {
-                    MessageBox.Show("Chưa điền tên xuất xứ");
-                    return;
+            int state;
+            if (txtTenXuatXu.Text == "")
+            {
+                MessageBox.Show("Chưa điền tên xuất xứ");
+                return;
 
-                }
-                if (!ckbTrangThai.Checked)
-                    state = 0;
-                else state = 1;
-                try
-                {
-                    XuatXu xx = new XuatXu(int.Parse(txtMaXuatXu.Text.ToString()), txtTenXuatXu.Text.ToString(), state);
-                    bus.update(xx);
-                    DGVXuatXu.CurrentRow.Cells["tenXuatXu"].Value = txtTenXuatXu.Text.ToString();
-                    DGVXuatXu.CurrentRow.Cells["TrangThai"].Value = state == 1 ? "Active" : "Not Active";
-                    txtTenXuatXu.Text = "";
-                    MessageBox.Show("Sửa thành công");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            
+            }
+            if (!ckbTrangThai.Checked)
+                state = 0;
+            else state = 1;
+            try
+            {
+                XuatXu xx = new XuatXu(int.Parse(txtMaXuatXu.Text.ToString()), txtTenXuatXu.Text.ToString(), state);
+                bus.update(xx);
+                DGVXuatXu.CurrentRow.Cells["tenXuatXu"].Value = txtTenXuatXu.Text.ToString();
+                DGVXuatXu.CurrentRow.Cells["TrangThai"].Value = state == 1 ? "Active" : "Not Active";
+                txtTenXuatXu.Text = "";
+                MessageBox.Show("Sửa thành công");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             //DGVDoiTuong.Refresh();
         }
 
-        private void xoabtn_Click(object sender, EventArgs e)
-        {
-          /*  foreach (DataGridViewRow srows in DGVXuatXu.SelectedRows)
-            {*/
-                int ma = int.Parse(DGVXuatXu.CurrentRow.Cells["maXuatXu"].Value.ToString());
-                int trangThai = ckbTrangThai.Checked ? 1 : 0;
-            if (trangThai == 0)
-            {
-                MessageBox.Show("Xuất xứ đã bị hủy kích hoạt từ trước!!!");
-                return;
-            }
-            else
-            {
-                if (MessageBox.Show("Bạn có chắc chắn muốn hủy kích hoạt xuất xứ không?", "Xác nhận hủy", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    try
-                    {
-                        bus.delete(ma);
-                        txtTenXuatXu.Text = "";
-                        MessageBox.Show("Hủy kích hoạt xuất xứ thành công!!!");
-                        DGVXuatXu.CurrentRow.Cells["TrangThai"].Value = "Not Active";
-                        ckbTrangThai.Checked = false;
-                        foreach (DTO.Thuoc item in thuocbus.getList())
-                        {
-                            if (ma == item.MaXuatXu)
-                                thuocbus.delete(item.MaThuoc);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-            }
-        }
+
         private void searchbtn_Click(object sender, EventArgs e)
         {
-            if (txtSearch.Text.Trim().ToString() == "")
-            {
-                MessageBox.Show("Bạn chưa nhập điều kiện cần lọc");
-                return;
-            }
-            DGVXuatXu.Rows.Clear();
-           if (cbbSearch.SelectedItem.ToString() == "Mã xuất xứ")
-            {
-               
-                int maXuatXu = int.Parse(txtSearch.Text.ToString());
-                foreach (XuatXu item in bus.searchatMa(maXuatXu))
-                {
-                    string temp;
-                    int ma = int.Parse(item.MaXuatXu.ToString());
-                    string ten = item.TenXuatXu.ToString();
-                    int state = int.Parse(item.TrangThai.ToString());
-                    if (state == 1)
-                    {
-                        temp = "Active";
-                    }
-                    else
-                    {
-                        temp = "Not Active";
-                    }
-                    DGVXuatXu.Rows.Add(ma, ten, temp);
-                    flag = 0;
-                }
-                
-            }
-            else if (cbbSearch.SelectedItem.ToString() == "Tên xuất xứ")
-            {
-                string tenXuatXu = txtSearch.Text.ToString();
-                foreach (XuatXu item in bus.searchatTen(tenXuatXu))
-                {
-                    string temp;
-                    int ma = int.Parse(item.MaXuatXu.ToString());
-                    string ten = item.TenXuatXu.ToString();
-                    int state = int.Parse(item.TrangThai.ToString());
-                    if (state == 1)
-                    {
-                        temp = "Active";
-                    }
-                    else
-                    {
-                        temp = "Not Active";
-                    }
-                    DGVXuatXu.Rows.Add(ma, ten, temp);
-                    flag = 0;
-                }
-            }
+            /* if (txtSearch.Text.Trim().ToString() == "")
+             {
+                 MessageBox.Show("Bạn chưa nhập điều kiện cần lọc");
+                 return;
+             }
+             DGVXuatXu.Rows.Clear();
+             string tenXuatXu = txtSearch.Text.ToString();
+             if (cbbSearch.SelectedItem.ToString() == "Mã xuất xứ")
+             {
+
+
+                 foreach (XuatXu item in bus.searchatMa(tenXuatXu))
+                 {
+                     string temp;
+                     int ma = int.Parse(item.MaXuatXu.ToString());
+                     string ten = item.TenXuatXu.ToString();
+                     int state = int.Parse(item.TrangThai.ToString());
+                     if (state == 1)
+                     {
+                         temp = "Active";
+                     }
+                     else
+                     {
+                         temp = "Not Active";
+                     }
+                     DGVXuatXu.Rows.Add(ma, ten, temp);
+                     flag = 0;
+                 }
+
+             }
+             else if (cbbSearch.SelectedItem.ToString() == "Tên xuất xứ")
+             {
+
+                 foreach (XuatXu item in bus.searchatTen(tenXuatXu))
+                 {
+                     string temp;
+                     int ma = int.Parse(item.MaXuatXu.ToString());
+                     string ten = item.TenXuatXu.ToString();
+                     int state = int.Parse(item.TrangThai.ToString());
+                     if (state == 1)
+                     {
+                         temp = "Active";
+                     }
+                     else
+                     {
+                         temp = "Not Active";
+                     }
+                     DGVXuatXu.Rows.Add(ma, ten, temp);
+                     flag = 0;
+                 }
+             }*/
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
-        {           
+        {
             loadds();
             flag = 1;
         }
@@ -248,7 +218,7 @@ namespace pharmacy_management.GUI.QLxuatxu
                 Microsoft.Office.Interop.Excel.Worksheet xlWorksheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkbook.ActiveSheet;
 
                 // Column headers
-                string[] headers = { "maXuatXu", "tenXuatXu","TrangThai" };
+                string[] headers = { "maXuatXu", "tenXuatXu", "TrangThai" };
 
                 // Add column headers
                 for (int j = 0; j < headers.Length; j++)
@@ -305,6 +275,7 @@ namespace pharmacy_management.GUI.QLxuatxu
             {
                 ckbTrangThai.Checked = false;
             }
+            setEnable(false);
         }
 
         private void DGVXuatXu_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -313,6 +284,7 @@ namespace pharmacy_management.GUI.QLxuatxu
             DGVXuatXu.ClearSelection();
             txtMaXuatXu.Text = "";
             txtTenXuatXu.Text = "";
+            setEnable(true);
         }
         private void addFormtoPanelContainer(object Form)
         {
@@ -329,12 +301,29 @@ namespace pharmacy_management.GUI.QLxuatxu
             }
         }
 
-        private void backlbl_MouseClick(object sender, MouseEventArgs e)
+        private void backlbl_MouseClick(object sender, EventArgs e)
         {
             FormThuoc formthuoc = new FormThuoc();
             addFormtoPanelContainer(formthuoc);
         }
-    }
-                        
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            DGVXuatXu.Rows.Clear();
+            string text = txtSearch.Text.Trim().ToString();
+            foreach (XuatXu item in bus.search(text))
+            {
+                string temp;
+                int ma = int.Parse(item.MaXuatXu.ToString());
+                string tenxuatxu = item.TenXuatXu.ToString();
+                int state = int.Parse(item.TrangThai.ToString());
+                if (state == 1)
+                    temp = "Active";
+                else
+                    temp = "Not Active";
+                DGVXuatXu.Rows.Add(ma, tenxuatxu, temp);
+            }
+        }
+    }            
     
 }
