@@ -163,41 +163,13 @@ namespace pharmacy_management.DAO
             conn.ExecuteNonQuery(sql);
         }
 
-        public ArrayList searchatMa(string tendoituong)
+     
+        public ArrayList search(string text)
         {
             ArrayList arrayList = new ArrayList();
 
             ConnectDB conn = new ConnectDB();
-            string query = "SELECT * FROM DoiTuong WHERE MaDT = " + tendoituong;
-            SqlDataReader reader = conn.Execute(query);
-            try
-            {
-                while (reader.Read())
-                {
-                    DoiTuong tmp = new DoiTuong(
-                        Int32.Parse(reader["MaDT"].ToString()),
-                        reader["TenDT"].ToString(),
-                        Int32.Parse(reader["TrangThai"].ToString())
-                     );
-                    arrayList.Add(tmp);
-                }
-            }
-            catch (Exception ex)
-            {
-                reader.Close();
-
-                Console.WriteLine("An error at DoiTuongDAO: " + ex.Message);
-            }
-
-            return arrayList;
-        }
-
-        public ArrayList searchatTen(string ten)
-        {
-            ArrayList arrayList = new ArrayList();
-
-            ConnectDB conn = new ConnectDB();
-            string query = "SELECT * FROM DoiTuong WHERE TenDT LIKE N'%" + ten + "%'";
+            string query = string.Format("SELECT * FROM DoiTuong WHERE TenDT LIKE N'%{0}%' OR MaDT LIKE '{0}'", text);
             SqlDataReader reader = conn.Execute(query);
             try
             {
