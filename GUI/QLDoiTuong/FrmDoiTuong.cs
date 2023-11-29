@@ -74,15 +74,13 @@ namespace pharmacy_management.GUI.QLDoiTuong
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (flag == 0)
-                MessageBox.Show("Bạn phải làm mới bảng trước");
-            else
+            if (txtSearch.Text.Length > 0)
             {
-                if (DGVDoiTuong.SelectedRows.Count >= 1)
-                {
-                    MessageBox.Show("Có dòng đang được chọn hãy bỏ chọn trước!");
-                    return;
-                }
+                MessageBox.Show("Bạn phải làm mới bảng trước");
+                return;
+            }
+            else
+            {            
                 if (txtTenDoiTuong.Text == "")
                 {
                     MessageBox.Show("Chưa điền tên đối tượng");
@@ -214,6 +212,7 @@ namespace pharmacy_management.GUI.QLDoiTuong
             txtTenDoiTuong.Text = "";
             txtMaDoiTuong.Text = "";
             ckbTrangThai.Visible = false;
+            txtSearch.Text = "";
             setEnable(true);
             DGVDoiTuong.ClearSelection();
         }

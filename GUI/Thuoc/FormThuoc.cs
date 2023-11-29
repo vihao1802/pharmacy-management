@@ -144,9 +144,10 @@ namespace pharmacy_management.GUI.Thuoc
         {
  
             if (checkInput() == false) return;
-            if (DGVThuoc.SelectedRows.Count >= 1)
+            if (txtSearch.Text.Length>0)
+            
             {
-                MessageBox.Show("Có dòng đang được chọn hãy bỏ chọn trước!");
+                MessageBox.Show("Bạn phải làm mới bảng trước!");
                 return;
             }
             if (ckbTrangThai.Checked == false) ;
