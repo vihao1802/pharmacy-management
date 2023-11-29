@@ -18,6 +18,9 @@ using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Data.OleDb;
+using System.Data.SqlClient;
+using pharmacy_management.Database;
 
 namespace pharmacy_management.GUI.Thuoc
 {
@@ -143,18 +146,13 @@ namespace pharmacy_management.GUI.Thuoc
         private void btnThem_Click_1(object sender, EventArgs e)
         {
  
-            if (checkInput() == false) return;
-        
-           
+            if (checkInput() == false) return;    
                 try
-                {
-                    
+                {        
                     string maxx = cbbMaXuatXu.Text.Trim();
                     string madt = cbbMaDoiTuong.Text.Trim();
                     DTO.Thuoc drug = new DTO.Thuoc(txtTenThuoc.Text.ToString(), int.Parse(madt[0].ToString()), float.Parse(txtGiaThuoc.Text.ToString()), globalFilename, 1, int.Parse(maxx[0].ToString()), 0);
                     thuocbus.add(drug);
-
-                 
                     loadds();
                     Refreshtxt();
                     MessageBox.Show("Thêm thành công");

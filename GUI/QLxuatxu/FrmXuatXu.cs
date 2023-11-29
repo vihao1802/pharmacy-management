@@ -78,9 +78,7 @@ namespace pharmacy_management.GUI.QLxuatxu
                 try
                 {
                     XuatXu DTO = new XuatXu(txtTenXuatXu.Text.ToString(), 1);
-                    bus.add(DTO);
-
-                   
+                    bus.add(DTO);                 
                     loadds();
                     txtTenXuatXu.Text = "";
                     MessageBox.Show("Thêm thành công");
