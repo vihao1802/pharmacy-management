@@ -201,50 +201,16 @@ namespace pharmacy_management.GUI.Thuoc
             txtSoLuong.Clear();
             pictureBox1.Image = null;
             txtSearch.Clear();
+            ckbTrangThai.Visible = false;
+            setEnable(true);
             DGVThuoc.ClearSelection();
-        }
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-            int ma = int.Parse(DGVThuoc.CurrentRow.Cells["MaThuoc"].Value.ToString());
-            int trangThai = ckbTrangThai.Checked ? 1 : 0;
-            if (trangThai == 0)
-            {
-                MessageBox.Show("Thuốc này đã hủy kích hoạt từ trước!!!");
-                return;
-            }
-            else
-            {
-                if (MessageBox.Show("Bạn có chắc chắn muốn hủy kích hoạt thông tin thuốc không?", "Xác nhận hủy", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    try
-                    {
-                        thuocbus.delete(ma);
-                        Refresh();
-                        MessageBox.Show("Hủy kích hoạt thông tin thuốc thành công!!!");
-                        DGVThuoc.CurrentRow.Cells["TrangThai"].Value = "Ngừng bán";
-                        DGVThuoc.CurrentRow.Cells["SoLuong"].Value = "0";
-                        ckbTrangThai.Checked = false;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-            }
-        }
+        }     
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             int state;
-            checkInput();
-            int soluong;
-            if (DGVThuoc.SelectedRows.Count < 1)
-            {
-                MessageBox.Show("Chưa chọn dòng để sửa!");
-                return;
-            }
-
+            if (checkInput()==false) return;
+            int soluong;         
             if (!ckbTrangThai.Checked)
             {
                 state = 0;
@@ -269,7 +235,7 @@ namespace pharmacy_management.GUI.Thuoc
             {
 
                 int mt = int.Parse(DGVThuoc.CurrentRow.Cells["MaThuoc"].Value.ToString());
-                DTO.Thuoc drug = new DTO.Thuoc(mt, txtTenThuoc.Text.ToString(), madt, float.Parse(txtGiaThuoc.Text.ToString()), globalFilename, 1, maxx, soluong);
+                DTO.Thuoc drug = new DTO.Thuoc(mt, txtTenThuoc.Text.ToString(), madt, float.Parse(txtGiaThuoc.Text.ToString()), globalFilename, state, maxx, soluong);
                 thuocbus.update(drug);
                 int trangthaiNew = drug.TrangThai;
                 string tenNew = drug.TenThuoc;
