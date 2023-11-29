@@ -38,7 +38,6 @@
             this.txtSearch = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonGroupBox2 = new Krypton.Toolkit.KryptonGroupBox();
             this.btnRefresh = new Krypton.Toolkit.KryptonButton();
-            this.cbbSearch = new Krypton.Toolkit.KryptonComboBox();
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
             this.lblback = new Krypton.Toolkit.KryptonLabel();
             this.DGVDoiTuong = new System.Windows.Forms.DataGridView();
@@ -56,11 +55,11 @@
             this.txtMaDoiTuong = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cbbSearch = new Krypton.Toolkit.KryptonComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).BeginInit();
             this.kryptonGroupBox2.Panel.SuspendLayout();
             this.kryptonGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDoiTuong)).BeginInit();
@@ -68,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
             this.kryptonGroupBox1.Panel.SuspendLayout();
             this.kryptonGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // searchbtn
@@ -186,21 +186,6 @@
             this.toolTip1.SetToolTip(this.btnRefresh, "Làm mới");
             this.btnRefresh.Values.Text = "";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // cbbSearch
-            // 
-            this.cbbSearch.CornerRoundingRadius = 20F;
-            this.cbbSearch.DropDownWidth = 136;
-            this.cbbSearch.IntegralHeight = false;
-            this.cbbSearch.Location = new System.Drawing.Point(8, 23);
-            this.cbbSearch.Name = "cbbSearch";
-            this.cbbSearch.Size = new System.Drawing.Size(145, 37);
-            this.cbbSearch.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.cbbSearch.StateCommon.ComboBox.Border.Rounding = 20F;
-            this.cbbSearch.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.cbbSearch.TabIndex = 8;
             // 
             // kryptonPanel1
             // 
@@ -552,6 +537,21 @@
             this.kryptonLabel1.TabIndex = 0;
             this.kryptonLabel1.Values.Text = "Mã đối tượng";
             // 
+            // cbbSearch
+            // 
+            this.cbbSearch.CornerRoundingRadius = 20F;
+            this.cbbSearch.DropDownWidth = 136;
+            this.cbbSearch.IntegralHeight = false;
+            this.cbbSearch.Location = new System.Drawing.Point(8, 23);
+            this.cbbSearch.Name = "cbbSearch";
+            this.cbbSearch.Size = new System.Drawing.Size(145, 37);
+            this.cbbSearch.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cbbSearch.StateCommon.ComboBox.Border.Rounding = 20F;
+            this.cbbSearch.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cbbSearch.TabIndex = 8;
+            // 
             // FrmDoiTuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -566,7 +566,6 @@
             this.kryptonGroupBox2.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).EndInit();
             this.kryptonGroupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbbSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
@@ -576,6 +575,7 @@
             this.kryptonGroupBox1.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).EndInit();
             this.kryptonGroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbbSearch)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -591,7 +591,6 @@
         private Krypton.Toolkit.KryptonTextBox txtTenDoiTuong;
         private Krypton.Toolkit.KryptonTextBox txtMaDoiTuong;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private Krypton.Toolkit.KryptonComboBox cbbSearch;
         private System.Windows.Forms.ToolTip toolTip1;
         private Krypton.Toolkit.KryptonButton btnRefresh;
         private Krypton.Toolkit.KryptonLabel backlbl;
@@ -603,5 +602,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private Krypton.Toolkit.KryptonComboBox cbbSearch;
     }
 }
