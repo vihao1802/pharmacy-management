@@ -37,9 +37,6 @@ namespace pharmacy_management.DAO
                         maTmp = "0";
                     }
 
-                    //DateTime dateTime = DateTime.ParseExact(reader["NgayLap"].ToString(), "MM/dd/yyyy hh:mm:ss tt", null);
-                    //string outputString = dateTime.ToString("yyyy-MM-dd");
-                    //Console.WriteLine(outputString);
                     DateTime dateTime;
                     string dateString = reader["NgayLap"].ToString();
                     string outputString = "";
@@ -77,7 +74,94 @@ namespace pharmacy_management.DAO
 
         }
 
+        public ArrayList GetALlStatis(string dateStart, string dateEnd, string numeric)
+        {
+            ArrayList arrayList = new ArrayList();
 
+            ConnectDB conn = new ConnectDB();
+            string query = "";
+            if (numeric == "0")
+            {
+                query = string.Format("SELECT thuoc.MaThuoc, MAX(thuoc.TenThuoc) AS TenThuoc, MAX(thuoc.GiaThuoc) AS GiaBan, SUM(chitietdonhang.SoLuong) AS SoLuongBan FROM donhang INNER JOIN chitietdonhang ON donhang.MaDH = chitietdonhang.MaDH INNER JOIN thuoc ON thuoc.MaThuoc = chitietdonhang.MaThuoc WHERE donhang.NgayLap BETWEEN '{0}' AND '{1}' GROUP BY thuoc.MaThuoc", dateStart, dateEnd);
+            }
+            else
+            {
+                query = string.Format("SELECT TOP {2} thuoc.MaThuoc, MAX(thuoc.TenThuoc) AS TenThuoc, MAX(thuoc.GiaThuoc) AS GiaBan, SUM(chitietdonhang.SoLuong) AS SoLuongBan FROM donhang INNER JOIN chitietdonhang ON donhang.MaDH = chitietdonhang.MaDH INNER JOIN thuoc ON thuoc.MaThuoc = chitietdonhang.MaThuoc WHERE donhang.NgayLap BETWEEN '{0}' AND '{1}' GROUP BY thuoc.MaThuoc ORDER BY SoLuongBan DESC", dateStart, dateEnd, numeric);
+            }
+
+            SqlDataReader reader = conn.Execute(query);
+            //Console.WriteLine(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    Thuoc tmp = new Thuoc(
+                        Int32.Parse(reader["MaThuoc"].ToString()),
+                        reader["TenThuoc"].ToString(),
+                        0,
+                        float.Parse(reader["GiaBan"].ToString()),
+                        "",
+                        1,
+                        0,
+                        Int32.Parse(reader["SoLuongBan"].ToString())
+                    );
+                    arrayList.Add(tmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at DonHangDAO getAll: " + ex.Message);
+            }
+
+            return arrayList;
+
+        }
+        public ArrayList GetALlStatisDT(string dateStart, string dateEnd, string numeric)
+        {
+            ArrayList arrayList = new ArrayList();
+
+            ConnectDB conn = new ConnectDB();
+            string query = "";
+            if (numeric == "0")
+            {
+                query = string.Format("SELECT thuoc.MaDoiTuong, MAX(doituong.TenDT) AS TenDoiTuong, SUM(thuoc.GiaThuoc) AS GiaBan, SUM(chitietdonhang.SoLuong) AS SoLuongBan FROM donhang INNER JOIN chitietdonhang ON donhang.MaDH = chitietdonhang.MaDH INNER JOIN thuoc ON thuoc.MaThuoc = chitietdonhang.MaThuoc INNER JOIN doituong ON thuoc.MaDoiTuong = doituong.MaDT WHERE donhang.NgayLap BETWEEN '{0}' AND '{1}' GROUP BY thuoc.MaDoiTuong", dateStart, dateEnd);
+            }
+            else
+            {
+                query = string.Format("SELECT TOP {2} thuoc.MaDoiTuong, MAX(doituong.TenDT) AS TenDoiTuong, SUM(thuoc.GiaThuoc) AS GiaBan, SUM(chitietdonhang.SoLuong) AS SoLuongBan FROM donhang INNER JOIN chitietdonhang ON donhang.MaDH = chitietdonhang.MaDH INNER JOIN thuoc ON thuoc.MaThuoc = chitietdonhang.MaThuoc INNER JOIN doituong ON thuoc.MaDoiTuong = doituong.MaDT WHERE donhang.NgayLap BETWEEN '{0}' AND '{1}' GROUP BY thuoc.MaDoiTuong ORDER BY SoLuongBan DESC", dateStart, dateEnd, numeric);
+            }
+
+            SqlDataReader reader = conn.Execute(query);
+            //Console.WriteLine(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    Thuoc tmp = new Thuoc(
+                        Int32.Parse(reader["MaDoiTuong"].ToString()),
+                        reader["TenDoiTuong"].ToString(),
+                        0,
+                        float.Parse(reader["GiaBan"].ToString()),
+                        "",
+                        1,
+                        0,
+                        Int32.Parse(reader["SoLuongBan"].ToString())
+                    );
+                    arrayList.Add(tmp);
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at DonHangDAO getAll: " + ex.Message);
+            }
+
+            return arrayList;
+
+        }
         public ArrayList GetALlPriceAscend(string dateStart, string dateEnd, string search)
         {
             ArrayList arrayList = new ArrayList();
@@ -97,9 +181,6 @@ namespace pharmacy_management.DAO
                         maTmp = "0";
                     }
 
-                    //DateTime dateTime = DateTime.ParseExact(reader["NgayLap"].ToString(), "MM/dd/yyyy hh:mm:ss tt", null);
-                    //string outputString = dateTime.ToString("yyyy-MM-dd");
-                    //Console.WriteLine(outputString);
 
                     DateTime dateTime;
                     string dateString = reader["NgayLap"].ToString();
@@ -157,9 +238,6 @@ namespace pharmacy_management.DAO
                         maTmp = "0";
                     }
 
-                    //DateTime dateTime = DateTime.ParseExact(reader["NgayLap"].ToString(), "MM/dd/yyyy hh:mm:ss tt", null);
-                    //string outputString = dateTime.ToString("yyyy-MM-dd");
-                    //Console.WriteLine(outputString);
                     DateTime dateTime;
                     string dateString = reader["NgayLap"].ToString();
                     string outputString = "";

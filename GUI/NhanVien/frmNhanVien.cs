@@ -673,7 +673,14 @@ namespace pharmacy_management.GUI.NhanVien
                     {
                         ckbTrangThai.Checked = false;
                     }
-                    ckbTrangThai.Visible = true;
+                    if (cbxMaQuyen.Text == "Admin")
+                    {
+                        ckbTrangThai.Visible = false;
+                    }
+                    else
+                    {
+                        ckbTrangThai.Visible = true;
+                    }
                     label8.Visible = false;
                     txtMatKhau.Visible = false;
                     btnSua.Enabled = true;                 
@@ -688,7 +695,7 @@ namespace pharmacy_management.GUI.NhanVien
 
         private void txt_searching_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void txt_searching_TextChanged_1(object sender, EventArgs e)
