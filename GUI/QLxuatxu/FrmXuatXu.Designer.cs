@@ -50,7 +50,6 @@
             this.btnThem = new Krypton.Toolkit.KryptonButton();
             this.btnXuat = new Krypton.Toolkit.KryptonButton();
             this.backlbl = new Krypton.Toolkit.KryptonLabel();
-            this.kryptonBorderEdge1 = new Krypton.Toolkit.KryptonBorderEdge();
             this.kryptonGroupBox2 = new Krypton.Toolkit.KryptonGroupBox();
             this.btnRefresh = new Krypton.Toolkit.KryptonButton();
             this.txtSearch = new Krypton.Toolkit.KryptonTextBox();
@@ -157,7 +156,6 @@
             this.kryptonPanel1.Controls.Add(this.btnThem);
             this.kryptonPanel1.Controls.Add(this.btnXuat);
             this.kryptonPanel1.Controls.Add(this.backlbl);
-            this.kryptonPanel1.Controls.Add(this.kryptonBorderEdge1);
             this.kryptonPanel1.Controls.Add(this.kryptonGroupBox2);
             this.kryptonPanel1.Controls.Add(this.kryptonGroupBox1);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -420,13 +418,6 @@
             this.backlbl.Values.Text = "";
             this.backlbl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.backlbl_MouseClick);
             // 
-            // kryptonBorderEdge1
-            // 
-            this.kryptonBorderEdge1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonBorderEdge1.Name = "kryptonBorderEdge1";
-            this.kryptonBorderEdge1.Size = new System.Drawing.Size(50, 1);
-            this.kryptonBorderEdge1.Text = "kryptonBorderEdge1";
-            // 
             // kryptonGroupBox2
             // 
             this.kryptonGroupBox2.CaptionStyle = Krypton.Toolkit.LabelStyle.BoldPanel;
@@ -547,7 +538,6 @@
         private Krypton.Toolkit.KryptonTextBox txtSearch;
         private System.Windows.Forms.ToolTip toolTip1;
         private Krypton.Toolkit.KryptonButton btnRefresh;
-        private Krypton.Toolkit.KryptonBorderEdge kryptonBorderEdge1;
         private Krypton.Toolkit.KryptonLabel backlbl;
         private Krypton.Toolkit.KryptonButton btnXuat;
         private Krypton.Toolkit.KryptonButton btnSua;
