@@ -38,6 +38,7 @@ namespace pharmacy_management.GUI.KhachHang
 
         private void loads()
         {
+            bus = new KhachHangBUS();
             khachhangDataGridView.Rows.Clear();
             foreach (DTO.KhachHang item in bus.getList())
             {
@@ -176,14 +177,15 @@ namespace pharmacy_management.GUI.KhachHang
                 }
 
                 // Increment the maximum MaKH to get the new MaKH
-                int maNew = maxMaKH + 1;
+                /*int maNew = maxMaKH + 1;
                 string tenNew = dto.TenKH;
                 string sdtNew = dto.Sdt;
                 DateTime ngaysinhNew = dto.NgaySinh;
                 int trangthaiNew = dto.TrangThai;
                 string tempNew = (trangthaiNew == 1) ? "Đang hoạt động" : "Dừng hoạt động";
                 khachhangDataGridView.Rows.Add(maNew, tenNew, sdtNew, ngaysinhNew.ToString("yyyy-MM-dd"), tempNew);
-
+*/
+                loads();
                 MessageBox.Show("Thêm thành công");
                 RefreshTextBox();
             }

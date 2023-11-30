@@ -250,12 +250,12 @@ namespace pharmacy_management.GUI.Thuoc
             {
                 state = 0;
                 soluong = 0;
-                DialogResult result = MessageBox.Show("Khi ngừng bán, số lượng sản phẩm sẽ = 0 Bạn có chắc muốn tiếp tục?", "Ngừng bán", MessageBoxButtons.OKCancel);
+                /*    DialogResult result = MessageBox.Show("Khi ngừng bán, số lượng sản phẩm sẽ = 0 Bạn có chắc muốn tiếp tục?", "Ngừng bán", MessageBoxButtons.OKCancel);
 
-                if (result != DialogResult.OK)
-                {
-                    return;
-                }
+                    if (result != DialogResult.OK)
+                    {
+                        return;
+                    }*/
             }
             else
             {
@@ -506,7 +506,7 @@ namespace pharmacy_management.GUI.Thuoc
                 int madoituong = int.Parse(item.MaDoiTuong.ToString());
                 int soluong = int.Parse(item.SoLuong.ToString());
                 float price = float.Parse(item.GiaThuoc.ToString());
-                string anh = item.AnhThuoc.ToString();
+                string anh = item.AnhThuoc.ToString().Replace("images/", ""); ;
                 int state = int.Parse(item.TrangThai.ToString());
                 string tenxuatxu = xxbus.GetNameBUS(maxuatxu);
                 string tendoituong = dtbus.GetNameBUS(madoituong);
@@ -521,6 +521,20 @@ namespace pharmacy_management.GUI.Thuoc
         private void kryptonPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtGiaThuoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as RichTextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
