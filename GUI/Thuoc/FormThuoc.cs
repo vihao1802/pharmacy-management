@@ -46,17 +46,18 @@ namespace pharmacy_management.GUI.Thuoc
         private bool checkInput()
         {
             Boolean result = true;
-            string giathuoc = txtGiaThuoc.Text;
-            if (txtGiaThuoc.Equals("") || txtTenThuoc.Equals("") || cbbMaDoiTuong.Text == "" || cbbMaXuatXu.Text == "" || pictureBox1.Image == null)
+            string giathuoc = txtGiaThuoc.Text.Trim().ToString();
+            if (giathuoc.Equals("") || txtTenThuoc.Text.Equals("") || cbbMaDoiTuong.Text == "" || cbbMaXuatXu.Text == "" || pictureBox1.Image == null)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                 result = false;
             }
-            /*else if (giathuoc.Any(char.IsLetter) || (float.TryParse(giathuoc, out float gia) && gia <= 1000) || float.Parse(giathuoc) % 1000 != 0)
+
+            else if (int.Parse(giathuoc) < 1)
             {
-                MessageBox.Show("Giá thuốc không hợp lệ.VD:100000 hoặc 55000 và giá thuốc phải > 1000 VND");
+                MessageBox.Show("Giá thuốc phải lớn hơn ít nhất 1000 đồng");
                 result = false;
-            }*/
+            }
             /*foreach (char c in txtTenThuoc.Text)
                     if (char.IsDigit(c))
                         return true;*/
@@ -149,28 +150,22 @@ namespace pharmacy_management.GUI.Thuoc
         {
 
             if (checkInput() == false) return;
-            if (txtSearch.Text.Length > 0)
-
-            {
-                MessageBox.Show("Bạn phải làm mới bảng trước!");
-                return;
-            }
-            if (ckbTrangThai.Checked == false) ;
-
             try
             {
                 string maxx = cbbMaXuatXu.Text.Trim();
                 string madt = cbbMaDoiTuong.Text.Trim();
 
-
                 int maxThuoc = 0;
-                ArrayList thuocList = thuocbus.getList();
+                /*ArrayList thuocList = thuocbus.getList();
                 thuocList.Reverse();
                 foreach (DTO.Thuoc item in thuocbus.getList())
                 {
                     maxThuoc = item.MaThuoc;
                     break;
-                }
+                }*/
+
+                DTO.Thuoc item = thuocbus.getLastItem();
+                maxThuoc = item.MaThuoc;
                 Console.WriteLine(maxThuoc);
                 string newFileName = maxThuoc + 1 + "." + globalFilename.Split('.')[1];
                 DTO.Thuoc drug = new DTO.Thuoc(txtTenThuoc.Text.ToString(), int.Parse(madt[0].ToString()), float.Parse(txtGiaThuoc.Text.ToString()) * 1000, newFileName, 1, int.Parse(maxx[0].ToString()), 0);
@@ -248,14 +243,21 @@ namespace pharmacy_management.GUI.Thuoc
             int soluong;
             if (!ckbTrangThai.Checked)
             {
+                if (int.Parse(txtSoLuong.Text.Trim().ToString()) > 0)
+                {
+                    MessageBox.Show("Số lượng thuốc vẫn còn,không được phép xóa!!!!");
+                    ckbTrangThai.Checked = true;
+                    return;
+                }
                 state = 0;
                 soluong = 0;
-                /*    DialogResult result = MessageBox.Show("Khi ngừng bán, số lượng sản phẩm sẽ = 0 Bạn có chắc muốn tiếp tục?", "Ngừng bán", MessageBoxButtons.OKCancel);
+                /*DialogResult result = MessageBox.Show("Khi ngừng bán, số lượng sản phẩm sẽ = 0 Bạn có chắc muốn tiếp tục?", "Ngừng bán", MessageBoxButtons.OKCancel);
 
-                    if (result != DialogResult.OK)
-                    {
-                        return;
-                    }*/
+                if (result != DialogResult.OK)
+                {
+                    return;
+                }*/
+
             }
             else
             {
@@ -266,12 +268,12 @@ namespace pharmacy_management.GUI.Thuoc
             DoiTuongBUS dtbus = new DoiTuongBUS();
             int maxx = int.Parse(cbbMaXuatXu.Text.Trim().Substring(0, cbbMaXuatXu.Text.Trim().IndexOf('-')));
             int madt = int.Parse(cbbMaDoiTuong.Text.Trim().Substring(0, cbbMaDoiTuong.Text.Trim().IndexOf('-')));
-            if ((xxbus.GetStateBUS(maxx) == 0 || dtbus.GetStateBUS(madt) == 0) && state == 1)
+            /*if ((xxbus.GetStateBUS(maxx) == 0 || dtbus.GetStateBUS(madt) == 0) && state == 1)
             {
                 MessageBox.Show("Mã đối tượng hoặc mã xuất xứ đang trong trạng thái không hoạt động, không thể kích hoạt lại thuốc.Vui lòng kiểm tra lại");
                 ckbTrangThai.Checked = false;
                 return;
-            }
+            }*/
             try
             {
 
@@ -306,6 +308,7 @@ namespace pharmacy_management.GUI.Thuoc
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
 
@@ -525,16 +528,8 @@ namespace pharmacy_management.GUI.Thuoc
 
         private void txtGiaThuoc_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
                 e.Handled = true;
-            }
-
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as RichTextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
         }
     }
 }

@@ -13,7 +13,7 @@ namespace pharmacy_management.BUS
     {
         private ArrayList list;
         private ThuocDAO dao;
-      
+
 
         public ThuocBUS()
         {
@@ -41,17 +41,17 @@ namespace pharmacy_management.BUS
             dao.add(Drug);
         }
 
-       /* public ArrayList searchatMa(int ma)
-        {
-            list = dao.searchatMa(ma);
-            return list;
-        }
+        /* public ArrayList searchatMa(int ma)
+         {
+             list = dao.searchatMa(ma);
+             return list;
+         }
 
-        public ArrayList searchatTen(string ten)
-        {
-            list = dao.searchatTen(ten);
-            return list;
-        }*/
+         public ArrayList searchatTen(string ten)
+         {
+             list = dao.searchatTen(ten);
+             return list;
+         }*/
         public void deleteatMaXuatXu(int ma)
         {
             dao.DeleteatMaXuatXu(ma);
@@ -68,13 +68,13 @@ namespace pharmacy_management.BUS
             return list;
         }
 
-      
-        
+
+
         public void update(Thuoc Drug)
         {
             dao.update(Drug);
         }
-       
+
         public int getSizeList(string text_searching, int selected_doiTuong, int selected_xuatXu)
         {
             list = dao.GetAllAdvancedWithoutPaginateDAO(text_searching, selected_doiTuong, selected_xuatXu);
@@ -90,11 +90,16 @@ namespace pharmacy_management.BUS
         {
             list = dao.GetAllAdvancedDAO(text_searching, selected_doiTuong, selected_xuatXu, page_value, perPage);
         }
-     
+
 
         public DTO.Thuoc getItem(int ma)
         {
             return dao.getItem(ma);
+        }
+
+        public DTO.Thuoc getLastItem()
+        {
+            return dao.getLastItem();
         }
 
         public void updateQuantity(int ma, int sl)

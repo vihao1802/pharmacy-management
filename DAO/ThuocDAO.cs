@@ -552,6 +552,37 @@ namespace pharmacy_management.DAO
             return t;
         }
 
+        public DTO.Thuoc getLastItem()
+        {
+            DTO.Thuoc t = new DTO.Thuoc(0, "", 0, 0, "", 0, 0, 0);
+            ConnectDB conn = new ConnectDB();
+            string query = string.Format("SELECT top 1 * FROM thuoc ORDER BY MaThuoc DESC");
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                if (reader.Read())
+                {
+                    t = new Thuoc(
+                        Int32.Parse(reader["MaThuoc"].ToString()),
+                        reader["TenThuoc"].ToString(),
+                        Int32.Parse(reader["MaDoiTuong"].ToString()),
+                        float.Parse(reader["GiaThuoc"].ToString()),
+                        reader["AnhThuoc"].ToString(),
+                        Int32.Parse(reader["TrangThai"].ToString()),
+                        Int32.Parse(reader["MaXuatXu"].ToString()),
+                        Int32.Parse(reader["SoLuong"].ToString())
+                    );
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+                Console.WriteLine("An error at ThuocDAO: " + ex.Message);
+            }
+            return t;
+        }
         public void updateQuantity(int ma, int sl)
         {
             ConnectDB conn = new ConnectDB();
