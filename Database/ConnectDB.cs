@@ -17,10 +17,11 @@ namespace pharmacy_management.Database
         //string strCnn = "Data Source=LAPTOP-LOJNVCRF\\SQLEXPRESS; Database=ql_nhathuoc; Max Pool Size=1000;Integrated Security = True";
 
         // @author Duc
-        //string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Max Pool Size=1000;Integrated Security=True";
+       // string strCnn = "Data Source=MSI\\LAMDUC;Initial Catalog=ql_nhathuoc;Max Pool Size=1000;Integrated Security=True";
 
         //@author an
-        //string strCnn = "Data Source=DESKTOP-F74SIEE;Initial Catalog=ql_nhathuoc;Max Pool Size=1000;Integrated Security=True";
+       // string strCnn = "Data Source=DESKTOP-F74SIEE;Initial Catalog=ql_nhathuoc;Max Pool Size=1000;Integrated Security=True";
+
 
         SqlConnection sqlConn; //Doi tuong ket noi CSDL
         SqlDataAdapter da;//Bo dieu phoi du lieu
@@ -28,6 +29,7 @@ namespace pharmacy_management.Database
         {
             sqlConn = new SqlConnection(strCnn);
         }
+
 
         public SqlConnection KetNoiCSDL()
         {

@@ -1,13 +1,19 @@
-﻿using pharmacy_management.BUS;
+﻿using OfficeOpenXml;
+using OfficeOpenXml.Table;
+using pharmacy_management.BUS;
 using pharmacy_management.DAO;
+using pharmacy_management.Database;
 using pharmacy_management.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -290,5 +296,88 @@ namespace pharmacy_management.GUI.NhapHang
 
 
         }
+
+        private void btnNhap_Click(object sender, EventArgs e)
+        {
+            ConnectDB connectDB = new ConnectDB();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx| All files(*.*)|*.*";
+            DialogResult result = openFileDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                thuoc_list.createTemp();
+                string filepath = openFileDialog.FileName;
+                string excelConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + filepath + ";Extended Properties=Excel 12.0;Persist Security Info=False";
+
+                using (ExcelPackage package = new ExcelPackage(new FileInfo(filepath)))
+                {
+                    ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+                    var worksheet = package.Workbook.Worksheets[0];
+                    DataTable excelTable = new DataTable();
+                    foreach (var firstRowCell in worksheet.Cells[1, 1, 1, worksheet.Dimension.End.Column])
+                    {
+                        excelTable.Columns.Add(firstRowCell.Text);
+                    }
+
+                    // Add the data from the Excel sheet to the data table
+                    for (int rowNumber = 2; rowNumber <= worksheet.Dimension.End.Row; rowNumber++)
+                    {
+                        var row = worksheet.Cells[rowNumber, 1, rowNumber, worksheet.Dimension.End.Column];
+                        var newRow = excelTable.NewRow();
+                        foreach (var cell in row)
+                        {
+                            newRow[cell.Start.Column - 1] = cell.Text;
+                        }
+                        excelTable.Rows.Add(newRow);
+                    }
+
+                    SqlConnection sqlcon = connectDB.KetNoiCSDL();
+                    try
+                    {
+                        using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(sqlcon))
+                        {
+                            sqlcon.Open();
+                            // Set the destination table name
+                            sqlBulkCopy.DestinationTableName = "TempTable";
+
+                            // Map the columns from the Excel sheet to the SQL table
+                            sqlBulkCopy.ColumnMappings.Add("MaThuoc", "MaThuoc");
+                            sqlBulkCopy.ColumnMappings.Add("TenThuoc", "TenThuoc");
+                            sqlBulkCopy.ColumnMappings.Add("MaDoiTuong", "MaDoiTuong");
+                            sqlBulkCopy.ColumnMappings.Add("GiaThuoc", "GiaThuoc");
+                            sqlBulkCopy.ColumnMappings.Add("AnhThuoc", "AnhThuoc");
+                            sqlBulkCopy.ColumnMappings.Add("TrangThai", "TrangThai");
+                            sqlBulkCopy.ColumnMappings.Add("MaXuatXu", "MaXuatXu");
+                            sqlBulkCopy.ColumnMappings.Add("SoLuong", "SoLuong");
+
+                            // Write the data to the SQL table
+                            sqlBulkCopy.WriteToServer(excelTable);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                        MessageBox.Show("Format file không đúng, đã có lỗi xảy ra");
+                        return;
+
+                    }
+                    try
+                    {
+                        thuoc_list.Merge();
+                        MessageBox.Show("Nhập thành công");
+                        thuoc_list.dropTempTable();
+                        setEmpty();
+                        pagination();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        return;
+                    }
+
+                }
+            }
+        }
     }
 }
+

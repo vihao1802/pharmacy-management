@@ -68,17 +68,7 @@ namespace pharmacy_management.GUI.QLxuatxu
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtSearch.Text.Length > 0) {
-                MessageBox.Show("Bạn phải làm mới bảng trước");
-                return;
-            }
-            else
-            {
-                if (DGVXuatXu.SelectedRows.Count >= 1)
-                {
-                    MessageBox.Show("Có dòng đang được chọn hãy bỏ chọn trước!");
-                    return;
-                }
+          
                 if (txtTenXuatXu.Text == "")
                 {
                     MessageBox.Show("Chưa điền tên xuất xứ");
@@ -88,30 +78,17 @@ namespace pharmacy_management.GUI.QLxuatxu
                 try
                 {
                     XuatXu DTO = new XuatXu(txtTenXuatXu.Text.ToString(), 1);
-                    bus.add(DTO);
-
-                    int maxXuatXu = 0;
-                    foreach (XuatXu item in bus.getList())
-                    {
-                        int ma = int.Parse(item.MaXuatXu.ToString());
-                        if (ma > maxXuatXu)
-                        {
-                            maxXuatXu = ma;
-                        }
-                    }
-                    int trangthaiNew = DTO.TrangThai;
-                    string tenNew = DTO.TenXuatXu;
-                    string tempNew = (trangthaiNew == 1) ? "Active" : "Not Active";
-                    DGVXuatXu.Rows.Add(maxXuatXu + 1, tenNew, tempNew);
-                    /*loadds();*/
+                    bus.add(DTO);                 
+                    loadds();
                     txtTenXuatXu.Text = "";
                     MessageBox.Show("Thêm thành công");
+               
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
+            //}
         }
 
         private void btnSua_Click(object sender, EventArgs e)

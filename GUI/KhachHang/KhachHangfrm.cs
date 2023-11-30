@@ -30,7 +30,7 @@ namespace pharmacy_management.GUI.KhachHang
             InitializeComponent();
             loads();
 
-            btnSua.Enabled = false;         
+            btnSua.Enabled = false;
             label5.Visible = false;
             lbl_DiemKH.Visible = false;
         }
@@ -60,7 +60,7 @@ namespace pharmacy_management.GUI.KhachHang
             txtNgaySinh.MinDate = new DateTime(1900, 01, 01);
             ckbTrangThai.Checked = true;
             btnThem.Enabled = true;
-            btnSua.Enabled = false;         
+            btnSua.Enabled = false;
             ckbTrangThai.Visible = false;
             label5.Visible = false;
             lbl_DiemKH.Visible = false;
@@ -379,14 +379,14 @@ namespace pharmacy_management.GUI.KhachHang
                         if (value != null)
                         {
                             if (headers[j] == "SDT") // Assuming SDT is the column name for phone number
-                                xlWorksheet.Cells[i + 2, j + 1] = "'" + value.ToString(); // Prepend with a single quote to treat it as text
-                            else if (headers[j] == "NgaySinh") // Assuming NgaySinh is the column name for date of birth
+                                xlWorksheet.Cells[i + 2, j + 1] = value.ToString(); // Prepend with a single quote to treat it as text
+                            /*else if (headers[j] == "NgaySinh") // Assuming NgaySinh is the column name for date of birth
                             {
                                 DateTime ngaySinhValue = DateTime.Parse(value.ToString());
                                 xlWorksheet.Cells[i + 2, j + 1] = ngaySinhValue;
                                 // Set the number format for the "NgaySinh" column to "yyyy-MM-dd"
                                 xlWorksheet.Cells[i + 2, j + 1].NumberFormat = "yyyy-mm-dd";
-                            }
+                            }*/
                             else if (headers[j] == "MaKH") // Assuming MaKH is the column name for customer ID
                                 xlWorksheet.Cells[i + 2, j + 1] = Convert.ToInt32(value);
                             else
@@ -443,7 +443,7 @@ namespace pharmacy_management.GUI.KhachHang
 
         private void khachhangDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-           // khachhangDataGridView.CurrentRow.Selected = true;
+            // khachhangDataGridView.CurrentRow.Selected = true;
         }
 
         private void khachhangDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -480,7 +480,7 @@ namespace pharmacy_management.GUI.KhachHang
                         label1.Visible = false;
                         label3.Visible = false;
                         label5.Visible = false;
-                        lbl_DiemKH.Visible = false;                     
+                        lbl_DiemKH.Visible = false;
                         ckbTrangThai.Visible = false;
                     }
                     else
@@ -491,7 +491,7 @@ namespace pharmacy_management.GUI.KhachHang
                         label1.Visible = true;
                         label3.Visible = true;
                         label5.Visible = true;
-                        lbl_DiemKH.Visible = true;                     
+                        lbl_DiemKH.Visible = true;
                         ckbTrangThai.Visible = true;
                     }
                     foreach (DTO.DiemKhachHang diem in diembus.getList())
@@ -525,7 +525,7 @@ namespace pharmacy_management.GUI.KhachHang
             string tim = txt_searching.Text.Trim().ToString();
             foreach (DTO.KhachHang item in bus.search(tim))
             {
-                
+
                 int ma = item.MaKH;
                 string ten = item.TenKH;
                 string sdt = item.Sdt;
@@ -537,7 +537,7 @@ namespace pharmacy_management.GUI.KhachHang
             }
         }
 
-       
+
 
         private void btn_refresh_Click(object sender, EventArgs e)
         {
