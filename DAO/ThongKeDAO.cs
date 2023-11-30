@@ -35,7 +35,7 @@ namespace pharmacy_management.DAO
         //        }
         public int getslthuoc()
         {
-            string query = "Select Count(*) from thuoc";
+            string query = "Select Count(*) from thuoc WHERE TrangThai = '1'";
             using (SqlCommand cmd = new SqlCommand(query, sqlcon))
             {
                 sqlcon.Open();
