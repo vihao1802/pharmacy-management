@@ -62,7 +62,7 @@ namespace pharmacy_management.GUI
 
             dnbus.sendMail(nv.Email);
             dnbus.resetPass(nv);
-
+            Close();
         }
     }
 }

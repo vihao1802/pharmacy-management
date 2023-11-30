@@ -47,16 +47,12 @@ namespace pharmacy_management.GUI.Thuoc
         {
             Boolean result = true;
             string giathuoc = txtGiaThuoc.Text.Trim().ToString();
-            if (txtGiaThuoc.Equals("") || txtTenThuoc.Equals("") || cbbMaDoiTuong.Text == "" || cbbMaXuatXu.Text == "" || pictureBox1.Image == null)
+            if (giathuoc.Equals("") || txtTenThuoc.Text.Equals("") || cbbMaDoiTuong.Text == "" || cbbMaXuatXu.Text == "" || pictureBox1.Image == null)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                 result = false;
             }
-            else if (giathuoc.Any(char.IsLetter) )
-            {
-                MessageBox.Show("Giá thuốc không được chứa chữ");
-                result = false;
-            }
+
             else if (int.Parse(giathuoc) < 1)
             {
                 MessageBox.Show("Giá thuốc phải lớn hơn ít nhất 1000 đồng");
@@ -153,20 +149,23 @@ namespace pharmacy_management.GUI.Thuoc
         private void btnThem_Click_1(object sender, EventArgs e)
         {
 
-            if (checkInput() == false) return;          
+            if (checkInput() == false) return;
             try
             {
                 string maxx = cbbMaXuatXu.Text.Trim();
                 string madt = cbbMaDoiTuong.Text.Trim();
 
                 int maxThuoc = 0;
-                ArrayList thuocList = thuocbus.getList();
+                /*ArrayList thuocList = thuocbus.getList();
                 thuocList.Reverse();
                 foreach (DTO.Thuoc item in thuocbus.getList())
                 {
                     maxThuoc = item.MaThuoc;
                     break;
-                }
+                }*/
+
+                DTO.Thuoc item = thuocbus.getLastItem();
+                maxThuoc = item.MaThuoc;
                 Console.WriteLine(maxThuoc);
                 string newFileName = maxThuoc + 1 + "." + globalFilename.Split('.')[1];
                 DTO.Thuoc drug = new DTO.Thuoc(txtTenThuoc.Text.ToString(), int.Parse(madt[0].ToString()), float.Parse(txtGiaThuoc.Text.ToString()) * 1000, newFileName, 1, int.Parse(maxx[0].ToString()), 0);
@@ -258,7 +257,7 @@ namespace pharmacy_management.GUI.Thuoc
                 {
                     return;
                 }*/
-                
+
             }
             else
             {
@@ -309,7 +308,7 @@ namespace pharmacy_management.GUI.Thuoc
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
 
 
@@ -510,7 +509,7 @@ namespace pharmacy_management.GUI.Thuoc
                 int madoituong = int.Parse(item.MaDoiTuong.ToString());
                 int soluong = int.Parse(item.SoLuong.ToString());
                 float price = float.Parse(item.GiaThuoc.ToString());
-                string anh = item.AnhThuoc.ToString();
+                string anh = item.AnhThuoc.ToString().Replace("images/", ""); ;
                 int state = int.Parse(item.TrangThai.ToString());
                 string tenxuatxu = xxbus.GetNameBUS(maxuatxu);
                 string tendoituong = dtbus.GetNameBUS(madoituong);
@@ -529,7 +528,7 @@ namespace pharmacy_management.GUI.Thuoc
 
         private void txtGiaThuoc_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
     }
