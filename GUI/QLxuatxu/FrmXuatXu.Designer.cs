@@ -35,7 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kryptonGroupBox1 = new Krypton.Toolkit.KryptonGroupBox();
-            this.ckbTrangThai = new Krypton.Toolkit.KryptonCheckBox();
             this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             this.txtTenXuatXu = new Krypton.Toolkit.KryptonTextBox();
             this.txtMaXuatXu = new Krypton.Toolkit.KryptonTextBox();
@@ -43,9 +42,6 @@
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
             this.lblback = new Krypton.Toolkit.KryptonLabel();
             this.DGVXuatXu = new System.Windows.Forms.DataGridView();
-            this.maXuatXu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenXuatXu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSua = new Krypton.Toolkit.KryptonButton();
             this.btnThem = new Krypton.Toolkit.KryptonButton();
             this.btnXuat = new Krypton.Toolkit.KryptonButton();
@@ -54,6 +50,9 @@
             this.btnRefresh = new Krypton.Toolkit.KryptonButton();
             this.txtSearch = new Krypton.Toolkit.KryptonTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.maXuatXu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenXuatXu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
             this.kryptonGroupBox1.Panel.SuspendLayout();
@@ -78,7 +77,6 @@
             // 
             // kryptonGroupBox1.Panel
             // 
-            this.kryptonGroupBox1.Panel.Controls.Add(this.ckbTrangThai);
             this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel2);
             this.kryptonGroupBox1.Panel.Controls.Add(this.txtTenXuatXu);
             this.kryptonGroupBox1.Panel.Controls.Add(this.txtMaXuatXu);
@@ -91,15 +89,6 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonGroupBox1.TabIndex = 0;
             this.kryptonGroupBox1.Values.Heading = "Thông tin xuất xứ";
-            // 
-            // ckbTrangThai
-            // 
-            this.ckbTrangThai.Location = new System.Drawing.Point(20, 131);
-            this.ckbTrangThai.Name = "ckbTrangThai";
-            this.ckbTrangThai.Size = new System.Drawing.Size(92, 31);
-            this.ckbTrangThai.StateCommon.ShortText.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbTrangThai.TabIndex = 9;
-            this.ckbTrangThai.Values.Text = "Active";
             // 
             // kryptonLabel2
             // 
@@ -233,35 +222,6 @@
             this.DGVXuatXu.TabIndex = 62;
             this.DGVXuatXu.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVXuatXu_CellMouseClick);
             this.DGVXuatXu.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVXuatXu_CellMouseDoubleClick);
-            // 
-            // maXuatXu
-            // 
-            this.maXuatXu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.maXuatXu.DataPropertyName = "maXuatXu";
-            this.maXuatXu.HeaderText = "Mã";
-            this.maXuatXu.MinimumWidth = 10;
-            this.maXuatXu.Name = "maXuatXu";
-            this.maXuatXu.ReadOnly = true;
-            this.maXuatXu.Width = 10;
-            // 
-            // tenXuatXu
-            // 
-            this.tenXuatXu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenXuatXu.DataPropertyName = "tenXuatXu";
-            this.tenXuatXu.HeaderText = "Tên xuất xứ";
-            this.tenXuatXu.MinimumWidth = 6;
-            this.tenXuatXu.Name = "tenXuatXu";
-            this.tenXuatXu.ReadOnly = true;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TrangThai.DataPropertyName = "TrangThai";
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.MinimumWidth = 6;
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            this.TrangThai.Width = 130;
             // 
             // btnSua
             // 
@@ -498,6 +458,36 @@
             this.txtSearch.TabIndex = 4;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
+            // maXuatXu
+            // 
+            this.maXuatXu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.maXuatXu.DataPropertyName = "maXuatXu";
+            this.maXuatXu.HeaderText = "Mã";
+            this.maXuatXu.MinimumWidth = 40;
+            this.maXuatXu.Name = "maXuatXu";
+            this.maXuatXu.ReadOnly = true;
+            this.maXuatXu.Width = 40;
+            // 
+            // tenXuatXu
+            // 
+            this.tenXuatXu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenXuatXu.DataPropertyName = "tenXuatXu";
+            this.tenXuatXu.HeaderText = "Tên xuất xứ";
+            this.tenXuatXu.MinimumWidth = 6;
+            this.tenXuatXu.Name = "tenXuatXu";
+            this.tenXuatXu.ReadOnly = true;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.MinimumWidth = 6;
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
+            this.TrangThai.Width = 130;
+            // 
             // FrmXuatXu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -533,7 +523,6 @@
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private Krypton.Toolkit.KryptonLabel kryptonLabel2;
-        private Krypton.Toolkit.KryptonCheckBox ckbTrangThai;
         private Krypton.Toolkit.KryptonGroupBox kryptonGroupBox2;
         private Krypton.Toolkit.KryptonTextBox txtSearch;
         private System.Windows.Forms.ToolTip toolTip1;

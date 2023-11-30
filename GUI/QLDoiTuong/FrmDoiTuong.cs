@@ -23,7 +23,7 @@ namespace pharmacy_management.GUI.QLDoiTuong
             InitializeComponent();
             loadds();
             setup();
-            ckbTrangThai.Visible = false;
+            //ckbTrangThai.Visible = false;
         }
 
         DoiTuongBUS bus = new DoiTuongBUS();
@@ -105,12 +105,13 @@ namespace pharmacy_management.GUI.QLDoiTuong
                 MessageBox.Show("Chưa điền tên đối tượng");
                 return;
             }
-            if (!ckbTrangThai.Checked)
+           /* if (!ckbTrangThai.Checked)
             {
                 state = 0;
                 thuocbus.deleteatMaDoiTuong(ma);              
             }
-            else state = 1;
+            else */
+                state = 1;
             try
             {
                 DoiTuong dt = new DoiTuong(int.Parse(txtMaDoiTuong.Text.ToString()), txtTenDoiTuong.Text.ToString(), state);
@@ -137,7 +138,7 @@ namespace pharmacy_management.GUI.QLDoiTuong
             flag = 1; 
             txtTenDoiTuong.Text = "";
             txtMaDoiTuong.Text = "";
-            ckbTrangThai.Visible = false;
+            //ckbTrangThai.Visible = false;
             txtSearch.Text = "";
             setEnable(true);
             DGVDoiTuong.ClearSelection();
@@ -202,17 +203,11 @@ namespace pharmacy_management.GUI.QLDoiTuong
 
         private void DGVDoiTuong_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            ckbTrangThai.Visible = true;
+            //ckbTrangThai.Visible = true;
             DGVDoiTuong.CurrentRow.Selected = true;
             // Lấy giá trị từ cột tương ứng và hiển thị lên TextBox
             txtMaDoiTuong.Text = DGVDoiTuong.CurrentRow.Cells["MaDT"].Value.ToString();
-            txtTenDoiTuong.Text = DGVDoiTuong.CurrentRow.Cells["TenDT"].Value.ToString();
-            string temp = DGVDoiTuong.CurrentRow.Cells["TrangThai"].Value.ToString();
-            ckbTrangThai.Enabled = true;
-            if (temp.Equals("Active", StringComparison.OrdinalIgnoreCase))
-                ckbTrangThai.Checked = true;
-            else
-                ckbTrangThai.Checked = false;
+            txtTenDoiTuong.Text = DGVDoiTuong.CurrentRow.Cells["TenDT"].Value.ToString();          
             setEnable(false);
         }
 
@@ -233,7 +228,7 @@ namespace pharmacy_management.GUI.QLDoiTuong
 
         private void DGVDoiTuong_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            ckbTrangThai.Visible = false;
+            //ckbTrangThai.Visible = false;
             DGVDoiTuong.ClearSelection();
             txtMaDoiTuong.Text = "";
             txtTenDoiTuong.Text = "";

@@ -24,8 +24,9 @@ namespace pharmacy_management.GUI.QLxuatxu
             loadds();
             setup();
 
-            ckbTrangThai.Visible = false;
+            /*ckbTrangThai.Visible = false;*/
         }
+       
         int flag = 1;
         XuatXuBUS bus = new XuatXuBUS();
         ThuocBUS thuocbus = new ThuocBUS();
@@ -77,7 +78,7 @@ namespace pharmacy_management.GUI.QLxuatxu
 
                 try
                 {
-                    XuatXu DTO = new XuatXu(txtTenXuatXu.Text.ToString(), 1);
+                    XuatXu DTO = new XuatXu(txtTenXuatXu.Text.Trim().ToString(), 1);
                     bus.add(DTO);                 
                     loadds();
                     txtTenXuatXu.Text = "";
@@ -96,24 +97,26 @@ namespace pharmacy_management.GUI.QLxuatxu
             int state;
             int ma = int.Parse(txtMaXuatXu.Text.ToString());
             XuatXuBUS bus = new XuatXuBUS();
-            ThuocBUS thuocbus = new ThuocBUS();
+           // ThuocBUS thuocbus = new ThuocBUS();
             if (txtTenXuatXu.Text == "")
             {
                 MessageBox.Show("Chưa điền tên xuất xứ");
                 return;
 
             }
-            if (!ckbTrangThai.Checked)
+            
+            /*if (!ckbTrangThai.Checked)
             {
                 state = 0;
                 thuocbus.deleteatMaXuatXu(ma);
             }
-            else state = 1;
+            else */
+                state = 1;
             try
             {
                 XuatXu xx = new XuatXu(int.Parse(txtMaXuatXu.Text.ToString()), txtTenXuatXu.Text.ToString(), state);
                 bus.update(xx);
-                DGVXuatXu.CurrentRow.Cells["tenXuatXu"].Value = txtTenXuatXu.Text.ToString();
+                DGVXuatXu.CurrentRow.Cells["tenXuatXu"].Value = txtTenXuatXu.Text.Trim().ToString();
                 DGVXuatXu.CurrentRow.Cells["TrangThai"].Value = state == 1 ? "Active" : "Not Active";
                 txtTenXuatXu.Text = "";
                 txtMaXuatXu.Text = "";
@@ -137,7 +140,7 @@ namespace pharmacy_management.GUI.QLxuatxu
             txtMaXuatXu.Text = "";
             txtSearch.Text = "";
             DGVXuatXu.ClearSelection();
-            ckbTrangThai.Visible = false;
+            //ckbTrangThai.Visible = false;
             setEnable(true);
         }
 
@@ -198,27 +201,17 @@ namespace pharmacy_management.GUI.QLxuatxu
 
         private void DGVXuatXu_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            ckbTrangThai.Visible = true;
+           // ckbTrangThai.Visible = true;
             DGVXuatXu.CurrentRow.Selected = true;
             // Lấy giá trị từ cột tương ứng và hiển thị lên TextBox
             txtMaXuatXu.Text = DGVXuatXu.CurrentRow.Cells["maXuatXu"].Value.ToString();
-            txtTenXuatXu.Text = DGVXuatXu.CurrentRow.Cells["tenXuatXu"].Value.ToString();
-            string temp = DGVXuatXu.CurrentRow.Cells["TrangThai"].Value.ToString();
-            ckbTrangThai.Enabled = true;
-            if (temp.Equals("Active", StringComparison.OrdinalIgnoreCase))
-            {
-                ckbTrangThai.Checked = true;
-            }
-            else
-            {
-                ckbTrangThai.Checked = false;
-            }
+            txtTenXuatXu.Text = DGVXuatXu.CurrentRow.Cells["tenXuatXu"].Value.ToString();            
             setEnable(false);
         }
 
         private void DGVXuatXu_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            ckbTrangThai.Visible = false;
+            //ckbTrangThai.Visible = false;
             DGVXuatXu.ClearSelection();
             txtMaXuatXu.Text = "";
             txtTenXuatXu.Text = "";
