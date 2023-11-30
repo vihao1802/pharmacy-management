@@ -66,11 +66,11 @@ namespace pharmacy_management.DAO
                 {
                     if (selected_xuatXu <= 0)
                     {
-                        query = string.Format("SELECT * FROM thuoc WHERE TrangThai = '1'");
+                        query = string.Format("SELECT * FROM thuoc inner join doituong on thuoc.MaDoiTuong = doituong.MaDT inner join xuatxu on thuoc.MaXuatXu = xuatxu.MaXuatXu WHERE doituong.TrangThai = '1' AND thuoc.TrangThai ='1' AND xuatxu.TrangThai = '1'");
                     }
                     else
                     {
-                        query = string.Format("SELECT * FROM thuoc WHERE TrangThai = '1' AND MaXuatXu = '{0}'", selected_xuatXu);
+                        query = string.Format("SELECT * FROM thuoc inner join doituong on thuoc.MaDoiTuong = doituong.MaDT inner join xuatxu on thuoc.MaXuatXu = xuatxu.MaXuatXu WHERE doituong.TrangThai = '1' AND thuoc.TrangThai ='1' AND  thuoc.MaXuatXu = '{0}' AND xuatxu.TrangThai = '1'", selected_xuatXu);
                     }
 
                 }
@@ -78,11 +78,11 @@ namespace pharmacy_management.DAO
                 {
                     if (selected_xuatXu <= 0)
                     {
-                        query = string.Format("SELECT * FROM thuoc WHERE TrangThai = '1' AND MaDoiTuong = '{0}'", selected_doiTuong);
+                        query = string.Format("SELECT * FROM thuoc inner join doituong on thuoc.MaDoiTuong = doituong.MaDT inner join xuatxu on thuoc.MaXuatXu = xuatxu.MaXuatXu WHERE doituong.TrangThai = '1' AND thuoc.TrangThai ='1' AND  thuoc.MaDoiTuong = '{0}' AND xuatxu.TrangThai = '1'", selected_doiTuong);
                     }
                     else
                     {
-                        query = string.Format("SELECT * FROM thuoc WHERE TrangThai = '1' AND MaDoiTuong = '{0}' AND MaXuatXu = '{1}'", selected_doiTuong, selected_xuatXu);
+                        query = string.Format("SELECT * FROM thuoc inner join doituong on thuoc.MaDoiTuong = doituong.MaDT inner join xuatxu on thuoc.MaXuatXu = xuatxu.MaXuatXu WHERE doituong.TrangThai = '1' AND thuoc.TrangThai ='1' AND  thuoc.MaDoiTuong = '{0}' AND  thuoc.MaXuatXu = '{1}' AND xuatxu.TrangThai = '1'", selected_doiTuong, selected_xuatXu);
                     }
                 }
             }
@@ -92,11 +92,11 @@ namespace pharmacy_management.DAO
                 {
                     if (selected_xuatXu <= 0)
                     {
-                        query = string.Format("SELECT * FROM thuoc WHERE TenThuoc LIKE N'%{0}%' AND TrangThai = '1'", text_searching);
+                        query = string.Format("SELECT * FROM thuoc inner join doituong on thuoc.MaDoiTuong = doituong.MaDT inner join xuatxu on thuoc.MaXuatXu = xuatxu.MaXuatXu WHERE doituong.TrangThai = '1' AND thuoc.TrangThai ='1' AND TenThuoc LIKE N'%{0}%' AND xuatxu.TrangThai = '1'", text_searching);
                     }
                     else
                     {
-                        query = string.Format("SELECT * FROM thuoc WHERE TenThuoc LIKE N'%{1}%' AND TrangThai = '1' AND MaXuatXu = '{0}'", selected_xuatXu, text_searching);
+                        query = string.Format("SELECT * FROM thuoc inner join doituong on thuoc.MaDoiTuong = doituong.MaDT inner join xuatxu on thuoc.MaXuatXu = xuatxu.MaXuatXu WHERE doituong.TrangThai = '1' AND thuoc.TrangThai ='1' AND TenThuoc LIKE N'%{1}%' AND xuatxu.TrangThai = '1' AND thuoc.MaXuatXu = '{0}'", selected_xuatXu, text_searching);
                     }
 
                 }
@@ -104,11 +104,11 @@ namespace pharmacy_management.DAO
                 {
                     if (selected_xuatXu <= 0)
                     {
-                        query = string.Format("SELECT * FROM thuoc WHERE TenThuoc LIKE N'%{1}%' AND TrangThai = '1' AND MaDoiTuong = '{0}'", selected_doiTuong, text_searching);
+                        query = string.Format("SELECT * FROM thuoc inner join doituong on thuoc.MaDoiTuong = doituong.MaDT inner join xuatxu on thuoc.MaXuatXu = xuatxu.MaXuatXu WHERE doituong.TrangThai = '1' AND thuoc.TrangThai ='1' AND TenThuoc LIKE N'%{1}%' AND xuatxu.TrangThai = '1' AND thuoc.MaDoiTuong = '{0}'", selected_doiTuong, text_searching);
                     }
                     else
                     {
-                        query = string.Format("SELECT * FROM thuoc WHERE TenThuoc LIKE N'%{2}%' AND TrangThai = '1' AND MaDoiTuong = '{0}' AND MaXuatXu = '{1}'", selected_doiTuong, selected_xuatXu, text_searching);
+                        query = string.Format("SELECT * FROM thuoc inner join doituong on thuoc.MaDoiTuong = doituong.MaDT inner join xuatxu on thuoc.MaXuatXu = xuatxu.MaXuatXu WHERE doituong.TrangThai = '1' AND thuoc.TrangThai ='1' AND TenThuoc LIKE N'%{2}%' AND xuatxu.TrangThai = '1' AND thuoc.MaDoiTuong = '{0}' AND thuoc.MaXuatXu = '{1}'", selected_doiTuong, selected_xuatXu, text_searching);
                     }
                 }
             }
@@ -148,8 +148,8 @@ namespace pharmacy_management.DAO
             ArrayList arrayList = new ArrayList();
 
             ConnectDB conn = new ConnectDB();
-             string query = string.Format("SELECT * FROM thuoc INNER JOIN xuatxu ON thuoc.MaXuatXu = xuatxu.MaXuatXu INNER JOIN doituong ON doituong.MaDT = thuoc.MaDoiTuong WHERE (xuatxu.TenXuatXu LIKE N'%{0}%' or doituong.TenDT  LIKE N'%{0}%' or thuoc.TenThuoc LIKE N'%{0}%')",text);
-            
+            string query = string.Format("SELECT * FROM thuoc INNER JOIN xuatxu ON thuoc.MaXuatXu = xuatxu.MaXuatXu INNER JOIN doituong ON doituong.MaDT = thuoc.MaDoiTuong WHERE (xuatxu.TenXuatXu LIKE N'%{0}%' or doituong.TenDT  LIKE N'%{0}%' or thuoc.TenThuoc LIKE N'%{0}%')", text);
+
             SqlDataReader reader = conn.Execute(query);
             try
             {
@@ -260,11 +260,11 @@ namespace pharmacy_management.DAO
                 {
                     if (selected_xuatXu <= 0)
                     {
-                        query = string.Format("SELECT * FROM thuoc WHERE TrangThai = '1' ORDER BY MaThuoc OFFSET {0} ROWS FETCH NEXT {1} ROWS ONLY", start, perPage);
+                        query = string.Format("SELECT * FROM thuoc inner join doituong on thuoc.MaDoiTuong = doituong.MaDT inner join xuatxu on thuoc.MaXuatXu = xuatxu.MaXuatXu WHERE doituong.TrangThai = '1' AND thuoc.TrangThai ='1' AND xuatxu.TrangThai = '1' ORDER BY MaThuoc OFFSET {0} ROWS FETCH NEXT {1} ROWS ONLY", start, perPage);
                     }
                     else
                     {
-                        query = string.Format("SELECT * FROM thuoc WHERE TrangThai = '1' AND MaXuatXu = '{0}'  ORDER BY MaThuoc OFFSET {1} ROWS FETCH NEXT {2} ROWS ONLY", selected_xuatXu, start, perPage);
+                        query = string.Format("SELECT * FROM thuoc inner join doituong on thuoc.MaDoiTuong = doituong.MaDT inner join xuatxu on thuoc.MaXuatXu = xuatxu.MaXuatXu WHERE doituong.TrangThai = '1' AND thuoc.TrangThai ='1' AND xuatxu.TrangThai = '1' AND thuoc.MaXuatXu = '{0}'  ORDER BY MaThuoc OFFSET {1} ROWS FETCH NEXT {2} ROWS ONLY", selected_xuatXu, start, perPage);
                     }
 
                 }
@@ -272,11 +272,11 @@ namespace pharmacy_management.DAO
                 {
                     if (selected_xuatXu <= 0)
                     {
-                        query = string.Format("SELECT * FROM thuoc WHERE TrangThai = '1' AND MaDoiTuong = '{0}' ORDER BY MaThuoc OFFSET {1} ROWS FETCH NEXT {2} ROWS ONLY", selected_doiTuong, start, perPage);
+                        query = string.Format("SELECT * FROM thuoc inner join doituong on thuoc.MaDoiTuong = doituong.MaDT inner join xuatxu on thuoc.MaXuatXu = xuatxu.MaXuatXu WHERE doituong.TrangThai = '1' AND thuoc.TrangThai ='1' AND xuatxu.TrangThai = '1' AND thuoc.MaDoiTuong = '{0}' ORDER BY MaThuoc OFFSET {1} ROWS FETCH NEXT {2} ROWS ONLY", selected_doiTuong, start, perPage);
                     }
                     else
                     {
-                        query = string.Format("SELECT * FROM thuoc WHERE TrangThai = '1' AND MaDoiTuong = '{0}' AND MaXuatXu = '{1}'  ORDER BY MaThuoc OFFSET {2} ROWS FETCH NEXT {3} ROWS ONLY", selected_doiTuong, selected_xuatXu, start, perPage);
+                        query = string.Format("SELECT * FROM thuoc inner join doituong on thuoc.MaDoiTuong = doituong.MaDT inner join xuatxu on thuoc.MaXuatXu = xuatxu.MaXuatXu WHERE doituong.TrangThai = '1' AND thuoc.TrangThai ='1' AND xuatxu.TrangThai = '1' AND thuoc.MaDoiTuong = '{0}' AND thuoc.MaXuatXu = '{1}'  ORDER BY MaThuoc OFFSET {2} ROWS FETCH NEXT {3} ROWS ONLY", selected_doiTuong, selected_xuatXu, start, perPage);
                     }
                 }
             }
@@ -286,11 +286,11 @@ namespace pharmacy_management.DAO
                 {
                     if (selected_xuatXu <= 0)
                     {
-                        query = string.Format("SELECT * FROM thuoc WHERE TenThuoc LIKE N'%{2}%' AND TrangThai = '1' ORDER BY MaThuoc OFFSET {0} ROWS FETCH NEXT {1} ROWS ONLY", start, perPage, text_searching);
+                        query = string.Format("SELECT * FROM thuoc inner join doituong on thuoc.MaDoiTuong = doituong.MaDT inner join xuatxu on thuoc.MaXuatXu = xuatxu.MaXuatXu WHERE doituong.TrangThai = '1' AND thuoc.TrangThai ='1' AND TenThuoc LIKE N'%{2}%' AND xuatxu.TrangThai = '1' ORDER BY MaThuoc OFFSET {0} ROWS FETCH NEXT {1} ROWS ONLY", start, perPage, text_searching);
                     }
                     else
                     {
-                        query = string.Format("SELECT * FROM thuoc WHERE TenThuoc LIKE N'%{3}%' AND TrangThai = '1' AND MaXuatXu = '{0}'  ORDER BY MaThuoc OFFSET {1} ROWS FETCH NEXT {2} ROWS ONLY", selected_xuatXu, start, perPage, text_searching);
+                        query = string.Format("SELECT * FROM thuoc inner join doituong on thuoc.MaDoiTuong = doituong.MaDT inner join xuatxu on thuoc.MaXuatXu = xuatxu.MaXuatXu WHERE doituong.TrangThai = '1' AND thuoc.TrangThai ='1' AND TenThuoc LIKE N'%{3}%' AND xuatxu.TrangThai = '1' AND thuoc.MaXuatXu = '{0}'  ORDER BY MaThuoc OFFSET {1} ROWS FETCH NEXT {2} ROWS ONLY", selected_xuatXu, start, perPage, text_searching);
                     }
 
                 }
@@ -298,11 +298,11 @@ namespace pharmacy_management.DAO
                 {
                     if (selected_xuatXu <= 0)
                     {
-                        query = string.Format("SELECT * FROM thuoc WHERE TenThuoc LIKE N'%{3}%' AND TrangThai = '1' AND MaDoiTuong = '{0}' ORDER BY MaThuoc OFFSET {1} ROWS FETCH NEXT {2} ROWS ONLY", selected_doiTuong, start, perPage, text_searching);
+                        query = string.Format("SELECT * FROM thuoc inner join doituong on thuoc.MaDoiTuong = doituong.MaDT inner join xuatxu on thuoc.MaXuatXu = xuatxu.MaXuatXu WHERE doituong.TrangThai = '1' AND thuoc.TrangThai ='1' AND TenThuoc LIKE N'%{3}%' AND xuatxu.TrangThai = '1' AND thuoc.MaDoiTuong = '{0}' ORDER BY MaThuoc OFFSET {1} ROWS FETCH NEXT {2} ROWS ONLY", selected_doiTuong, start, perPage, text_searching);
                     }
                     else
                     {
-                        query = string.Format("SELECT * FROM thuoc WHERE TenThuoc LIKE N'%{4}%' AND TrangThai = '1' AND MaDoiTuong = '{0}' AND MaXuatXu = '{1}'  ORDER BY MaThuoc OFFSET {2} ROWS FETCH NEXT {3} ROWS ONLY", selected_doiTuong, selected_xuatXu, start, perPage, text_searching);
+                        query = string.Format("SELECT * FROM thuoc inner join doituong on thuoc.MaDoiTuong = doituong.MaDT inner join xuatxu on thuoc.MaXuatXu = xuatxu.MaXuatXu WHERE doituong.TrangThai = '1' AND thuoc.TrangThai ='1' AND TenThuoc LIKE N'%{4}%' AND xuatxu.TrangThai = '1' AND thuoc.MaDoiTuong = '{0}' AND thuoc.MaXuatXu = '{1}'  ORDER BY MaThuoc OFFSET {2} ROWS FETCH NEXT {3} ROWS ONLY", selected_doiTuong, selected_xuatXu, start, perPage, text_searching);
                     }
                 }
             }

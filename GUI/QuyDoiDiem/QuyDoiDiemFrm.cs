@@ -87,7 +87,8 @@ namespace pharmacy_management.GUI.QuyDoiDiem
                 }
                 string tenKH = qd.MaKH + "_" + khBUS.getKH(qd.MaKH).TenKH;
 
-                gv_QDD.Rows.Add(qd.MaQuyDoi, tenKH, qd.NgayQuyDoi, status);
+                PhieuGiamGia tmp = pggBUS.getItem(qd.MaQuyDoi);
+                gv_QDD.Rows.Add(qd.MaQuyDoi, tenKH, qd.NgayQuyDoi, tmp.MoTaPG, tmp.SoDiemQuyDoi, tmp.PhanTramGiam, status);
             }
         }
 
@@ -182,6 +183,78 @@ namespace pharmacy_management.GUI.QuyDoiDiem
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             setup();
+        }
+
+        private void btn_export_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Create a new instance of Excel application
+                Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlApp.Visible = true;
+
+                // Create a new workbook
+                Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Add(Type.Missing);
+
+                // Get the active sheet
+                Microsoft.Office.Interop.Excel.Worksheet xlWorksheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkbook.ActiveSheet;
+
+                // Column headers
+                string[] headers = { "MaQuyDoi", "KhachHang", "NgayDoi", "MoTa", "DiemQuyDoi", "PhanTram", "TrangThai" };
+
+                // Add column headers
+                for (int j = 0; j < headers.Length; j++)
+                {
+                    xlWorksheet.Cells[1, j + 1] = headers[j];
+                    xlWorksheet.Columns[j + 1].ColumnWidth = gv_QDD.Columns[headers[j]].Width / 5; // Adjust column width based on DataGridView column width
+                    xlWorksheet.Columns[j + 1].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter; // Center align the column
+                }
+
+                // Loop through each row in the DataGridView
+                for (int i = 0; i < gv_QDD.Rows.Count; i++)
+                {
+                    // Loop through each column in the DataGridView
+                    for (int j = 0; j < headers.Length; j++)
+                    {
+                        // Populate Excel cells with data from the DataGridView
+                        object value = gv_QDD.Rows[i].Cells[headers[j]].Value;
+
+                        // Format cells based on data types
+                        if (value != null)
+                        {
+                            //if (headers[j] == "SDT") // Assuming SDT is the column name for phone number
+                            //xlWorksheet.Cells[i + 2, j + 1] = "'" + value.ToString(); // Prepend with a single quote to treat it as text
+                            if (headers[j] == "TrangThai" || headers[j] == "MaQuyDoi" || headers[j] == "DiemQuyDoi" || headers[j] == "PhanTram") // Assuming MaNV and MaQuyen are columns with integer values
+                                xlWorksheet.Cells[i + 2, j + 1] = value.ToString();
+                            else
+                                xlWorksheet.Cells[i + 2, j + 1] = value;
+
+                            xlWorksheet.Cells[i + 2, j + 1].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter; // Center align the cell
+                        }
+                    }
+                }
+
+                // Auto-fit all columns to the content
+                xlWorksheet.Columns.AutoFit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        private void txt_searching_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as RichTextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

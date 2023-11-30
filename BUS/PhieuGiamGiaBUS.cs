@@ -1,4 +1,5 @@
 ﻿using pharmacy_management.DAO;
+using pharmacy_management.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -41,6 +42,11 @@ namespace pharmacy_management.BUS
         public string getPhanTramGiamBUS(int ma)
         {
             return dao.GetPhanTramGiamDAO(ma);
+        }
+
+        public PhieuGiamGia getItem(int ma)
+        {
+            return dao.getItem(ma);
         }
 
         public void insertItem(string mota, string diem, string phanTram, string maqd)

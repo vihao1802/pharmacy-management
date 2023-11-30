@@ -56,7 +56,6 @@ namespace pharmacy_management.GUI
                 btnPill.Visible = false;
                 btnPN.Visible = false;
                 btnStorage.Visible = false;
-                btnVoucher.Visible = false;
             }
             else if (nv.MaQuyen == 3)
             {
@@ -112,7 +111,7 @@ namespace pharmacy_management.GUI
             btnCustomer.Enabled = flag;
             kryptonButton1.Enabled = flag;
             btnPN.Enabled = flag;
-            btnCoupon.Enabled = flag;
+            //btnCoupon.Enabled = flag;
         }
         private void addFormtoPanelContainer(object Form)
         {
@@ -206,11 +205,11 @@ namespace pharmacy_management.GUI
             doiMatKhau.Show();
         }
 
-        private void btnCoupon_Click(object sender, EventArgs e)
+        /*private void btnCoupon_Click(object sender, EventArgs e)
         {
             addFormtoPanelContainer(new PhieuGiamGiaFrm());
-            btnCoupon.Enabled = false;
-        }
+            //btnCoupon.Enabled = false;
+        }*/
 
         private void btnCustomer_Click_1(object sender, EventArgs e)
         {

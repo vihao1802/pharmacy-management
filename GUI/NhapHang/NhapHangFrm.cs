@@ -42,7 +42,7 @@ namespace pharmacy_management.GUI.NhapHang
             DoiTuongBUS dt_list = new DoiTuongBUS();
             cb_DoiTuong.Items.Add("Tất cả");
             cb_DoiTuong.SelectedIndex = 0;
-            foreach (DoiTuong dt in dt_list.getList())
+            foreach (DoiTuong dt in dt_list.getActiveMadoituong())
             {
                 cb_DoiTuong.Items.Add(dt.TenDT);
             }
@@ -51,7 +51,7 @@ namespace pharmacy_management.GUI.NhapHang
             XuatXuBUS xx_list = new XuatXuBUS();
             cb_XuatXu.Items.Add("Tất cả");
             cb_XuatXu.SelectedIndex = 0;
-            foreach (XuatXu xx in xx_list.getList())
+            foreach (XuatXu xx in xx_list.getActiveMaxuatxu())
             {
                 cb_XuatXu.Items.Add(xx.TenXuatXu);
             }
@@ -307,8 +307,8 @@ namespace pharmacy_management.GUI.NhapHang
             {
                 thuoc_list.createTemp();
                 string filepath = openFileDialog.FileName;
-                string excelConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+ filepath +";Extended Properties=Excel 12.0;Persist Security Info=False";
-           
+                string excelConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + filepath + ";Extended Properties=Excel 12.0;Persist Security Info=False";
+
                 using (ExcelPackage package = new ExcelPackage(new FileInfo(filepath)))
                 {
                     ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
@@ -330,7 +330,7 @@ namespace pharmacy_management.GUI.NhapHang
                         }
                         excelTable.Rows.Add(newRow);
                     }
-                   
+
                     SqlConnection sqlcon = connectDB.KetNoiCSDL();
                     try
                     {
@@ -354,25 +354,30 @@ namespace pharmacy_management.GUI.NhapHang
                             sqlBulkCopy.WriteToServer(excelTable);
                         }
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         Console.WriteLine(ex.ToString());
                         MessageBox.Show("Format file không đúng, đã có lỗi xảy ra");
                         return;
 
                     }
-                        try
-                        {
-                            thuoc_list.Merge();
-                            MessageBox.Show("Nhập thành công");
-                            thuoc_list.dropTempTable();
-                        }catch(Exception ex) {
-                        Console.WriteLine(ex.Message);
-                                return; } 
-
+                    try
+                    {
+                        thuoc_list.Merge();
+                        MessageBox.Show("Nhập thành công");
+                        thuoc_list.dropTempTable();
+                        setEmpty();
+                        pagination();
                     }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        return;
+                    }
+
                 }
             }
         }
     }
+}
 

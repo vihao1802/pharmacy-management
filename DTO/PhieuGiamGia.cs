@@ -14,6 +14,7 @@ namespace pharmacy_management.DTO
         private int phanTramGiam;
         private int maQuyDoi;
 
+        public PhieuGiamGia() { }
         public PhieuGiamGia(int maPhieuGiam, string moTaPG, int soDiemQuyDoi, int phanTramGiam, int maQuyDoi)
         {
             this.MaPhieuGiam = maPhieuGiam;

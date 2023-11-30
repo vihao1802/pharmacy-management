@@ -50,6 +50,36 @@ namespace pharmacy_management.DAO
 
         }
 
+        public PhieuGiamGia getItem(int ma)
+        {
+            PhieuGiamGia tmp = new PhieuGiamGia();
+
+            ConnectDB conn = new ConnectDB();
+            string query = "SELECT * FROM phieugiamgia WHERE MaQuyDoi = '" + ma + "'";
+            SqlDataReader reader = conn.Execute(query);
+            try
+            {
+                while (reader.Read())
+                {
+                    tmp = new PhieuGiamGia(
+                        Int32.Parse(reader["MaPhieuGiam"].ToString()),
+                        reader["MoTaPG"].ToString(),
+                        Int32.Parse(reader["SoDiemQuyDoi"].ToString()),
+                        Int32.Parse(reader["PhanTramGiam"].ToString()),
+                        Int32.Parse(reader["MaQuyDoi"].ToString())
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                reader.Close();
+
+                Console.WriteLine("An error at PhieuGiamGiaDAO getItem: " + ex.Message);
+            }
+
+            return tmp;
+
+        }
         public ArrayList GetALlCondition(string search)
         {
             ArrayList arrayList = new ArrayList();
