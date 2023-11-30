@@ -106,5 +106,17 @@ namespace pharmacy_management.BUS
         {
             dao.addQuantity(ma, sl);
         }
+        public void createTemp()
+        {
+            dao.createTemp();
+        }
+        public void Merge()
+        {
+            dao.Merge();
+        }
+        public void dropTempTable()
+        {
+            dao.dropTempTable();
+        }
     }
 }

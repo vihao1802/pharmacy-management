@@ -421,5 +421,30 @@ namespace pharmacy_management.DAO
             string sql = "UPDATE THUOC SET TrangThai = 0,SoLuong = 0  WHERE Thuoc.MaDoiTuong = " + ma;
             conn.ExecuteNonQuery(sql);
         }
+        public void createTemp()
+        {
+            ConnectDB conn = new ConnectDB();
+            string createTempTable = "CREATE TABLE TempTable (MaThuoc int, TenThuoc nvarchar(50), MaDoiTuong int, GiaThuoc float, AnhThuoc nvarchar(50), TrangThai int, MaXuatXu int, SoLuong int)";
+            conn.ExecuteNonQuery(createTempTable);
+        }
+        public void Merge()
+        {
+            ConnectDB conn = new ConnectDB();
+            string mergeSql = "MERGE thuoc AS Target " +
+                  "USING TempTable AS Source " +
+                  "ON Target.TenThuoc = Source.TenThuoc " +
+                  "WHEN MATCHED THEN " +
+                  "UPDATE SET Target.SoLuong = Target.SoLuong + Source.SoLuong " +
+                  "WHEN NOT MATCHED BY TARGET THEN " +
+                  "INSERT (TenThuoc, MaDoiTuong, GiaThuoc, AnhThuoc, TrangThai, MaXuatXu, SoLuong) " +
+                  "VALUES (Source.TenThuoc, Source.MaDoiTuong, Source.GiaThuoc, Source.AnhThuoc, Source.TrangThai, Source.MaXuatXu, Source.SoLuong);";
+            conn.ExecuteNonQuery(mergeSql);
+        }
+        public void dropTempTable()
+        {
+            ConnectDB conn = new ConnectDB();
+            string query = "DROP TABLE TempTable";
+            conn.ExecuteNonQuery(query);
+        }
     }
 }
