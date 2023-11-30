@@ -68,8 +68,10 @@ namespace pharmacy_management.GUI.QLxuatxu
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (flag == 0)
+            if (txtSearch.Text.Length > 0) {
                 MessageBox.Show("Bạn phải làm mới bảng trước");
+                return;
+            }
             else
             {
                 if (DGVXuatXu.SelectedRows.Count >= 1)
@@ -115,6 +117,9 @@ namespace pharmacy_management.GUI.QLxuatxu
         private void btnSua_Click(object sender, EventArgs e)
         {
             int state;
+            int ma = int.Parse(txtMaXuatXu.Text.ToString());
+            XuatXuBUS bus = new XuatXuBUS();
+            ThuocBUS thuocbus = new ThuocBUS();
             if (txtTenXuatXu.Text == "")
             {
                 MessageBox.Show("Chưa điền tên xuất xứ");
@@ -122,7 +127,10 @@ namespace pharmacy_management.GUI.QLxuatxu
 
             }
             if (!ckbTrangThai.Checked)
+            {
                 state = 0;
+                thuocbus.deleteatMaXuatXu(ma);
+            }
             else state = 1;
             try
             {
@@ -131,6 +139,8 @@ namespace pharmacy_management.GUI.QLxuatxu
                 DGVXuatXu.CurrentRow.Cells["tenXuatXu"].Value = txtTenXuatXu.Text.ToString();
                 DGVXuatXu.CurrentRow.Cells["TrangThai"].Value = state == 1 ? "Active" : "Not Active";
                 txtTenXuatXu.Text = "";
+                txtMaXuatXu.Text = "";
+                DGVXuatXu.ClearSelection();
                 MessageBox.Show("Sửa thành công");
             }
             catch (Exception ex)
@@ -142,65 +152,16 @@ namespace pharmacy_management.GUI.QLxuatxu
         }
 
 
-        private void searchbtn_Click(object sender, EventArgs e)
-        {
-            /* if (txtSearch.Text.Trim().ToString() == "")
-             {
-                 MessageBox.Show("Bạn chưa nhập điều kiện cần lọc");
-                 return;
-             }
-             DGVXuatXu.Rows.Clear();
-             string tenXuatXu = txtSearch.Text.ToString();
-             if (cbbSearch.SelectedItem.ToString() == "Mã xuất xứ")
-             {
-
-
-                 foreach (XuatXu item in bus.searchatMa(tenXuatXu))
-                 {
-                     string temp;
-                     int ma = int.Parse(item.MaXuatXu.ToString());
-                     string ten = item.TenXuatXu.ToString();
-                     int state = int.Parse(item.TrangThai.ToString());
-                     if (state == 1)
-                     {
-                         temp = "Active";
-                     }
-                     else
-                     {
-                         temp = "Not Active";
-                     }
-                     DGVXuatXu.Rows.Add(ma, ten, temp);
-                     flag = 0;
-                 }
-
-             }
-             else if (cbbSearch.SelectedItem.ToString() == "Tên xuất xứ")
-             {
-
-                 foreach (XuatXu item in bus.searchatTen(tenXuatXu))
-                 {
-                     string temp;
-                     int ma = int.Parse(item.MaXuatXu.ToString());
-                     string ten = item.TenXuatXu.ToString();
-                     int state = int.Parse(item.TrangThai.ToString());
-                     if (state == 1)
-                     {
-                         temp = "Active";
-                     }
-                     else
-                     {
-                         temp = "Not Active";
-                     }
-                     DGVXuatXu.Rows.Add(ma, ten, temp);
-                     flag = 0;
-                 }
-             }*/
-        }
-
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             loadds();
             flag = 1;
+            txtTenXuatXu.Text = "";
+            txtMaXuatXu.Text = "";
+            txtSearch.Text = "";
+            DGVXuatXu.ClearSelection();
+            ckbTrangThai.Visible = false;
+            setEnable(true);
         }
 
         private void btnXuat_Click(object sender, EventArgs e)
@@ -324,6 +285,8 @@ namespace pharmacy_management.GUI.QLxuatxu
                 DGVXuatXu.Rows.Add(ma, tenxuatxu, temp);
             }
         }
+
+      
     }            
     
 }

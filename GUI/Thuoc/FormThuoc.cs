@@ -39,7 +39,7 @@ namespace pharmacy_management.GUI.Thuoc
         XuatXuBUS xxbus = new XuatXuBUS();
 
         public string globalFilename;
-        public string originalFileName;
+        public string originalFileName = "";
         private bool checkInput()
         {
             Boolean result = true;
@@ -145,17 +145,17 @@ namespace pharmacy_management.GUI.Thuoc
         private void btnThem_Click_1(object sender, EventArgs e)
         {
 
-            //if (checkInput() == false) return;
-            if (DGVThuoc.SelectedRows.Count >= 1)
+            if (checkInput() == false) return;
+            if (txtSearch.Text.Length > 0)
+
             {
-                MessageBox.Show("Có dòng đang được chọn hãy bỏ chọn trước!");
+                MessageBox.Show("Bạn phải làm mới bảng trước!");
                 return;
             }
             if (ckbTrangThai.Checked == false) ;
 
             try
             {
-                loadds();
                 string maxx = cbbMaXuatXu.Text.Trim();
                 string madt = cbbMaDoiTuong.Text.Trim();
 
@@ -170,7 +170,7 @@ namespace pharmacy_management.GUI.Thuoc
                 }
                 Console.WriteLine(maxThuoc);
                 string newFileName = maxThuoc + 1 + "." + globalFilename.Split('.')[1];
-                DTO.Thuoc drug = new DTO.Thuoc(txtTenThuoc.Text.ToString(), int.Parse(madt[0].ToString()), float.Parse(txtGiaThuoc.Text.ToString()), newFileName, 1, int.Parse(maxx[0].ToString()), 0);
+                DTO.Thuoc drug = new DTO.Thuoc(txtTenThuoc.Text.ToString(), int.Parse(madt[0].ToString()), float.Parse(txtGiaThuoc.Text.ToString()) * 1000, newFileName, 1, int.Parse(maxx[0].ToString()), 0);
                 thuocbus.add(drug);
 
                 int trangthaiNew = drug.TrangThai;
@@ -180,10 +180,13 @@ namespace pharmacy_management.GUI.Thuoc
                 int soluong = drug.SoLuong;
                 float giathuoc = drug.GiaThuoc;
                 string directoryPath = @"..\..\Resources";
-                SaveImageToDirectory(newFileName, directoryPath);
+                if (originalFileName != "")
+                {
+                    SaveImageToDirectory(newFileName, directoryPath);
+                }
                 string tempNew = (trangthaiNew == 1) ? "Còn bán" : "Ngừng bán";
-                DGVThuoc.Rows.Add(maxThuoc + 1, tenNew, tenxuatxu, tendoituong, soluong, giathuoc, newFileName, tempNew);
-
+                //DGVThuoc.Rows.Add(maxThuoc + 1, tenNew, tenxuatxu, tendoituong, soluong, giathuoc, newFileName, tempNew);
+                loadds();
                 Refreshtxt();
                 MessageBox.Show("Thêm thành công");
             }
@@ -197,11 +200,7 @@ namespace pharmacy_management.GUI.Thuoc
         {
             try
             {
-                if (originalFileName == null)
-                {
-                    Console.WriteLine("User canceled the dialog. Image not saved.");
-                    return;
-                }
+
 
                 byte[] imageBytes = File.ReadAllBytes(originalFileName);
 
@@ -214,6 +213,7 @@ namespace pharmacy_management.GUI.Thuoc
                 Console.WriteLine(destinationPath);
                 // Write the byte array to the destination file
                 File.WriteAllBytes(destinationPath, imageBytes);
+                originalFileName = "";
             }
             catch (Exception ex)
             {
@@ -232,54 +232,27 @@ namespace pharmacy_management.GUI.Thuoc
             txtSoLuong.Clear();
             pictureBox1.Image = null;
             txtSearch.Clear();
+            ckbTrangThai.Visible = false;
+            setEnable(true);
             DGVThuoc.ClearSelection();
-        }
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-            int ma = int.Parse(DGVThuoc.CurrentRow.Cells["MaThuoc"].Value.ToString());
-            int trangThai = ckbTrangThai.Checked ? 1 : 0;
-            if (trangThai == 0)
-            {
-                MessageBox.Show("Thuốc này đã hủy kích hoạt từ trước!!!");
-                return;
-            }
-            else
-            {
-                if (MessageBox.Show("Bạn có chắc chắn muốn hủy kích hoạt thông tin thuốc không?", "Xác nhận hủy", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    try
-                    {
-                        thuocbus.delete(ma);
-                        Refresh();
-                        MessageBox.Show("Hủy kích hoạt thông tin thuốc thành công!!!");
-                        DGVThuoc.CurrentRow.Cells["TrangThai"].Value = "Ngừng bán";
-                        DGVThuoc.CurrentRow.Cells["SoLuong"].Value = "0";
-                        ckbTrangThai.Checked = false;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            int state;
-            checkInput();
-            int soluong;
-            if (DGVThuoc.SelectedRows.Count < 1)
-            {
-                MessageBox.Show("Chưa chọn dòng để sửa!");
-                return;
-            }
 
+            int state;
+            if (checkInput() == false) return;
+            int soluong;
             if (!ckbTrangThai.Checked)
             {
                 state = 0;
                 soluong = 0;
+                DialogResult result = MessageBox.Show("Khi ngừng bán, số lượng sản phẩm sẽ = 0 Bạn có chắc muốn tiếp tục?", "Ngừng bán", MessageBoxButtons.OKCancel);
+
+                if (result != DialogResult.OK)
+                {
+                    return;
+                }
             }
             else
             {
@@ -302,8 +275,11 @@ namespace pharmacy_management.GUI.Thuoc
                 int mt = int.Parse(DGVThuoc.CurrentRow.Cells["MaThuoc"].Value.ToString());
                 string newFileName = mt + "." + globalFilename.Split('.')[1];
                 string directoryPath = @"..\..\Resources";
-                SaveImageToDirectory(newFileName, directoryPath);
-                DTO.Thuoc drug = new DTO.Thuoc(mt, txtTenThuoc.Text.ToString(), madt, float.Parse(txtGiaThuoc.Text.ToString()), newFileName, 1, maxx, soluong);
+                if (originalFileName != "")
+                {
+                    SaveImageToDirectory(newFileName, directoryPath);
+                }
+                DTO.Thuoc drug = new DTO.Thuoc(mt, txtTenThuoc.Text.ToString(), madt, float.Parse(txtGiaThuoc.Text.ToString()) * 1000, newFileName, state, maxx, soluong);
                 thuocbus.update(drug);
                 int trangthaiNew = drug.TrangThai;
                 string tenNew = drug.TenThuoc;
@@ -316,9 +292,10 @@ namespace pharmacy_management.GUI.Thuoc
                 DGVThuoc.CurrentRow.Cells["MaXuatXu"].Value = tenxuatxu;
                 DGVThuoc.CurrentRow.Cells["MaDoiTuong"].Value = tendoituong;
                 DGVThuoc.CurrentRow.Cells["SoLuong"].Value = quantity;
-                DGVThuoc.CurrentRow.Cells["GiaThuoc"].Value = giathuoc;
+                DGVThuoc.CurrentRow.Cells["GiaThuoc"].Value = giathuoc / 1000;
                 DGVThuoc.CurrentRow.Cells["AnhThuoc"].Value = anhthuoc;
                 DGVThuoc.CurrentRow.Cells["TrangThai"].Value = state == 1 ? "Còn bán" : "Ngừng bán";
+                loadds();
                 Refreshtxt();
                 MessageBox.Show("Sửa thành công");
             }
@@ -420,7 +397,7 @@ namespace pharmacy_management.GUI.Thuoc
                 txtMaThuoc.Text = DGVThuoc.CurrentRow.Cells["MaThuoc"].Value.ToString();
                 txtSoLuong.Text = DGVThuoc.CurrentRow.Cells["SoLuong"].Value.ToString();
                 txtTenThuoc.Text = DGVThuoc.CurrentRow.Cells["TenThuoc"].Value.ToString();
-                txtGiaThuoc.Text = DGVThuoc.CurrentRow.Cells["GiaThuoc"].Value.ToString();
+                txtGiaThuoc.Text = (float.Parse(DGVThuoc.CurrentRow.Cells["GiaThuoc"].Value.ToString()) / 1000).ToString();
                 cbbMaDoiTuong.Text = doituong;
                 cbbMaXuatXu.Text = xuatxu;
                 //string filePath = "C:\\DrugStore\\pharmacy-management\\Resources\\";

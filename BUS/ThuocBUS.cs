@@ -52,9 +52,14 @@ namespace pharmacy_management.BUS
             list = dao.searchatTen(ten);
             return list;
         }*/
-        public void delete(int ma)
+        public void deleteatMaXuatXu(int ma)
         {
-            dao.Delete(ma);
+            dao.DeleteatMaXuatXu(ma);
+        }
+
+        public void deleteatMaDoiTuong(int ma)
+        {
+            dao.DeleteatMaDoiTuong(ma);
         }
 
         public ArrayList search(string text)
@@ -63,6 +68,8 @@ namespace pharmacy_management.BUS
             return list;
         }
 
+      
+        
         public void update(Thuoc Drug)
         {
             dao.update(Drug);

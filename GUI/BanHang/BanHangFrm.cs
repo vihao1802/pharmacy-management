@@ -45,7 +45,7 @@ namespace pharmacy_management.GUI.BanHang
             DoiTuongBUS dt_list = new DoiTuongBUS();
             cb_DoiTuong.Items.Add("Tất cả");
             cb_DoiTuong.SelectedIndex = 0;
-            foreach (DoiTuong dt in dt_list.getList())
+            foreach (DoiTuong dt in dt_list.getActiveMadoituong())
             {
                 cb_DoiTuong.Items.Add(dt.TenDT);
             }
@@ -54,7 +54,7 @@ namespace pharmacy_management.GUI.BanHang
             XuatXuBUS xx_list = new XuatXuBUS();
             cb_XuatXu.Items.Add("Tất cả");
             cb_XuatXu.SelectedIndex = 0;
-            foreach (XuatXu xx in xx_list.getList())
+            foreach (XuatXu xx in xx_list.getActiveMaxuatxu())
             {
                 cb_XuatXu.Items.Add(xx.TenXuatXu);
             }
