@@ -19,7 +19,7 @@ namespace pharmacy_management.GUI.QuyDoiDiem
         KhachHangBUS khBUS = new KhachHangBUS();
         PhieuGiamGiaBUS pggBUS = new PhieuGiamGiaBUS();
         DiemKhachHangBUS dkhBUS = new DiemKhachHangBUS();
-        int soLuongChonDiem = 10;
+        int soLuongChonDiem = 4;
         public QuyDoiDiemFrm()
         {
             InitializeComponent();

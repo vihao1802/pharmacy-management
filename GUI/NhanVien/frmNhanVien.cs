@@ -12,6 +12,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using thuoc;
 
 namespace pharmacy_management.GUI.NhanVien
 {
@@ -21,26 +22,28 @@ namespace pharmacy_management.GUI.NhanVien
         private ArrayList list;
         NhanVienBUS bus = new NhanVienBUS();
         private NhanVienBUS nhanVienBus;
-
         QuyenBUS busquyen = new QuyenBUS();
         private QuyenBUS quyenBus;
-
+        public static DTO.NhanVien nv = new DTO.NhanVien();
         public frmNhanVien()
         {
             InitializeComponent();
             loads();
-
+            nv = Login.nv;
             cbxMaQuyen.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxMaQuyen.AutoCompleteMode = AutoCompleteMode.None;
             cbxMaQuyen.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbxMaQuyen.Items.Clear();
             foreach (Quyen dt in busquyen.getList())
             {
-
+                if (dt.MaQuyen == 1)
+                {
+                    continue;
+                }
                 string temp = dt.TenQuyen;
                 cbxMaQuyen.Items.Add(temp);
             }
-            btnSua.Enabled = false;          
+            btnSua.Enabled = false;
         }
 
         private void RefreshTextBox()
@@ -58,17 +61,23 @@ namespace pharmacy_management.GUI.NhanVien
             {
                 if (!cbxMaQuyen.Items.Contains(dt.TenQuyen))
                 {
+                    if (dt.MaQuyen == 1)
+                    {
+                        continue;
+                    }
                     cbxMaQuyen.Items.Add(dt.TenQuyen);
                 }
             }
             ckbTrangThai.Enabled = false;
             ckbTrangThai.Checked = true;
             btnThem.Enabled = true;
-            btnSua.Enabled = false;          
+            btnSua.Enabled = false;
             txtTenDangNhap.Enabled = true;
             ckbTrangThai.Visible = false;
             label8.Visible = true;
             txtMatKhau.Visible = true;
+            cbxMaQuyen.Visible = true;
+            label7.Visible = true;
             nhanvienDataGridView.ClearSelection();
         }
 
@@ -76,7 +85,7 @@ namespace pharmacy_management.GUI.NhanVien
         private void loads()
         {
             nhanvienDataGridView.Rows.Clear();
-
+            bus = new NhanVienBUS();
             foreach (DTO.NhanVien item in bus.getList())
             {
 
@@ -370,7 +379,7 @@ namespace pharmacy_management.GUI.NhanVien
 
                 }
 
-                nhanvienDataGridView.Rows.Add(maNew, tenNew, sdtNew, diachiNew, emailNew, tempNew, tendangnhapNew, matkhauNew, tenquyenNew);
+                nhanvienDataGridView.Rows.Add(maNew, tenNew, sdtNew, diachiNew, emailNew, tendangnhapNew, tempNew, tenquyenNew);
 
                 MessageBox.Show("Thêm thành công");
                 RefreshTextBox();
@@ -445,24 +454,28 @@ namespace pharmacy_management.GUI.NhanVien
 
 
                 // Kiểm tra số điện thoại
-                if (txtSDT.Text == "")
-                {
-                    MessageBox.Show("Vui lòng nhập số điện thoại!!!");
-                    return;
+                /* if (txtSDT.Text == "")
+                 {
+                     MessageBox.Show("Vui lòng nhập số điện thoại!!!");
+                     return;
 
-                }
-                else
-                {
-                    // Sử dụng biểu thức chính quy để kiểm tra số điện thoại
-                    string pattern = @"^0[0-9]{9}$"; // Bắt đầu bằng 0
-                    if (!Regex.IsMatch(txtSDT.Text.Trim(), pattern))
-                    {
-                        MessageBox.Show("Số điện thoại không hợp lệ!!!");
-                        return;
-                    }
+                 }
+                 else
+                 {
+                     // Sử dụng biểu thức chính quy để kiểm tra số điện thoại
+                     string pattern = @"^0[0-9]{9}$"; // Bắt đầu bằng 0
+                     if (!Regex.IsMatch(txtSDT.Text.Trim(), pattern))
+                     {
+                         MessageBox.Show("Số điện thoại không hợp lệ!!!");
+                         return;
+                     }
+                     if (IsPhoneNumberExists(txtSDT.Text.Trim()))
+                     {
+                         MessageBox.Show("Số điện thoại đã tồn tại!!!");
+                         return;
+                     }
 
-
-                }
+                 }*/
 
                 // Kiểm tra email
                 if (txtEmail.Text == "")
@@ -673,17 +686,30 @@ namespace pharmacy_management.GUI.NhanVien
                     {
                         ckbTrangThai.Checked = false;
                     }
-                    if (cbxMaQuyen.Text == "Admin")
+
+                    if (nhanvienDataGridView.Rows[e.RowIndex].Cells["MaQuyen"].Value.ToString() == "Admin")
                     {
                         ckbTrangThai.Visible = false;
+                        cbxMaQuyen.Visible = false;
+                        label7.Visible = false;
+                        btnSua.Enabled = false;
                     }
                     else
                     {
                         ckbTrangThai.Visible = true;
+                        cbxMaQuyen.Visible = true;
+                        label7.Visible = true;
+                        btnSua.Enabled = true;
+                    }
+                    if (nv.MaNV == int.Parse(nhanvienDataGridView.Rows[e.RowIndex].Cells["MaNV"].Value.ToString()))
+                    {
+                        ckbTrangThai.Visible = false;
+                        cbxMaQuyen.Visible = false;
+                        label7.Visible = false;
+                        btnSua.Enabled = true;
                     }
                     label8.Visible = false;
                     txtMatKhau.Visible = false;
-                    btnSua.Enabled = true;                 
                 }
             }
         }

@@ -50,17 +50,29 @@ namespace pharmacy_management.GUI
         }
         private void addControls()
         {
-            if (nv.MaQuyen == 2)
+            string quyen = qbus.getTenfromMa(nv.MaQuyen);
+            if (quyen.Equals("Nhân viên"))
             {
                 btnStaff.Visible = false;
                 btnPill.Visible = false;
                 btnPN.Visible = false;
                 btnStorage.Visible = false;
             }
-            else if (nv.MaQuyen == 3)
+            else if (quyen.Equals("Quản lý"))
             {
-                btnCustomer.Visible = false;
+                btnSell.Visible = false;
+                btnVoucher.Visible = false;
 
+            }
+            else if (quyen.Equals("Admin"))
+            {
+                btnPill.Visible = false;
+                btnPN.Visible = false;
+                btnStorage.Visible = false;
+                btnCustomer.Visible = false;
+                btnSell.Visible = false;
+                btnVoucher.Visible = false;
+                kryptonButton1.Visible = false;
             }
         }
 

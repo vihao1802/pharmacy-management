@@ -318,49 +318,51 @@ namespace pharmacy_management.GUI.NhapHang
                     {
                         excelTable.Columns.Add(firstRowCell.Text);
                     }
-
-                    // Add the data from the Excel sheet to the data table
-                    for (int rowNumber = 2; rowNumber <= worksheet.Dimension.End.Row; rowNumber++)
-                    {
-                        var row = worksheet.Cells[rowNumber, 1, rowNumber, worksheet.Dimension.End.Column];
-                        var newRow = excelTable.NewRow();
-                        foreach (var cell in row)
-                        {
-                            newRow[cell.Start.Column - 1] = cell.Text;
-                        }
-                        excelTable.Rows.Add(newRow);
-                    }
-
-                    SqlConnection sqlcon = connectDB.KetNoiCSDL();
                     try
                     {
-                        using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(sqlcon))
+                        // Add the data from the Excel sheet to the data table
+                        for (int rowNumber = 2; rowNumber <= worksheet.Dimension.End.Row; rowNumber++)
                         {
-                            sqlcon.Open();
-                            // Set the destination table name
-                            sqlBulkCopy.DestinationTableName = "TempTable";
-
-                            // Map the columns from the Excel sheet to the SQL table
-                            sqlBulkCopy.ColumnMappings.Add("MaThuoc", "MaThuoc");
-                            sqlBulkCopy.ColumnMappings.Add("TenThuoc", "TenThuoc");
-                            sqlBulkCopy.ColumnMappings.Add("MaDoiTuong", "MaDoiTuong");
-                            sqlBulkCopy.ColumnMappings.Add("GiaThuoc", "GiaThuoc");
-                            sqlBulkCopy.ColumnMappings.Add("AnhThuoc", "AnhThuoc");
-                            sqlBulkCopy.ColumnMappings.Add("TrangThai", "TrangThai");
-                            sqlBulkCopy.ColumnMappings.Add("MaXuatXu", "MaXuatXu");
-                            sqlBulkCopy.ColumnMappings.Add("SoLuong", "SoLuong");
-
-                            // Write the data to the SQL table
-                            sqlBulkCopy.WriteToServer(excelTable);
+                            var row = worksheet.Cells[rowNumber, 1, rowNumber, worksheet.Dimension.End.Column];
+                            var newRow = excelTable.NewRow();
+                            foreach (var cell in row)
+                            {
+                                newRow[cell.Start.Column - 1] = cell.Text;
+                            }
+                            excelTable.Rows.Add(newRow);
                         }
                     }
                     catch (Exception ex)
                     {
                         Console.WriteLine(ex.ToString());
+                        thuoc_list.dropTempTable();
                         MessageBox.Show("Format file không đúng, đã có lỗi xảy ra");
                         return;
 
                     }
+                    SqlConnection sqlcon = connectDB.KetNoiCSDL();
+
+                    using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(sqlcon))
+                    {
+                        sqlcon.Open();
+                        // Set the destination table name
+                        sqlBulkCopy.DestinationTableName = "TempTable";
+
+                        // Map the columns from the Excel sheet to the SQL table
+                        sqlBulkCopy.ColumnMappings.Add("MaThuoc", "MaThuoc");
+                        sqlBulkCopy.ColumnMappings.Add("TenThuoc", "TenThuoc");
+                        sqlBulkCopy.ColumnMappings.Add("MaDoiTuong", "MaDoiTuong");
+                        sqlBulkCopy.ColumnMappings.Add("GiaThuoc", "GiaThuoc");
+                        sqlBulkCopy.ColumnMappings.Add("AnhThuoc", "AnhThuoc");
+                        sqlBulkCopy.ColumnMappings.Add("TrangThai", "TrangThai");
+                        sqlBulkCopy.ColumnMappings.Add("MaXuatXu", "MaXuatXu");
+                        sqlBulkCopy.ColumnMappings.Add("SoLuong", "SoLuong");
+
+                        // Write the data to the SQL table
+                        sqlBulkCopy.WriteToServer(excelTable);
+                    }
+
+
                     try
                     {
                         thuoc_list.Merge();
