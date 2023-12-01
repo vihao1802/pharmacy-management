@@ -571,6 +571,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\ql_nhathuoc.sql" />
     <Content Include="Images\Analyze-Contrast.png" />
     <Content Include="Images\Analyze.png" />
     <Content Include="Images\banner1.jpg" />

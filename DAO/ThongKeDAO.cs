@@ -47,7 +47,7 @@ namespace pharmacy_management.DAO
         }
         public int getslkh()
         {
-            string query = "Select Count(*) from KhachHang";
+            string query = "Select Count(*) from KhachHang WHERE TrangThai = '1' and MaKH <>1";
             using (SqlCommand cmd = new SqlCommand(query, sqlcon))
             {
                 sqlcon.Open();
@@ -58,7 +58,7 @@ namespace pharmacy_management.DAO
         }
         public int getslban()
         {
-            string query = "Select Count(Soluong) from chitietdonhang";
+            string query = "Select Sum(Soluong) from chitietdonhang";
             using (SqlCommand cmd = new SqlCommand(query, sqlcon))
             {
                 sqlcon.Open();
